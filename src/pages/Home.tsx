@@ -3,7 +3,6 @@ import React from 'react'
 import CSS from 'csstype'
 import InfiniteLooper from '../components/banner'
 import Bubble from '../components/bubble'
-import ScrollToTop from '../components/scrollToTop'
 import logo from '../static/assets/UofTAI_Logo.png'
 
 const Home = function Home() {
