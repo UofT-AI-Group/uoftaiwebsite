@@ -3,6 +3,7 @@ import React from 'react'
 import CSS from 'csstype'
 import InfiniteLooper from '../components/banner'
 import Bubble from '../components/bubble'
+import ScrollToTop from '../components/scrollToTop'
 import logo from '../static/assets/UofTAI_Logo.png'
 
 const Home = function Home() {
@@ -15,9 +16,9 @@ const Home = function Home() {
             <Bubble speed="20" size="400px" top="-400px" left="-150px" />
             <Bubble
                 speed="20"
-                size="400px"
-                top="200px"
-                left="calc(100vw + 100px)"
+                size="300px"
+                top="150px"
+                left="calc(100vw + 0px)"
             />
 
             <div className="title" style={titleStyles}></div>
