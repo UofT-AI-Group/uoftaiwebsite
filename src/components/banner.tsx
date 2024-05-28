@@ -89,26 +89,3 @@ const InfiniteLooper = function InfiniteLooper({
 }
 
 export default InfiniteLooper
-// const App = () => (
-//   <div className="app">
-//     <p className="description">
-//       Just throw some content into the component and set the speed and
-//       direction.
-//     </p>
-
-//     <InfiniteLooper speed="4" direction="right">
-//       <div className="contentBlock contentBlock--one">
-//         Place the stuff you want to loop
-//       </div>
-//       <div className="contentBlock contentBlock--one">right here</div>
-//     </InfiniteLooper>
-
-//     <InfiniteLooper direction="right" speed="0.4">
-//       <div className="contentBlock contentBlock--two">
-//         <i>faster 🚀</i>
-//       </div>
-//     </InfiniteLooper>
-//   </div>
-// );
-
-// ReactDOM.render(<App />, document.getElementById("root"));
