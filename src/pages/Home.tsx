@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react'
 import React from 'react'
 import InfiniteLooper from '../components/banner'
 import logo from '../static/assets/UofTAI_Logo.png'
+import TeamSection from '../components/team-component/TeamSection'
 
 const Home = () => (
     <Box>
@@ -18,6 +19,9 @@ const Home = () => (
                     alt="UofT AI Club Logo"
                 />
             </InfiniteLooper>
+        </div>
+        <div className="team-component">
+            <TeamSection />
         </div>
     </Box>
 )
