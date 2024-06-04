@@ -6,7 +6,7 @@ export const LandingTitle = () => {
     return (
         <Heading
             fontWeight={'medium'}
-            fontSize={48}
+            fontSize={[30, 48]}
             display={'inline'}
             fontFamily={'Tabular, sans-serif'}
         >

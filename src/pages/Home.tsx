@@ -23,9 +23,17 @@ const Home = () => {
                 maxW={'4xl'}
                 pt={64}
             >
-                <VStack alignItems={'left'} spacing={5} pr={48}>
+                <VStack
+                    alignItems={'left'}
+                    spacing={5}
+                    pr={[4, 48]}
+                    pl={[4, 0]}
+                >
                     <LandingTitle />
-                    <Text fontWeight={'semibold'}>
+                    <Text
+                        fontWeight={['regular', 'semibold']}
+                        fontSize={[14, 18]}
+                    >
                         Shaping the future of artificial intelligence through a
                         variety of initiatives, including educational programs,
                         competitions, guest lectures, and conferences.

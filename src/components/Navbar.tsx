@@ -145,7 +145,7 @@ const Navbar = () => {
                         bg={'dark'}
                         color={'light'}
                     >
-                        <DrawerCloseButton size={'lg'} />
+                        <DrawerCloseButton size={'lg'} mt={3} />
                         <DrawerBody>
                             <Stack as={'nav'} spacing={4}>
                                 {Links.map((link) => (
