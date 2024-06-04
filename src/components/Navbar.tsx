@@ -12,7 +12,6 @@ import {
     DrawerContent,
     DrawerCloseButton,
     DrawerBody,
-    Button,
 } from '@chakra-ui/react'
 import { ReactNode, useEffect, useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
