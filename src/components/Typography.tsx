@@ -29,7 +29,14 @@ export const LandingTitle = () => {
 
 export const SectionHeading = ({ children }: { children: React.ReactNode }) => {
     return (
-        <Heading as="h2" size="2xl">
+        <Heading
+            fontSize={[24, 32]}
+            fontWeight={'medium'}
+            fontFamily={'Tabular, sans-serif'}
+            _firstLetter={{
+                textDecoration: 'underline',
+            }}
+        >
             {children}
         </Heading>
     )
