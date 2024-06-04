@@ -9,6 +9,13 @@ export const ButtonDark = ({ children }: { children: ReactNode }) => {
             bg={'dark'}
             color={'light'}
             borderRadius={0}
+            fontFamily={'Tabular, sans-serif'}
+            fontWeight={'medium'}
+            border={'2px'}
+            _hover={{
+                bg: 'white',
+                color: 'dark',
+            }}
         >
             {children}
         </ChakraButton>
@@ -23,7 +30,9 @@ export const ButtonOutline = ({
     children: ReactNode
 }) => {
     const color = variant === 'dark' ? 'dark' : 'light'
+    const hoverColor = variant === 'dark' ? 'light' : 'dark'
     const borderColor = variant === 'dark' ? 'dark' : 'light'
+    const bgHoverColor = variant === 'dark' ? 'dark' : 'light'
     return (
         <ChakraButton
             py={4}
@@ -33,6 +42,12 @@ export const ButtonOutline = ({
             borderRadius={0}
             border={'2px'}
             borderColor={borderColor}
+            fontFamily={'Tabular, sans-serif'}
+            fontWeight={'medium'}
+            _hover={{
+                color: hoverColor,
+                bg: bgHoverColor,
+            }}
         >
             {children}
         </ChakraButton>

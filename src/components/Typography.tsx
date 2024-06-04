@@ -4,7 +4,12 @@ import ReactTypingEffect from 'react-typing-effect'
 
 export const LandingTitle = () => {
     return (
-        <Heading fontWeight={'semibold'} size={'3xl'} display={'inline'}>
+        <Heading
+            fontWeight={'medium'}
+            fontSize={48}
+            display={'inline'}
+            fontFamily={'Tabular, sans-serif'}
+        >
             <Text as={'span'} color={'brand'}>
                 UofT AI
             </Text>

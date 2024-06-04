@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter } from 'react-router-dom'
 import theme from './theme'
+import Fonts from './fonts'
 
 const container = document.getElementById('root')
 if (!container) throw new Error('Failed to find the root element')
@@ -14,6 +15,7 @@ const root = ReactDOM.createRoot(container)
 root.render(
     <React.StrictMode>
         <ChakraProvider theme={theme}>
+            <Fonts />
             <ColorModeScript />
             <BrowserRouter>
                 <App />

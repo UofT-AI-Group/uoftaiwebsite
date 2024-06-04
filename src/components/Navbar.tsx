@@ -34,6 +34,8 @@ const NavLink = ({
         px={2}
         py={1}
         rounded={'md'}
+        fontFamily={'Tabular, sans-serif'}
+        fontWeight={'semibold'}
         _hover={{
             textDecoration: 'none',
             cursor: 'pointer',
