@@ -46,9 +46,7 @@
 
 .bannerlabel {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 186px;
+    height: 180px;
     width: 250px;
     background-color: black;
     display: flex;

@@ -1,0 +1,38 @@
+.bubble {
+    background: radial-gradient(purple, white 50%);
+    border-radius: 50%;
+    animation-name: grow;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: grow;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: grow;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    z-index: -10;
+}
+
+@-webkit-keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
