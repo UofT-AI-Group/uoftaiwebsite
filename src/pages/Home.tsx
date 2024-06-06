@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react'
 import React from 'react'
 import InfiniteLooper from '../components/banner'
 import logo from '../static/assets/UofTAI_Logo.png'
+import Footer from '../components/Footer/Footer'
 
 const Home = () => (
     <Box>
@@ -19,6 +20,8 @@ const Home = () => (
                 />
             </InfiniteLooper>
         </div>
+
+        <Footer />
     </Box>
 )
 
