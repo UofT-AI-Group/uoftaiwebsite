@@ -1,4 +1,4 @@
-import { Card } from './FlipCard'
+import { Card } from '../../components/team-component/FlipCard'
 
 // modify the data here: add actual team members and their information
 export const cards: Card[] = [
@@ -8,7 +8,7 @@ export const cards: Card[] = [
         displayedData: {
             name: 'John Doe',
             message: 'Lorem ipsum',
-            position: 'President',
+            position: 'Director of Partnerships',
         },
         picture: 'favicon.ico',
     },

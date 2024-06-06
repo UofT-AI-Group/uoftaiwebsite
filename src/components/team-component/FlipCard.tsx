@@ -38,10 +38,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ card }) => {
                             alt={`Picture of ${displayedData.name}`}
                         />
                         <div className="person-details d-row-flex">
-                            <div className="card-club-position card-text fs-5 fw-bold">
+                            <div className="card-club-position card-text fs-7">
                                 {displayedData.position}
                             </div>
-                            <p className="card-text fs-4">
+                            <p className="card-text fs-8">
                                 {displayedData.name}
                             </p>
                         </div>
@@ -49,8 +49,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ card }) => {
                 </div>
                 <div className="card back">
                     <div className="card-body justify-content-center align-items-center">
-                        <p className="card-text fs-4 fw-bold">Bio:</p>
-                        <p className="card-text">{displayedData.message}</p>
+                        <p className="card-text bio-title">Bio:</p>
+                        <p className="card-text bio-message">
+                            {displayedData.message}
+                        </p>
                     </div>
                 </div>
             </div>
