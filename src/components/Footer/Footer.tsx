@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
-                <div className="logo-and-sections">
+                <div className="logo-and-links">
                     <div className="footer-links">
                         <img className="footer-img" src={logo} alt="AI Logo" />
                         <a href="#">About Us</a>
@@ -40,13 +40,13 @@ const Footer: React.FC = () => {
                             web.cs.toronto.edu
                         </a>
                     </div>
+                    <div className="footer-bottom">
+                        <p>
+                            &copy; University of Toronto Artificial Intelligence
+                            Group 2024
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div className="footer-bottom">
-                <p>
-                    &copy; University of Toronto Artificial Intelligence Group
-                    2023
-                </p>
             </div>
         </footer>
     )

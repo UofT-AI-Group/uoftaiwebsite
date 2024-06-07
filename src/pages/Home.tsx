@@ -4,7 +4,6 @@ import CSS from 'csstype'
 import InfiniteLooper from '../components/banner'
 import Bubble from '../components/bubble'
 import logo from '../static/assets/UofTAI_Logo.png'
-import Footer from '../components/Footer/Footer'
 
 const Home = function Home() {
     const titleStyles: CSS.Properties = {
