@@ -1,8 +1,10 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading, Text, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 import ReactTypingEffect from 'react-typing-effect'
 
 export const LandingTitle = () => {
+    const isMobile = useBreakpointValue({ base: true, md: false })
+
     return (
         <Heading
             fontWeight={'medium'}
@@ -14,6 +16,7 @@ export const LandingTitle = () => {
                 UofT AI
             </Text>
             <Text as={'span'}>: Advancing AI through </Text>
+            {isMobile && <br />}
             <Text as={'span'} color={'brand'}>
                 <ReactTypingEffect
                     text={['ProjectX', 'ConferenceX', 'LearnAI']}
