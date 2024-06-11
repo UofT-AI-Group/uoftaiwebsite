@@ -1,7 +1,13 @@
 import React, { ReactNode } from 'react'
 import { Button as ChakraButton } from '@chakra-ui/react'
 
-export const ButtonDark = ({ children }: { children: ReactNode }) => {
+export const ButtonDark = ({
+    children,
+    onClick,
+}: {
+    children: ReactNode
+    onClick?: () => void
+}) => {
     return (
         <ChakraButton
             py={4}
@@ -16,6 +22,7 @@ export const ButtonDark = ({ children }: { children: ReactNode }) => {
                 bg: 'white',
                 color: 'dark',
             }}
+            onClick={onClick}
         >
             {children}
         </ChakraButton>
@@ -24,9 +31,11 @@ export const ButtonDark = ({ children }: { children: ReactNode }) => {
 
 export const ButtonOutline = ({
     children,
+    onClick,
     variant = 'dark',
 }: {
     variant?: string
+    onClick?: () => void
     children: ReactNode
 }) => {
     const color = variant === 'dark' ? 'dark' : 'light'
@@ -48,6 +57,7 @@ export const ButtonOutline = ({
                 color: hoverColor,
                 bg: bgHoverColor,
             }}
+            onClick={onClick}
         >
             {children}
         </ChakraButton>
