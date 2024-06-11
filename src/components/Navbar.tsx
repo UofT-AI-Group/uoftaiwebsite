@@ -99,7 +99,7 @@ const Navbar = () => {
                     justifyContent={'space-between'}
                 >
                     <Flex alignItems={'center'} pl={0}>
-                        <NavLink to={'home'} onClose={onClose}>
+                        <NavLink to={'/'} onClose={onClose}>
                             <Img src={HeaderLogo} alt="Logo" h={20} w={20} />
                         </NavLink>
                     </Flex>
@@ -118,7 +118,7 @@ const Navbar = () => {
                             {Links.map((link) => (
                                 <NavLink
                                     key={link}
-                                    to={link.toLowerCase().replace(/\s/g, '')}
+                                    to={`#${link.toLowerCase().replace(/\s/g, '')}`}
                                     onClose={onClose}
                                 >
                                     {link}
