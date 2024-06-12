@@ -4,6 +4,8 @@ import CSS from 'csstype'
 import InfiniteLooper from '../components/banner'
 import Bubble from '../components/bubble'
 import logo from '../static/assets/UofTAI_Logo.png'
+import { Initiative } from '../components/projects/Initiative'
+import { Projects } from '../components/projects/Projects'
 
 const Home = function Home() {
     const titleStyles: CSS.Properties = {
@@ -36,6 +38,7 @@ const Home = function Home() {
                     />
                 </InfiniteLooper>
             </div>
+            <Projects />
         </Box>
     )
 }
