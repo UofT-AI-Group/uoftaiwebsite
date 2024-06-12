@@ -1,0 +1,21 @@
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(20px);
+    transition:
+        opacity 0.5s,
+        transform 2s;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition:
+        opacity 0.5s,
+        transform 2s;
+}
+
+.slide-in-left.active,
+.slide-in-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -58,8 +58,8 @@ const Home = () => {
                         alt="UofT AI Club Logo"
                     />
                 </InfiniteLooper>
-                <About />
             </div>
+            <About />
         </Box>
     )
 }
