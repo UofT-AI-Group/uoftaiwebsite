@@ -3,6 +3,8 @@ import React from 'react'
 import InfiniteLooper from '../components/banner'
 import Bubble from '../components/bubble'
 import logo from '../static/assets/UofTAI_Logo.png'
+import { Initiative } from '../components/projects/Initiative'
+import { Projects } from '../components/projects/Projects'
 import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import About from '../components/about'
@@ -60,6 +62,7 @@ const Home = () => {
                 </InfiniteLooper>
             </div>
             <About />
+            <Projects />
         </Box>
     )
 }
