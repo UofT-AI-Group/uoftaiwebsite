@@ -5,10 +5,11 @@ import Bubble from '../components/bubble'
 import logo from '../static/assets/UofTAI_Logo.png'
 import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
+import About from '../components/about'
 
 const Home = () => {
     return (
-        <Box>
+        <Box fontFamily={'Tabular, sans-serif'}>
             <Bubble speed="20" size="400px" top="-400px" left="-150px" />
             <Bubble
                 speed="20"
@@ -58,6 +59,7 @@ const Home = () => {
                     />
                 </InfiniteLooper>
             </div>
+            <About />
         </Box>
     )
 }

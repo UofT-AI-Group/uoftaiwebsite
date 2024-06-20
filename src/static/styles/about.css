@@ -1,0 +1,15 @@
+.divider {
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+@media (max-width: 1250px) {
+    .divider {
+        display: none;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
