@@ -1,11 +1,12 @@
-import { Box, Container, VStack, Text } from '@chakra-ui/react'
+import { Box, Container, VStack, Text, Flex, Card } from '@chakra-ui/react'
 import Bubble from '../components/bubble'
 import { PartnerTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
+import TextCard from '../components/textcard'
 
 const Partner = () => {
     return (
-        <Box fontFamily={'Tabular, sans-serif'} height={'200vh'}>
+        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'}>
             <Bubble speed="7" size="300px" top="100px" left="-150px" />
             <Bubble
                 speed="12"
@@ -14,9 +15,16 @@ const Partner = () => {
                 left="calc(100vw - 50px)"
             />
 
+            <Bubble
+                speed="15"
+                size="200px"
+                top="calc(100vh + 400px)"
+                left="-120px"
+            />
+
             <Container
                 className={'title slide-and-zoom'}
-                h={'100vh'}
+                h={'calc(100vh - 100px)'}
                 maxW={'1200px'}
                 pt={'35vh'}
                 pr={'20px'}
@@ -38,6 +46,27 @@ const Partner = () => {
                     </Box>
                 </VStack>
             </Container>
+
+            <Flex
+                justifyContent={'center'}
+                alignItems={'center'}
+                h={'100vh'}
+                flexWrap={'wrap'}
+                flexShrink={0}
+            >
+                <TextCard
+                    title="Mentorship"
+                    body="1 on 1 and group programs between industry professionals and 600+ brilliant minds. Work closely with promising undergraduates in Al research."
+                />
+                <TextCard
+                    title="Community Involvement & Recruitment"
+                    body="Direct access to resumes and cover letters from top students in various fields like computer science, cognitive science, and finance."
+                />
+                <TextCard
+                    title="Contribute to AI Innovation"
+                    body="Encourage innovative thinking and groundbreaking research in Al by providing a platform for leading undergraduates to showcase their work."
+                />
+            </Flex>
         </Box>
     )
 }
