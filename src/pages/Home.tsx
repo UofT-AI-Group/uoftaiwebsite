@@ -12,12 +12,12 @@ import About from '../components/about'
 const Home = () => {
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
-            <Bubble speed="20" size="400px" top="-400px" left="-150px" />
+            <Bubble speed="10" size="400px" top="-300px" left="-150px" />
             <Bubble
-                speed="20"
+                speed="15"
                 size="300px"
                 top="150px"
-                left="calc(100vw + 0px)"
+                left="calc(100vw - 50px)"
             />
 
             <Container

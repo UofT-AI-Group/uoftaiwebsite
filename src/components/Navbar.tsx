@@ -79,7 +79,7 @@ const Navbar = () => {
             >
                 <Box
                     bg={'rgba(236, 236, 236, 0.1)'}
-                    backdropFilter={'blur(4px)'}
+                    backdropFilter={'blur(40px)'}
                     width={'100vw'}
                     h={28}
                     margin={'-5px -10px -10px -5px'}
@@ -124,7 +124,9 @@ const Navbar = () => {
                                     {link}
                                 </NavLink>
                             ))}
-                            <ButtonDark>Partner With Us</ButtonDark>
+                            <NavLink to={'partner'} onClose={onClose}>
+                                <ButtonDark>Partner With Us</ButtonDark>
+                            </NavLink>
                         </HStack>
                     </HStack>
                     <IconButton
