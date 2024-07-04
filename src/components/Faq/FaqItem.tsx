@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import chevron from '../../static/assets/chevron-down.svg'
 
 interface FAQItemProps {
@@ -8,10 +8,18 @@ interface FAQItemProps {
 
 const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [height, setHeight] = useState('0px')
+    const contentRef = useRef<HTMLDivElement>(null)
 
     const toggleOpen = () => {
         setIsOpen(!isOpen)
     }
+
+    useEffect(() => {
+        if (contentRef.current) {
+            setHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px')
+        }
+    }, [isOpen])
 
     return (
         <div className="faq-item">
@@ -22,7 +30,13 @@ const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
                     className={`arrow ${isOpen ? 'open' : ''}`}
                 ></img>
             </div>
-            <div className={`faq-answer ${isOpen ? 'show' : ''}`}>{answer}</div>
+            <div
+                ref={contentRef}
+                className={`faq-answer ${isOpen ? 'show' : ''}`}
+                style={{ maxHeight: `${height}` }}
+            >
+                {answer}
+            </div>
             <hr className={`underline ${isOpen ? 'toggleOn' : ''}`} />
         </div>
     )

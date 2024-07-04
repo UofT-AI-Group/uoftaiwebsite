@@ -8,7 +8,7 @@
 }
 
 h2 {
-    font-size: 60px;
+    font-size: 50px;
     text-decoration: underline;
     margin-bottom: 48px;
     color: #ba76e1;
@@ -20,7 +20,7 @@ h2 {
 
 .faq-item {
     margin-bottom: 20px;
-    font-size: 48px;
+    font-size: 40px;
 }
 
 ul {
@@ -34,12 +34,12 @@ ul {
 }
 
 .arrow {
-    rotate: 90deg;
+    rotate: 0deg;
     transition: 2s ease;
 }
 
 .open {
-    rotate: 0deg;
+    rotate: 180deg;
     transition: 2s ease;
 }
 
@@ -51,7 +51,7 @@ ul {
 }
 
 .faq-answer.show {
-    max-height: 500px; /* Arbitrarily large value to ensure it expands */
+    max-height: 400px; /* Arbitrarily large value to ensure it expands */
 }
 
 hr {
