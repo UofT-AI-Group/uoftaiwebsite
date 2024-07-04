@@ -9,7 +9,7 @@ export const App = () => (
         <Navbar />
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/partner" element={<Partner />} />
+            <Route path="/partner-with-us" element={<Partner />} />
         </Routes>
     </>
 )
