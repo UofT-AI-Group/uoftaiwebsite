@@ -37,7 +37,7 @@ const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
             >
                 {answer}
             </div>
-            <hr className={`underline ${isOpen ? 'toggleOn' : ''}`} />
+            <hr className={`underline ${isOpen ? 'toggleOn' : ''}, 'faq-hr`} />
         </div>
     )
 }
