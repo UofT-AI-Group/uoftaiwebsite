@@ -3,6 +3,7 @@ import Bubble from '../components/bubble'
 import { PartnerTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import TextCard from '../components/textcard'
+import Faq from '../components/Faq/Faq'
 
 const Partner = () => {
     return (
@@ -67,6 +68,7 @@ const Partner = () => {
                     body="Encourage innovative thinking and groundbreaking research in Al by providing a platform for leading undergraduates to showcase their work."
                 />
             </Flex>
+            <Faq />
         </Box>
     )
 }
