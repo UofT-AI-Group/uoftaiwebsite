@@ -1,0 +1,45 @@
+import React, { useState, useRef, useEffect } from 'react'
+import chevron from '../../static/assets/chevron-down.svg'
+
+interface FAQItemProps {
+    question: string
+    answer: React.ReactNode
+}
+
+const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
+    const [isOpen, setIsOpen] = useState(false)
+    const [height, setHeight] = useState('0px')
+    const contentRef = useRef<HTMLDivElement>(null)
+
+    const toggleOpen = () => {
+        setIsOpen(!isOpen)
+    }
+
+    useEffect(() => {
+        if (contentRef.current) {
+            setHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px')
+        }
+    }, [isOpen])
+
+    return (
+        <div className="faq-item">
+            <div className="faq-question" onClick={toggleOpen}>
+                {question}
+                <img
+                    src={chevron}
+                    className={`arrow ${isOpen ? 'open' : ''}`}
+                ></img>
+            </div>
+            <div
+                ref={contentRef}
+                className={`faq-answer ${isOpen ? 'show' : ''}`}
+                style={{ maxHeight: `${height}` }}
+            >
+                {answer}
+            </div>
+            <hr className={`underline ${isOpen ? 'toggleOn' : ''}`} />
+        </div>
+    )
+}
+
+export default FaqItem

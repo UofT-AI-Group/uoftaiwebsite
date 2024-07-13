@@ -124,7 +124,7 @@ const Navbar = () => {
                                     {link}
                                 </NavLink>
                             ))}
-                            <NavLink to={'partner'} onClose={onClose}>
+                            <NavLink to={'partner-with-us'} onClose={onClose}>
                                 <ButtonDark>Partner With Us</ButtonDark>
                             </NavLink>
                         </HStack>
