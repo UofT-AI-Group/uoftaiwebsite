@@ -1,6 +1,6 @@
 import React from 'react'
 import CSS from 'csstype'
-import { Card, CardHeader, CardBody } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, Box } from '@chakra-ui/react'
 
 const TextCard = function TextCard({
     title,
@@ -17,18 +17,21 @@ const TextCard = function TextCard({
         boxShadow: '20px 20px black',
         textAlign: 'center',
         margin: '30px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        padding: '20px',
     }
 
     return (
         <Card style={cardStyles}>
-            <CardHeader
-                fontSize={'30px'}
-                marginTop={'80px'}
-                fontWeight={'medium'}
-            >
+            <Box fontSize={'30px'} fontWeight={'medium'} mb={'20px'}>
                 {title}
-            </CardHeader>
-            <CardBody fontSize={'20px'}>{body}</CardBody>
+            </Box>
+            <Box height={'280px'} fontSize={'20px'}>
+                {body}
+            </Box>
         </Card>
     )
 }
