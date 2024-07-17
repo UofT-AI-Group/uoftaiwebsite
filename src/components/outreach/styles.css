@@ -1,0 +1,92 @@
+.conferencexbenefits-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    color: white;
+    font-family: 'Tabular';
+    font-style: normal;
+    font-weight: 300;
+    width: 100%;
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+        url('../../static/assets/outreach-gradient.jpeg') lightgray 50% / cover
+            no-repeat;
+}
+
+.conferencexbenefits-content {
+    font-size: 48px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.conferencexbenefits-title {
+    color: #bf94ff;
+}
+
+.conferencexbenefits-subtitle {
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.conferencexbenefits-event-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.conferencexbenefits-event-button:hover {
+    background-color: white;
+    color: #2e0249;
+}
+
+.conferencexbenefits-details {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    width: 50%;
+}
+
+.conferencexbenefits-detail-item {
+    padding: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .conferencexbenefits-container {
+        flex-direction: column;
+    }
+    .conferencexbenefits-contents {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .conferencexbenefits-container {
+        flex-direction: column;
+    }
+    .conferencexbenefits-contents {
+        margin-bottom: 50px;
+    }
+    .conferencexbenefits-contents {
+        font-size: 30px;
+    }
+    .conferencexbenefits-details {
+        font-size: 26px;
+    }
+    .conferencexbenefits-detail-item {
+        padding: 10px;
+    }
+}
