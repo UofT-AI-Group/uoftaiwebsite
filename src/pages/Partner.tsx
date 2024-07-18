@@ -52,7 +52,7 @@ const Partner = () => {
             <Flex
                 justifyContent={'center'}
                 alignItems={'center'}
-                h={'100vh'}
+                minH={'100vh'}
                 flexWrap={'wrap'}
                 flexShrink={0}
             >
