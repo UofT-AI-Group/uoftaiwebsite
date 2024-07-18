@@ -7,7 +7,7 @@
     background-color: white;
 }
 
-h2 {
+.faq-h2 {
     font-size: 50px;
     text-decoration: underline;
     margin-bottom: 48px;
@@ -23,7 +23,7 @@ h2 {
     font-size: 40px;
 }
 
-ul {
+.faq-ul {
     margin-left: 50px;
 }
 
@@ -54,7 +54,7 @@ ul {
     max-height: 400px; /* Arbitrarily large value to ensure it expands */
 }
 
-hr {
+.faq-hr {
     border: 2px solid black;
     margin-top: 10px;
 }

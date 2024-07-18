@@ -1,17 +1,18 @@
 import React from 'react'
 import FaqItem from './FaqItem'
 import './styles.css'
+import { Card, CardHeader, CardBody, Box } from '@chakra-ui/react'
 
 const Faq: React.FC = () => {
     return (
-        <div className="faq-container">
-            <div className="container-items">
-                <h2>FAQ</h2>
-                <div className="dropdowns">
+        <Box className="faq-container">
+            <Box className="container-items">
+                <h2 className="faq-h2">FAQ</h2>
+                <Box className="dropdowns">
                     <FaqItem
                         question="How can I get involved as a partner?"
                         answer={
-                            <ul>
+                            <ul className="faq-ul">
                                 <li>
                                     <strong>Sponsors:</strong> 3 types (refer to
                                     sponsorship package)
@@ -30,7 +31,7 @@ const Faq: React.FC = () => {
                     <FaqItem
                         question="What are the contribution amounts of sponsors?"
                         answer={
-                            <ul>
+                            <ul className="faq-ul">
                                 <li>
                                     <strong>Lunar: </strong>$5,000
                                 </li>
@@ -53,9 +54,9 @@ const Faq: React.FC = () => {
                             </p>
                         }
                     />
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     )
 }
 
