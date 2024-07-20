@@ -1,5 +1,4 @@
 import logo from '../static/assets/UofTAI_Logo.png'
-import { ButtonDark, ButtonOutline } from './Button'
 import '../static/styles/about.css'
 import { Box, Flex, Text, Image } from '@chakra-ui/react'
 import SlideInOnScroll from './slideinonscroll'
@@ -46,7 +45,6 @@ const About = () => {
                         about AI, collaborate on projects, and network with
                         industry professionals.
                     </Text>
-                    <ButtonOutline>Learn More</ButtonOutline>
                 </Box>
             </SlideInOnScroll>
             <div className="divider"></div>
@@ -84,7 +82,6 @@ const About = () => {
                             and opportunities to learn about AI, collaborate on
                             projects, and network with industry professionals.
                         </Text>
-                        <ButtonOutline>Learn More</ButtonOutline>
                     </Box>
                 </Box>
             </SlideInOnScroll>

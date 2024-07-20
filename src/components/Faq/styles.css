@@ -35,19 +35,19 @@
 
 .arrow {
     rotate: 0deg;
-    transition: 2s ease;
+    transition: 1s ease;
 }
 
 .open {
     rotate: 180deg;
-    transition: 2s ease;
+    transition: 1s ease;
 }
 
 .faq-answer {
     font-size: x-large;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 2s ease;
+    transition: max-height 1s ease;
 }
 
 .faq-answer.show {

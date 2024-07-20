@@ -1,6 +1,9 @@
 import { Heading, Text, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 import ReactTypingEffect from 'react-typing-effect'
+import Typewriter from 'typewriter-effect'
+import CSS from 'csstype'
+import '../static/styles/conferenceX.css'
 
 export const LandingTitle = () => {
     const isMobile = useBreakpointValue({ base: true, md: false })
@@ -58,6 +61,31 @@ export const PartnerTitle = () => {
                 UofT AI
             </Text>
             <Text as={'span'}> Partner </Text>
+        </Heading>
+    )
+}
+
+export const ConferenceXTitle = () => {
+    const displayStyle: CSS.Properties = {
+        display: 'inline',
+    }
+    return (
+        <Heading
+            fontWeight={'medium'}
+            fontSize={[30, 48]}
+            fontFamily={'Tabular, sans-serif'}
+            display={'inline'}
+        >
+            <Text as={'span'} color={'light'}>
+                Welcome To:
+            </Text>
+            <Text as={'span'} color={'brand'}>
+                <Typewriter
+                    onInit={(typewriter) => {
+                        typewriter.typeString('ConferenceX').start()
+                    }}
+                />
+            </Text>
         </Heading>
     )
 }
