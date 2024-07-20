@@ -26,9 +26,9 @@ const Partner = () => {
 
             <Container
                 className={'title slide-and-zoom'}
-                h={'calc(100vh - 100px)'}
+                h={'calc(100vh - 250px)'}
                 maxW={'1200px'}
-                pt={'35vh'}
+                pt={'260px'}
                 pr={'20px'}
                 pl={'20px'}
                 textAlign={'center'}
