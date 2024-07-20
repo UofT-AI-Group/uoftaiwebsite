@@ -19,7 +19,6 @@ const Home = () => {
                 top="150px"
                 left="calc(100vw - 50px)"
             />
-
             <Container
                 className={'title'}
                 h={'calc(100vh - 100px)'}
@@ -46,7 +45,6 @@ const Home = () => {
                     </Box>
                 </VStack>
             </Container>
-
             <div className="banner">
                 <div className="bannerlabel">
                     <p className="bannerdesc">Our</p>
