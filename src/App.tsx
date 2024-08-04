@@ -7,6 +7,7 @@ import Partner from './pages/Partner'
 import Navbar from './components/Navbar'
 import ConferenceX from './pages/ConferenceX'
 import ScrollToTop from './components/scrollToTop'
+import Newsletter from './pages/Newsletter'
 
 export const App = () => (
     <>
@@ -16,6 +17,7 @@ export const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/partner-with-us" element={<Partner />} />
             <Route path="/conferencex" element={<ConferenceX />} />
+            <Route path="/newsletter" element={<Newsletter />}></Route>
         </Routes>
         <Footer />
     </>
