@@ -1,0 +1,9 @@
+.issue {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.issue:hover {
+    transform: scale(1.02); /* Slightly increase the size on hover */
+}
