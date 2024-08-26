@@ -21,7 +21,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 
 const Links = ['ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
 
-const NavLink = ({
+export const NavLink = ({
     children,
     to,
     onClose,

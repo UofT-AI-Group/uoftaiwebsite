@@ -8,8 +8,10 @@ import { Projects } from '../components/projects/Projects'
 import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import About from '../components/about'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+    let navigate = useNavigate()
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
             <Bubble speed="10" size="400px" top="-300px" left="-150px" />
@@ -41,7 +43,13 @@ const Home = () => {
                         competitions, guest lectures, and conferences.
                     </Text>
                     <Box>
-                        <ButtonOutline>Read our Newsletter</ButtonOutline>
+                        <ButtonOutline
+                            onClick={() => {
+                                navigate('newsletter')
+                            }}
+                        >
+                            Read our Newsletter
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </Container>

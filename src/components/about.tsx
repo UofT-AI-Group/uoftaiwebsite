@@ -10,7 +10,7 @@ const About = () => {
             flexDirection={'row'}
             justifyContent={'center'}
             flexWrap={'wrap'}
-            align={'center'}
+            align={'flex-start'}
             m={10}
         >
             <SlideInOnScroll>
@@ -38,12 +38,13 @@ const About = () => {
                     />
                     <Text paddingTop={10} paddingBottom={10}>
                         The University of Toronto Artificial Intelligence Club
-                        (UofT AI Club) is a student-run organization that aims
-                        to foster a community of students passionate about
-                        artificial intelligence. We are committed to providing
-                        students with the resources and opportunities to learn
-                        about AI, collaborate on projects, and network with
-                        industry professionals.
+                        (UofT AI Club) is UofT AI is not just a club that hosts
+                        conferences and hackathons, but an incubator of talents
+                        for the booming space AI provides. We are committed to
+                        providing students with the resources and opportunities
+                        to learn about AI, collaborate on projects, and network
+                        with industry professionals. Our yearly initiatives
+                        harness the potential of 600+ passionate undergraduates.
                     </Text>
                 </Box>
             </SlideInOnScroll>
@@ -74,13 +75,9 @@ const About = () => {
                             alt="UofT AI Logo"
                         />
                         <Text paddingTop={10} paddingBottom={10}>
-                            The University of Toronto Artificial Intelligence
-                            Club (UofT AI Club) is a student-run organization
-                            that aims to foster a community of students
-                            passionate about artificial intelligence. We are
-                            committed to providing students with the resources
-                            and opportunities to learn about AI, collaborate on
-                            projects, and network with industry professionals.
+                            UofT AI will become the go-to space for members to
+                            meet and learn from folks with specific shared
+                            interests and even find co-founders.
                         </Text>
                     </Box>
                 </Box>
