@@ -47,14 +47,14 @@ const Footer: React.FC = () => {
                     <div className="footer-presidents">
                         <h1>Presidents</h1>
                         <div className="footer-link">
-                            <a href="mailto:alexis.tassone@mail.utoronto.ca">
-                                alexis.tassone@mail.utoronto.ca
+                            <a href="mailto:shiri.yeung@mail.utoronto.ca">
+                                shiri.yeung@mail.utoronto.ca
                             </a>
                         </div>
 
                         <div className="footer-link">
-                            <a href="mailto:jai.mansukhani@mail.utoronto.ca">
-                                jai.mansukhani@mail.utoronto.ca
+                            <a href="mailto:dev.shah@mail.utoronto.ca">
+                                dev.shah@mail.utoronto.ca
                             </a>
                         </div>
                     </div>
