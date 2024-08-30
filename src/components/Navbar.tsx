@@ -20,7 +20,14 @@ import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-const Links = ['ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
+const Links = ['Home', 'ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
+
+function get_link(link: string) {
+    if (link == 'Home') {
+        return '/'
+    }
+    return link.toLowerCase().replace(/\s/g, '')
+}
 
 export const NavLink = ({
     children,
@@ -119,7 +126,7 @@ const Navbar = () => {
                             {Links.map((link) => (
                                 <NavLink
                                     key={link}
-                                    to={`${link.toLowerCase().replace(/\s/g, '')}`}
+                                    to={`${get_link(link)}`}
                                     onClose={onClose}
                                 >
                                     {link}
@@ -154,7 +161,7 @@ const Navbar = () => {
                                 {Links.map((link) => (
                                     <NavLink
                                         key={link}
-                                        to={`${link.toLowerCase().replace(/\s/g, '')}`}
+                                        to={`${get_link(link)}`}
                                         onClose={onClose}
                                     >
                                         <Text
