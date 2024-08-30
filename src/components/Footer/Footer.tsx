@@ -9,30 +9,54 @@ const Footer: React.FC = () => {
                 <div className="logo-and-links">
                     <div className="footer-links">
                         <img className="footer-img" src={logo} alt="AI Logo" />
-                        <a href="#">About Us</a>
-                        <a href="#">Projects</a>
-                        <a href="#">Our Team</a>
-                        <a href="#">Newsletter</a>
-                        <a href="#">Get Involved</a>
+
+                        <div className="footer-link">
+                            <a href="/">Home</a>
+                        </div>
+
+                        <div className="footer-link">
+                            <a href="/conferencex">ConferenceX</a>
+                        </div>
+
+                        <div className="footer-link">
+                            <a href="/newsletter">Newsletter</a>
+                        </div>
                     </div>
-                    <button className="partner-button">Partner With Us</button>
+
+                    <div className="footer-link">
+                        <a href="/partner-with-us">
+                            <button className="partner-button">
+                                Partner With Us
+                            </button>
+                        </a>
+                    </div>
                 </div>
                 <div className="main-contacts">
                     <div className="footer-contacts">
                         <h1>Contacts</h1>
-                        <a href="mailto:general@uoft.ai">general@uoft.ai</a>
-                        <a href="mailto:partnerships@uoft.ai">
-                            partnerships@uoft.ai
-                        </a>
+                        <div className="footer-link">
+                            <a href="mailto:general@uoft.ai">general@uoft.ai</a>
+                        </div>
+
+                        <div className="footer-link">
+                            <a href="mailto:partnerships@uoft.ai">
+                                partnerships@uoft.ai
+                            </a>
+                        </div>
                     </div>
                     <div className="footer-presidents">
                         <h1>Presidents</h1>
-                        <a href="mailto:alexis.tassone@mail.utoronto.ca">
-                            alexis.tassone@mail.utoronto.ca
-                        </a>
-                        <a href="mailto:jai.mansukhani@mail.utoronto.ca">
-                            jai.mansukhani@mail.utoronto.ca
-                        </a>
+                        <div className="footer-link">
+                            <a href="mailto:alexis.tassone@mail.utoronto.ca">
+                                alexis.tassone@mail.utoronto.ca
+                            </a>
+                        </div>
+
+                        <div className="footer-link">
+                            <a href="mailto:jai.mansukhani@mail.utoronto.ca">
+                                jai.mansukhani@mail.utoronto.ca
+                            </a>
+                        </div>
                     </div>
                     <div className="footer-affiliated">
                         <h1>Affiliated Sites</h1>
