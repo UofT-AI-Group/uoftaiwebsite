@@ -20,8 +20,7 @@ import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-const Links = ['Home', 'ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
-
+const Links = ['Home', 'ConferenceX', 'Newsletter']
 
 function get_link(link: string) {
     if (link == 'Home') {
