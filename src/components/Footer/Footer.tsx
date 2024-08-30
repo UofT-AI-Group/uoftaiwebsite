@@ -35,12 +35,14 @@ const Footer: React.FC = () => {
                     <div className="footer-contacts">
                         <h1>Contacts</h1>
                         <div className="footer-link">
-                            <a href="mailto:general@uoft.ai">general@uoft.ai</a>
+                            <a href="mailto:uoftaigroup@gmail.com">
+                                uoftaigroup@gmail.com
+                            </a>
                         </div>
 
                         <div className="footer-link">
-                            <a href="mailto:partnerships@uoft.ai">
-                                partnerships@uoft.ai
+                            <a href="mailto:uoftaigrouppartnerships@gmail.com">
+                                uoftaigrouppartnerships@gmail.com
                             </a>
                         </div>
                     </div>
