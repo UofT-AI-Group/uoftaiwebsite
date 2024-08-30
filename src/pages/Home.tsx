@@ -9,6 +9,15 @@ import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import About from '../components/about'
 import { useNavigate } from 'react-router-dom'
+import bmoLogo from '../static/assets/bmo-logo.png'
+import bellLogo from '../static/assets/bell-logo.png'
+import cifarLogo from '../static/assets/cifar-logo.png'
+import kpmgLogo from '../static/assets/kpmg-logo.png'
+import marsLogo from '../static/assets/mars-logo.png'
+import rippleLogo from '../static/assets/ripple-logo.svg'
+import uoftLogo from '../static/assets/uoft-logo.png'
+import vectorLogo from '../static/assets/vector-institute-logo.png'
+import womboLogo from '../static/assets/wombo-logo.svg'
 
 const Home = () => {
     let navigate = useNavigate()
@@ -59,10 +68,50 @@ const Home = () => {
                     <p className="bannerdesc">Partners</p>
                 </div>
 
-                <InfiniteLooper direction="right" speed="3">
+                <InfiniteLooper direction="right" speed="16">
                     <img
                         className="bannerlogo"
-                        src={logo}
+                        src={bmoLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={bellLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={cifarLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={kpmgLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={marsLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={rippleLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={uoftLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={vectorLogo}
+                        alt="UofT AI Club Logo"
+                    />
+                    <img
+                        className="bannerlogo"
+                        src={womboLogo}
                         alt="UofT AI Club Logo"
                     />
                 </InfiniteLooper>
