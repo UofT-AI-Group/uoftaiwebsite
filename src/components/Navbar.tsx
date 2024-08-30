@@ -22,6 +22,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 
 const Links = ['Home', 'ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
 
+
 function get_link(link: string) {
     if (link == 'Home') {
         return '/'

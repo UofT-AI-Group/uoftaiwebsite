@@ -9,6 +9,8 @@ import ConferenceX from './pages/ConferenceX'
 import ScrollToTop from './components/scrollToTop'
 import Newsletter from './pages/Newsletter'
 
+// This is the deployment branch
+
 export const App = () => (
     <>
         <Navbar />
@@ -17,7 +19,7 @@ export const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/partner-with-us" element={<Partner />} />
             <Route path="/conferencex" element={<ConferenceX />} />
-            <Route path="/newsletter" element={<Newsletter />}></Route>
+            <Route path="/newsletter" element={<Newsletter />} />
         </Routes>
         <Footer />
     </>
