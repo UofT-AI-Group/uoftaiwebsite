@@ -12,6 +12,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
     DrawerBody,
+    Text,
 } from '@chakra-ui/react'
 import { ReactNode, useEffect, useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
@@ -151,23 +152,29 @@ const Navbar = () => {
                         <DrawerBody>
                             <Stack as={'nav'} spacing={4}>
                                 {Links.map((link) => (
-                                    <Link
-                                        as={RouterLink}
-                                        to={link
-                                            .toLowerCase()
-                                            .replace(/\s/g, '')}
-                                        onClick={onClose}
-                                        fontWeight={'semibold'}
-                                        fontSize={24}
-                                        textAlign={'right'}
+                                    <NavLink
+                                        key={link}
+                                        to={`${link.toLowerCase().replace(/\s/g, '')}`}
+                                        onClose={onClose}
                                     >
-                                        {link}
-                                    </Link>
+                                        <Text
+                                            fontWeight={'semibold'}
+                                            fontSize={24}
+                                            textAlign={'right'}
+                                        >
+                                            {link}
+                                        </Text>
+                                    </NavLink>
                                 ))}
                                 <Flex justifyContent={'right'}>
-                                    <ButtonOutline variant="light">
-                                        Partner With Us
-                                    </ButtonOutline>
+                                    <NavLink
+                                        to={'partner-with-us'}
+                                        onClose={onClose}
+                                    >
+                                        <ButtonOutline variant="light">
+                                            Partner With Us
+                                        </ButtonOutline>
+                                    </NavLink>
                                 </Flex>
                             </Stack>
                         </DrawerBody>
