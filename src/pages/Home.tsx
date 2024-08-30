@@ -9,6 +9,7 @@ import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import About from '../components/about'
 import { useNavigate } from 'react-router-dom'
+import MeetTheTeam from '../components/meetTheTeam'
 import bmoLogo from '../static/assets/bmo-logo.png'
 import bellLogo from '../static/assets/bell-logo.png'
 import cifarLogo from '../static/assets/cifar-logo.png'
@@ -118,6 +119,7 @@ const Home = () => {
             </div>
             <About />
             <Projects />
+            <MeetTheTeam />
         </Box>
     )
 }
