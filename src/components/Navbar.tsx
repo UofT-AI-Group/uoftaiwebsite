@@ -12,6 +12,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
     DrawerBody,
+    Text,
 } from '@chakra-ui/react'
 import { ReactNode, useEffect, useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
@@ -19,9 +20,17 @@ import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-const Links = ['ConferenceX', 'Newsletter']
+const Links = ['Home', 'ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
 
-const NavLink = ({
+
+function get_link(link: string) {
+    if (link == 'Home') {
+        return '/'
+    }
+    return link.toLowerCase().replace(/\s/g, '')
+}
+
+export const NavLink = ({
     children,
     to,
     onClose,
@@ -118,7 +127,7 @@ const Navbar = () => {
                             {Links.map((link) => (
                                 <NavLink
                                     key={link}
-                                    to={`${link.toLowerCase().replace(/\s/g, '')}`}
+                                    to={`${get_link(link)}`}
                                     onClose={onClose}
                                 >
                                     {link}
@@ -151,23 +160,29 @@ const Navbar = () => {
                         <DrawerBody>
                             <Stack as={'nav'} spacing={4}>
                                 {Links.map((link) => (
-                                    <Link
-                                        as={RouterLink}
-                                        to={link
-                                            .toLowerCase()
-                                            .replace(/\s/g, '')}
-                                        onClick={onClose}
-                                        fontWeight={'semibold'}
-                                        fontSize={24}
-                                        textAlign={'right'}
+                                    <NavLink
+                                        key={link}
+                                        to={`${get_link(link)}`}
+                                        onClose={onClose}
                                     >
-                                        {link}
-                                    </Link>
+                                        <Text
+                                            fontWeight={'semibold'}
+                                            fontSize={24}
+                                            textAlign={'right'}
+                                        >
+                                            {link}
+                                        </Text>
+                                    </NavLink>
                                 ))}
                                 <Flex justifyContent={'right'}>
-                                    <ButtonOutline variant="light">
-                                        Partner With Us
-                                    </ButtonOutline>
+                                    <NavLink
+                                        to={'partner-with-us'}
+                                        onClose={onClose}
+                                    >
+                                        <ButtonOutline variant="light">
+                                            Partner With Us
+                                        </ButtonOutline>
+                                    </NavLink>
                                 </Flex>
                             </Stack>
                         </DrawerBody>

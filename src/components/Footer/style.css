@@ -29,6 +29,11 @@ footer {
     flex-direction: column;
 }
 
+.footer-link {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .footer-links a {
     font-size: x-large;
     color: #ffffff;
@@ -73,7 +78,6 @@ footer {
     text-decoration: underline;
     text-decoration-color: white;
     color: #ffffff;
-    display: block;
     margin: 5px 0;
 }
 

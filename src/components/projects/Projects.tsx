@@ -11,24 +11,27 @@ export function Projects() {
         <div className="projects">
             <Initiative
                 title="ProjectX"
-                description="Lorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum Dolor"
+                description="The largest undergraduate ML competition in North America. 200+ participants, $40k in prize money, 40+ participating Universities all across the world. "
                 image={img1}
                 image2={projectx}
                 theme="dark"
+                location="/"
             />
             <Initiative
                 title="The UofT AI Conference"
-                description="Lorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum Dolor"
+                description="A space where humanity meets technology through discussions, collective learning and relationship-building. 500+ attendees, 8 startup showcases and key sponsors including BMO, KPMG, Vector Institute and Ripple Ventures."
                 image={img2}
                 image2={conferencex}
                 theme="light"
+                location="conferencex"
             />
             <Initiative
                 title="Learn AI"
-                description="Lorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum DolorLorem Ipsum Dolor"
+                description="A 4-month course that bridges the gap between theoretical knowledge and practical application in AI technologies."
                 image={img3}
                 image2={learnai}
                 theme="dark"
+                location="/"
             />
         </div>
     )

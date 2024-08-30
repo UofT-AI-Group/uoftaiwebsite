@@ -75,6 +75,7 @@ export const ConferenceXTitle = () => {
             fontSize={[30, 48]}
             fontFamily={'Tabular, sans-serif'}
             display={'inline'}
+            textAlign={'center'}
         >
             <Text as={'span'} color={'light'}>
                 Welcome To:

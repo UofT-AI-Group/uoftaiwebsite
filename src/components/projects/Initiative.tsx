@@ -7,6 +7,7 @@ export function Initiative(props: {
     image: any
     image2: any
     theme: string
+    location: string
 }) {
     const themeClass = props.theme === 'dark' ? '' : '_light'
 
@@ -19,6 +20,7 @@ export function Initiative(props: {
                 title={props.title}
                 description={props.description}
                 theme={props.theme}
+                location={props.location}
             />
             {/* <div className="project-img-container"> */}
             <img className="project-image" src={props.image} alt="" />
