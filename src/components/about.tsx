@@ -8,7 +8,7 @@ const About = () => {
         <Flex
             className="about"
             flexDirection={'row'}
-            justifyContent={'center'}
+            justifyContent={'space-evenly'}
             flexWrap={'wrap'}
             align={'center'}
             m={10}
@@ -16,7 +16,7 @@ const About = () => {
             <SlideInOnScroll>
                 <Box
                     minW={300}
-                    maxW="46vw"
+                    maxW="40vw"
                     padding="2vw"
                     flexShrink={2}
                     className="slide-in-right"
@@ -51,7 +51,7 @@ const About = () => {
             <SlideInOnScroll>
                 <Box
                     minW={300}
-                    maxW="46vw"
+                    maxW="40vw"
                     padding="2vw"
                     flexShrink={2}
                     className="slide-in-left"

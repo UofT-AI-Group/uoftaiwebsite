@@ -82,7 +82,8 @@ const Navbar = () => {
                     backdropFilter={'blur(200px)'}
                     width={'100vw'}
                     h={28}
-                    margin={'-5px -10px -10px -5px'}
+                    margin={0}
+                    border={'none'}
                 />
             </Box>
             <Box
