@@ -36,6 +36,8 @@ import tomi from '../static/assets/Tomi-Poutanen.jpg'
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
 import gallery from '../static/assets/gallery.jpg'
 import showcase from '../static/assets/Showcase.jpg'
+import { HashLink } from 'react-router-hash-link'
+import '../static/styles/conferenceX.css'
 
 const ConferenceX = () => {
     return (
@@ -60,9 +62,14 @@ const ConferenceX = () => {
                         Where technology meets humanity
                     </Text>
                     <Box>
-                        <ButtonOutline variant="light">
-                            View the Agenda
-                        </ButtonOutline>
+                        <HashLink
+                            smooth
+                            to={'/conferencex#conference2024higlights'}
+                        >
+                            <ButtonOutline variant="light">
+                                ConferenceX 2024 Highlights
+                            </ButtonOutline>
+                        </HashLink>
                     </Box>
                 </VStack>
             </Box>
@@ -105,6 +112,7 @@ const ConferenceX = () => {
                 position={'relative'}
                 zIndex={10}
             >
+                <div id="conference2024higlights"></div>
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2024 Highlights
                 </Text>
