@@ -1,5 +1,4 @@
-import { Box, Container, VStack, Text, Flex } from '@chakra-ui/react'
-import gradient from '../static/assets/outreach-gradient.jpeg'
+import { Box, VStack, Text, Flex } from '@chakra-ui/react'
 import { ButtonOutline } from '../components/Button'
 import Issue from '../components/issue'
 import issue1 from '../static/assets/newletters/issue1.jpg'
@@ -49,7 +48,15 @@ const Newsletter = () => {
                     </Text>
 
                     <Box mt={'40px'}>
-                        <ButtonOutline variant="light">Sign Up</ButtonOutline>
+                        <a
+                            href="http://eepurl.com/iYa6Xw"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <ButtonOutline variant="light">
+                                Subscribe
+                            </ButtonOutline>
+                        </a>
                     </Box>
                 </VStack>
             </Box>
