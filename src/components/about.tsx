@@ -1,4 +1,6 @@
 import logo from '../static/assets/UofTAI_Logo.png'
+import whoWeAre from '../static/assets/who-we-are.jpg'
+import ourMission from '../static/assets/our-mission.jpg'
 import '../static/styles/about.css'
 import { Box, Flex, Text, Image } from '@chakra-ui/react'
 import SlideInOnScroll from './slideinonscroll'
@@ -31,20 +33,23 @@ const About = () => {
                     </Text>
 
                     <Image
-                        boxSize={250}
+                        maxHeight={'300px'}
                         className="aboutpic"
-                        src={logo}
+                        src={whoWeAre}
                         alt="UofT AI Logo"
+                        border={'3px solid #000'}
+                        boxShadow={'10px 10px black'}
+                        mr={'auto'}
+                        ml={'auto'}
                     />
                     <Text paddingTop={10} paddingBottom={10}>
                         The University of Toronto Artificial Intelligence Club
-                        (UofT AI Club) is UofT AI is not just a club that hosts
-                        conferences and hackathons, but an incubator of talents
-                        for the booming space AI provides. We are committed to
-                        providing students with the resources and opportunities
-                        to learn about AI, collaborate on projects, and network
-                        with industry professionals. Our yearly initiatives
-                        harness the potential of 600+ passionate undergraduates.
+                        (UofT AI Club) is an incubator of talent at the
+                        University of Toronto, dedicated to fostering the next
+                        generation of AI enthusiasts. Beyond hosting conferences
+                        and hackathons, we provide a collaborative environment
+                        where students can learn, network, and work on AI
+                        projects with industry professionals.
                     </Text>
                 </Box>
             </SlideInOnScroll>
@@ -69,15 +74,22 @@ const About = () => {
                     </Box>
                     <Box className="aboutbody">
                         <Image
-                            boxSize={250}
+                            maxHeight={'300px'}
                             className="aboutpic"
-                            src={logo}
+                            src={ourMission}
                             alt="UofT AI Logo"
+                            border={'3px solid #000'}
+                            boxShadow={'10px 10px black'}
+                            mr={'auto'}
+                            ml={'auto'}
                         />
                         <Text paddingTop={10} paddingBottom={10}>
-                            UofT AI will become the go-to space for members to
-                            meet and learn from folks with specific shared
-                            interests and even find co-founders.
+                            Our mission is to empower over 600 passionate
+                            undergraduates by offering resources, opportunities,
+                            and a community where they can explore specific AI
+                            interests, collaborate with like-minded peers, and
+                            potentially discover co-founders for future
+                            ventures.
                         </Text>
                     </Box>
                 </Box>

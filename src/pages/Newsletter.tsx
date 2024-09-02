@@ -25,7 +25,7 @@ const Newsletter = () => {
                 height={'80vh'}
                 width={'100%'}
                 mt={28}
-                pt={64}
+                pt={[40, 64]}
             >
                 <VStack alignItems={'center'} spacing={1}>
                     <span>
@@ -63,7 +63,7 @@ const Newsletter = () => {
                 </VStack>
             </Box>
             <Box bgColor={'#051A42'} p={[1, '70px']} minH={'100vh'}>
-                <Text fontSize={'24px'} color={'light'} mt={'70px'}>
+                <Text fontSize={'24px'} color={'light'} mt={'40px'} pl={'10px'}>
                     Previous Issues:
                 </Text>
 
@@ -71,7 +71,7 @@ const Newsletter = () => {
                     justifyContent={'center'}
                     alignItems={'center'}
                     flexWrap={'wrap'}
-                    mt={'40px'}
+                    mt={'20px'}
                     flexShrink={1}
                 >
                     <Issue

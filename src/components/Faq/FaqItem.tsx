@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import chevron from '../../static/assets/chevron-down.svg'
+import { Card, CardHeader, Text, Box } from '@chakra-ui/react'
 
 interface FAQItemProps {
     question: string
@@ -22,7 +23,7 @@ const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
     }, [isOpen])
 
     return (
-        <div className="faq-item">
+        <Box className="faq-item" fontSize={['24px', '40px']}>
             <div className="faq-question" onClick={toggleOpen}>
                 {question}
                 <img
@@ -35,10 +36,10 @@ const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
                 className={`faq-answer ${isOpen ? 'show' : ''}`}
                 style={{ maxHeight: `${height}` }}
             >
-                {answer}
+                <Text fontSize={['16px', '24px']}>{answer}</Text>
             </div>
             <hr className={`underline ${isOpen ? 'toggleOn' : ''}, 'faq-hr`} />
-        </div>
+        </Box>
     )
 }
 

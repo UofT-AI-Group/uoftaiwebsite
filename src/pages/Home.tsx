@@ -1,9 +1,6 @@
-import { Box, Container, VStack, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Container, VStack, Text, Image } from '@chakra-ui/react'
 import InfiniteLooper from '../components/banner'
 import Bubble from '../components/bubble'
-import logo from '../static/assets/UofTAI_Logo.png'
-import { Initiative } from '../components/projects/Initiative'
 import { Projects } from '../components/projects/Projects'
 import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
@@ -24,18 +21,13 @@ const Home = () => {
     let navigate = useNavigate()
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
-            <Bubble speed="10" size="400px" top="-300px" left="-150px" />
-            <Bubble
-                speed="15"
-                size="300px"
-                top="150px"
-                left="calc(100vw - 50px)"
-            />
+            <Bubble speed="10" size="35vw" top="-18vw" left="-17vw" />
+            <Bubble speed="15" size="18vw" top="150px" left="calc(94vw)" />
             <Container
                 className={'title'}
                 h={'calc(100vh - 100px)'}
                 maxW={'4xl'}
-                pt={64}
+                pt={[40, 64]}
             >
                 <VStack
                     alignItems={'left'}
@@ -64,61 +56,104 @@ const Home = () => {
                 </VStack>
             </Container>
             <div className="banner">
-                <div className="bannerlabel">
-                    <p className="bannerdesc">Our</p>
-                    <p className="bannerdesc">Partners</p>
-                </div>
+                <Box
+                    className="bannerlabel"
+                    position={'absolute'}
+                    h={['130px', '180px']}
+                    w={['150px', '250px']}
+                    display={'flex'}
+                    justifyContent={'center'}
+                    alignItems={'left'}
+                    flexDirection={'column'}
+                    zIndex={100}
+                >
+                    <Text className="bannerdesc" fontSize={['20px', '32px']}>
+                        Our
+                    </Text>
+                    <Text className="bannerdesc" fontSize={['20px', '32px']}>
+                        Partners
+                    </Text>
+                </Box>
 
                 <InfiniteLooper direction="right" speed="16">
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={bmoLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={bellLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={cifarLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={kpmgLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={marsLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={rippleLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={uoftLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={vectorLogo}
                         alt="UofT AI Club Logo"
                     />
-                    <img
+                    <Image
+                        h={['100px', '150px']}
+                        m={'20px 30px'}
+                        mb={'10px'}
                         className="bannerlogo"
                         src={womboLogo}
                         alt="UofT AI Club Logo"
                     />
                 </InfiniteLooper>
             </div>
+            <div id="about"></div>
             <About />
             <Projects />
+            <div id="meet-the-team"></div>
             <MeetTheTeam />
         </Box>
     )

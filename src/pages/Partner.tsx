@@ -9,26 +9,16 @@ import ConferenceXBenefits from '../components/outreach/ConferenceXBenefits'
 const Partner = () => {
     return (
         <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'}>
-            <Bubble speed="7" size="300px" top="100px" left="-150px" />
-            <Bubble
-                speed="12"
-                size="300px"
-                top="600px"
-                left="calc(100vw - 50px)"
-            />
+            <Bubble speed="7" size="27vw" top="-15vw" left="-17vw" />
+            <Bubble speed="12" size="25vw" top="600px" left="calc(94vw)" />
 
-            <Bubble
-                speed="15"
-                size="200px"
-                top="calc(100vh + 400px)"
-                left="-120px"
-            />
+            <Bubble speed="15" size="18vw" top="calc(120vh)" left="-18vw" />
 
             <Container
                 className={'title slide-and-zoom'}
-                h={'calc(100vh - 250px)'}
+                minH={'calc(100vh - 250px)'}
                 maxW={'1200px'}
-                pt={'260px'}
+                pt={[40, 64]}
                 pr={'20px'}
                 pl={'20px'}
                 textAlign={'center'}
@@ -55,6 +45,7 @@ const Partner = () => {
                 minH={'100vh'}
                 flexWrap={'wrap'}
                 flexShrink={0}
+                mb={'40px'}
             >
                 <TextCard
                     title="Mentorship"

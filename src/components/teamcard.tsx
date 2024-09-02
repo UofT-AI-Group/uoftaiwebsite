@@ -34,20 +34,28 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
                         h={['60px', '80px', '128px']}
                         w={['60px', '80px', '128px']}
                     >
-                        <Image src={image} />
+                        <Image src={image} borderRadius={'50%'} />
                     </Box>
-                    <VStack mt={['10px', '15px', '20px']} ml={'20px'}>
+                    <VStack
+                        mt={['10px', '15px', '20px']}
+                        ml={'20px'}
+                        alignItems={'flex-start'}
+                    >
                         <Text
                             border={'2px solid black'}
-                            fontWeight={'medium'}
-                            fontSize={['14px', '20px', '28px']}
+                            fontSize={['12px', '14px', '20px']}
                             pl={'15px'}
                             pr={'15px'}
                         >
                             {role}
                         </Text>
 
-                        <Text fontSize={['11px', '14px', '20px']}>{name}</Text>
+                        <Text
+                            fontSize={['14px', '20px', '28px']}
+                            fontWeight={'medium'}
+                        >
+                            {name}
+                        </Text>
                     </VStack>
                 </Box>
 
@@ -61,7 +69,7 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
                 className={`meet-the-team-answer ${isOpen ? 'show' : ''}`}
                 style={{ maxHeight: `${height}` }}
             >
-                <Text fontSize={['10px', '12px', '15px']} mt={'15px'}>
+                <Text fontSize={['12px', '12px', '15px']} mt={'15px'}>
                     {description}
                 </Text>
             </div>

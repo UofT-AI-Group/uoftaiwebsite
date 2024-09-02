@@ -21,6 +21,21 @@ import rippleLogo from '../static/assets/ripple-logo.svg'
 import uoftLogo from '../static/assets/uoft-logo.png'
 import vectorLogo from '../static/assets/vector-institute-logo.png'
 import womboLogo from '../static/assets/wombo-logo.svg'
+import angela from '../static/assets/Angela-Sim.jpg'
+import armando from '../static/assets/Armando-Benitez.jpg'
+import ben from '../static/assets/Ben-Zion.jpg'
+import chitra from '../static/assets/Chitra-Sridhar.jpg'
+import colin from '../static/assets/Colin-Toal.jpg'
+import geoffrey from '../static/assets/Geoffrey-Hinton.jpg'
+import lisa from '../static/assets/Lisa-Mah.jpg'
+import mike from '../static/assets/Mike-Schaekermann.jpg'
+import ruslan from '../static/assets/Ruslan-Salakhutdinov.jpg'
+import santoshi from '../static/assets/Santoshi-Tadanki.jpg'
+import sunil from '../static/assets/Sunil-Sharma.jpg'
+import tomi from '../static/assets/Tomi-Poutanen.jpg'
+import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
+import gallery from '../static/assets/gallery.jpg'
+import showcase from '../static/assets/Showcase.jpg'
 
 const ConferenceX = () => {
     return (
@@ -33,7 +48,7 @@ const ConferenceX = () => {
                 height={'80vh'}
                 width={'100%'}
                 mt={28}
-                pt={64}
+                pt={[40, 64]}
             >
                 <VStack alignItems={'center'} spacing={5}>
                     <ConferenceXTitle />
@@ -51,25 +66,18 @@ const ConferenceX = () => {
                     </Box>
                 </VStack>
             </Box>
-            <Box
-                backgroundColor={'dark'}
-                pt={20}
-                pb={20}
-                pl={20}
-                pr={20}
-                position={'relative'}
-            >
+            <Box backgroundColor={'dark'} p={[5, 20]} position={'relative'}>
                 <Image
                     src={logo}
                     position={'absolute'}
-                    h={'310px'}
+                    h={['150px', '310px']}
                     top={'55%'}
                     left={'80%'}
                     zIndex={0}
                 />
                 <Text
                     color={'light'}
-                    fontSize={'40px'}
+                    fontSize={['25px', '40px']}
                     zIndex={100}
                     position={'relative'}
                 >
@@ -77,7 +85,7 @@ const ConferenceX = () => {
                 </Text>
                 <Text
                     color={'light'}
-                    fontSize={'24px'}
+                    fontSize={['14px', '24px']}
                     maxW={'600px'}
                     w={'100%'}
                     pt={8}
@@ -93,31 +101,43 @@ const ConferenceX = () => {
             </Box>
             <Box
                 bgColor={'#051A42'}
-                p={'70px'}
+                p={[5, 20]}
                 position={'relative'}
                 zIndex={10}
             >
-                <Text fontSize={'24px'} color={'light'}>
+                <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2024 Highlights
                 </Text>
 
-                <VStack alignItems={'center'} spacing={12} mt={'60px'}>
+                <VStack
+                    alignItems={'center'}
+                    spacing={15}
+                    mt={['30px', '60px']}
+                >
                     <Flex
                         justifyContent={'center'}
                         alignItems={'top'}
                         flexWrap={'wrap'}
                     >
-                        <Image src={logo} h={'200px'} />
+                        <Image
+                            src={geoffreySpeaking}
+                            h={'200px'}
+                            borderRadius={'50%'}
+                        />
                         <Box
                             maxW={'1000px'}
                             minW={'300px'}
-                            ml={'40px'}
+                            ml={['0px', '40px']}
                             w={'80%'}
                         >
-                            <Text color={'light'} fontSize={'24px'}>
+                            <Text
+                                color={'light'}
+                                fontSize={['18px', '24px']}
+                                pb={'10px'}
+                            >
                                 Panel Discussion with Geoffrey Hinton
                             </Text>
-                            <Text color={'light'} fontSize={'18px'}>
+                            <Text color={'light'} fontSize={['14px', '18px']}>
                                 Geoffrey Hinton, the “Godfather of AI” and
                                 co-founder of the Vector Institute has
                                 profoundly shaped the field of deep learning
@@ -139,17 +159,25 @@ const ConferenceX = () => {
                         alignItems={'top'}
                         flexWrap={'wrap'}
                     >
-                        <Image src={logo} h={'200px'} />
+                        <Image
+                            src={showcase}
+                            h={'200px'}
+                            borderRadius={'50%'}
+                        />
                         <Box
                             maxW={'1000px'}
                             minW={'300px'}
                             ml={'40px'}
                             w={'80%'}
                         >
-                            <Text color={'light'} fontSize={'24px'}>
+                            <Text
+                                color={'light'}
+                                fontSize={['18px', '24px']}
+                                pb={'10px'}
+                            >
                                 Startup Showcase
                             </Text>
-                            <Text color={'light'} fontSize={'18px'}>
+                            <Text color={'light'} fontSize={['14px', '18px']}>
                                 Some of Toronto's most promising AI startups
                                 took center stage in an exclusive startup
                                 showcase. Attendees experienced live
@@ -169,17 +197,21 @@ const ConferenceX = () => {
                         alignItems={'top'}
                         flexWrap={'wrap'}
                     >
-                        <Image src={logo} h={'200px'} />
+                        <Image src={gallery} h={'200px'} borderRadius={'50%'} />
                         <Box
                             maxW={'1000px'}
                             minW={'300px'}
                             ml={'40px'}
                             w={'80%'}
                         >
-                            <Text color={'light'} fontSize={'24px'}>
+                            <Text
+                                color={'light'}
+                                fontSize={['18px', '24px']}
+                                pb={'10px'}
+                            >
                                 AI-Generated Art Gallery
                             </Text>
-                            <Text color={'light'} fontSize={'18px'}>
+                            <Text color={'light'} fontSize={['14px', '18px']}>
                                 An AI-generated art gallery presented a striking
                                 collection of artwork created entirely by
                                 artificial intelligence. The exhibition
@@ -194,7 +226,12 @@ const ConferenceX = () => {
                     </Flex>
                 </VStack>
 
-                <Text fontSize={'24px'} color={'light'} mt={'70px'}>
+                <Text
+                    fontSize={['18px', '24px']}
+                    color={'light'}
+                    mt={'70px'}
+                    mb={'20px'}
+                >
                     Featured Speakers
                 </Text>
 
@@ -211,11 +248,15 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={bmoLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image
+                            src={geoffrey}
+                            h={'200px'}
+                            borderRadius={'50%'}
+                        />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Geoffrey Hinton
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Co-founder @The Vector Institute
                         </Text>
                     </Flex>
@@ -226,14 +267,14 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={bellLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={tomi} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Tomi Poutanen
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Co-founder @The Vector Institute
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             CEO of Signal 1
                         </Text>
                     </Flex>
@@ -244,11 +285,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={cifarLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={colin} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Colin Toal
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Principal BD AI/ML @ AWS
                         </Text>
                     </Flex>
@@ -259,11 +300,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={kpmgLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={sunil} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Sunil Sharma
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Managing Director @Techstars
                         </Text>
                     </Flex>
@@ -274,17 +315,17 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={marsLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={armando} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Dr. Armando Benitez
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Managing Director,
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Quantitative Analytics,
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Capital Markets @BMO
                         </Text>
                     </Flex>
@@ -295,11 +336,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={ruslan} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Ruslan Salakhutdinov
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Ex-Director of Research @Apple
                         </Text>
                     </Flex>
@@ -309,11 +350,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={angela} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Angela Sim
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Chief Technology Resiliency @BMO
                         </Text>
                     </Flex>
@@ -323,11 +364,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={chitra} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Chitra Sridhar
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Head of Services: Lighthouse @KPMG
                         </Text>
                     </Flex>
@@ -337,14 +378,14 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={lisa} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Lisa Mah
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Director of Ventures
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             @The Creative Destruction Lab
                         </Text>
                     </Flex>
@@ -354,11 +395,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={ben} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Ben-Zion
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Co-founder & CEO @Wombo.ai
                         </Text>
                     </Flex>
@@ -368,11 +409,11 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image src={mike} h={'200px'} borderRadius={'50%'} />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Mike Schaekermann
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Research Scientist @ Google
                         </Text>
                     </Flex>
@@ -382,11 +423,15 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={uoftLogo} h={'200px'} />
-                        <Text fontSize={'22px'} color={'light'}>
+                        <Image
+                            src={santoshi}
+                            h={'200px'}
+                            borderRadius={'50%'}
+                        />
+                        <Text fontSize={['16px', '22px']} color={'light'}>
                             Santoshi Tadanki
                         </Text>
-                        <Text fontSize={'16px'} color={'light'}>
+                        <Text fontSize={['14px', '16px']} color={'light'}>
                             Data Analytics and AI Strategy @RBC
                         </Text>
                     </Flex>

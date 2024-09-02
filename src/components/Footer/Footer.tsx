@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../static/assets/UofTAI_Logo.png'
 import './style.css'
+import { HashLink } from 'react-router-hash-link'
 
 const Footer: React.FC = () => {
     return (
@@ -15,7 +16,27 @@ const Footer: React.FC = () => {
                         </div>
 
                         <div className="footer-link">
+                            <HashLink smooth to={'/#about'}>
+                                About Us
+                            </HashLink>
+                        </div>
+
+                        <div className="footer-link">
+                            <HashLink smooth to={'/#meet-the-team'}>
+                                Our Team
+                            </HashLink>
+                        </div>
+
+                        <div className="footer-link">
                             <a href="/conferencex">ConferenceX</a>
+                        </div>
+
+                        <div className="footer-link">
+                            <a href="/projectx">ProjectX</a>
+                        </div>
+
+                        <div className="footer-link">
+                            <a href="/learnai">Learn AI</a>
                         </div>
 
                         <div className="footer-link">
