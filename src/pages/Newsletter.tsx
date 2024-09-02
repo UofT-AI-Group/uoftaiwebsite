@@ -1,24 +1,15 @@
-import {
-    Box,
-    Container,
-    VStack,
-    Text,
-    Flex,
-    Card,
-    Image,
-    SimpleGrid,
-} from '@chakra-ui/react'
+import { Box, Container, VStack, Text, Flex } from '@chakra-ui/react'
 import gradient from '../static/assets/outreach-gradient.jpeg'
-import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
-import logo from '../static/assets/UofTAI_Logo_bw.png'
 import Issue from '../components/issue'
+import issue1 from '../static/assets/newletters/issue1.jpg'
+import newletterBg from '../static/assets/newletter-bg.jpg'
 
 const Newsletter = () => {
     return (
         <Box fontFamily={'Tabular, sans-serif'} minH={'150'}>
             <Box
-                bgImage={gradient}
+                bgImage={newletterBg}
                 bgPosition={'50%'}
                 bgSize={'cover'}
                 bgRepeat={'no-repeat'}
@@ -62,7 +53,7 @@ const Newsletter = () => {
                     </Box>
                 </VStack>
             </Box>
-            <Box bgColor={'#051A42'} p={[1, '70px']} minH={'100vh'}>
+            <Box bgColor={'#272727'} p={[1, '70px']} minH={'100vh'}>
                 <Text fontSize={'24px'} color={'light'} mt={'40px'} pl={'10px'}>
                     Previous Issues:
                 </Text>
@@ -75,31 +66,15 @@ const Newsletter = () => {
                     flexShrink={1}
                 >
                     <Issue
-                        issueLink={'http://domain.com'}
-                        img={logo}
-                        title={'How AI is changing the world'}
-                        desc={
-                            'New technologies are changing the world, and AI is leading the way. Learn more about the latest advancements in AI and how they are impacting our lives.'
+                        issueLink={
+                            'https://mailchi.mp/24a2b06173ba/welcome-to-uoft-ais-2024-2025-neural-notes'
                         }
-                        date={'September 21 2024'}
-                    />
-                    <Issue
-                        issueLink={'http://domain.com'}
-                        img={logo}
-                        title={'How AI is changing the world'}
+                        img={issue1}
+                        title={'Welcome to UofT AI 2024-2025'}
                         desc={
-                            'New technologies are changing the world, and AI is leading the way. Learn more about the latest advancements in AI and how they are impacting our lives.'
+                            'The UofT AI Neural Notes newsletter provides quick updates on AI news, events, and student highlights. Stay connected with the latest in AI research and opportunities at UofT. Ideal for anyone interested in AI.'
                         }
-                        date={'September 21 2024'}
-                    />
-                    <Issue
-                        issueLink={'http://domain.com'}
-                        img={logo}
-                        title={'How AI is changing the world'}
-                        desc={
-                            'New technologies are changing the world, and AI is leading the way. Learn more about the latest advancements in AI and how they are impacting our lives.'
-                        }
-                        date={'September 21 2024'}
+                        date={'September 2 2024'}
                     />
                 </Flex>
             </Box>
