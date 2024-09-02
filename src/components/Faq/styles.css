@@ -8,7 +8,6 @@
 }
 
 .faq-h2 {
-    font-size: 50px;
     text-decoration: underline;
     margin-bottom: 48px;
     color: #ba76e1;
@@ -20,7 +19,6 @@
 
 .faq-item {
     margin-bottom: 20px;
-    font-size: 40px;
 }
 
 .faq-ul {
