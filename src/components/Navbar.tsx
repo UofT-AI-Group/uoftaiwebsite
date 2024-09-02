@@ -19,13 +19,29 @@ import { Link as RouterLink } from 'react-router-dom'
 import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { HashLink } from 'react-router-hash-link'
 
-const Links = ['Home', 'ConferenceX', 'ProjectX', 'LearnAI', 'Newsletter']
-
+const Links = [
+    'Home',
+    'About Us',
+    'Our Team',
+    'ConferenceX',
+    'ProjectX',
+    'LearnAI',
+    'Newsletter',
+]
 
 function get_link(link: string) {
     if (link == 'Home') {
         return '/'
+    }
+
+    if (link == 'About Us') {
+        return '/#about'
+    }
+
+    if (link == 'Our Team') {
+        return '/#meet-the-team'
     }
     return link.toLowerCase().replace(/\s/g, '')
 }
@@ -50,9 +66,9 @@ export const NavLink = ({
             cursor: 'pointer',
         }}
     >
-        <Link as={RouterLink} to={to} onClick={onClose} fontWeight={'semibold'}>
+        <HashLink smooth to={to} onClick={onClose}>
             {children}
-        </Link>
+        </HashLink>
     </Box>
 )
 
@@ -81,15 +97,16 @@ const Navbar = () => {
                 zIndex={1000}
                 top={0}
                 left={0}
-                width={'100vw'}
+                width={'110%'}
                 h={28}
                 overflow={'hidden'}
-                shadow={'md'}
+                bg={'white'}
+                borderBottom={'2px solid black'}
             >
                 <Box
                     bg={'rgba(236, 236, 236, 0.1)'}
                     backdropFilter={'blur(200px)'}
-                    width={'100vw'}
+                    width={'100%'}
                     h={28}
                     margin={'-5px -10px -10px -5px'}
                 />
@@ -123,6 +140,7 @@ const Navbar = () => {
                             as={'nav'}
                             spacing={6}
                             display={{ base: 'none', md: 'flex' }}
+                            fontWeight={'semibold'}
                         >
                             {Links.map((link) => (
                                 <NavLink

@@ -6,7 +6,7 @@ const SlideInOnScroll = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY >= 400 && ref.current) {
+            if (window.scrollY >= 350 && ref.current) {
                 const slideIns = ref.current.querySelectorAll(
                     '.slide-in-right, .slide-in-left',
                 )
