@@ -49,7 +49,11 @@ const Newsletter = () => {
                     </Text>
 
                     <Box mt={'40px'}>
-                        <ButtonOutline variant="light">Sign Up</ButtonOutline>
+                        <a href="http://eepurl.com/iYa6Xw" target="_blank">
+                            <ButtonOutline variant="light">
+                                Subscribe
+                            </ButtonOutline>
+                        </a>
                     </Box>
                 </VStack>
             </Box>
