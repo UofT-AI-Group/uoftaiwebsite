@@ -1,0 +1,17 @@
+#about-container {
+    position: relative;
+}
+
+#about {
+    position: absolute;
+    top: -112px;
+}
+
+#meet-the-team-container {
+    position: relative;
+}
+
+#meet-the-team {
+    position: absolute;
+    top: -112px;
+}
