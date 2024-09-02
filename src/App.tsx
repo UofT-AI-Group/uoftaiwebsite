@@ -9,6 +9,7 @@ import ConferenceX from './pages/ConferenceX'
 import ScrollToTop from './components/scrollToTop'
 import Newsletter from './pages/Newsletter'
 import ComingSoon from './pages/ComingSoon'
+import ProjectX from './pages/ProjectX'
 
 // This is the deployment branch
 
@@ -22,7 +23,7 @@ export const App = () => (
             <Route path="/conferencex" element={<ConferenceX />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/learnai" element={<ComingSoon />} />
-            <Route path="/projectx" element={<ComingSoon />} />
+            <Route path="/projectx" element={<ProjectX />} />
         </Routes>
         <Footer />
     </>

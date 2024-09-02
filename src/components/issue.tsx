@@ -37,7 +37,7 @@ const Issue = function Issue({
 
     return (
         <Card style={cardStyles} onClick={handleClick} className="issue">
-            <Image h={['150', '250px']} src={img}></Image>
+            <Image h={['150', '230px']} borderRadius={'30px'} src={img}></Image>
             <CardHeader fontWeight={'medium'} fontSize={25} pb={'5px'}>
                 {title}
             </CardHeader>

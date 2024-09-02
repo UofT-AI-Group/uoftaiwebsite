@@ -16,6 +16,7 @@ import rippleLogo from '../static/assets/ripple-logo.svg'
 import uoftLogo from '../static/assets/uoft-logo.png'
 import vectorLogo from '../static/assets/vector-institute-logo.png'
 import womboLogo from '../static/assets/wombo-logo.svg'
+import '../static/styles/home.css'
 
 const Home = () => {
     let navigate = useNavigate()
@@ -67,10 +68,20 @@ const Home = () => {
                     flexDirection={'column'}
                     zIndex={100}
                 >
-                    <Text className="bannerdesc" fontSize={['20px', '32px']}>
+                    <Text
+                        className="bannerdesc"
+                        fontFamily={'Tabular, sans-serif'}
+                        fontWeight={'medium'}
+                        fontSize={['18px', '28px']}
+                    >
                         Our
                     </Text>
-                    <Text className="bannerdesc" fontSize={['20px', '32px']}>
+                    <Text
+                        className="bannerdesc"
+                        fontFamily={'Tabular, sans-serif'}
+                        fontWeight={'medium'}
+                        fontSize={['18px', '28px']}
+                    >
                         Partners
                     </Text>
                 </Box>
@@ -150,11 +161,15 @@ const Home = () => {
                     />
                 </InfiniteLooper>
             </div>
-            <div id="about"></div>
-            <About />
+            <div id="about-container">
+                <div id="about"></div>
+                <About />
+            </div>
             <Projects />
-            <div id="meet-the-team"></div>
-            <MeetTheTeam />
+            <div id="meet-the-team-container">
+                <div id="meet-the-team"></div>
+                <MeetTheTeam />
+            </div>
         </Box>
     )
 }
