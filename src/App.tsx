@@ -7,6 +7,8 @@ import Partner from './pages/Partner'
 import Navbar from './components/Navbar'
 import ConferenceX from './pages/ConferenceX'
 import ScrollToTop from './components/scrollToTop'
+import ProjectXComponent from './components/project-x/ProjectXComponent'
+import ProjectYear from './components/project-x/ProjectYear'
 
 export const App = () => (
     <>
@@ -16,6 +18,11 @@ export const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/partner-with-us" element={<Partner />} />
             <Route path="/conferencex" element={<ConferenceX />} />
+            <Route path="/projectx" element={<ProjectXComponent />} />
+            <Route path="/projectx/2020" element={<ProjectYear />} />
+            <Route path="/projectx/2021" element={<ProjectYear />} />
+            <Route path="/projectx/2022" element={<ProjectYear />} />
+            <Route path="/projectx/2023" element={<ProjectYear />} />
         </Routes>
         <Footer />
     </>
