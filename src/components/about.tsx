@@ -84,9 +84,9 @@ const About = () => {
                             ml={'auto'}
                         />
                         <Text paddingTop={10} paddingBottom={10}>
-                            Our mission is to empower over 600 passionate
-                            undergraduates by offering resources, opportunities,
-                            and a community where they can explore specific AI
+                            Our mission is to empower passionate undergraduates
+                            by offering resources, opportunities, and a
+                            community where they can explore specific AI
                             interests, collaborate with like-minded peers, and
                             potentially discover co-founders for future
                             ventures.
