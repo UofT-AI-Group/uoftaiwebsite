@@ -1,4 +1,3 @@
-import logo from '../static/assets/UofTAI_Logo.png'
 import whoWeAre from '../static/assets/who-we-are.jpg'
 import ourMission from '../static/assets/our-mission.jpg'
 import '../static/styles/about.css'
