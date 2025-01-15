@@ -29,6 +29,7 @@ import sridhar from '../static/assets/2025_speakers/sridhar.jpg'
 import supekar from '../static/assets/2025_speakers/supekar.jpg'
 import wang from '../static/assets/2025_speakers/wang.png'
 import waslander from '../static/assets/2025_speakers/waslander.png'
+import william from '../static/assets/2025_speakers/william.jpeg'
 
 import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/Accenture-logo.png'
 import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
@@ -318,7 +319,7 @@ const ConferenceX = () => {
                         flexDirection={'column'}
                         w={'340px'}
                     >
-                        <Image src={pant} h={'200px'} borderRadius={'50%'} />
+                        <Image src={william} h={'200px'} borderRadius={'50%'} />
                         <Text fontSize={['16px', '22px']} color={'light'}>
                             William Cunningham
                         </Text>
@@ -531,7 +532,7 @@ const ConferenceX = () => {
                             color={'light'}
                             textAlign="center"
                         >
-                            Quantitative Developer, Citadel Prev. Senior Machine
+                            Quantitative Developer, CitadelPrev. Senior Machine
                             Learning Engineer, Shopify
                         </Text>
                     </Flex>
