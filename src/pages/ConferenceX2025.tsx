@@ -72,7 +72,7 @@ const ConferenceX = () => {
                 mt={28}
                 pt={[40, 64]}
             >
-                <VStack alignItems={'center'} spacing={5} textAlign="center">
+                <VStack alignItems={'center'} spacing={5}>
                     <ConferenceXTitle />
                     <Text
                         fontWeight={'regular'}
@@ -143,9 +143,7 @@ const ConferenceX = () => {
                         to={'/conferencex-2024#conference2024higlights'}
                     >
                         <ButtonOutline variant="light">
-                            <Text fontSize={['12px', '16px']}>
-                                Check out last year's conference
-                            </Text>
+                            Check out last year's conference
                         </ButtonOutline>
                     </HashLink>
                 </Box>
@@ -330,7 +328,8 @@ const ConferenceX = () => {
                             textAlign="center"
                             color={'light'}
                         >
-                            Researcher at the Vector Institute for AI
+                            Professor and Researcher at Google DeepMind, the
+                            Vector Institute, and UofT
                         </Text>
                     </Flex>
 
@@ -574,6 +573,12 @@ const ConferenceX = () => {
                         />
                         <Image
                             src={citadel}
+                            p={'20px'}
+                            maxW={'200px'}
+                            minW={'100px'}
+                        />
+                        <Image
+                            src={deep}
                             p={'20px'}
                             maxW={'200px'}
                             minW={'100px'}
