@@ -46,7 +46,7 @@ import uoft from '../static/assets/2025-confx-spons/conference 2025 logos/Univer
 import vector from '../static/assets/2025-confx-spons/conference 2025 logos/Vector-Institute_Logo.png'
 import uf from '../static/assets/2025-confx-spons/conference 2025 logos/University-of-Florida-Logo.png'
 import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_Economic_Forum_logo.svg.png'
-import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Logo.svg.png'
+import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
 import gallery from '../static/assets/gallery.jpg'
