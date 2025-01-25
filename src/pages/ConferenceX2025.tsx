@@ -30,6 +30,7 @@ import supekar from '../static/assets/2025_speakers/supekar.jpg'
 import wang from '../static/assets/2025_speakers/wang.png'
 import waslander from '../static/assets/2025_speakers/waslander.png'
 import william from '../static/assets/2025_speakers/william.jpeg'
+import schedule from '../static/assets/2025_speakers/ConferenceX 2025 Organizer Schedule - V6.pdf'
 
 import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/Accenture-logo.png'
 import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
@@ -702,6 +703,14 @@ const ConferenceX = () => {
                     </Flex>
                 </Box>
             </Box>
+            <div style={{ width: '100%', height: '100vh' }}>
+                <iframe
+                    src={schedule}
+                    style={{ width: '100%', height: '100%' }}
+                    frameBorder="0"
+                    title="PDF Viewer"
+                ></iframe>
+            </div>
         </Box>
     )
 }
