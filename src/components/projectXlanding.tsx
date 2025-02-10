@@ -4,9 +4,15 @@ import { ButtonOutline } from '../components/Button'
 
 const ProjectXLanding = ({
     onClick2023,
+    onClick2022,
+    onClick2021,
+    onClick2020,
     onClickCurrent,
 }: {
     onClick2023: () => void
+    onClick2022: () => void
+    onClick2021: () => void
+    onClick2020: () => void
     onClickCurrent: () => void
 }) => {
     return (
@@ -72,6 +78,18 @@ const ProjectXLanding = ({
                     <Box as="span" p={'5px'}></Box>
                     <ButtonOutline variant="light" onClick={onClick2023}>
                         2023
+                    </ButtonOutline>
+                    <Box as="span" p={'5px'}></Box>
+                    <ButtonOutline variant="light" onClick={onClick2022}>
+                        2022
+                    </ButtonOutline>
+                    <Box as="span" p={'5px'}></Box>
+                    <ButtonOutline variant="light" onClick={onClick2021}>
+                        2021
+                    </ButtonOutline>
+                    <Box as="span" p={'5px'}></Box>
+                    <ButtonOutline variant="light" onClick={onClick2020}>
+                        2020
                     </ButtonOutline>
                 </Box>
             </VStack>
