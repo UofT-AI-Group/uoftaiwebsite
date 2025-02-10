@@ -1,29 +1,31 @@
 import { Box, VStack, Text, Flex, SimpleGrid, Image } from '@chakra-ui/react'
 import gradient from '../static/assets/2022gradient.png'
 import { ButtonOutline } from './Button'
-import carnegie from '../static/assets/carnegie.png'
+
 import cornell from '../static/assets/cornell.png'
-import duke from '../static/assets/duke.png'
-import harvard from '../static/assets/Harvard-Logo.png'
-import irvine from '../static/assets/irvine.png'
-import jhu from '../static/assets/Johns-Hopkins-University-Logo.png'
-import laurier from '../static/assets/laurier.png'
 import mcgill from '../static/assets/mcgill.jpeg'
 import montreal from '../static/assets/montreal.png'
-import northwestern from '../static/assets/northwestern.png'
-import queens from '../static/assets/queens.png'
-import singapore from '../static/assets/singapore.png'
-import texas from '../static/assets/texas.svg'
 import ubc from '../static/assets/UBC.png'
-import uofa from '../static/assets/uofa.png'
 import usc from '../static/assets/usc.png'
 import uoft from '../static/assets/uoft.png'
-import upenn from '../static/assets/UPenn-Logo.png'
-import uwash from '../static/assets/uwash.png'
+import york from '../static/assets/york.png'
+import sfu from '../static/assets/sfu.png'
+import icl from '../static/assets/icl.png'
+import princeton from '../static/assets/princeton.png'
+import umass from '../static/assets/umass.png'
+import uoi from '../static/assets/uoi.png'
 import warwick from '../static/assets/warwick.jpg'
 import waterloo from '../static/assets/waterloo.png'
 import wisonconsin from '../static/assets/wisonconsin.png'
-import timeline from '../static/assets/2023timeline.png'
+
+import deepmind from '../static/assets/deepmind.png'
+import google from '../static/assets/google.png'
+import intel from '../static/assets/intel.png'
+import nvidia from '../static/assets/nvidia.png'
+import vector from '../static/assets/vector.png'
+
+import team2022 from '../static/assets/team2022.png'
+
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
@@ -193,28 +195,21 @@ const ProjectX2022 = ({
             <Box p="20px">
                 <Text fontSize="40px">Participating Teams</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
-                    <Image src={uoft} maxH="150px" />
-                    <Image src={usc} maxH="150px" />
-                    <Image src={waterloo} maxH="150px" />
-                    <Image src={laurier} maxH="150px" />
-                    <Image src={queens} maxH="150px" />
-                    <Image src={ubc} maxH="150px" />
-                    <Image src={uofa} maxH="150px" />
-                    <Image src={mcgill} maxH="150px" />
-                    <Image src={montreal} maxH="150px" />
-                    <Image src={harvard} maxH="150px" />
-                    <Image src={cornell} maxH="150px" />
-                    <Image src={duke} maxH="150px" />
-                    <Image src={upenn} maxH="150px" />
-                    <Image src={carnegie} maxH="150px" />
-                    <Image src={jhu} maxH="150px" />
-                    <Image src={irvine} maxH="150px" />
-                    <Image src={uwash} maxH="150px" />
-                    <Image src={northwestern} maxH="150px" />
-                    <Image src={texas} maxH="150px" />
-                    <Image src={warwick} maxH="150px" />
-                    <Image src={wisonconsin} maxH="150px" />
-                    <Image src={singapore} maxH="150px" />
+                    <Image src={uoft} maxH="120px" />
+                    <Image src={usc} maxH="120px" />
+                    <Image src={uoi} maxH="70px" />
+                    <Image src={york} maxH="90px" />
+                    <Image src={wisonconsin} maxH="110px" />
+                    <Image src={ubc} maxH="80px" />
+                    <Image src={mcgill} maxH="100px" />
+                    <Image src={waterloo} maxH="100px" />
+                    <Image src={sfu} maxH="80px" />
+                    <Image src={icl} maxH="80px" />
+                    <Image src={cornell} maxH="100px" />
+                    <Image src={warwick} maxH="100px" />
+                    <Image src={montreal} maxH="100px" />
+                    <Image src={princeton} maxH="110px" />
+                    <Image src={umass} maxH="110px" />
                 </Flex>
             </Box>
 
@@ -222,28 +217,11 @@ const ProjectX2022 = ({
             <Box p="20px">
                 <Text fontSize="40px">Our Partners</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
-                    <Image src={uoft} maxH="150px" />
-                    <Image src={usc} maxH="150px" />
-                    <Image src={waterloo} maxH="150px" />
-                    <Image src={laurier} maxH="150px" />
-                    <Image src={queens} maxH="150px" />
-                    <Image src={ubc} maxH="150px" />
-                    <Image src={uofa} maxH="150px" />
-                    <Image src={mcgill} maxH="150px" />
-                    <Image src={montreal} maxH="150px" />
-                    <Image src={harvard} maxH="150px" />
-                    <Image src={cornell} maxH="150px" />
-                    <Image src={duke} maxH="150px" />
-                    <Image src={upenn} maxH="150px" />
-                    <Image src={carnegie} maxH="150px" />
-                    <Image src={jhu} maxH="150px" />
-                    <Image src={irvine} maxH="150px" />
-                    <Image src={uwash} maxH="150px" />
-                    <Image src={northwestern} maxH="150px" />
-                    <Image src={texas} maxH="150px" />
-                    <Image src={warwick} maxH="150px" />
-                    <Image src={wisonconsin} maxH="150px" />
-                    <Image src={singapore} maxH="150px" />
+                    <Image src={vector} maxH="200px" />
+                    <Image src={nvidia} maxH="200px" />
+                    <Image src={intel} maxH="200px" />
+                    <Image src={deepmind} maxH="130px" />
+                    <Image src={google} maxH="200px" />
                 </Flex>
             </Box>
 
@@ -351,6 +329,14 @@ const ProjectX2022 = ({
                         display="block"
                     />
                 </Box>
+            </Box>
+
+            {/* -- Our Team-- */}
+            <Box p="20px">
+                <Text fontSize="40px">Our Team</Text>
+                <Flex flexWrap="wrap" justifyContent="center" gap="40px">
+                    <Image src={team2022} maxH="1000px" />
+                </Flex>
             </Box>
         </Box>
     )

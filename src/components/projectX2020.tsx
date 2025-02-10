@@ -10,33 +10,62 @@ import {
 } from '@chakra-ui/react'
 import gradient from '../static/assets/2020gradient.png'
 import { ButtonOutline } from './Button'
+import berkeley from '../static/assets/berkeley.png'
+import caltech from '../static/assets/caltech.png'
 import carnegie from '../static/assets/carnegie.png'
 import cornell from '../static/assets/cornell.png'
-import duke from '../static/assets/duke.png'
-import harvard from '../static/assets/Harvard-Logo.png'
-import irvine from '../static/assets/irvine.png'
+import darmstadt from '../static/assets/darmstadt.png'
+import duquesne from '../static/assets/duquesne.png'
 import jhu from '../static/assets/Johns-Hopkins-University-Logo.png'
-import laurier from '../static/assets/laurier.png'
 import mcgill from '../static/assets/mcgill.jpeg'
+import michigan from '../static/assets/michigan.png'
+import mit from '../static/assets/mit.png'
 import montreal from '../static/assets/montreal.png'
-import northwestern from '../static/assets/northwestern.png'
 import queens from '../static/assets/queens.png'
-import singapore from '../static/assets/singapore.png'
-import texas from '../static/assets/texas.svg'
+import stanford from '../static/assets/stanford.png'
 import ubc from '../static/assets/UBC.png'
+import uchile from '../static/assets/uchile.png'
+import umass from '../static/assets/umass.png'
 import uofa from '../static/assets/uofa.png'
-import usc from '../static/assets/usc.png'
 import uoft from '../static/assets/uoft.png'
-import upenn from '../static/assets/UPenn-Logo.png'
-import uwash from '../static/assets/uwash.png'
-import warwick from '../static/assets/warwick.jpg'
-import waterloo from '../static/assets/waterloo.png'
-import wisonconsin from '../static/assets/wisonconsin.png'
-import timeline from '../static/assets/2023timeline.png'
+import uoi from '../static/assets/uoi.png'
+import usc from '../static/assets/usc.png'
+import usp from '../static/assets/usp.png'
+import wisconsin from '../static/assets/wisonconsin.png'
+
+import accuweather from '../static/assets/accuweather.png'
+import altaML from '../static/assets/altaml.png'
+import amii from '../static/assets/amii.png'
+import citadel from '../static/assets/citadel.png'
+import climsystems from '../static/assets/climsystems.png'
+import deepmind from '../static/assets/deepmind.png'
+import descartesLabs from '../static/assets/descarteslabs.png'
+import googleAI from '../static/assets/googleAI.png'
+import ibm from '../static/assets/ibm.png'
+import internationalTaxSolutions from '../static/assets/ITS.png'
+import konrad from '../static/assets/konrad.png'
+import loblaw from '../static/assets/loblaw.png'
+import mattermore from '../static/assets/mattermore.png'
+import mcKinsey from '../static/assets/mckinsey.png'
+import mila from '../static/assets/mila.png'
+import rogers from '../static/assets/rogers.png'
+import schwartzReisman from '../static/assets/schwartzReisman.png'
+import vector from '../static/assets/vector.png'
+
+import accenture from '../static/assets/accenture.png'
+import altaml from '../static/assets/altaml.png'
+import google from '../static/assets/google.png'
+import moderna from '../static/assets/moderna.png'
+import nvidia from '../static/assets/nvidia.png'
+import twentythreeandme from '../static/assets/23andme.png'
+
+import team2021part1 from '../static/assets/team2021part1.png'
+import team2021part3 from '../static/assets/team2021part3.png'
+
+import bluegray from '../static/assets/gray_blue_bg.jpg'
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
-import covid from '../static/assets/covid.jpg'
 import human from '../static/assets/human.jpg'
 
 const ProjectX2022 = ({
@@ -216,28 +245,32 @@ const ProjectX2022 = ({
             <Box p="20px">
                 <Text fontSize="40px">Participating Teams</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
-                    <Image src={uoft} maxH="150px" />
-                    <Image src={usc} maxH="150px" />
-                    <Image src={waterloo} maxH="150px" />
-                    <Image src={laurier} maxH="150px" />
-                    <Image src={queens} maxH="150px" />
-                    <Image src={ubc} maxH="150px" />
-                    <Image src={uofa} maxH="150px" />
-                    <Image src={mcgill} maxH="150px" />
-                    <Image src={montreal} maxH="150px" />
-                    <Image src={harvard} maxH="150px" />
-                    <Image src={cornell} maxH="150px" />
-                    <Image src={duke} maxH="150px" />
-                    <Image src={upenn} maxH="150px" />
-                    <Image src={carnegie} maxH="150px" />
-                    <Image src={jhu} maxH="150px" />
-                    <Image src={irvine} maxH="150px" />
-                    <Image src={uwash} maxH="150px" />
-                    <Image src={northwestern} maxH="150px" />
-                    <Image src={texas} maxH="150px" />
-                    <Image src={warwick} maxH="150px" />
-                    <Image src={wisonconsin} maxH="150px" />
-                    <Image src={singapore} maxH="150px" />
+                    <Image src={mit} maxH="80px" />
+                    <Image src={uoft} maxH="110px" />
+                    <Image src={stanford} maxH="70px" />
+
+                    <Image src={berkeley} maxH="100px" />
+                    <Image src={carnegie} maxH="100px" />
+                    <Image src={jhu} maxH="100px" />
+
+                    <Image src={uoi} maxH="80px" />
+                    <Image src={mcgill} maxH="90px" />
+                    <Image src={michigan} maxH="120px" />
+                    <Image src={caltech} maxH="100px" />
+                    <Image src={montreal} maxH="100px" />
+
+                    <Image src={ubc} maxH="70px" />
+                    <Image src={cornell} maxH="100px" />
+                    <Image src={wisconsin} maxH="100px" />
+                    <Image src={queens} maxH="100px" />
+                    <Image src={umass} maxH="100px" />
+                    <Image src={usc} maxH="100px" />
+                    <Image src={uofa} maxH="100px" />
+
+                    <Image src={uchile} maxH="100px" />
+                    <Image src={duquesne} maxH="70px" />
+                    <Image src={usp} maxH="100px" />
+                    <Image src={darmstadt} maxH="90px" />
                 </Flex>
             </Box>
 
@@ -245,59 +278,99 @@ const ProjectX2022 = ({
             <Box p="20px">
                 <Text fontSize="40px">Our Partners</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
-                    <Image src={uoft} maxH="150px" />
-                    <Image src={usc} maxH="150px" />
-                    <Image src={waterloo} maxH="150px" />
-                    <Image src={laurier} maxH="150px" />
-                    <Image src={queens} maxH="150px" />
-                    <Image src={ubc} maxH="150px" />
-                    <Image src={uofa} maxH="150px" />
-                    <Image src={mcgill} maxH="150px" />
-                    <Image src={montreal} maxH="150px" />
-                    <Image src={harvard} maxH="150px" />
-                    <Image src={cornell} maxH="150px" />
-                    <Image src={duke} maxH="150px" />
-                    <Image src={upenn} maxH="150px" />
-                    <Image src={carnegie} maxH="150px" />
-                    <Image src={jhu} maxH="150px" />
-                    <Image src={irvine} maxH="150px" />
-                    <Image src={uwash} maxH="150px" />
-                    <Image src={northwestern} maxH="150px" />
-                    <Image src={texas} maxH="150px" />
-                    <Image src={warwick} maxH="150px" />
-                    <Image src={wisonconsin} maxH="150px" />
-                    <Image src={singapore} maxH="150px" />
+                    <Image src={googleAI} maxH="130px" />
+                    <Image src={uoft} maxH="130px" />
+                    <Image src={ibm} maxH="120px" />
+                    <Image src={deepmind} maxH="70px" />
+                    <Image src={vector} maxH="120px" />
+                    <Image src={accuweather} maxH="30px" />
+                    <Image src={schwartzReisman} maxH="100px" />
+                    <Image src={citadel} maxH="30px" />
+                    <Image src={climsystems} maxH="30px" />
+                    <Image src={altaML} maxH="100px" />
+                    <Image src={rogers} maxH="100px" />
+                    <Image src={konrad} maxH="50px" />
+                    <Image src={mattermore} maxH="35px" />
+                    <Image src={loblaw} maxH="90px" />
+                    <Image src={descartesLabs} maxH="90px" />
+                    <Image src={internationalTaxSolutions} maxH="50px" />
+                    <Image src={mila} maxH="80px" />
+                    <Image src={mcKinsey} maxH="130px" />
+                    <Image src={amii} maxH="100px" />
                 </Flex>
             </Box>
 
-            {/* -- Our Partners -- */}
+            <Box w="100%" maxH="70vh" position="relative">
+                <Image
+                    src={bluegray}
+                    alt="background"
+                    w="100%"
+                    maxH="70vh"
+                    objectFit="cover"
+                />
+            </Box>
+
+            <Box p={8} borderRadius="md" maxW="800px" mx="auto">
+                {/* Solar Sponsors */}
+                <Text
+                    fontSize="2xl"
+                    fontWeight="bold"
+                    textAlign="center"
+                    mb={4}
+                >
+                    Solar Sponsors
+                </Text>
+                <VStack spacing={6}>
+                    <Box display="flex" justifyContent="center" gap={20}>
+                        <Image src={google} maxH="200px" />
+                        <Image src={ibm} maxH="150px" />
+                    </Box>
+                    <Box display="flex" justifyContent="center" gap={20}>
+                        <Image src={moderna} maxH="100px" />
+                        <Image src={altaml} maxH="150px" />
+                    </Box>
+                </VStack>
+
+                {/* Planetary Sponsors */}
+                <Text
+                    fontSize="2xl"
+                    fontWeight="bold"
+                    textAlign="center"
+                    mt={8}
+                    mb={10}
+                >
+                    Planetary Sponsors
+                </Text>
+                <Box display="flex" justifyContent="center" gap={20}>
+                    <Image src={accenture} maxH="100px" />
+                    <Image src={nvidia} maxH="150px" />
+                </Box>
+
+                {/* Lunar Sponsors */}
+                <Text
+                    fontSize="2xl"
+                    fontWeight="bold"
+                    textAlign="center"
+                    mt={8}
+                    mb={4}
+                >
+                    Lunar Sponsors
+                </Text>
+                <Box display="flex" justifyContent="center" gap={20}>
+                    <Image src={twentythreeandme} maxH="150px" />
+                    <Image src={vector} maxH="150px" />
+                    <Image src={deepmind} maxH="100px" />
+                </Box>
+            </Box>
+
+            {/* -- Our Team-- */}
             <Box p="20px">
-                <Text fontSize="40px">Our Partners</Text>
+                <Text fontSize="40px">Judging Panel</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
-                    <Image src={uoft} maxH="150px" />
-                    <Image src={usc} maxH="150px" />
-                    <Image src={waterloo} maxH="150px" />
-                    <Image src={laurier} maxH="150px" />
-                    <Image src={queens} maxH="150px" />
-                    <Image src={ubc} maxH="150px" />
-                    <Image src={uofa} maxH="150px" />
-                    <Image src={mcgill} maxH="150px" />
-                    <Image src={montreal} maxH="150px" />
-                    <Image src={harvard} maxH="150px" />
-                    <Image src={cornell} maxH="150px" />
-                    <Image src={duke} maxH="150px" />
-                    <Image src={upenn} maxH="150px" />
-                    <Image src={carnegie} maxH="150px" />
-                    <Image src={jhu} maxH="150px" />
-                    <Image src={irvine} maxH="150px" />
-                    <Image src={uwash} maxH="150px" />
-                    <Image src={northwestern} maxH="150px" />
-                    <Image src={texas} maxH="150px" />
-                    <Image src={warwick} maxH="150px" />
-                    <Image src={wisonconsin} maxH="150px" />
-                    <Image src={singapore} maxH="150px" />
+                    <Image src={team2021part1} maxH="1000px" />
                 </Flex>
             </Box>
+
             <Box position="relative" bgColor="dark" p={0} m={0}>
                 {/* Text Content – adds right padding on large screens so text does not go under the image */}
                 <Box
@@ -313,7 +386,7 @@ const ProjectX2022 = ({
                         <Text
                             fontWeight="bold"
                             fontSize={['18px', '22px']}
-                            color="#EE3B8E"
+                            color="#86BAFF"
                         >
                             May 31 - Confirm University Participation
                         </Text>
@@ -327,7 +400,7 @@ const ProjectX2022 = ({
                         <Text
                             fontWeight="bold"
                             fontSize={['18px', '22px']}
-                            color="#EE3B8E"
+                            color="#86BAFF"
                         >
                             June 14 - Team Registration Deadline
                         </Text>
@@ -342,7 +415,7 @@ const ProjectX2022 = ({
                         <Text
                             fontWeight="bold"
                             fontSize={['18px', '22px']}
-                            color="#EE3B8E"
+                            color="#86BAFF"
                         >
                             September 01 - Competition Starts
                         </Text>
@@ -357,7 +430,7 @@ const ProjectX2022 = ({
                         <Text
                             fontWeight="bold"
                             fontSize={['18px', '22px']}
-                            color="#EE3B8E"
+                            color="#86BAFF"
                         >
                             January 31 - Final Deliverables Due
                         </Text>
@@ -371,7 +444,7 @@ const ProjectX2022 = ({
                         <Text
                             fontWeight="bold"
                             fontSize={['18px', '22px']}
-                            color="#EE3B8E"
+                            color="#86BAFF"
                         >
                             February 14 - Winners Announced
                         </Text>
@@ -401,6 +474,13 @@ const ProjectX2022 = ({
                         display="block"
                     />
                 </Box>
+            </Box>
+            {/* -- Our Team-- */}
+            <Box p="20px">
+                <Text fontSize="40px">Our Team</Text>
+                <Flex flexWrap="wrap" justifyContent="center" gap="40px">
+                    <Image src={team2021part3} maxH="1000px" />
+                </Flex>
             </Box>
         </Box>
     )
