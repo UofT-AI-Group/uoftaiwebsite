@@ -1,4 +1,4 @@
-import { Box, VStack, Text } from '@chakra-ui/react'
+import { Box, VStack, Text, Stack } from '@chakra-ui/react'
 import gradient from '../static/assets/dark gradient.png'
 import { ButtonOutline } from '../components/Button'
 
@@ -71,7 +71,13 @@ const ProjectXLanding = ({
                     EVENT DETAILS
                 </Text>
 
-                <Box>
+                <Stack
+                    direction={['column', 'row']}
+                    spacing={{ base: 2, md: 4 }}
+                    justify="left"
+                    align="center"
+                    flexWrap="wrap"
+                >
                     <ButtonOutline variant="light" onClick={onClickCurrent}>
                         2024
                     </ButtonOutline>
@@ -91,7 +97,7 @@ const ProjectXLanding = ({
                     <ButtonOutline variant="light" onClick={onClick2020}>
                         2020
                     </ButtonOutline>
-                </Box>
+                </Stack>
             </VStack>
         </Box>
     )

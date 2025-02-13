@@ -67,30 +67,50 @@ const ProjectX = () => {
             )}
             {viewCurrent && (
                 <ProjectX2024
+                    onClickCurrent={clickCurrent}
                     onClick2023={click2023}
+                    onClick2022={click2022}
+                    onClick2021={click2021}
+                    onClick2020={click2020}
                     onClickLanding={clickLanding}
                 />
             )}
             {view2023 && (
                 <ProjectX2023
+                    onClick2023={click2023}
+                    onClick2022={click2022}
+                    onClick2021={click2021}
+                    onClick2020={click2020}
                     onClickCurrent={clickCurrent}
                     onClickLanding={clickLanding}
                 />
             )}
             {view2022 && (
                 <ProjectX2022
+                    onClick2023={click2023}
+                    onClick2022={click2022}
+                    onClick2021={click2021}
+                    onClick2020={click2020}
                     onClickCurrent={clickCurrent}
                     onClickLanding={clickLanding}
                 />
             )}
             {view2021 && (
                 <ProjectX2021
+                    onClick2023={click2023}
+                    onClick2022={click2022}
+                    onClick2021={click2021}
+                    onClick2020={click2020}
                     onClickCurrent={clickCurrent}
                     onClickLanding={clickLanding}
                 />
             )}
             {view2020 && (
                 <ProjectX2020
+                    onClick2023={click2023}
+                    onClick2022={click2022}
+                    onClick2021={click2021}
+                    onClick2020={click2020}
                     onClickCurrent={clickCurrent}
                     onClickLanding={clickLanding}
                 />

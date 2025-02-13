@@ -7,6 +7,8 @@ import {
     Image,
     Button,
     Heading,
+    Stack,
+    Wrap,
 } from '@chakra-ui/react'
 import gradient from '../static/assets/2020gradient.png'
 import { ButtonOutline } from './Button'
@@ -70,9 +72,17 @@ import human from '../static/assets/human.jpg'
 
 const ProjectX2022 = ({
     onClickCurrent,
+    onClick2023,
+    onClick2022,
+    onClick2021,
+    onClick2020,
     onClickLanding,
 }: {
     onClickCurrent: () => void
+    onClick2023: () => void
+    onClick2022: () => void
+    onClick2021: () => void
+    onClick2020: () => void
     onClickLanding: () => void
 }) => {
     return (
@@ -147,6 +157,34 @@ const ProjectX2022 = ({
                         $65,000
                     </Text>
                 </VStack>
+
+                <Stack
+                    direction={['column', 'row']}
+                    spacing={{ base: 2, md: 4 }}
+                    justify="left"
+                    align="center"
+                    flexWrap="wrap"
+                >
+                    <ButtonOutline variant="dark" onClick={onClickCurrent}>
+                        2024
+                    </ButtonOutline>
+                    <ButtonOutline variant="dark" onClick={onClick2023}>
+                        2023
+                    </ButtonOutline>
+                    <ButtonOutline variant="dark" onClick={onClick2022}>
+                        2022
+                    </ButtonOutline>
+                    <ButtonOutline variant="dark" onClick={onClick2021}>
+                        2021
+                    </ButtonOutline>
+                    <ButtonOutline variant="dark" onClick={onClick2020}>
+                        2020
+                    </ButtonOutline>
+                    <Box as="span" p={'5px'}></Box>
+                    <ButtonOutline variant="dark" onClick={onClickLanding}>
+                        Landing Page
+                    </ButtonOutline>
+                </Stack>
             </Box>
 
             {/* -- Info Blocks -- */}
@@ -242,8 +280,10 @@ const ProjectX2022 = ({
             </SimpleGrid>
 
             {/* -- Participating Teams -- */}
-            <Box p="20px">
-                <Text fontSize="40px">Participating Teams</Text>
+            <Box p="20px" boxShadow="md">
+                <Text fontSize="40px" mb="20px">
+                    Participating Teams
+                </Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
                     <Image src={mit} maxH="80px" />
                     <Image src={uoft} maxH="110px" />
@@ -275,7 +315,7 @@ const ProjectX2022 = ({
             </Box>
 
             {/* -- Our Partners -- */}
-            <Box p="20px">
+            <Box p="20px" boxShadow="md">
                 <Text fontSize="40px">Our Partners</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
                     <Image src={googleAI} maxH="130px" />
@@ -300,20 +340,15 @@ const ProjectX2022 = ({
                 </Flex>
             </Box>
 
-            <Box w="100%" maxH="70vh" position="relative">
-                <Image
-                    src={bluegray}
-                    alt="background"
-                    w="100%"
-                    maxH="70vh"
-                    objectFit="cover"
-                />
-            </Box>
-
-            <Box p={8} borderRadius="md" maxW="800px" mx="auto">
+            <Box
+                p={{ base: 4, md: 8 }}
+                borderRadius="md"
+                maxW="800px"
+                mx="auto"
+            >
                 {/* Solar Sponsors */}
                 <Text
-                    fontSize="2xl"
+                    fontSize="3xl"
                     fontWeight="bold"
                     textAlign="center"
                     mb={4}
@@ -321,19 +356,20 @@ const ProjectX2022 = ({
                     Solar Sponsors
                 </Text>
                 <VStack spacing={6}>
-                    <Box display="flex" justifyContent="center" gap={20}>
+                    <Wrap justify="center" spacing={{ base: 6, md: 20 }}>
                         <Image src={google} maxH="200px" />
                         <Image src={ibm} maxH="150px" />
-                    </Box>
-                    <Box display="flex" justifyContent="center" gap={20}>
+                    </Wrap>
+
+                    <Wrap justify="center" spacing={{ base: 6, md: 20 }}>
                         <Image src={moderna} maxH="100px" />
                         <Image src={altaml} maxH="150px" />
-                    </Box>
+                    </Wrap>
                 </VStack>
 
                 {/* Planetary Sponsors */}
                 <Text
-                    fontSize="2xl"
+                    fontSize="3xl"
                     fontWeight="bold"
                     textAlign="center"
                     mt={8}
@@ -341,14 +377,14 @@ const ProjectX2022 = ({
                 >
                     Planetary Sponsors
                 </Text>
-                <Box display="flex" justifyContent="center" gap={20}>
+                <Wrap justify="center" spacing={{ base: 6, md: 20 }}>
                     <Image src={accenture} maxH="100px" />
                     <Image src={nvidia} maxH="150px" />
-                </Box>
+                </Wrap>
 
                 {/* Lunar Sponsors */}
                 <Text
-                    fontSize="2xl"
+                    fontSize="3xl"
                     fontWeight="bold"
                     textAlign="center"
                     mt={8}
@@ -356,27 +392,27 @@ const ProjectX2022 = ({
                 >
                     Lunar Sponsors
                 </Text>
-                <Box display="flex" justifyContent="center" gap={20}>
+                <Wrap justify="center" spacing={{ base: 6, md: 20 }}>
                     <Image src={twentythreeandme} maxH="150px" />
                     <Image src={vector} maxH="150px" />
                     <Image src={deepmind} maxH="100px" />
-                </Box>
+                </Wrap>
             </Box>
 
             {/* -- Our Team-- */}
-            <Box p="20px">
+            <Box p="20px" boxShadow="md">
                 <Text fontSize="40px">Judging Panel</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
                     <Image src={team2021part1} maxH="1000px" />
                 </Flex>
             </Box>
 
-            <Box position="relative" bgColor="dark" p={0} m={0}>
+            <Box position="relative" bgColor="dark" p={0} m={0} boxShadow="md">
                 {/* Text Content – adds right padding on large screens so text does not go under the image */}
                 <Box
                     p={['20px', '20px', '40px']}
                     color="white"
-                    pr={['20px', '20px', '40%']} // 40% right padding on larger screens only
+                    pr={{ base: '20px', md: '40%' }}
                 >
                     <Text fontSize={['24px', '36px']} mb={8}>
                         TIMELINE
@@ -458,10 +494,11 @@ const ProjectX2022 = ({
 
                 {/* Image – absolutely positioned on large screens */}
                 <Box
-                    position={['static', 'static', 'absolute']} // static on small screens; absolute on larger screens
+                    display={{ base: 'none', md: 'block' }} // Hide image on smaller screens
+                    position={{ base: 'static', md: 'absolute' }}
                     top="0"
                     right="0"
-                    width="40%"
+                    width={{ base: '100%', md: '40%' }}
                     height="100%"
                     overflow="hidden"
                 >
@@ -476,7 +513,7 @@ const ProjectX2022 = ({
                 </Box>
             </Box>
             {/* -- Our Team-- */}
-            <Box p="20px">
+            <Box p="20px" boxShadow="md">
                 <Text fontSize="40px">Our Team</Text>
                 <Flex flexWrap="wrap" justifyContent="center" gap="40px">
                     <Image src={team2021part3} maxH="1000px" />

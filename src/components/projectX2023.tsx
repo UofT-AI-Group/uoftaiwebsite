@@ -1,4 +1,12 @@
-import { Box, VStack, Text, Flex, SimpleGrid, Image } from '@chakra-ui/react'
+import {
+    Box,
+    VStack,
+    Text,
+    Flex,
+    SimpleGrid,
+    Image,
+    Stack,
+} from '@chakra-ui/react'
 import gradient from '../static/assets/dark gradient.png'
 import { ButtonOutline } from './Button'
 import carnegie from '../static/assets/carnegie.png'
@@ -29,9 +37,17 @@ import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 
 const ProjectX2023 = ({
     onClickCurrent,
+    onClick2023,
+    onClick2022,
+    onClick2021,
+    onClick2020,
     onClickLanding,
 }: {
     onClickCurrent: () => void
+    onClick2023: () => void
+    onClick2022: () => void
+    onClick2021: () => void
+    onClick2020: () => void
     onClickLanding: () => void
 }) => {
     return (
@@ -110,15 +126,33 @@ const ProjectX2023 = ({
                         OTHER DETAILS
                     </Text>
 
-                    <Box>
+                    <Stack
+                        direction={['column', 'row']}
+                        spacing={{ base: 2, md: 4 }}
+                        justify="left"
+                        align="center"
+                        flexWrap="wrap"
+                    >
                         <ButtonOutline variant="light" onClick={onClickCurrent}>
                             2024
+                        </ButtonOutline>
+                        <ButtonOutline variant="light" onClick={onClick2023}>
+                            2023
+                        </ButtonOutline>
+                        <ButtonOutline variant="light" onClick={onClick2022}>
+                            2022
+                        </ButtonOutline>
+                        <ButtonOutline variant="light" onClick={onClick2021}>
+                            2021
+                        </ButtonOutline>
+                        <ButtonOutline variant="light" onClick={onClick2020}>
+                            2020
                         </ButtonOutline>
                         <Box as="span" p={'5px'}></Box>
                         <ButtonOutline variant="light" onClick={onClickLanding}>
                             Landing Page
                         </ButtonOutline>
-                    </Box>
+                    </Stack>
                 </VStack>
             </Box>
 
