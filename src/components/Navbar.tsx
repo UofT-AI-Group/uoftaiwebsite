@@ -29,6 +29,7 @@ const Links = [
     'ProjectX',
     'LearnAI',
     'Newsletter',
+    'AI Review',
 ]
 
 function get_link(link: string) {
@@ -42,6 +43,10 @@ function get_link(link: string) {
 
     if (link == 'Our Team') {
         return '/#meet-the-team'
+    }
+
+    if (link == 'AI Review') {
+        return 'https://torontoaireview.framer.website/'
     }
     return link.toLowerCase().replace(/\s/g, '')
 }
