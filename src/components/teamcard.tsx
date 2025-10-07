@@ -34,7 +34,13 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
                         h={['60px', '80px', '128px']}
                         w={['60px', '80px', '128px']}
                     >
-                        <Image src={image} borderRadius={'50%'} />
+                        <Image
+                            src={image}
+                            borderRadius={'50%'}
+                            width="100%"
+                            height="100%"
+                            objectFit="cover"
+                        />
                     </Box>
                     <VStack
                         mt={['10px', '15px', '20px']}

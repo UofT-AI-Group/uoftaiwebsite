@@ -11,6 +11,10 @@ import dev from '../static/assets/Dev-Shah.jpg'
 import ethan from '../static/assets/Ethan-Cheung.jpeg'
 import shreena from '../static/assets/shreena-badami.png'
 import harshit from '../static/assets/harshit-sahoney.png'
+import ansh from '../static/assets/Ansh_Agrawal.png'
+import natalie from '../static/assets/Natalie-Oulikhanian.png'
+import zoey from '../static/assets/Zoey-Xie.png'
+import hana from '../static/assets/Hana-Greenberg.png'
 import { Card, CardHeader, CardBody, Box, SimpleGrid } from '@chakra-ui/react'
 
 const MeetTheTeam: React.FC = () => {
@@ -45,6 +49,22 @@ const MeetTheTeam: React.FC = () => {
                     </Box>
                     <Box>
                         <TeamCard
+                            role="Co-Director of Partnerships"
+                            name="Ansh Agrawal"
+                            image={ansh}
+                            description="Ansh is a 4th year Computer Science student specializing in Artificial Intelligence. He's interested in startups and the future of deep learning, and hopes to one day build technology that makes a real difference. Outside of school, he enjoys travelling, watching movies, DJing, and checking out new restaurants."
+                        />
+                    </Box>
+                    <Box>
+                        <TeamCard
+                            role="Co-Director of Partnerships"
+                            name="Hana Greenberg"
+                            image={hana}
+                            description="Hi! My name is Hana and I'm a second year student studying Political Science, Applied Data Science, and Creative Writing. My AI interests include AI ethics, Large Language Models, and Digital Policy. As the Head of Publishing, I look forward to sharing stories and articles rooted in tech with you all :)"
+                        />
+                    </Box>
+                    <Box>
+                        <TeamCard
                             role="Partnerships"
                             name="Ethan Cheung"
                             image={ethan}
@@ -63,6 +83,16 @@ const MeetTheTeam: React.FC = () => {
                     </Box>
                     <Box>
                         <TeamCard
+                            role="Director of Conference X"
+                            name="Natalie Oulikhanian"
+                            image={natalie}
+                            description={
+                                "Hi, I'm Natalie, your director of ConferenceX 2026! I'm a third-year student studying Public Policy and Economics passionate about how innovation shapes society. I'm fascinated by the importance of applying concepts from the social sciences to AI, especially when designing mechanisms for AI alignment. Incredibly excited to make a conference that is as diverse in subjects, perspectives, and people as the field of AI right now! "
+                            }
+                        />
+                    </Box>
+                    <Box>
+                        <TeamCard
                             role="Project X"
                             name="Harshit Sahoney"
                             image={harshit}
@@ -75,6 +105,14 @@ const MeetTheTeam: React.FC = () => {
                             name="Shreena Badami"
                             image={shreena}
                             description="Shreena is a second-year Computer Science Specialist with a growing passion in data science and machine learning. Beyond that, she loves bollywood movies, dancing, travelling and reading."
+                        />
+                    </Box>
+                    <Box>
+                        <TeamCard
+                            role="Co-Director of Community"
+                            name="Zoey Xie"
+                            image={zoey}
+                            description="Hi! I’m Zoey, a 4th year CS spec. I’m love learning about the intersection of AI and other fields within and outside CS, like biology or cybersecurity!"
                         />
                     </Box>
                     <Box>
