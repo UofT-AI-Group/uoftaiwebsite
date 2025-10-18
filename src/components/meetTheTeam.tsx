@@ -8,6 +8,7 @@ import natalie from '../static/assets/Natalie-Oulikhanian.png'
 import zoey from '../static/assets/Zoey-Xie.png'
 import hana from '../static/assets/Hana-Greenberg.png'
 import brandon from '../static/assets/Tang_Brandon.jpg'
+import sherry from '../static/assets/Sherry-Wang.png'
 import { Card, CardHeader, CardBody, Box, SimpleGrid } from '@chakra-ui/react'
 
 const MeetTheTeam: React.FC = () => {
@@ -118,8 +119,8 @@ const MeetTheTeam: React.FC = () => {
                         <TeamCard
                             role="Finance"
                             name="Sherry Yuehua Wang"
-                            image={brandon}
-                            description="Need to fill in"
+                            image={sherry}
+                            description="Hey everyone! I’m Sherry, a second-year studying Mathematical Applications in Economics and Finance, with a minor in Computer Science. Lately I’ve been diving into data science and I’m interested about how AI is reshaping the world of finance. Outside of academics, I like eating candies and sleeping. Excited to be part of the team this year!"
                         />
                     </Box>
                     <Box>
