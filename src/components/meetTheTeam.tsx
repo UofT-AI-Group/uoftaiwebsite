@@ -9,6 +9,8 @@ import zoey from '../static/assets/Zoey-Xie.png'
 import hana from '../static/assets/Hana-Greenberg.png'
 import brandon from '../static/assets/Tang_Brandon.jpg'
 import sherry from '../static/assets/Sherry-Wang.png'
+import purav from '../static/assets/Purav-Gupta.png'
+import rui from '../static/assets/Rui-Weng.png'
 import { Card, CardHeader, CardBody, Box, SimpleGrid } from '@chakra-ui/react'
 
 const MeetTheTeam: React.FC = () => {
@@ -79,8 +81,8 @@ const MeetTheTeam: React.FC = () => {
                         <TeamCard
                             role="Technical Development"
                             name="Purav Gupta"
-                            image={brandon}
-                            description="Need to fill in"
+                            image={purav}
+                            description="Purav is a third-year student at the University of Toronto, specializing in Bioinformatics and Compuational Biology, along with Molecular Genetics and Computer Science. He is very passionate about the intersection of biology and machine learning and outside of research, you can find him buried in books or out on a run!"
                         />
                     </Box>
                     <Box>
@@ -135,8 +137,8 @@ const MeetTheTeam: React.FC = () => {
                         <TeamCard
                             role="Community"
                             name="Rui Weng"
-                            image={brandon}
-                            description="Need to fill in"
+                            image={rui}
+                            description="Hi everyone! My name is Rui, I’m a second-year CS + Math student at UofT, and I’m super excited to be Co-director of Community Engagement this year! Fun fact: I like playing badminton, and I have a pet bunny 🏸🐰 "
                         />
                     </Box>
                 </SimpleGrid>
