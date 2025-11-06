@@ -27,14 +27,14 @@ const MeetTheTeam: React.FC = () => {
                     mr={'auto'}
                     ml={'auto'}
                 >
-                    <Box>
+                    {/* <Box>
                         <TeamCard
                             role="Co-President"
                             name="Sonia Vaidya"
                             image={sonia}
                             description="Need to fill in"
                         />
-                    </Box>
+                    </Box> */}
                     <Box>
                         <TeamCard
                             role="Co-President"
@@ -61,22 +61,22 @@ const MeetTheTeam: React.FC = () => {
                             description="Ansh is a 4th year Computer Science student specializing in Artificial Intelligence. He's interested in startups and the future of deep learning, and hopes to one day build technology that makes a real difference. Outside of school, he enjoys travelling, watching movies, DJing, and checking out new restaurants."
                         />
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <TeamCard
                             role="Partnerships"
                             name="Georgia Goldsworthy"
                             image={brandon}
                             description="Need to fill in"
                         />
-                    </Box>
-                    <Box>
+                    </Box> */}
+                    {/* <Box>
                         <TeamCard
                             role="Campus Strategy"
                             name="James Han"
                             image={brandon}
                             description={'Need to fill in'}
                         />
-                    </Box>
+                    </Box> */}
                     <Box>
                         <TeamCard
                             role="Technical Development"
@@ -85,14 +85,14 @@ const MeetTheTeam: React.FC = () => {
                             description="Purav is a third-year student at the University of Toronto, specializing in Bioinformatics and Compuational Biology, along with Molecular Genetics and Computer Science. He is very passionate about the intersection of biology and machine learning and outside of research, you can find him buried in books or out on a run!"
                         />
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <TeamCard
                             role="Technical Development"
                             name="TBD"
                             image={brandon}
                             description="Need to fill in"
                         />
-                    </Box>
+                    </Box> */}
                     <Box>
                         <TeamCard
                             role="Publishing"
@@ -101,22 +101,22 @@ const MeetTheTeam: React.FC = () => {
                             description="Hi! My name is Hana and I'm a second year student studying Political Science, Applied Data Science, and Creative Writing. My AI interests include AI ethics, Large Language Models, and Digital Policy. As the Head of Publishing, I look forward to sharing stories and articles rooted in tech with you all :)"
                         />
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <TeamCard
                             role="Venture Strategy"
                             name="TBD"
                             image={brandon}
                             description="Need to fill in"
                         />
-                    </Box>
-                    <Box>
+                    </Box> */}
+                    {/* <Box>
                         <TeamCard
                             role="Marketing"
                             name="Caitlyn Mae Hundey"
                             image={brandon}
                             description="Need to fill in"
                         />
-                    </Box>
+                    </Box> */}
                     <Box>
                         <TeamCard
                             role="Finance"
