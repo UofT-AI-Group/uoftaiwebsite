@@ -35,14 +35,14 @@ const MeetTheTeam: React.FC = () => {
                             description="Need to fill in"
                         />
                     </Box> */}
-                    <Box>
+                    {/* <Box>
                         <TeamCard
                             role="Co-President"
                             name="Dev Shah"
                             image={dev}
                             description="Dev is a 3rd year Computer Science Specialist with a minor in Math with a passion for Machine Learning and specifically what the future of ML holds in the future of healthcare. Beyond the time I spend learning about ML, I love writing, playing soccer, reading, and going on random rabbitholes."
                         />
-                    </Box>
+                    </Box> */}
                     <Box>
                         <TeamCard
                             role="Conference X"
