@@ -29,7 +29,7 @@ const Links = [
     'ProjectX',
     'LearnAI',
     'Newsletter',
-    'AI Review',
+    'AI REVIEW',
 ]
 
 function get_link(link: string) {
