@@ -11,6 +11,7 @@ import brandon from '../static/assets/Tang_Brandon.jpg'
 import sherry from '../static/assets/Sherry-Wang.png'
 import purav from '../static/assets/Purav-Gupta.png'
 import rui from '../static/assets/Rui-Weng.png'
+import caitlyn from '../static/assets/Caitlyn-Hundey.png'
 import { Card, CardHeader, CardBody, Box, SimpleGrid } from '@chakra-ui/react'
 
 const MeetTheTeam: React.FC = () => {
@@ -109,14 +110,14 @@ const MeetTheTeam: React.FC = () => {
                             description="Need to fill in"
                         />
                     </Box> */}
-                    {/* <Box>
+                    <Box>
                         <TeamCard
                             role="Marketing"
-                            name="Caitlyn Mae Hundey"
-                            image={brandon}
-                            description="Need to fill in"
+                            name="Caitlyn Hundey"
+                            image={caitlyn}
+                            description="I'm a 4th year Bachelor of Information student at the University of Toronto. My interests lie in the intersection of design and human-computer iteraction. In my freetime, I bike ride, read, and nap with my cat!"
                         />
-                    </Box> */}
+                    </Box>
                     <Box>
                         <TeamCard
                             role="Finance"
