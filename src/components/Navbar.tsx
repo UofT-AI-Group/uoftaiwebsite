@@ -27,7 +27,7 @@ const Links = [
     'Our Team',
     'ConferenceX',
     'ProjectX',
-    'LearnAI',
+    // 'LearnAI',
     'Newsletter',
     'AI Review',
 ]
