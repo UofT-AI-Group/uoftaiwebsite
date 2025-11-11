@@ -35,9 +35,9 @@ const Footer: React.FC = () => {
                             <a href="/projectx">ProjectX</a>
                         </div>
 
-                        <div className="footer-link">
+                        {/* <div className="footer-link">
                             <a href="/learnai">Learn AI</a>
-                        </div>
+                        </div> */}
 
                         <div className="footer-link">
                             <a href="/newsletter">Newsletter</a>
