@@ -1,8 +1,8 @@
 import React from 'react'
 import TeamCard from './teamcard'
 import '../static/styles/teamcard.css'
-import sonia from '../static/assets/Sonia_Vaidya.jpg'
-import dev from '../static/assets/Dev-Shah.jpg'
+import sonia from '../static/assets/Sonia_Vaidya_1.jpg'
+import dev from '../static/assets/Dev_Shah.png'
 import ansh from '../static/assets/Ansh_Agrawal.png'
 import natalie from '../static/assets/Natalie-Oulikhanian.png'
 import zoey from '../static/assets/Zoey-Xie.png'
@@ -28,22 +28,22 @@ const MeetTheTeam: React.FC = () => {
                     mr={'auto'}
                     ml={'auto'}
                 >
-                    {/* <Box>
+                    <Box>
                         <TeamCard
                             role="Co-President"
                             name="Sonia Vaidya"
                             image={sonia}
-                            description="Need to fill in"
+                            description="I’m Sonia Vaidya, a third-year Computer Science specialist student at the University of Toronto. I work in the Social AI Research Group at UofT, where I use reinforcement learning to study how models of artificial intelligence can help us reason about the human mind, social dynamics, and collective behaviour! I’m curious about how ML and cognition intersect, and how behaviour emerges at scale. Outside of research and being Co-President of UofT AI, I love dancing and doing photography."
                         />
-                    </Box> */}
-                    {/* <Box>
+                    </Box>
+                    <Box>
                         <TeamCard
                             role="Co-President"
                             name="Dev Shah"
                             image={dev}
-                            description="Dev is a 3rd year Computer Science Specialist with a minor in Math with a passion for Machine Learning and specifically what the future of ML holds in the future of healthcare. Beyond the time I spend learning about ML, I love writing, playing soccer, reading, and going on random rabbitholes."
+                            description="I’m Dev Shah, a fourth-year Computer Science student at the University of Toronto specializing in machine learning, where I split my time between research on foundation models, leading UofT AI as Co-President, and building real-world systems at companies like Shopify and Fallyx. Outside of school and work, I love exploring Toronto, writing long seasonal reflections, mentoring builders, and getting lost in anything that blends tech, design, and storytelling."
                         />
-                    </Box> */}
+                    </Box>
                     <Box>
                         <TeamCard
                             role="Conference X"
