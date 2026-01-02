@@ -1,4 +1,3 @@
-import ConferenceYearTabs from '../components/ConferenceYearTabs'
 import {
     Box,
     Container,
@@ -62,17 +61,7 @@ import '../static/styles/conferenceX.css'
 
 const ConferenceX = () => {
     return (
-        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
-            <Box
-                bg="white"
-                py={2}
-                position="relative"
-                zIndex={500}
-                style={{ pointerEvents: 'auto' }}
-            >
-                <ConferenceYearTabs />
-            </Box>
-
+        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'}>
             <Box
                 bgImage={gradient}
                 bgPosition={'50%'}
@@ -80,16 +69,10 @@ const ConferenceX = () => {
                 bgRepeat={'no-repeat'}
                 height={'90vh'}
                 width={'100%'}
-                mt={0}
+                mt={28}
                 pt={[40, 64]}
-                pointerEvents="none"
             >
-                <VStack
-                    alignItems={'center'}
-                    spacing={5}
-                    textAlign="center"
-                    pointerEvents="auto"
-                >
+                <VStack alignItems={'center'} spacing={5} textAlign="center">
                     <ConferenceXTitle />
                     <Text
                         fontWeight={'regular'}
