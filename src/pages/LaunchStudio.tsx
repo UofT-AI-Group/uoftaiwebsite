@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import gradient from '../static/assets/dark gradient.png'
 import { LaunchStudioTitle } from '../components/Typography'
+import Bubble from '../components/bubble'
 
 const profilingRows = [
     {
@@ -118,7 +119,15 @@ const supportCards = [
 
 const LaunchStudio = () => {
     return (
-        <Box fontFamily={'Tabular, sans-serif'} bg={'dark'} color={'light'}>
+        <Box
+            fontFamily={'Tabular, sans-serif'}
+            bg={'white'}
+            color={'dark'}
+            position={'relative'}
+            overflow={'hidden'}
+        >
+            <Bubble speed="12" size="28vw" top="-14vw" left="-12vw" />
+            <Bubble speed="18" size="18vw" top="35vh" left="82vw" />
             <Box
                 bgImage={gradient}
                 bgPosition={'50%'}
@@ -143,13 +152,13 @@ const LaunchStudio = () => {
                 </Container>
             </Box>
 
-            <Container maxW={'6xl'} py={[12, 20]}>
-                <VStack alignItems={'flex-start'} spacing={[10, 14]}>
+            <Box bg={'white'} py={[12, 16]}>
+                <Container maxW={'6xl'}>
                     <VStack alignItems={'flex-start'} spacing={4}>
                         <Text
                             fontSize={['15px', '18px']}
                             maxW={'900px'}
-                            color={'rgba(255,255,255,0.85)'}
+                            color={'gray.700'}
                         >
                             Launch Studio identifies and accelerates the most
                             promising student-led AI projects at the University
@@ -161,250 +170,306 @@ const LaunchStudio = () => {
                         <Text
                             fontSize={['15px', '18px']}
                             maxW={'900px'}
-                            color={'rgba(255,255,255,0.85)'}
+                            color={'gray.700'}
                         >
                             Your project becomes a UofT AI–backed project:
                             ambitious, technically sharp, and built with
                             real-world impact in mind.
                         </Text>
                     </VStack>
+                </Container>
+            </Box>
 
-                    <Box w={'full'}>
-                        <Text
-                            fontSize={['18px', '24px']}
-                            mb={3}
-                            color={'light'}
-                        >
-                            What makes Launch Studio different
-                        </Text>
-                        <SimpleGrid columns={[1, 3]} spacing={[4, 6]}>
-                            <Box
-                                bg={'rgba(255,255,255,0.06)'}
-                                p={6}
-                                borderRadius={'xl'}
-                                border={'1px solid rgba(255,255,255,0.12)'}
+            <Box
+                bgImage={gradient}
+                bgSize={'cover'}
+                bgRepeat={'no-repeat'}
+                py={[12, 16]}
+                color={'light'}
+            >
+                <Container maxW={'6xl'}>
+                    <VStack alignItems={'flex-start'} spacing={[8, 10]}>
+                        <Box w={'full'}>
+                            <Text
+                                fontSize={['18px', '24px']}
+                                mb={3}
+                                color={'light'}
                             >
-                                <Text fontWeight={'semibold'} fontSize={'lg'}>
-                                    Selective, not one-size-fits-all
-                                </Text>
-                                <Text mt={3} color={'rgba(255,255,255,0.78)'}>
-                                    We back a small number of technically
-                                    ambitious, high-impact projects — the ones
-                                    that should break through.
-                                </Text>
-                            </Box>
-                            <Box
-                                bg={'rgba(255,255,255,0.06)'}
-                                p={6}
-                                borderRadius={'xl'}
-                                border={'1px solid rgba(255,255,255,0.12)'}
-                            >
-                                <Text fontWeight={'semibold'} fontSize={'lg'}>
-                                    Full-stack support
-                                </Text>
-                                <Text mt={3} color={'rgba(255,255,255,0.78)'}>
-                                    Compute, access to real markets, mentors,
-                                    and a network that opens doors — tailored to
-                                    what each builder actually needs.
-                                </Text>
-                            </Box>
-                            <Box
-                                bg={'rgba(255,255,255,0.06)'}
-                                p={6}
-                                borderRadius={'xl'}
-                                border={'1px solid rgba(255,255,255,0.12)'}
-                            >
-                                <Text fontWeight={'semibold'} fontSize={'lg'}>
-                                    Built to ship
-                                </Text>
-                                <Text mt={3} color={'rgba(255,255,255,0.78)'}>
-                                    Projects end on stage in front of industry,
-                                    researchers, investors, and Toronto’s AI
-                                    community — a fast-paced, hands-on demo
-                                    night.
-                                </Text>
-                            </Box>
-                        </SimpleGrid>
-                    </Box>
-
-                    <Box w={'full'}>
-                        <Text
-                            fontSize={['18px', '24px']}
-                            mb={3}
-                            color={'light'}
-                        >
-                            What you can tap into
-                        </Text>
-                        <SimpleGrid columns={[1, 2, 3]} spacing={[4, 6]}>
-                            {supportCards.map((card) => (
+                                What makes Launch Studio different
+                            </Text>
+                            <SimpleGrid columns={[1, 3]} spacing={[4, 6]}>
                                 <Box
-                                    key={card.title}
-                                    bg={'rgba(255,255,255,0.04)'}
-                                    p={5}
+                                    bg={'rgba(255,255,255,0.08)'}
+                                    p={6}
                                     borderRadius={'xl'}
-                                    border={'1px solid rgba(255,255,255,0.12)'}
+                                    border={'1px solid rgba(255,255,255,0.15)'}
                                 >
-                                    <Text fontWeight={'semibold'}>
-                                        {card.title}
-                                    </Text>
                                     <Text
-                                        mt={2}
-                                        color={'rgba(255,255,255,0.78)'}
+                                        fontWeight={'semibold'}
+                                        fontSize={'lg'}
                                     >
-                                        {card.body}
+                                        Selective, not one-size-fits-all
                                     </Text>
-                                </Box>
-                            ))}
-                        </SimpleGrid>
-                    </Box>
-
-                    <Box w={'full'}>
-                        <Text
-                            fontSize={['18px', '24px']}
-                            mb={3}
-                            color={'light'}
-                        >
-                            How Launch Studio runs
-                        </Text>
-                        <Stack spacing={[8, 10]}>
-                            {steps.map((step) => (
-                                <Box
-                                    key={step.title}
-                                    bg={'rgba(255,255,255,0.04)'}
-                                    p={[5, 7]}
-                                    borderRadius={'2xl'}
-                                    boxShadow={'md'}
-                                    border={'1px solid rgba(255,255,255,0.12)'}
-                                >
-                                    <Stack
-                                        direction={['column', 'row']}
-                                        justifyContent={'space-between'}
-                                        alignItems={['flex-start', 'center']}
-                                        spacing={4}
-                                        flexWrap={'wrap'}
-                                    >
-                                        <Heading fontSize={['20px', '24px']}>
-                                            {step.title}
-                                        </Heading>
-                                        <Tag
-                                            colorScheme="purple"
-                                            variant="subtle"
-                                        >
-                                            {step.goal}
-                                        </Tag>
-                                    </Stack>
                                     <Text
                                         mt={3}
-                                        color={'rgba(255,255,255,0.85)'}
+                                        color={'rgba(255,255,255,0.86)'}
                                     >
-                                        {step.body}
+                                        We back a small number of technically
+                                        ambitious, high-impact projects — the
+                                        ones that should break through.
                                     </Text>
-                                    {step.highlights && (
-                                        <SimpleGrid
-                                            columns={[1, 3]}
-                                            spacing={[4, 6]}
-                                            mt={5}
+                                </Box>
+                                <Box
+                                    bg={'rgba(255,255,255,0.08)'}
+                                    p={6}
+                                    borderRadius={'xl'}
+                                    border={'1px solid rgba(255,255,255,0.15)'}
+                                >
+                                    <Text
+                                        fontWeight={'semibold'}
+                                        fontSize={'lg'}
+                                    >
+                                        Full-stack support
+                                    </Text>
+                                    <Text
+                                        mt={3}
+                                        color={'rgba(255,255,255,0.86)'}
+                                    >
+                                        Compute, access to real markets,
+                                        mentors, and a network that opens doors
+                                        — tailored to what each builder actually
+                                        needs.
+                                    </Text>
+                                </Box>
+                                <Box
+                                    bg={'rgba(255,255,255,0.08)'}
+                                    p={6}
+                                    borderRadius={'xl'}
+                                    border={'1px solid rgba(255,255,255,0.15)'}
+                                >
+                                    <Text
+                                        fontWeight={'semibold'}
+                                        fontSize={'lg'}
+                                    >
+                                        Built to ship
+                                    </Text>
+                                    <Text
+                                        mt={3}
+                                        color={'rgba(255,255,255,0.86)'}
+                                    >
+                                        Projects end on stage in front of
+                                        industry, researchers, investors, and
+                                        Toronto’s AI community — a fast-paced,
+                                        hands-on demo night.
+                                    </Text>
+                                </Box>
+                            </SimpleGrid>
+                        </Box>
+                    </VStack>
+                </Container>
+            </Box>
+
+            <Box bg={'white'} py={[12, 16]}>
+                <Container maxW={'6xl'}>
+                    <VStack alignItems={'flex-start'} spacing={[8, 10]}>
+                        <Box w={'full'}>
+                            <Text
+                                fontSize={['18px', '24px']}
+                                mb={3}
+                                color={'dark'}
+                            >
+                                What you can tap into
+                            </Text>
+                            <SimpleGrid columns={[1, 2, 3]} spacing={[4, 6]}>
+                                {supportCards.map((card) => (
+                                    <Box
+                                        key={card.title}
+                                        bg={'white'}
+                                        p={5}
+                                        borderRadius={'xl'}
+                                        border={'1px solid #e2e8f0'}
+                                        boxShadow={'sm'}
+                                    >
+                                        <Text fontWeight={'semibold'}>
+                                            {card.title}
+                                        </Text>
+                                        <Text mt={2} color={'gray.700'}>
+                                            {card.body}
+                                        </Text>
+                                    </Box>
+                                ))}
+                            </SimpleGrid>
+                        </Box>
+                    </VStack>
+                </Container>
+            </Box>
+
+            <Box
+                bgImage={gradient}
+                bgSize={'cover'}
+                bgRepeat={'no-repeat'}
+                py={[12, 16]}
+                color={'light'}
+            >
+                <Container maxW={'6xl'}>
+                    <VStack alignItems={'flex-start'} spacing={[8, 10]}>
+                        <Box w={'full'}>
+                            <Text
+                                fontSize={['18px', '24px']}
+                                mb={3}
+                                color={'light'}
+                            >
+                                How Launch Studio runs
+                            </Text>
+                            <Stack spacing={[8, 10]}>
+                                {steps.map((step) => (
+                                    <Box
+                                        key={step.title}
+                                        bg={'rgba(255,255,255,0.08)'}
+                                        p={[5, 7]}
+                                        borderRadius={'2xl'}
+                                        boxShadow={'md'}
+                                        border={
+                                            '1px solid rgba(255,255,255,0.15)'
+                                        }
+                                    >
+                                        <Stack
+                                            direction={['column', 'row']}
+                                            justifyContent={'space-between'}
+                                            alignItems={[
+                                                'flex-start',
+                                                'center',
+                                            ]}
+                                            spacing={4}
+                                            flexWrap={'wrap'}
                                         >
-                                            {step.highlights.map(
-                                                ({
-                                                    dimension,
-                                                    examples,
-                                                    why,
-                                                }) => (
-                                                    <Box
-                                                        key={dimension}
-                                                        p={4}
-                                                        borderRadius={'lg'}
-                                                        border={
-                                                            '1px solid rgba(255,255,255,0.12)'
-                                                        }
-                                                        bg={
-                                                            'rgba(255,255,255,0.04)'
+                                            <Heading
+                                                fontSize={['20px', '24px']}
+                                            >
+                                                {step.title}
+                                            </Heading>
+                                            <Tag
+                                                colorScheme="purple"
+                                                variant="subtle"
+                                            >
+                                                {step.goal}
+                                            </Tag>
+                                        </Stack>
+                                        <Text
+                                            mt={3}
+                                            color={'rgba(255,255,255,0.9)'}
+                                        >
+                                            {step.body}
+                                        </Text>
+                                        {step.highlights && (
+                                            <SimpleGrid
+                                                columns={[1, 3]}
+                                                spacing={[4, 6]}
+                                                mt={5}
+                                            >
+                                                {step.highlights.map(
+                                                    ({
+                                                        dimension,
+                                                        examples,
+                                                        why,
+                                                    }) => (
+                                                        <Box
+                                                            key={dimension}
+                                                            p={4}
+                                                            borderRadius={'lg'}
+                                                            border={
+                                                                '1px solid rgba(255,255,255,0.12)'
+                                                            }
+                                                            bg={
+                                                                'rgba(255,255,255,0.04)'
+                                                            }
+                                                        >
+                                                            <Text
+                                                                fontWeight={
+                                                                    'semibold'
+                                                                }
+                                                            >
+                                                                {dimension}
+                                                            </Text>
+                                                            <Text
+                                                                mt={2}
+                                                                color={
+                                                                    'rgba(255,255,255,0.78)'
+                                                                }
+                                                            >
+                                                                {examples}
+                                                            </Text>
+                                                            <Text
+                                                                mt={2}
+                                                                fontSize={'sm'}
+                                                                color={
+                                                                    'rgba(255,255,255,0.65)'
+                                                                }
+                                                            >
+                                                                {why}
+                                                            </Text>
+                                                        </Box>
+                                                    ),
+                                                )}
+                                            </SimpleGrid>
+                                        )}
+                                        {step.bullets && (
+                                            <VStack
+                                                alignItems={'flex-start'}
+                                                spacing={2}
+                                                mt={4}
+                                            >
+                                                {step.bullets.map((item) => (
+                                                    <Text
+                                                        key={item}
+                                                        color={
+                                                            'rgba(255,255,255,0.85)'
                                                         }
                                                     >
-                                                        <Text
-                                                            fontWeight={
-                                                                'semibold'
-                                                            }
-                                                        >
-                                                            {dimension}
-                                                        </Text>
-                                                        <Text
-                                                            mt={2}
-                                                            color={
-                                                                'rgba(255,255,255,0.78)'
-                                                            }
-                                                        >
-                                                            {examples}
-                                                        </Text>
-                                                        <Text
-                                                            mt={2}
-                                                            fontSize={'sm'}
-                                                            color={
-                                                                'rgba(255,255,255,0.65)'
-                                                            }
-                                                        >
-                                                            {why}
-                                                        </Text>
-                                                    </Box>
-                                                ),
-                                            )}
-                                        </SimpleGrid>
-                                    )}
-                                    {step.bullets && (
-                                        <VStack
-                                            alignItems={'flex-start'}
-                                            spacing={2}
-                                            mt={4}
-                                        >
-                                            {step.bullets.map((item) => (
+                                                        • {item}
+                                                    </Text>
+                                                ))}
+                                            </VStack>
+                                        )}
+                                        {step.placeholder && (
+                                            <Box
+                                                mt={5}
+                                                minH={'180px'}
+                                                borderRadius={'xl'}
+                                                border={
+                                                    '2px dashed rgba(255,255,255,0.3)'
+                                                }
+                                                bg={'rgba(255,255,255,0.03)'}
+                                                display={'flex'}
+                                                alignItems={'center'}
+                                                justifyContent={'center'}
+                                                textAlign={'center'}
+                                                px={4}
+                                            >
                                                 <Text
-                                                    key={item}
                                                     color={
-                                                        'rgba(255,255,255,0.78)'
+                                                        'rgba(255,255,255,0.6)'
                                                     }
                                                 >
-                                                    • {item}
+                                                    {step.placeholder}
                                                 </Text>
-                                            ))}
-                                        </VStack>
-                                    )}
-                                    {step.placeholder && (
-                                        <Box
-                                            mt={5}
-                                            minH={'180px'}
-                                            borderRadius={'xl'}
-                                            border={
-                                                '2px dashed rgba(255,255,255,0.3)'
-                                            }
-                                            bg={'rgba(255,255,255,0.03)'}
-                                            display={'flex'}
-                                            alignItems={'center'}
-                                            justifyContent={'center'}
-                                            textAlign={'center'}
-                                            px={4}
-                                        >
+                                            </Box>
+                                        )}
+                                        {step.footer && (
                                             <Text
-                                                color={'rgba(255,255,255,0.6)'}
+                                                mt={4}
+                                                color={'rgba(255,255,255,0.85)'}
                                             >
-                                                {step.placeholder}
+                                                {step.footer}
                                             </Text>
-                                        </Box>
-                                    )}
-                                    {step.footer && (
-                                        <Text
-                                            mt={4}
-                                            color={'rgba(255,255,255,0.78)'}
-                                        >
-                                            {step.footer}
-                                        </Text>
-                                    )}
-                                </Box>
-                            ))}
-                        </Stack>
-                    </Box>
-                </VStack>
-            </Container>
+                                        )}
+                                    </Box>
+                                ))}
+                            </Stack>
+                        </Box>
+                    </VStack>
+                </Container>
+            </Box>
         </Box>
     )
 }
