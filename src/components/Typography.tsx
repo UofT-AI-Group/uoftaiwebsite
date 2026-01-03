@@ -90,3 +90,26 @@ export const ConferenceXTitle = () => {
         </Heading>
     )
 }
+
+export const LaunchStudioTitle = () => {
+    return (
+        <Heading
+            fontWeight={'medium'}
+            fontSize={[30, 48]}
+            fontFamily={'Tabular, sans-serif'}
+            display={'inline'}
+            textAlign={'center'}
+        >
+            <Text as={'span'} color={'light'}>
+                Welcome To:
+            </Text>
+            <Text as={'span'} color={'brand'}>
+                <Typewriter
+                    onInit={(typewriter) => {
+                        typewriter.typeString('Launch Studio').start()
+                    }}
+                />
+            </Text>
+        </Heading>
+    )
+}

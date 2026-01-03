@@ -9,6 +9,8 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react'
+import gradient from '../static/assets/dark gradient.png'
+import { LaunchStudioTitle } from '../components/Typography'
 
 const profilingRows = [
     {
@@ -116,115 +118,106 @@ const supportCards = [
 
 const LaunchStudio = () => {
     return (
-        <Box fontFamily={'Tabular, sans-serif'} bg={'white'}>
-            <Box bg={'dark'} color={'light'} py={[16, 24]}>
+        <Box fontFamily={'Tabular, sans-serif'} bg={'dark'} color={'light'}>
+            <Box
+                bgImage={gradient}
+                bgPosition={'50%'}
+                bgSize={'cover'}
+                bgRepeat={'no-repeat'}
+                height={'90vh'}
+                width={'100%'}
+                pt={[40, 64]}
+                display={'flex'}
+                alignItems={'center'}
+            >
                 <Container maxW={'6xl'}>
-                    <Flex
-                        direction={['column', 'row']}
-                        alignItems={['flex-start', 'center']}
-                        gap={[10, 14]}
+                    <VStack
+                        alignItems={'center'}
+                        spacing={6}
+                        textAlign="center"
+                        justifyContent="center"
+                        minH={'50vh'}
                     >
-                        <VStack alignItems={'flex-start'} spacing={4} flex={1}>
-                            <Tag
-                                size={'lg'}
-                                colorScheme="yellow"
-                                bg={'yellow'}
-                                color={'black'}
-                            >
-                                Launch Studio
-                            </Tag>
-                            <Heading
-                                fontSize={['32px', '44px']}
-                                lineHeight={1.1}
-                                maxW={'760px'}
-                            >
-                                Accelerating the right AI projects from UofT
-                            </Heading>
-                            <Text fontSize={['15px', '18px']} maxW={'760px'}>
-                                Launch Studio identifies and accelerates the
-                                most promising student-led AI projects at the
-                                University of Toronto. We put the full weight of
-                                UofT AI — our network, resources, mentors, and
-                                more — behind a small number of projects with
-                                the potential to shape the future.
-                            </Text>
-                            <Text fontSize={['15px', '18px']} maxW={'760px'}>
-                                Your project becomes a UofT AI–backed project:
-                                ambitious, technically sharp, and built with
-                                real-world impact in mind.
-                            </Text>
-                        </VStack>
-                        <Box
-                            flex={1}
-                            minH={'220px'}
-                            borderRadius={'xl'}
-                            border={'2px dashed rgba(255,255,255,0.35)'}
-                            bg={'rgba(255,255,255,0.08)'}
-                            display={'flex'}
-                            alignItems={'center'}
-                            justifyContent={'center'}
-                            textAlign={'center'}
-                            px={6}
-                        >
-                            <Text fontSize={['15px', '18px']} color={'light'}>
-                                [Hero image placeholder — add Launch Studio
-                                visual]
-                            </Text>
-                        </Box>
-                    </Flex>
+                        <LaunchStudioTitle />
+                    </VStack>
                 </Container>
             </Box>
 
             <Container maxW={'6xl'} py={[12, 20]}>
                 <VStack alignItems={'flex-start'} spacing={[10, 14]}>
+                    <VStack alignItems={'flex-start'} spacing={4}>
+                        <Text
+                            fontSize={['15px', '18px']}
+                            maxW={'900px'}
+                            color={'rgba(255,255,255,0.85)'}
+                        >
+                            Launch Studio identifies and accelerates the most
+                            promising student-led AI projects at the University
+                            of Toronto. We put the full weight of UofT AI — our
+                            network, resources, mentors, and more — behind a
+                            small number of projects with the potential to shape
+                            the future.
+                        </Text>
+                        <Text
+                            fontSize={['15px', '18px']}
+                            maxW={'900px'}
+                            color={'rgba(255,255,255,0.85)'}
+                        >
+                            Your project becomes a UofT AI–backed project:
+                            ambitious, technically sharp, and built with
+                            real-world impact in mind.
+                        </Text>
+                    </VStack>
+
                     <Box w={'full'}>
-                        <Heading fontSize={['26px', '34px']} mb={3}>
+                        <Text
+                            fontSize={['18px', '24px']}
+                            mb={3}
+                            color={'light'}
+                        >
                             What makes Launch Studio different
-                        </Heading>
+                        </Text>
                         <SimpleGrid columns={[1, 3]} spacing={[4, 6]}>
                             <Box
-                                bg={'gray.50'}
+                                bg={'rgba(255,255,255,0.06)'}
                                 p={6}
                                 borderRadius={'xl'}
-                                border={'1px solid'}
-                                borderColor={'gray.100'}
+                                border={'1px solid rgba(255,255,255,0.12)'}
                             >
                                 <Text fontWeight={'semibold'} fontSize={'lg'}>
                                     Selective, not one-size-fits-all
                                 </Text>
-                                <Text mt={3} color={'gray.700'}>
+                                <Text mt={3} color={'rgba(255,255,255,0.78)'}>
                                     We back a small number of technically
                                     ambitious, high-impact projects — the ones
                                     that should break through.
                                 </Text>
                             </Box>
                             <Box
-                                bg={'gray.50'}
+                                bg={'rgba(255,255,255,0.06)'}
                                 p={6}
                                 borderRadius={'xl'}
-                                border={'1px solid'}
-                                borderColor={'gray.100'}
+                                border={'1px solid rgba(255,255,255,0.12)'}
                             >
                                 <Text fontWeight={'semibold'} fontSize={'lg'}>
                                     Full-stack support
                                 </Text>
-                                <Text mt={3} color={'gray.700'}>
+                                <Text mt={3} color={'rgba(255,255,255,0.78)'}>
                                     Compute, access to real markets, mentors,
                                     and a network that opens doors — tailored to
                                     what each builder actually needs.
                                 </Text>
                             </Box>
                             <Box
-                                bg={'gray.50'}
+                                bg={'rgba(255,255,255,0.06)'}
                                 p={6}
                                 borderRadius={'xl'}
-                                border={'1px solid'}
-                                borderColor={'gray.100'}
+                                border={'1px solid rgba(255,255,255,0.12)'}
                             >
                                 <Text fontWeight={'semibold'} fontSize={'lg'}>
                                     Built to ship
                                 </Text>
-                                <Text mt={3} color={'gray.700'}>
+                                <Text mt={3} color={'rgba(255,255,255,0.78)'}>
                                     Projects end on stage in front of industry,
                                     researchers, investors, and Toronto’s AI
                                     community — a fast-paced, hands-on demo
@@ -235,24 +228,29 @@ const LaunchStudio = () => {
                     </Box>
 
                     <Box w={'full'}>
-                        <Heading fontSize={['26px', '34px']} mb={3}>
+                        <Text
+                            fontSize={['18px', '24px']}
+                            mb={3}
+                            color={'light'}
+                        >
                             What you can tap into
-                        </Heading>
+                        </Text>
                         <SimpleGrid columns={[1, 2, 3]} spacing={[4, 6]}>
                             {supportCards.map((card) => (
                                 <Box
                                     key={card.title}
-                                    bg={'white'}
+                                    bg={'rgba(255,255,255,0.04)'}
                                     p={5}
                                     borderRadius={'xl'}
-                                    border={'1px solid'}
-                                    borderColor={'gray.100'}
-                                    boxShadow={'sm'}
+                                    border={'1px solid rgba(255,255,255,0.12)'}
                                 >
                                     <Text fontWeight={'semibold'}>
                                         {card.title}
                                     </Text>
-                                    <Text mt={2} color={'gray.700'}>
+                                    <Text
+                                        mt={2}
+                                        color={'rgba(255,255,255,0.78)'}
+                                    >
                                         {card.body}
                                     </Text>
                                 </Box>
@@ -261,19 +259,22 @@ const LaunchStudio = () => {
                     </Box>
 
                     <Box w={'full'}>
-                        <Heading fontSize={['26px', '34px']} mb={3}>
+                        <Text
+                            fontSize={['18px', '24px']}
+                            mb={3}
+                            color={'light'}
+                        >
                             How Launch Studio runs
-                        </Heading>
+                        </Text>
                         <Stack spacing={[8, 10]}>
                             {steps.map((step) => (
                                 <Box
                                     key={step.title}
-                                    bg={'white'}
+                                    bg={'rgba(255,255,255,0.04)'}
                                     p={[5, 7]}
                                     borderRadius={'2xl'}
                                     boxShadow={'md'}
-                                    border={'1px solid'}
-                                    borderColor={'gray.100'}
+                                    border={'1px solid rgba(255,255,255,0.12)'}
                                 >
                                     <Stack
                                         direction={['column', 'row']}
@@ -292,7 +293,10 @@ const LaunchStudio = () => {
                                             {step.goal}
                                         </Tag>
                                     </Stack>
-                                    <Text mt={3} color={'gray.700'}>
+                                    <Text
+                                        mt={3}
+                                        color={'rgba(255,255,255,0.85)'}
+                                    >
                                         {step.body}
                                     </Text>
                                     {step.highlights && (
@@ -311,9 +315,12 @@ const LaunchStudio = () => {
                                                         key={dimension}
                                                         p={4}
                                                         borderRadius={'lg'}
-                                                        border={'1px solid'}
-                                                        borderColor={'gray.100'}
-                                                        bg={'gray.50'}
+                                                        border={
+                                                            '1px solid rgba(255,255,255,0.12)'
+                                                        }
+                                                        bg={
+                                                            'rgba(255,255,255,0.04)'
+                                                        }
                                                     >
                                                         <Text
                                                             fontWeight={
@@ -324,14 +331,18 @@ const LaunchStudio = () => {
                                                         </Text>
                                                         <Text
                                                             mt={2}
-                                                            color={'gray.700'}
+                                                            color={
+                                                                'rgba(255,255,255,0.78)'
+                                                            }
                                                         >
                                                             {examples}
                                                         </Text>
                                                         <Text
                                                             mt={2}
                                                             fontSize={'sm'}
-                                                            color={'gray.600'}
+                                                            color={
+                                                                'rgba(255,255,255,0.65)'
+                                                            }
                                                         >
                                                             {why}
                                                         </Text>
@@ -349,7 +360,9 @@ const LaunchStudio = () => {
                                             {step.bullets.map((item) => (
                                                 <Text
                                                     key={item}
-                                                    color={'gray.700'}
+                                                    color={
+                                                        'rgba(255,255,255,0.78)'
+                                                    }
                                                 >
                                                     • {item}
                                                 </Text>
@@ -361,21 +374,28 @@ const LaunchStudio = () => {
                                             mt={5}
                                             minH={'180px'}
                                             borderRadius={'xl'}
-                                            border={'2px dashed #CBD5E0'}
-                                            bg={'gray.50'}
+                                            border={
+                                                '2px dashed rgba(255,255,255,0.3)'
+                                            }
+                                            bg={'rgba(255,255,255,0.03)'}
                                             display={'flex'}
                                             alignItems={'center'}
                                             justifyContent={'center'}
                                             textAlign={'center'}
                                             px={4}
                                         >
-                                            <Text color={'gray.600'}>
+                                            <Text
+                                                color={'rgba(255,255,255,0.6)'}
+                                            >
                                                 {step.placeholder}
                                             </Text>
                                         </Box>
                                     )}
                                     {step.footer && (
-                                        <Text mt={4} color={'gray.700'}>
+                                        <Text
+                                            mt={4}
+                                            color={'rgba(255,255,255,0.78)'}
+                                        >
                                             {step.footer}
                                         </Text>
                                     )}
