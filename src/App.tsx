@@ -11,6 +11,7 @@ import ScrollToTop from './components/scrollToTop'
 import Newsletter from './pages/Newsletter'
 import ComingSoon from './pages/ComingSoon'
 import ProjectX from './pages/ProjectX'
+import LaunchStudio from './pages/LaunchStudio'
 
 // This is the deployment branch
 
@@ -26,6 +27,7 @@ export const App = () => (
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/learnai" element={<ComingSoon />} />
             <Route path="/projectx" element={<ProjectX />} />
+            <Route path="/launch-studio" element={<LaunchStudio />} />
         </Routes>
         <Footer />
     </>

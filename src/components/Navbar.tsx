@@ -26,6 +26,7 @@ const Links = [
     'About Us',
     'Our Team',
     'ConferenceX',
+    'Launch Studio',
     'ProjectX',
     // 'LearnAI',
     'Newsletter',
@@ -47,6 +48,9 @@ function get_link(link: string) {
 
     if (link == 'AI Review') {
         return 'https://torontoaireview.framer.website/'
+    }
+    if (link == 'Launch Studio') {
+        return '/launch-studio'
     }
     return link.toLowerCase().replace(/\s/g, '')
 }
