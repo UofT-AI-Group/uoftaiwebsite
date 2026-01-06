@@ -31,7 +31,7 @@ import uf from '../static/assets/2025-confx-spons/conference 2025 logos/Universi
 import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_Economic_Forum_logo.svg.png'
 import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 
-import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
+import speaker_pic from '../static/assets/conf-2026-assets/speaker_pic.jpg'
 import gallery from '../static/assets/our-mission.jpg'
 import showcase from '../static/assets/conf-2026-assets/showcase.png'
 import yvan from '../static/assets/conf-2026-assets/yvan.jpg'
@@ -373,9 +373,10 @@ const ConferenceX = () => {
                         mb={['24px', '32px']}
                     >
                         <Image
-                            src={geoffreySpeaking}
-                            h={['200px', '220px']}
+                            src={speaker_pic}
+                            boxSize={['200px', '220px']}
                             borderRadius={'50%'}
+                            objectFit="cover"
                         />
                         <Box
                             maxW={'1000px'}
@@ -516,13 +517,19 @@ const ConferenceX = () => {
                             borderRadius="md"
                             p={4}
                         >
-                            <Image
-                                src={speaker.img || logo}
-                                boxSize={'140px'}
+                            <Box
+                                boxSize={['140px', '160px']}
                                 borderRadius="full"
-                                objectFit="cover"
+                                overflow="hidden"
                                 mb={3}
-                            />
+                            >
+                                <Image
+                                    src={speaker.img || logo}
+                                    w="100%"
+                                    h="100%"
+                                    objectFit="cover"
+                                />
+                            </Box>
                             <Text
                                 fontSize={['16px', '22px']}
                                 color={'light'}
