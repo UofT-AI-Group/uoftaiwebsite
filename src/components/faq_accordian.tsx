@@ -7,7 +7,20 @@ import {
     Box,
 } from '@chakra-ui/react'
 
-const Accord = () => {
+type AccordProps = {
+    scheduleText?: string
+    knowledgeAnswer?: string
+}
+
+const Accord = ({ scheduleText, knowledgeAnswer }: AccordProps) => {
+    const scheduleAnswer =
+        scheduleText ??
+        'The event takes place on Saturday, January 25th from 9:00AM to 5:00PM EST at the Schwartz Reisman Institute for Technology and Society. Registration is from 9:00AM to 10:00AM, with opening remarks starting at 10:00AM'
+
+    const knowledgeAnswerText =
+        knowledgeAnswer ??
+        "ConferenceX 2025 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more!"
+
     return (
         <Box
             color={'white'} // White text
@@ -27,10 +40,7 @@ const Accord = () => {
                         </AccordionButton>
                     </h2>
                     <AccordionPanel fontSize={'md'} pb={4}>
-                        The event takes place on Saturday, January 25th from
-                        9:00AM to 5:00PM EST at the Schwartz Reisman Institute
-                        for Technology and Society. Registration is from 9:00AM
-                        to 10:00AM, with opening remarks starting at 10:00AM
+                        {scheduleAnswer}
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -62,10 +72,7 @@ const Accord = () => {
                         </AccordionButton>
                     </h2>
                     <AccordionPanel fontSize={'md'} pb={4}>
-                        ConferenceX 2025 is open to anyone who's interested in
-                        the AI community! We welcome attendees with all
-                        experience levels, whether they're students, founders,
-                        industry professionals or more!
+                        {knowledgeAnswerText}
                     </AccordionPanel>
                 </AccordionItem>
 

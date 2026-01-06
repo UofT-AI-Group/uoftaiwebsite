@@ -9,12 +9,10 @@ import {
     Image,
     SimpleGrid,
 } from '@chakra-ui/react'
-import gradient from '../static/assets/2025_grad.png'
 import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'
-import kpmgLogo from '../static/assets/kpmg-logo.png'
 import pant from '../static/assets/2025_speakers/pant.jpg'
 import basu from '../static/assets/2025_speakers/basu.jpg'
 import kesiraju from '../static/assets/2025_speakers/kesiraju.jpg'
@@ -53,14 +51,15 @@ import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
 import gallery from '../static/assets/gallery.jpg'
 import showcase from '../static/assets/Showcase.jpg'
 import { HashLink } from 'react-router-hash-link'
-import interact from '../static/assets/2025-confx-spons/Interac-Logo.wine 1.png'
-import kpmg from '../static/assets/2025-confx-spons/image 18.png'
-import price from '../static/assets/2025-confx-spons/PricewaterhouseCoopers_Logo 1.png'
-import flybits from '../static/assets/2025-confx-spons/flybits-logo-RGB 1.png'
-import mstar from '../static/assets/2025-confx-spons/morningstar-600px.bb30655 1.png'
+import eyLogo from '../static/assets/2026-confx-spons/EY.png'
+import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
+import intactLogo from '../static/assets/2026-confx-spons/intact.png'
 import '../static/styles/conferenceX.css'
 
 const ConferenceX = () => {
+    const gradient2026 =
+        'linear-gradient(135deg, #160d2f 0%, #2c1d5e 40%, #3b4fa3 100%)'
+
     return (
         <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
             <Box
@@ -74,7 +73,7 @@ const ConferenceX = () => {
             </Box>
 
             <Box
-                bgImage={gradient}
+                bgImage={gradient2026}
                 bgPosition={'50%'}
                 bgSize={'cover'}
                 bgRepeat={'no-repeat'}
@@ -168,7 +167,7 @@ const ConferenceX = () => {
                 </Box>
             </Box>
             <Box
-                bgImage={gradient}
+                bgImage={gradient2026}
                 bgSize={'cover'}
                 bgRepeat={'no-repeat'}
                 p={[5, 20]}
@@ -559,7 +558,14 @@ const ConferenceX = () => {
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     FAQ
                 </Text>
-                <Accord />
+                <Accord
+                    scheduleText={
+                        'The event runs 9:00AM to 5:00PM EST on January 24th and 25th, 2026 at the Schwartz Reisman Institute for Technology and Society.'
+                    }
+                    knowledgeAnswer={
+                        "ConferenceX 2026 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more."
+                    }
+                />
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     Partners
@@ -674,49 +680,42 @@ const ConferenceX = () => {
                     Sponsors
                 </Text>
                 <Box
-                    bg={'rgba(255, 255, 255, 0.25)'}
-                    p={'10px'}
-                    borderRadius={'md'}
-                    boxShadow={'md'}
+                    bg={'rgba(255, 255, 255, 0.18)'}
+                    p={['12px', '20px']}
+                    borderRadius={'lg'}
+                    boxShadow={'lg'}
+                    maxW={'1200px'}
+                    mx="auto"
+                    mt={['12px', '20px']}
                 >
-                    <Flex
-                        justifyContent={'center'}
-                        alignItems={'center'}
-                        flexWrap={'wrap'}
-                        mt={'40px'}
-                        flexShrink={1}
-                    >
-                        <Image
-                            src={mstar}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={flybits}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={kpmgLogo}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={price}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={interact}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                    </Flex>
+                    <Box maxW={'1100px'} mx="auto">
+                        <Flex
+                            justifyContent={'center'}
+                            alignItems={'center'}
+                            gap={['40px', '64px', '88px']}
+                            flexWrap={'wrap'}
+                            py={['12px', '20px']}
+                        >
+                            <Image
+                                src={canvasLogo}
+                                h={['140px', '170px']}
+                                maxW={'280px'}
+                                objectFit="contain"
+                            />
+                            <Image
+                                src={eyLogo}
+                                h={['120px', '120px']}
+                                maxW={'240px'}
+                                objectFit="contain"
+                            />
+                            <Image
+                                src={intactLogo}
+                                h={['140px', '170px']}
+                                maxW={'280px'}
+                                objectFit="contain"
+                            />
+                        </Flex>
+                    </Box>
                 </Box>
             </Box>
         </Box>
