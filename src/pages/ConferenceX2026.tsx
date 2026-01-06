@@ -13,22 +13,6 @@ import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'
-import pant from '../static/assets/2025_speakers/pant.jpg'
-import basu from '../static/assets/2025_speakers/basu.jpg'
-import kesiraju from '../static/assets/2025_speakers/kesiraju.jpg'
-import leung from '../static/assets/2025_speakers/leung.jpg'
-import manal from '../static/assets/2025_speakers/manal.jpg'
-import mcann from '../static/assets/2025_speakers/mcann.png'
-import mike from '../static/assets/2025_speakers/mike.png'
-import ming from '../static/assets/2025_speakers/ming.jpg'
-import parisa from '../static/assets/2025_speakers/parisa.png'
-import platnick from '../static/assets/2025_speakers/platnick.png'
-import rahul from '../static/assets/2025_speakers/rahul.png'
-import sridhar from '../static/assets/2025_speakers/sridhar.jpg'
-import supekar from '../static/assets/2025_speakers/supekar.jpg'
-import wang from '../static/assets/2025_speakers/wang.png'
-import waslander from '../static/assets/2025_speakers/waslander.png'
-import william from '../static/assets/2025_speakers/william.jpeg'
 
 import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/Accenture-logo.png'
 import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
@@ -48,17 +32,115 @@ import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_
 import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
-import gallery from '../static/assets/gallery.jpg'
-import showcase from '../static/assets/Showcase.jpg'
+import gallery from '../static/assets/our-mission.jpg'
+import showcase from '../static/assets/conf-2026-assets/showcase.png'
+import yvan from '../static/assets/conf-2026-assets/yvan.jpg'
+import hossein from '../static/assets/conf-2026-assets/hossein.jpg'
+import zhijing from '../static/assets/conf-2026-assets/zhijing.webp'
+import atrisha from '../static/assets/conf-2026-assets/atrisha.png'
+import stephen from '../static/assets/conf-2026-assets/stephen_wolfram.jpg'
+import joshua from '../static/assets/conf-2026-assets/joshua.webp'
+import david from '../static/assets/conf-2026-assets/david.jpg'
+import kristina from '../static/assets/conf-2026-assets/kristina.png'
+import janice from '../static/assets/conf-2026-assets/janice.jpg'
+import farhan from '../static/assets/conf-2026-assets/farhan.jpg'
+import daniel from '../static/assets/conf-2026-assets/daniel.webp'
+import lawrence from '../static/assets/conf-2026-assets/lawrence.jpg'
 import { HashLink } from 'react-router-hash-link'
 import eyLogo from '../static/assets/2026-confx-spons/EY.png'
 import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact.png'
 import '../static/styles/conferenceX.css'
+import { useEffect, useState } from 'react'
 
 const ConferenceX = () => {
     const gradient2026 =
         'linear-gradient(135deg, #160d2f 0%, #2c1d5e 40%, #3b4fa3 100%)'
+    const [countdown, setCountdown] = useState({
+        days: '00',
+        hours: '00',
+        minutes: '00',
+    })
+
+    useEffect(() => {
+        const target = new Date('2026-01-24T00:00:00-05:00').getTime()
+        const timer = setInterval(() => {
+            const now = Date.now()
+            const diff = Math.max(target - now, 0)
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+            const minutes = Math.floor((diff / (1000 * 60)) % 60)
+            setCountdown({
+                days: days.toString().padStart(2, '0'),
+                hours: hours.toString().padStart(2, '0'),
+                minutes: minutes.toString().padStart(2, '0'),
+            })
+        }, 1000)
+
+        return () => clearInterval(timer)
+    }, [])
+    const day1Speakers = [
+        {
+            name: 'Yvan Gauthier',
+            img: yvan,
+            role: 'Principal Advisor, AI Safety, National Research Council of Canada',
+        },
+        {
+            name: 'Hossein Rahnama',
+            img: hossein,
+            role: 'CEO, Flybits & Professor, MIT Media Lab',
+        },
+        {
+            name: 'Zhijing Jin',
+            img: zhijing,
+            role: 'Assistant Professor, University of Toronto',
+        },
+        {
+            name: 'Atrisha Sarkar',
+            img: atrisha,
+            role: 'Professor, University of Western Ontario',
+        },
+        {
+            name: 'Stephen Wolfram',
+            img: stephen,
+            role: 'Founder, Wolfram Institute',
+        },
+        {
+            name: 'Joshua Gans',
+            img: joshua,
+            role: 'Professor, University of Toronto',
+        },
+        {
+            name: 'David Fleet',
+            img: david,
+            role: 'CIFAR AI Chair; Lead, Google DeepMind Toronto',
+        },
+        {
+            name: 'Kristina McElheran',
+            img: kristina,
+            role: 'Professor, University of Toronto',
+        },
+        {
+            name: 'Janice Stein',
+            img: janice,
+            role: 'Founding Director, Munk School of Global Affairs & Public Policy',
+        },
+        {
+            name: 'Farhan Thawar',
+            img: farhan,
+            role: 'Head of Engineering, Shopify',
+        },
+        {
+            name: 'Daniel Wigdor',
+            img: daniel,
+            role: 'Founder, AXL',
+        },
+        {
+            name: 'Lawrence Zhang',
+            img: lawrence,
+            role: 'Head of Policy, ITIF',
+        },
+    ]
 
     return (
         <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
@@ -102,7 +184,7 @@ const ConferenceX = () => {
                         fontSize={[14, 18]}
                         color={'light'}
                     >
-                        January 2026
+                        January 24–25, 2026
                     </Text>
                     <Box>
                         <HashLink
@@ -116,6 +198,39 @@ const ConferenceX = () => {
                             </ButtonOutline>
                         </HashLink>
                     </Box>
+                    <Flex
+                        alignItems="center"
+                        gap={3}
+                        bg="rgba(255,255,255,0.15)"
+                        px={4}
+                        py={2}
+                        borderRadius="full"
+                        fontSize={[12, 14]}
+                        color="light"
+                        fontWeight="semibold"
+                    >
+                        <Text>Countdown to Day 1:</Text>
+                        <Flex gap={3}>
+                            <Box textAlign="center">
+                                <Text fontSize={[16, 18]} fontWeight="bold">
+                                    {countdown.days}
+                                </Text>
+                                <Text fontSize={[10, 12]}>Days</Text>
+                            </Box>
+                            <Box textAlign="center">
+                                <Text fontSize={[16, 18]} fontWeight="bold">
+                                    {countdown.hours}
+                                </Text>
+                                <Text fontSize={[10, 12]}>Hours</Text>
+                            </Box>
+                            <Box textAlign="center">
+                                <Text fontSize={[16, 18]} fontWeight="bold">
+                                    {countdown.minutes}
+                                </Text>
+                                <Text fontSize={[10, 12]}>Minutes</Text>
+                            </Box>
+                        </Flex>
+                    </Flex>
                 </VStack>
             </Box>
             <Box backgroundColor={'dark'} p={[5, 20]} position={'relative'}>
@@ -144,14 +259,16 @@ const ConferenceX = () => {
                     zIndex={100}
                     position={'relative'}
                 >
-                    ConferenceX is an annual conference hosted by the University
-                    of Toronto AI Group, aimed at fostering an inclusive,
-                    ethical, and innovative future for Artificial Intelligence.
-                    This year, ConferenceX 2026 will take place in January in
-                    Toronto. By featuring keynote talks, a startup showcase, and
-                    an AI research fair, the event aspires to inspire
-                    collaboration across academia, industry, and aspiring
-                    professionals.
+                    ConferenceX is the University of Toronto’s annual AI
+                    conference, built to foster a future where technology and
+                    humanity progress together. We believe that the best way to
+                    shape the future of AI is through rigorous discourse,
+                    diverse community building, and debate. Held in the heart of
+                    the world’s leading AI research hub, ConferenceX unites
+                    pioneers across the various domains AI impacts. Each year,
+                    we host an incredible lineup of leading speakers, hands-on
+                    workshops, expert panels, and showcases. This year,
+                    ConferenceX will be taking place January 24-25, 2026.
                 </Text>
                 <Box pt={10}>
                     <HashLink
@@ -165,6 +282,71 @@ const ConferenceX = () => {
                         </ButtonOutline>
                     </HashLink>
                 </Box>
+            </Box>
+            <Box backgroundColor={'light'} p={[5, 20]}>
+                <Text
+                    color={'dark'}
+                    fontSize={['25px', '32px']}
+                    fontWeight="semibold"
+                    mb={4}
+                >
+                    Theme – The Intelligence Test
+                </Text>
+                <VStack alignItems="flex-start" spacing={4} color="dark">
+                    <Text fontSize={['14px', '18px']}>
+                        In 1950, Alan Turing proposed a game of imitation: could
+                        a human mind tell the difference between machine and
+                        human? His thought experiment, The Turing Test,
+                        challenged us to imagine a world where the boundary
+                        between humans and machine intelligence might blur.
+                    </Text>
+                    <Text fontSize={['14px', '18px']}>
+                        Seventy-six years later, the test, however, feels
+                        quaint; every day we see machines that can pass it. And
+                        in building AI, we have discovered something more
+                        interesting than whether or not they can convince us.
+                        Turing imagined humans as testing machines, but the
+                        relationship has become reciprocal. AI can now probe our
+                        reasoning, expose our biases, and challenge our
+                        assumptions across domains. The interrogation runs both
+                        ways.
+                    </Text>
+                    <Box
+                        bg="rgba(17, 17, 17, 0.05)"
+                        border="1px solid rgba(17, 17, 17, 0.12)"
+                        borderRadius="lg"
+                        p={[4, 5]}
+                        boxShadow="sm"
+                    >
+                        <Text fontSize={['15px', '19px']} fontWeight="semibold">
+                            ConferenceX 2026: The Intelligence Test, explores
+                            intelligence as mutual examination.
+                        </Text>
+                        <Text fontSize={['14px', '18px']} mt={2}>
+                            We are interested in what we learn when humans and
+                            machines challenge each other, asking who – if one
+                            at all – is really in control.
+                        </Text>
+                    </Box>
+                    <Box pt={2}>
+                        <Text fontSize={['16px', '20px']} fontWeight="semibold">
+                            Day 1: How the human tests the machine
+                        </Text>
+                        <Text fontSize={['14px', '18px']}>
+                            Explore how far we can push the boundaries of AI,
+                            and where we must draw boundaries.
+                        </Text>
+                    </Box>
+                    <Box>
+                        <Text fontSize={['16px', '20px']} fontWeight="semibold">
+                            Day 2: How the machine tests the human
+                        </Text>
+                        <Text fontSize={['14px', '18px']}>
+                            Explore whether AI challenges the way we live,
+                            learn, think, create and work.
+                        </Text>
+                    </Box>
+                </VStack>
             </Box>
             <Box
                 bgImage={gradient2026}
@@ -181,17 +363,18 @@ const ConferenceX = () => {
 
                 <VStack
                     alignItems={'center'}
-                    spacing={15}
-                    mt={['30px', '60px']}
+                    spacing={[12, 16]}
+                    mt={['40px', '70px']}
                 >
                     <Flex
                         justifyContent={'center'}
                         alignItems={'top'}
                         flexWrap={'wrap'}
+                        mb={['24px', '32px']}
                     >
                         <Image
                             src={geoffreySpeaking}
-                            h={'200px'}
+                            h={['200px', '220px']}
                             borderRadius={'50%'}
                         />
                         <Box
@@ -208,17 +391,20 @@ const ConferenceX = () => {
                                 Speakers
                             </Text>
                             <Text color={'light'} fontSize={['14px', '18px']}>
-                                After welcoming hundreds of attendees and Nobel
-                                laureate Geoffrey Hinton in 2024, we've stepped
-                                it up for ConferenceX 2026, and confirmed a
-                                lineup of over 15 distinguished speakers in the
-                                AI landscape across Ontario, California,
-                                Massachusetts, and New York! The day will be
-                                packed with engaging talks from researchers,
-                                brilliant founders, and industry experts from
-                                Google Health, Google DeepMind, Citadel,
-                                Accenture, World Economic Forum, and more. Check
-                                out our complete list of speakers below.
+                                We’re bringing together leading voices across
+                                academia, industry, and the public sector for
+                                two days of deep exploration. ConferenceX is
+                                hosting more than 15 speakers per day, capturing
+                                topics for all interests in AI. Featuring
+                                researchers, founders, and practitioners from
+                                Google DeepMind, Vector Institute, Wolfram
+                                Institute, Shopify, Microsoft, National Research
+                                Council Canada, Creative Destruction Lab, the
+                                Munk School of Global Affairs and Public Policy,
+                                and more, the conference will generate an
+                                unforgettable discussion about how we evaluate
+                                AI and how they challenge our understanding in
+                                return.
                             </Text>
                         </Box>
                     </Flex>
@@ -226,12 +412,13 @@ const ConferenceX = () => {
                         justifyContent={'center'}
                         alignItems={'top'}
                         flexWrap={'wrap'}
-                        mt={'50px'}
+                        mb={['24px', '32px']}
                     >
                         <Image
                             src={showcase}
-                            h={'200px'}
+                            boxSize={['200px', '220px']}
                             borderRadius={'50%'}
+                            objectFit="cover"
                         />
                         <Box
                             maxW={'1000px'}
@@ -247,30 +434,35 @@ const ConferenceX = () => {
                                 Startup Showcase
                             </Text>
                             <Text color={'light'} fontSize={['14px', '18px']}>
-                                Some of Toronto's most promising AI startups
-                                took center stage in an exclusive startup
-                                showcase. Attendees experienced live
-                                demonstrations of groundbreaking AI
-                                technologies, offering a firsthand look at
-                                innovations set to transform industries. Beyond
-                                product demos, active recruitment of top student
-                                talent took place, providing an exciting
-                                opportunity for networking and career
-                                exploration within Toronto’s vibrant AI
-                                community.
+                                Toronto’s most innovative AI startups will take
+                                center stage with live demonstrations of
+                                cutting-edge technologies. Attendees will
+                                experience firsthand how these companies are
+                                pushing the boundaries of what is possible, from
+                                scientific discoveries to next-generation
+                                applications. This is your opportunity to
+                                witness the future being built and connect with
+                                the founders, as well as venture capitalists,
+                                shaping it.
                             </Text>
                         </Box>
                     </Flex>
-                    {/* <Flex
+                    <Flex
                         justifyContent={'center'}
                         alignItems={'top'}
                         flexWrap={'wrap'}
+                        mb={['24px', '32px']}
                     >
-                        <Image src={gallery} h={'200px'} borderRadius={'50%'} />
+                        <Image
+                            src={gallery}
+                            boxSize={['200px', '220px']}
+                            borderRadius={'50%'}
+                            objectFit="cover"
+                        />
                         <Box
                             maxW={'1000px'}
                             minW={'300px'}
-                            ml={'40px'}
+                            ml={['0px', '40px']}
                             w={'80%'}
                         >
                             <Text
@@ -278,21 +470,23 @@ const ConferenceX = () => {
                                 fontSize={['18px', '24px']}
                                 pb={'10px'}
                             >
-                                AI-Generated Art Gallery
+                                Workshops
                             </Text>
                             <Text color={'light'} fontSize={['14px', '18px']}>
-                                An AI-generated art gallery presented a striking
-                                collection of artwork created entirely by
-                                artificial intelligence. The exhibition
-                                highlighted how AI is being used in creative
-                                processes, offering attendees a unique
-                                perspective on the intersection of technology
-                                and art. The gallery provided an insightful look
-                                into how AI can contribute to the future of
-                                artistic expression.
+                                Beyond the main stage, ConferenceX features
+                                hands-on workshops where theory becomes practice
+                                and attendees learn real skills. Explore the
+                                frontiers of AI security through comparative
+                                jailbreaking experiments, examine the ethical
+                                boundaries of AI decision-making, learn how to
+                                augment creativity, and be better prepared for
+                                the tech industry in the age of AI. These
+                                interactive sessions offer a chance to grapple
+                                directly with the tensions and possibilities
+                                that define our AI moment.
                             </Text>
                         </Box>
-                    </Flex> */}
+                    </Flex>
                 </VStack>
 
                 <Text
@@ -311,248 +505,45 @@ const ConferenceX = () => {
                     mr={'auto'}
                     ml={'auto'}
                 >
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={pant} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Vik Pant
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
+                    {day1Speakers.map((speaker) => (
+                        <Flex
+                            key={speaker.name}
+                            justifyContent={'center'}
+                            alignItems={'center'}
+                            flexDirection={'column'}
+                            w={'340px'}
+                            bg="rgba(17,17,17,0.2)"
+                            borderRadius="md"
+                            p={4}
                         >
-                            Partner, Chief Data Scientist and Emerging
-                            Technology Leader at PwC Canada
-                        </Text>
-                    </Flex>
-
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={william} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            William Cunningham
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            textAlign="center"
-                            color={'light'}
-                        >
-                            Researcher at the Vector Institute for AI
-                        </Text>
-                    </Flex>
-
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={manal} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Manal Siddique
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Accenture Canada’s Responsible AI Lead
-                        </Text>
-                    </Flex>
-
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={supekar} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Kaustabh Supekar
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Clinical Associate Professor, Psychiatry and
-                            Behavioural Sciences at Stanford University
-                        </Text>
-                    </Flex>
-
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={ming} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Vivienne Ming
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Founder, Chair, & Chief Scientist at The Human Trust
-                            Founder & Chief Scientist at Dionysus Health
-                        </Text>
-                    </Flex>
-
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image
-                            src={kesiraju}
-                            h={'200px'}
-                            borderRadius={'50%'}
-                        />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Aravind Kesiraju
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Principle Software Engineer, Morningstar
-                        </Text>
-                    </Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={sridhar} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Chitra Sridhar
-                        </Text>
-                        <Text fontSize={['14px', '16px']} color={'light'}>
-                            Partner at KPMG Canada
-                        </Text>
-                    </Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={basu} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Sanjana Basu
-                        </Text>
-                        <Text fontSize={['14px', '16px']} color={'light'}>
-                            Partner at Radical Ventures
-                        </Text>
-                    </Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={mike} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Mike Schaekermann
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Senior Research Scientist at Google Health
-                        </Text>
-                    </Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={mcann} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Bryan McCann
-                        </Text>
-                        <Text fontSize={['14px', '16px']} color={'light'}>
-                            Co-Founder and CTO at you.com
-                        </Text>
-                    </Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image
-                            src={waslander}
-                            h={'200px'}
-                            borderRadius={'50%'}
-                        />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Steven Waslander
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Director, Toronto Robotics and AI Lab Professor at
-                            the Institute for Aerospace Studies, University of
-                            Toronto
-                        </Text>
-                    </Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image
-                            src={platnick}
-                            h={'200px'}
-                            borderRadius={'50%'}
-                        />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            Daniel Platnick
-                        </Text>
-                        <Text fontSize={['14px', '16px']} color={'light'}>
-                            Senior AI Scientist, Flybits
-                        </Text>
-                    </Flex>
-                    <Flex></Flex>
-                    <Flex
-                        justifyContent={'flex-start'}
-                        alignItems={'center'}
-                        flexDirection={'column'}
-                        w={'340px'}
-                    >
-                        <Image src={wang} h={'200px'} borderRadius={'50%'} />
-                        <Text fontSize={['16px', '22px']} color={'light'}>
-                            William Wang
-                        </Text>
-                        <Text
-                            fontSize={['14px', '16px']}
-                            color={'light'}
-                            textAlign="center"
-                        >
-                            Quantitative Developer, CitadelPrev. Senior Machine
-                            Learning Engineer, Shopify
-                        </Text>
-                    </Flex>
+                            <Image
+                                src={speaker.img || logo}
+                                boxSize={'140px'}
+                                borderRadius="full"
+                                objectFit="cover"
+                                mb={3}
+                            />
+                            <Text
+                                fontSize={['16px', '22px']}
+                                color={'light'}
+                                textAlign="center"
+                                fontWeight="semibold"
+                            >
+                                {speaker.name}
+                            </Text>
+                            {speaker.role && (
+                                <Text
+                                    fontSize={['13px', '15px']}
+                                    color={'light'}
+                                    textAlign="center"
+                                    opacity={0.8}
+                                    mt={1}
+                                >
+                                    {speaker.role}
+                                </Text>
+                            )}
+                        </Flex>
+                    ))}
                 </SimpleGrid>
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
@@ -566,115 +557,6 @@ const ConferenceX = () => {
                         "ConferenceX 2026 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more."
                     }
                 />
-
-                <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
-                    Partners
-                </Text>
-                <Box
-                    bg={'rgba(255, 255, 255, 0.25)'}
-                    p={'10px'}
-                    borderRadius={'md'}
-                    boxShadow={'md'}
-                >
-                    <Flex
-                        justifyContent={'center'}
-                        alignItems={'center'}
-                        flexWrap={'wrap'}
-                        mt={'40px'}
-                        flexShrink={1}
-                    >
-                        <Image
-                            src={accenture}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={stan}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={citadel}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={ghealth}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={human}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={dhealth}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={ne}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={perp}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={rad}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={trail}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={uoft}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={uf}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={vector}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={econ}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                        <Image
-                            src={you}
-                            p={'20px'}
-                            maxW={'200px'}
-                            minW={'100px'}
-                        />
-                    </Flex>
-                </Box>
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     Sponsors
