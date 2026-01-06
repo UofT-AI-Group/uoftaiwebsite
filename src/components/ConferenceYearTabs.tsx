@@ -9,7 +9,8 @@ export default function ConferenceYearTabs() {
     const location = useLocation()
 
     const tabs: YearTab[] = [
-        { year: '2025', link: '/conferencex' },
+        { year: '2026', link: '/conferencex' },
+        { year: '2025', link: '/conferencex-2025' },
         { year: '2024', link: '/conferencex-2024' },
     ]
 
@@ -22,27 +23,31 @@ export default function ConferenceYearTabs() {
                 marginTop: '20px',
             }}
         >
-            {tabs.map((t) => (
-                <Link
-                    key={t.year}
-                    to={t.link}
-                    style={{
-                        fontFamily: 'Tabular, sans-serif',
-                        fontWeight:
-                            location.pathname === t.link ? 'bold' : 'normal',
-                        textDecoration: 'none',
-                        color:
-                            location.pathname === t.link ? '#b185ff' : '#111',
-                        borderBottom:
-                            location.pathname === t.link
+            {tabs.map((t) => {
+                const isActive =
+                    location.pathname === t.link ||
+                    (t.year === '2026' &&
+                        location.pathname === '/conferencex-2026')
+
+                return (
+                    <Link
+                        key={t.year}
+                        to={t.link}
+                        style={{
+                            fontFamily: 'Tabular, sans-serif',
+                            fontWeight: isActive ? 'bold' : 'normal',
+                            textDecoration: 'none',
+                            color: isActive ? '#b185ff' : '#111',
+                            borderBottom: isActive
                                 ? '2px solid #b185ff'
                                 : 'none',
-                        paddingBottom: '3px',
-                    }}
-                >
-                    {t.year}
-                </Link>
-            ))}
+                            paddingBottom: '3px',
+                        }}
+                    >
+                        {t.year}
+                    </Link>
+                )
+            })}
         </div>
     )
 }
