@@ -9,7 +9,7 @@ import {
     Image,
     SimpleGrid,
 } from '@chakra-ui/react'
-import Accord from '../components/faq_accordian'
+import FAQAccord from '../components/faq_accordian_2026'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'
@@ -52,6 +52,7 @@ import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact.png'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
+import { Button } from '@chakra-ui/react'
 
 const ConferenceX = () => {
     const gradient2026 =
@@ -233,56 +234,95 @@ const ConferenceX = () => {
                     </Flex>
                 </VStack>
             </Box>
-            <Box backgroundColor={'dark'} p={[5, 20]} position={'relative'}>
-                <Image
-                    src={logo}
-                    position={'absolute'}
-                    h={['150px', '310px']}
-                    top={'55%'}
-                    left={'80%'}
-                    zIndex={0}
-                />
-                <Text
-                    color={'light'}
-                    fontSize={['25px', '40px']}
-                    zIndex={100}
-                    position={'relative'}
+
+            <Box
+                bg="linear-gradient(135deg, #120822 0%, #1f1244 50%, #2c1d5e 100%)"
+                py={[10, 20]}
+                px={[6, 20]}
+                fontFamily="Tabular, sans-serif"
+            >
+                <Flex
+                    direction={['column', 'column', 'row']}
+                    align="center"
+                    justify="space-between"
+                    gap={[8, 12]}
+                    maxW="1200px"
+                    mx="auto"
                 >
-                    What is ConferenceX?
-                </Text>
-                <Text
-                    color={'light'}
-                    fontSize={['14px', '24px']}
-                    //maxW={'600px'}
-                    w={'75%'}
-                    pt={8}
-                    zIndex={100}
-                    position={'relative'}
-                >
-                    ConferenceX is the University of Toronto’s annual AI
-                    conference, built to foster a future where technology and
-                    humanity progress together. We believe that the best way to
-                    shape the future of AI is through rigorous discourse,
-                    diverse community building, and debate. Held in the heart of
-                    the world’s leading AI research hub, ConferenceX unites
-                    pioneers across the various domains AI impacts. Each year,
-                    we host an incredible lineup of leading speakers, hands-on
-                    workshops, expert panels, and showcases. This year,
-                    ConferenceX will be taking place January 24-25, 2026.
-                </Text>
-                <Box pt={10}>
-                    <HashLink
-                        smooth
-                        to={'/conferencex-2025#conference2024higlights'}
+                    {/* Left Image */}
+                    <Box flex="1">
+                        <Image
+                            src={speaker_pic}
+                            borderRadius="2xl"
+                            objectFit="cover"
+                            w="100%"
+                            maxH="420px"
+                        />
+                    </Box>
+
+                    {/* Right Content */}
+                    <VStack
+                        flex="1"
+                        align="flex-start"
+                        spacing={5}
+                        color="light"
                     >
-                        <ButtonOutline variant="light">
-                            <Text fontSize={['12px', '16px']}>
+                        <Text
+                            as="h2"
+                            fontFamily="Tabular, sans-serif"
+                            fontSize={['26px', '34px', '40px']}
+                            fontWeight={600}
+                            letterSpacing="-0.02em"
+                            lineHeight="1.15"
+                            whiteSpace={['normal', 'normal', 'nowrap']}
+                        >
+                            What is ConferenceX 2026?
+                        </Text>
+
+                        <Text fontSize={['14px', '16px', '18px']} opacity={0.9}>
+                            ConferenceX is an annual conference hosted by the
+                            University of Toronto AI Group, aimed at fostering
+                            an inclusive, ethical, and innovative future for
+                            Artificial Intelligence.
+                        </Text>
+
+                        <Text fontSize={['14px', '16px', '18px']} opacity={0.9}>
+                            This year’s event features keynote talks from
+                            industry leaders, an exciting startup showcase
+                            highlighting emerging AI companies, and a
+                            comprehensive research fair showcasing cutting-edge
+                            academic work.
+                        </Text>
+
+                        <Text fontSize={['14px', '16px', '18px']} opacity={0.9}>
+                            Our mission is to inspire collaboration across
+                            academia, industry, and aspiring professionals while
+                            creating meaningful connections that drive the
+                            future of AI forward.
+                        </Text>
+
+                        {/* Circular / Pill Button */}
+                        <HashLink
+                            smooth
+                            to="/conferencex-2025#conference2024higlights"
+                        >
+                            <Button
+                                variant="outline"
+                                borderRadius="full"
+                                px={8}
+                                py={6}
+                                color="white"
+                                borderColor="white"
+                                _hover={{ bg: 'rgba(255,255,255,0.10)' }}
+                                fontFamily="Tabular, sans-serif"
+                            >
                                 Check out last year's conference
-                            </Text>
-                        </ButtonOutline>
-                    </HashLink>
-                </Box>
+                            </Button>
+                        </HashLink>
+                    </VStack>
+                </Flex>
             </Box>
+
             <Box backgroundColor={'light'} p={[5, 20]}>
                 <Text
                     color={'dark'}
@@ -553,17 +593,19 @@ const ConferenceX = () => {
                     ))}
                 </SimpleGrid>
 
-                <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
-                    FAQ
+                <Text
+                    fontSize={['22px', '28px', '32px']}
+                    color="light"
+                    mt="70px"
+                    mb="40px"
+                    textAlign="center"
+                    fontWeight={500}
+                    fontFamily="Tabular, sans-serif"
+                >
+                    Frequently Asked Questions
                 </Text>
-                <Accord
-                    scheduleText={
-                        'The event runs 9:00AM to 5:00PM EST on January 24th and 25th, 2026 at the Schwartz Reisman Institute for Technology and Society.'
-                    }
-                    knowledgeAnswer={
-                        "ConferenceX 2026 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more."
-                    }
-                />
+
+                <FAQAccord />
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     Sponsors
