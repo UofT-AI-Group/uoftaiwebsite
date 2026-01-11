@@ -490,68 +490,110 @@ const ConferenceX = () => {
                     </Flex>
                 </VStack>
 
-                <Text
-                    fontSize={['18px', '24px']}
-                    color={'light'}
-                    mt={'70px'}
-                    mb={'20px'}
-                >
-                    Featured Speakers
-                </Text>
-
-                <SimpleGrid
-                    columns={[1, 1, 2, 2, 3]}
-                    spacing={'40px'}
-                    maxW={'1100px'}
-                    mr={'auto'}
-                    ml={'auto'}
-                >
-                    {day1Speakers.map((speaker) => (
-                        <Flex
-                            key={speaker.name}
-                            justifyContent={'center'}
-                            alignItems={'center'}
-                            flexDirection={'column'}
-                            w={'340px'}
-                            bg="rgba(17,17,17,0.2)"
-                            borderRadius="md"
-                            p={4}
+                <Box mt={'70px'} mb={'40px'}>
+                    <Box maxW={'1200px'} mx={'auto'} mb={'40px'}>
+                        <Text
+                            fontSize={['32px', '48px']}
+                            color={'light'}
+                            fontFamily="'Tenor Sans', sans-serif"
                         >
+                            Featured Speakers
+                        </Text>
+                    </Box>
+
+                    <SimpleGrid
+                        columns={[1, 1, 2, 3]}
+                        spacing={'24px'}
+                        maxW={'1200px'}
+                        mx={'auto'}
+                    >
+                        {day1Speakers.map((speaker) => (
                             <Box
-                                boxSize={['140px', '160px']}
-                                borderRadius="full"
+                                key={speaker.name}
+                                bg="#2A1A3A"
+                                border="1px solid rgba(255,255,255,0.1)"
+                                borderRadius="14px"
+                                boxShadow="0 2px 8px rgba(0,0,0,0.2)"
                                 overflow="hidden"
-                                mb={3}
+                                w="384px"
+                                h="513.5px"
                             >
-                                <Image
-                                    src={speaker.img || logo}
-                                    w="100%"
-                                    h="100%"
-                                    objectFit="cover"
-                                />
+                                <Box w="100%" h="365.5px" overflow="hidden">
+                                    <Image
+                                        src={speaker.img || logo}
+                                        w="100%"
+                                        h="100%"
+                                        objectFit="cover"
+                                        objectPosition="center 1%"
+                                    />
+                                </Box>
+                                <Box p="24px" minH="140px">
+                                    <Text
+                                        fontSize={['18px', '20px']}
+                                        color="#FFFFFF"
+                                        mb="8px"
+                                        fontFamily="'Tenor Sans', sans-serif"
+                                        fontWeight={400}
+                                    >
+                                        {speaker.name}
+                                    </Text>
+                                    {speaker.role &&
+                                        (() => {
+                                            // Split role and company - typically separated by comma
+                                            const lastCommaIndex =
+                                                speaker.role.lastIndexOf(', ')
+                                            let roleText = speaker.role
+                                            let companyText = ''
+
+                                            if (lastCommaIndex > 0) {
+                                                roleText =
+                                                    speaker.role.substring(
+                                                        0,
+                                                        lastCommaIndex,
+                                                    )
+                                                companyText =
+                                                    speaker.role.substring(
+                                                        lastCommaIndex + 2,
+                                                    )
+                                            }
+
+                                            return (
+                                                <>
+                                                    <Text
+                                                        fontSize={[
+                                                            '13px',
+                                                            '14px',
+                                                        ]}
+                                                        color="rgba(255,255,255,0.6)"
+                                                        fontFamily="'Inter', sans-serif"
+                                                        fontWeight={400}
+                                                        lineHeight="1.4"
+                                                        mb="4px"
+                                                    >
+                                                        {roleText}
+                                                    </Text>
+                                                    {companyText && (
+                                                        <Text
+                                                            fontSize={[
+                                                                '13px',
+                                                                '14px',
+                                                            ]}
+                                                            color="#FFFFFF"
+                                                            fontFamily="'Inter', sans-serif"
+                                                            fontWeight={500}
+                                                            lineHeight="1.4"
+                                                        >
+                                                            {companyText}
+                                                        </Text>
+                                                    )}
+                                                </>
+                                            )
+                                        })()}
+                                </Box>
                             </Box>
-                            <Text
-                                fontSize={['16px', '22px']}
-                                color={'light'}
-                                textAlign="center"
-                                fontWeight="semibold"
-                            >
-                                {speaker.name}
-                            </Text>
-                            {speaker.role && (
-                                <Text
-                                    fontSize={['13px', '15px']}
-                                    color={'light'}
-                                    textAlign="center"
-                                    opacity={0.8}
-                                    mt={1}
-                                >
-                                    {speaker.role}
-                                </Text>
-                            )}
-                        </Flex>
-                    ))}
-                </SimpleGrid>
+                        ))}
+                    </SimpleGrid>
+                </Box>
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     FAQ
