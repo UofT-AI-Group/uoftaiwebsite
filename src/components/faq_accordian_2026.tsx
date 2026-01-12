@@ -33,7 +33,12 @@ const Accord = ({ items }: AccordProps) => {
     const faqs = items?.length ? items : DEFAULT_FAQS
 
     return (
-        <Box fontFamily="Inter, sans-serif" maxW="820px" mx="auto" px={[4, 0]}>
+        <Box
+            fontFamily="Tabular, sans-serif"
+            maxW="820px"
+            mx="auto"
+            px={[4, 0]}
+        >
             <Accordion allowMultiple>
                 {faqs.map((item) => (
                     <AccordionItem
