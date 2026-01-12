@@ -8,6 +8,11 @@ import {
     Card,
     Image,
     SimpleGrid,
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel,
 } from '@chakra-ui/react'
 import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
@@ -87,6 +92,9 @@ import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact.png'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
+import { scheduleDay1 } from '../data/scheduleDay1'
+import { scheduleDay2 } from '../data/scheduleDay2'
+import { useBreakpointValue } from '@chakra-ui/react'
 
 const ConferenceX = () => {
     const gradient2026 =
@@ -114,6 +122,12 @@ const ConferenceX = () => {
 
         return () => clearInterval(timer)
     }, [])
+
+    const isMobile = useBreakpointValue({
+        base: true,
+        md: false,
+    })
+    const [mobileTabIndex, setMobileTabIndex] = useState(0)
     const day1Speakers = [
         {
             name: 'Yvan Gauthier',
@@ -389,6 +403,98 @@ const ConferenceX = () => {
             img: stephen,
         },
     ]
+
+    // Helper function for category tag colors
+    const getCategoryTagStyles = (category: string) => {
+        const categories: Record<
+            string,
+            { bg: string; border: string; text: string }
+        > = {
+            General: {
+                bg: '#6A728233',
+                border: '#6A72824D',
+                text: '#D1D5DC',
+            },
+            Speaker: {
+                bg: '#AD46FF4D',
+                border: '#AD46FF4D',
+                text: '#DAB2FF',
+            },
+            Talk: {
+                bg: '#2B7FFF4D',
+                border: '#2B7FFF4D',
+                text: '#8EC5FF',
+            },
+            Workshop: {
+                bg: '#00CED14D',
+                border: '#00CED14D',
+                text: '#7FFFD4',
+            },
+            'VC Track': {
+                bg: '#00C9504D',
+                border: '#00C9504D',
+                text: '#7BF1A8',
+            },
+            VC: {
+                bg: '#00C9504D',
+                border: '#00C9504D',
+                text: '#7BF1A8',
+            },
+            'Startup Pitches': {
+                bg: '#00C9504D',
+                border: '#00C9504D',
+                text: '#7BF1A8',
+            },
+            Panel: {
+                bg: '#FFB8004D',
+                border: '#FFB8004D',
+                text: '#FFE066',
+            },
+            Research: {
+                bg: '#FF690033',
+                border: '#FF690033',
+                text: '#FFB86A',
+            },
+            Networking: {
+                bg: '#F6339A4D',
+                border: '#F6339A4D',
+                text: '#FDA5D5',
+            },
+        }
+
+        return (
+            categories[category] || {
+                bg: '#6A728233',
+                border: '#6A72824D',
+                text: '#D1D5DC',
+            }
+        )
+    }
+
+    // Category Tag Component
+    const CategoryTag = ({ category }: { category: string }) => {
+        const styles = getCategoryTagStyles(category)
+        return (
+            <Box
+                bg={styles.bg}
+                border={`1px solid ${styles.border}`}
+                borderRadius="full"
+                pt="6px"
+                pr="12px"
+                pb="6px"
+                pl="12px"
+            >
+                <Text
+                    color={styles.text}
+                    fontFamily="'Inter', sans-serif"
+                    fontWeight={600}
+                    fontSize={'12px'}
+                >
+                    {category}
+                </Text>
+            </Box>
+        )
+    }
 
     return (
         <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
@@ -825,6 +931,306 @@ const ConferenceX = () => {
                         "ConferenceX 2026 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more."
                     }
                 />
+
+                <Box
+                    bg="#0F0618"
+                    mt={'70px'}
+                    mb={'40px'}
+                    px={[6, 12, 100]}
+                    py={[5, 8]}
+                    w="100vw"
+                    ml="calc(-50vw + 50%)"
+                    position="relative"
+                >
+                    <Text
+                        fontSize={['32px', '48px']}
+                        color={'light'}
+                        mb={'40px'}
+                        fontFamily="'Tenor Sans', sans-serif"
+                    >
+                        Schedule
+                    </Text>
+
+                    {/* ScheduleCard Component */}
+                    {(() => {
+                        const ScheduleCard = ({
+                            start,
+                            end,
+                            title,
+                            description,
+                            tag,
+                        }: {
+                            start: string
+                            end: string
+                            title: string
+                            description: string
+                            tag: string
+                        }) => (
+                            <Box
+                                bg="#2A1A3A"
+                                borderTop="1px solid #FFFFFF1A"
+                                borderRight="1px solid #FFFFFF1A"
+                                borderBottom="1px solid #FFFFFF1A"
+                                borderLeft="4px solid #FFFFFF1A"
+                                borderRadius="14px"
+                                p="18px"
+                                position="relative"
+                                minH="170px"
+                                display="flex"
+                                flexDirection="column"
+                            >
+                                <Flex
+                                    justify="space-between"
+                                    align="flex-start"
+                                    mb="6px"
+                                    gap={4}
+                                >
+                                    <Text
+                                        color="#CF87FF"
+                                        fontFamily="'Inter', sans-serif"
+                                        fontWeight={600}
+                                        fontSize={'14px'}
+                                    >
+                                        {start} - {end}
+                                    </Text>
+                                    <Box
+                                        position="absolute"
+                                        top="18px"
+                                        right="18px"
+                                    >
+                                        <CategoryTag category={tag} />
+                                    </Box>
+                                </Flex>
+                                <Text
+                                    color="#FFFFFF"
+                                    fontFamily="'Tenor Sans', sans-serif"
+                                    fontWeight={400}
+                                    fontSize={'18px'}
+                                    mb="8px"
+                                    lineHeight="1.25"
+                                    pr="90px"
+                                    noOfLines={2}
+                                    wordBreak="break-word"
+                                >
+                                    {title}
+                                </Text>
+                                {description && (
+                                    <Text
+                                        color="rgba(255,255,255,0.7)"
+                                        fontFamily="'Inter', sans-serif"
+                                        fontWeight={400}
+                                        fontSize={'14px'}
+                                        lineHeight="1.4"
+                                        mt="auto"
+                                    >
+                                        {description}
+                                    </Text>
+                                )}
+                            </Box>
+                        )
+
+                        // DayColumn Component
+                        const DayColumn = ({
+                            date,
+                            dayName,
+                            title,
+                            subtitle,
+                            events,
+                        }: {
+                            date: string
+                            dayName: string
+                            title: string
+                            subtitle: string
+                            events: Array<{
+                                start: string
+                                end: string
+                                title: string
+                                description: string
+                                tag: string
+                            }>
+                        }) => (
+                            <VStack
+                                spacing={0}
+                                align="stretch"
+                                flex={1}
+                                w="100%"
+                            >
+                                <Box>
+                                    <Flex gap={2} align="baseline" mb={1}>
+                                        <Text
+                                            fontFamily="'Tenor Sans', sans-serif"
+                                            fontWeight={400}
+                                            fontSize={'30px'}
+                                            color="#FFFFFF"
+                                        >
+                                            {date}
+                                        </Text>
+                                        <Text
+                                            fontFamily="'Inter', sans-serif"
+                                            fontWeight={400}
+                                            fontSize={'16px'}
+                                            color="rgba(255,255,255,0.6)"
+                                        >
+                                            {dayName}
+                                        </Text>
+                                    </Flex>
+                                    <Text
+                                        fontFamily="'Tenor Sans', sans-serif"
+                                        fontWeight={400}
+                                        fontSize={'30px'}
+                                        color="#FFFFFF"
+                                        mb={2}
+                                    >
+                                        {title}
+                                    </Text>
+                                    <Text
+                                        fontFamily="'Inter', sans-serif"
+                                        fontWeight={400}
+                                        fontSize={'16px'}
+                                        fontStyle="italic"
+                                        color={'light'}
+                                        opacity={0.8}
+                                    >
+                                        {subtitle}
+                                    </Text>
+                                </Box>
+
+                                <VStack
+                                    spacing={isMobile ? 3.5 : 10}
+                                    align="stretch"
+                                    w="100%"
+                                    mt={6}
+                                >
+                                    {events.map((event, index) => (
+                                        <ScheduleCard
+                                            key={index}
+                                            start={event.start}
+                                            end={event.end}
+                                            title={event.title}
+                                            description={event.description}
+                                            tag={event.tag}
+                                        />
+                                    ))}
+                                </VStack>
+                            </VStack>
+                        )
+
+                        // Desktop: Two-column layout
+                        if (!isMobile) {
+                            return (
+                                <Flex gap={16} align="flex-start">
+                                    <DayColumn
+                                        date="Jan 24"
+                                        dayName="Saturday"
+                                        title="How the human tests the machine"
+                                        subtitle="Explore how far we can push the boundaries of AI, and where we must draw boundaries."
+                                        events={scheduleDay1}
+                                    />
+                                    <DayColumn
+                                        date="Jan 25"
+                                        dayName="Sunday"
+                                        title="How the machine tests the human"
+                                        subtitle="Explore whether AI challenges the way we live, learn, think, create and work."
+                                        events={scheduleDay2}
+                                    />
+                                </Flex>
+                            )
+                        }
+
+                        // Mobile: Tab switcher
+                        return (
+                            <Tabs
+                                colorScheme="purple"
+                                index={mobileTabIndex}
+                                onChange={setMobileTabIndex}
+                            >
+                                <TabList
+                                    borderBottom="none"
+                                    mb={8}
+                                    bg="rgba(255,255,255,0.1)"
+                                    borderRadius="full"
+                                    p={1}
+                                    display="flex"
+                                    gap={0}
+                                >
+                                    <Tab
+                                        fontFamily="'Inter', sans-serif"
+                                        fontWeight={400}
+                                        fontSize={'14px'}
+                                        color={'light'}
+                                        borderRadius="full"
+                                        flex={1}
+                                        py={2}
+                                        px={4}
+                                        _selected={{
+                                            bg: '#FFFFFF',
+                                            color: '#000000',
+                                            boxShadow:
+                                                '0 2px 4px rgba(0,0,0,0.1)',
+                                        }}
+                                        _focus={{ boxShadow: 'none' }}
+                                        _hover={{
+                                            bg:
+                                                mobileTabIndex === 0
+                                                    ? '#FFFFFF'
+                                                    : 'transparent',
+                                        }}
+                                        transition="all 0.2s"
+                                    >
+                                        Day 1 – Friday, Jan 24
+                                    </Tab>
+                                    <Tab
+                                        fontFamily="'Inter', sans-serif"
+                                        fontWeight={400}
+                                        fontSize={'14px'}
+                                        color={'light'}
+                                        borderRadius="full"
+                                        flex={1}
+                                        py={2}
+                                        px={4}
+                                        _selected={{
+                                            bg: '#FFFFFF',
+                                            color: '#000000',
+                                            boxShadow:
+                                                '0 2px 4px rgba(0,0,0,0.1)',
+                                        }}
+                                        _focus={{ boxShadow: 'none' }}
+                                        _hover={{
+                                            bg:
+                                                mobileTabIndex === 1
+                                                    ? '#FFFFFF'
+                                                    : 'transparent',
+                                        }}
+                                        transition="all 0.2s"
+                                    >
+                                        Day 2 – Saturday, Jan 25
+                                    </Tab>
+                                </TabList>
+
+                                <TabPanels>
+                                    <TabPanel p={0}>
+                                        <DayColumn
+                                            date="Jan 24"
+                                            dayName="Saturday"
+                                            title="How the human tests the machine"
+                                            subtitle="Explore how far we can push the boundaries of AI, and where we must draw boundaries."
+                                            events={scheduleDay1}
+                                        />
+                                    </TabPanel>
+                                    <TabPanel p={0}>
+                                        <DayColumn
+                                            date="Jan 25"
+                                            dayName="Sunday"
+                                            title="How the machine tests the human"
+                                            subtitle="Explore whether AI challenges the way we live, learn, think, create and work."
+                                            events={scheduleDay2}
+                                        />
+                                    </TabPanel>
+                                </TabPanels>
+                            </Tabs>
+                        )
+                    })()}
+                </Box>
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     Sponsors
