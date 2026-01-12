@@ -1,4 +1,5 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
+import React from 'react'
 import {
     Box,
     Container,
@@ -8,6 +9,7 @@ import {
     Card,
     Image,
     SimpleGrid,
+    Icon,
 } from '@chakra-ui/react'
 import FAQAccord from '../components/faq_accordian_2026'
 import { ConferenceXTitle } from '../components/Typography'
@@ -50,6 +52,9 @@ import { HashLink } from 'react-router-hash-link'
 import eyLogo from '../static/assets/2026-confx-spons/EY.png'
 import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact.png'
+import { FiUsers, FiGlobe } from 'react-icons/fi'
+import { MdLightbulbOutline } from 'react-icons/md'
+import { LuTrophy, LuRocket, LuBrain } from 'react-icons/lu'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
 import { Button } from '@chakra-ui/react'
@@ -529,6 +534,316 @@ const ConferenceX = () => {
                         </Box>
                     </Flex>
                 </VStack>
+
+                <Text
+                    fontSize={['25px', '48px']}
+                    color={'light'}
+                    mt={'128px'}
+                    mb={'48px'}
+                    fontFamily={'Tenor Sans, sans-serif'}
+                >
+                    Why Attend ConferenceX?
+                </Text>
+
+                <SimpleGrid
+                    columns={[1, 2, 3]}
+                    rowGap={'32px'}
+                    columnGap={'32px'}
+                    maxW={'1216px'}
+                    mr={'auto'}
+                    ml={'auto'}
+                >
+                    <Box
+                        bg="#2A1A3A"
+                        borderRadius="14px"
+                        border="1px solid #FFFFFF1A"
+                        p={6}
+                        maxW="384px"
+                    >
+                        <Box
+                            bg="rgba(138, 97, 200, 0.3)"
+                            borderRadius="full"
+                            w="56px"
+                            h="56px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb="24px"
+                        >
+                            <Icon
+                                as={FiUsers as React.ElementType}
+                                boxSize={6}
+                                color="#CF87FF"
+                            />
+                        </Box>
+                        <Text
+                            color="light"
+                            fontSize={['16px', '20px']}
+                            fontWeight="normal"
+                            lineHeight="28px"
+                            mb="12px"
+                            fontFamily={'Tenor Sans, sans-serif'}
+                        >
+                            World-Class Speakers
+                        </Text>
+                        <Text
+                            color="#FFFFFFB2"
+                            fontSize={['14px', '16px']}
+                            fontWeight="normal"
+                            lineHeight="26px"
+                            letterSpacing="-0.31px"
+                            opacity={0.9}
+                            fontFamily={'Inter, sans-serif'}
+                            maxW="281px"
+                            mb="16px"
+                        >
+                            Learn from leading AI researchers, executives, and
+                            innovators shaping the future of artificial
+                            intelligence.
+                        </Text>
+                    </Box>
+
+                    <Box
+                        bg="#2A1A3A"
+                        borderRadius="14px"
+                        border="1px solid #FFFFFF1A"
+                        p={6}
+                        maxW="384px"
+                    >
+                        <Box
+                            bg="rgba(138, 97, 200, 0.3)"
+                            borderRadius="full"
+                            w="56px"
+                            h="56px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb="24px"
+                        >
+                            <Icon
+                                as={MdLightbulbOutline as React.ElementType}
+                                boxSize="28px"
+                                color="#CF87FF"
+                            />
+                        </Box>
+                        <Text
+                            color="light"
+                            fontSize={['16px', '20px']}
+                            fontWeight="normal"
+                            lineHeight="28px"
+                            mb="12px"
+                            fontFamily={'Tenor Sans, sans-serif'}
+                        >
+                            Cutting-Edge Research
+                        </Text>
+                        <Text
+                            color="#FFFFFFB2"
+                            fontSize={['14px', '16px']}
+                            lineHeight="26px"
+                            letterSpacing="-0.31px"
+                            opacity={0.9}
+                            fontFamily={'Inter, sans-serif'}
+                            maxW="281px"
+                            mb="16px"
+                        >
+                            Explore the latest breakthroughs in machine
+                            learning, neural networks, and AI safety from top
+                            institutions.
+                        </Text>
+                    </Box>
+
+                    <Box
+                        bg="#2A1A3A"
+                        borderRadius="14px"
+                        border="1px solid #FFFFFF1A"
+                        p={6}
+                        maxW="384px"
+                    >
+                        <Box
+                            bg="rgba(138, 97, 200, 0.3)"
+                            borderRadius="full"
+                            w="56px"
+                            h="56px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb="24px"
+                        >
+                            <Icon
+                                as={LuTrophy as React.ElementType}
+                                boxSize={6}
+                                color="#CF87FF"
+                            />
+                        </Box>
+                        <Text
+                            color="light"
+                            fontSize={['16px', '20px']}
+                            fontWeight="normal"
+                            lineHeight="28px"
+                            mb="12px"
+                            fontFamily={'Tenor Sans, sans-serif'}
+                        >
+                            Startup Showcase
+                        </Text>
+                        <Text
+                            color="#FFFFFFB2"
+                            fontSize={['14px', '16px']}
+                            lineHeight="26px"
+                            letterSpacing="-0.31px"
+                            opacity={0.9}
+                            fontFamily={'Inter, sans-serif'}
+                            maxW="281px"
+                            mb="16px"
+                        >
+                            Discover innovative AI startups and pitch your own
+                            ideas to investors and industry experts.
+                        </Text>
+                    </Box>
+
+                    <Box
+                        bg="#2A1A3A"
+                        borderRadius="14px"
+                        border="1px solid #FFFFFF1A"
+                        p={6}
+                        maxW="384px"
+                    >
+                        <Box
+                            bg="rgba(138, 97, 200, 0.3)"
+                            borderRadius="full"
+                            w="56px"
+                            h="56px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb="24px"
+                        >
+                            <Icon
+                                as={LuRocket as React.ElementType}
+                                boxSize="28px"
+                                color="#CF87FF"
+                            />
+                        </Box>
+                        <Text
+                            color="light"
+                            fontSize={['16px', '20px']}
+                            fontWeight="normal"
+                            lineHeight="28px"
+                            mb="12px"
+                            fontFamily={'Tenor Sans, sans-serif'}
+                        >
+                            Career Opportunities
+                        </Text>
+                        <Text
+                            color="#FFFFFFB2"
+                            fontSize={['14px', '16px']}
+                            lineHeight="26px"
+                            letterSpacing="-0.31px"
+                            opacity={0.9}
+                            fontFamily={'Inter, sans-serif'}
+                            maxW="281px"
+                            mb="16px"
+                        >
+                            Connect with recruiters from top tech companies
+                            actively seeking AI talent.
+                        </Text>
+                    </Box>
+
+                    <Box
+                        bg="#2A1A3A"
+                        borderRadius="14px"
+                        border="1px solid #FFFFFF1A"
+                        p={6}
+                        maxW="384px"
+                    >
+                        <Box
+                            bg="rgba(138, 97, 200, 0.3)"
+                            borderRadius="full"
+                            w="56px"
+                            h="56px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb="24px"
+                        >
+                            <Icon
+                                as={FiGlobe as React.ElementType}
+                                boxSize="28px"
+                                color="#CF87FF"
+                            />
+                        </Box>
+                        <Text
+                            color="light"
+                            fontSize={['16px', '20px']}
+                            fontWeight="normal"
+                            lineHeight="28px"
+                            mb="12px"
+                            fontFamily={'Tenor Sans, sans-serif'}
+                        >
+                            Global Community
+                        </Text>
+                        <Text
+                            color="#FFFFFFB2"
+                            fontSize={['14px', '16px']}
+                            lineHeight="26px"
+                            letterSpacing="-0.31px"
+                            opacity={0.9}
+                            fontFamily={'Inter, sans-serif'}
+                            maxW="281px"
+                            mb="16px"
+                        >
+                            Network with 1,500+ attendees from 40+ countries,
+                            all passionate about AI innovation.
+                        </Text>
+                    </Box>
+
+                    <Box
+                        bg="#2A1A3A"
+                        borderRadius="14px"
+                        border="1px solid #FFFFFF1A"
+                        p={6}
+                        maxW="384px"
+                    >
+                        <Box
+                            bg="rgba(138, 97, 200, 0.3)"
+                            borderRadius="full"
+                            w="56px"
+                            h="56px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb="24px"
+                        >
+                            <Icon
+                                as={LuBrain as React.ElementType}
+                                boxSize="28px"
+                                color="#CF87FF"
+                            />
+                        </Box>
+                        <Text
+                            color="light"
+                            fontSize={['16px', '20px']}
+                            fontWeight="normal"
+                            lineHeight="28px"
+                            mb="12px"
+                            fontFamily={'Tenor Sans, sans-serif'}
+                        >
+                            Hands-On Workshops
+                        </Text>
+                        <Text
+                            color="#FFFFFFB2"
+                            fontSize={['14px', '16px']}
+                            lineHeight="26px"
+                            letterSpacing="-0.31px"
+                            opacity={0.9}
+                            fontFamily={'Inter, sans-serif'}
+                            maxW="281px"
+                            mb="16px"
+                        >
+                            Participate in interactive sessions on LLMs,
+                            computer vision, and responsible AI development.
+                        </Text>
+                    </Box>
+                </SimpleGrid>
 
                 <Text
                     fontSize={['18px', '24px']}
