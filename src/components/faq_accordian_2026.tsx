@@ -8,30 +8,7 @@ import {
     Text,
 } from '@chakra-ui/react'
 
-type FAQItem = {
-    q: string
-    a: string
-}
-
-type AccordProps = {
-    items?: FAQItem[]
-}
-
-const LOREM =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-
-const DEFAULT_FAQS: FAQItem[] = [
-    { q: 'Who can attend ConferenceX 2026?', a: LOREM },
-    { q: "What's included with my ticket?", a: LOREM },
-    { q: 'Will sessions be recorded?', a: LOREM },
-    { q: 'What is the refund policy?', a: LOREM },
-    { q: 'Is there a student discount?', a: LOREM },
-    { q: 'Where is the venue located?', a: LOREM },
-]
-
-const Accord = ({ items }: AccordProps) => {
-    const faqs = items?.length ? items : DEFAULT_FAQS
-
+const Accord = () => {
     return (
         <Box
             fontFamily="Tabular, sans-serif"
@@ -40,50 +17,160 @@ const Accord = ({ items }: AccordProps) => {
             px={[4, 0]}
         >
             <Accordion allowMultiple>
-                {faqs.map((item) => (
-                    <AccordionItem
-                        key={item.q}
-                        border="none"
-                        mb={3}
-                        borderRadius="lg"
-                        overflow="hidden"
-                        bg="rgba(255,255,255,0.08)"
-                        boxShadow="0 6px 18px rgba(0,0,0,0.25)"
-                    >
-                        <h2>
-                            <AccordionButton
-                                py={3}
-                                px={4}
-                                _hover={{ bg: 'rgba(255,255,255,0.10)' }}
-                                _expanded={{ bg: 'rgba(255,255,255,0.10)' }}
-                            >
-                                <Text
-                                    flex="1"
-                                    textAlign="left"
-                                    color="white"
-                                    fontSize={['13px', '14px']}
-                                    fontWeight={500}
-                                    opacity={0.95}
-                                >
-                                    {item.q}
-                                </Text>
-                                <AccordionIcon color="white" opacity={0.85} />
-                            </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel
+                {/* Q1 */}
+                <AccordionItem
+                    border="none"
+                    mb={3}
+                    borderRadius="lg"
+                    overflow="hidden"
+                    bg="rgba(255,255,255,0.08)"
+                    boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                >
+                    <h2>
+                        <AccordionButton
+                            py={3}
                             px={4}
-                            pb={4}
-                            pt={0}
-                            color="white"
-                            opacity={0.85}
-                            fontSize={['13px', '14px']}
-                            lineHeight="1.7"
+                            _hover={{ bg: 'rgba(255,255,255,0.10)' }}
+                            _expanded={{ bg: 'rgba(255,255,255,0.10)' }}
                         >
-                            {item.a}
-                        </AccordionPanel>
-                    </AccordionItem>
-                ))}
+                            <Text
+                                flex="1"
+                                textAlign="left"
+                                color="white"
+                                fontSize="14px"
+                                fontWeight={500}
+                            >
+                                When and where is the conference being held?
+                            </Text>
+                            <AccordionIcon color="white" />
+                        </AccordionButton>
+                    </h2>
+                    <AccordionPanel
+                        px={4}
+                        pb={4}
+                        pt={0}
+                        color="white"
+                        opacity={0.85}
+                        fontSize="14px"
+                    >
+                        The event runs 8:30AM to 5:00PM EST on January 24th and
+                        25th, 2026 at the Schwartz Reisman Institute for
+                        Technology and Society.
+                    </AccordionPanel>
+                </AccordionItem>
+
+                {/* Q2 */}
+                <AccordionItem
+                    border="none"
+                    mb={3}
+                    borderRadius="lg"
+                    overflow="hidden"
+                    bg="rgba(255,255,255,0.08)"
+                    boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                >
+                    <h2>
+                        <AccordionButton py={3} px={4}>
+                            <Text
+                                flex="1"
+                                textAlign="left"
+                                color="white"
+                                fontSize="14px"
+                                fontWeight={500}
+                            >
+                                Will food and refreshments be provided?
+                            </Text>
+                            <AccordionIcon color="white" />
+                        </AccordionButton>
+                    </h2>
+                    <AccordionPanel
+                        px={4}
+                        pb={4}
+                        pt={0}
+                        color="white"
+                        opacity={0.85}
+                        fontSize="14px"
+                    >
+                        Start the day with some hot coffee and light breakfast
+                        snacks! Lunch and drinks will be provided to attendees,
+                        with easy access to a water fountain throughout the day.
+                    </AccordionPanel>
+                </AccordionItem>
+
+                {/* Q3 */}
+                <AccordionItem
+                    border="none"
+                    mb={3}
+                    borderRadius="lg"
+                    overflow="hidden"
+                    bg="rgba(255,255,255,0.08)"
+                    boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                >
+                    <h2>
+                        <AccordionButton py={3} px={4}>
+                            <Text
+                                flex="1"
+                                textAlign="left"
+                                color="white"
+                                fontSize="14px"
+                                fontWeight={500}
+                            >
+                                How much AI knowledge is required to attend
+                                ConferenceX?
+                            </Text>
+                            <AccordionIcon color="white" />
+                        </AccordionButton>
+                    </h2>
+                    <AccordionPanel
+                        px={4}
+                        pb={4}
+                        pt={0}
+                        color="white"
+                        opacity={0.85}
+                        fontSize="14px"
+                    >
+                        ConferenceX 2026 is open to anyone who&apos;s interested
+                        in the AI community! We welcome attendees with all
+                        experience levels, whether they&apos;re students,
+                        founders, or industry professionals.
+                    </AccordionPanel>
+                </AccordionItem>
+
+                {/* Q4 */}
+                <AccordionItem
+                    border="none"
+                    mb={3}
+                    borderRadius="lg"
+                    overflow="hidden"
+                    bg="rgba(255,255,255,0.08)"
+                    boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                >
+                    <h2>
+                        <AccordionButton py={3} px={4}>
+                            <Text
+                                flex="1"
+                                textAlign="left"
+                                color="white"
+                                fontSize="14px"
+                                fontWeight={500}
+                            >
+                                Is there a limit to the number of attendees?
+                            </Text>
+                            <AccordionIcon color="white" />
+                        </AccordionButton>
+                    </h2>
+                    <AccordionPanel
+                        px={4}
+                        pb={4}
+                        pt={0}
+                        color="white"
+                        opacity={0.85}
+                        fontSize="14px"
+                    >
+                        Yes, ticket sales are limited. Seating is based on a
+                        first-come, first-served basis. Buy your ticket early to
+                        secure your spot.
+                    </AccordionPanel>
+                </AccordionItem>
             </Accordion>
         </Box>
     )
