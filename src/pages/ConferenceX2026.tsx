@@ -52,6 +52,7 @@ import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact.png'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
+import { LuQuote } from 'react-icons/lu'
 
 const ConferenceX = () => {
     const gradient2026 =
@@ -550,6 +551,77 @@ const ConferenceX = () => {
                                 </Text>
                             )}
                         </Flex>
+                    ))}
+                </SimpleGrid>
+
+                <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
+                    Testimonials
+                </Text>
+                <SimpleGrid
+                    columns={[1, 1, 2, 3]}
+                    spacing={'24px'}
+                    maxW={'1200px'}
+                    mx={'auto'}
+                    mb={'70px'}
+                >
+                    {[1, 2, 3].map((index) => (
+                        <Card
+                            key={index}
+                            bg="rgba(17,17,17,0.3)"
+                            backdropFilter="blur(10px)"
+                            border="1px solid rgba(255,255,255,0.1)"
+                            borderRadius="lg"
+                            p={6}
+                            w={'384px'}
+                            h={'311px'}
+                            display="flex"
+                            flexDirection="column"
+                            justifyContent="space-between"
+                        >
+                            <VStack align="flex-start" spacing={4}>
+                                <LuQuote
+                                    size={40}
+                                    color="rgba(168, 85, 247, 0.8)"
+                                />
+                                <Text
+                                    color={'light'}
+                                    fontSize={'16px'}
+                                    fontStyle="italic"
+                                    lineHeight={'1.6'}
+                                >
+                                    "As a startup founder, ConferenceX gave us
+                                    the exposure we needed. We secured funding
+                                    and found our first enterprise customer
+                                    here."
+                                </Text>
+                            </VStack>
+                            <Flex alignItems="center" gap={3} mt={4}>
+                                <Box
+                                    boxSize={'48px'}
+                                    borderRadius="full"
+                                    bg="rgba(255,255,255,0.1)"
+                                    overflow="hidden"
+                                >
+                                    {/* Placeholder for image */}
+                                </Box>
+                                <VStack align="flex-start" spacing={0}>
+                                    <Text
+                                        color={'light'}
+                                        fontSize={'16px'}
+                                        fontWeight="semibold"
+                                    >
+                                        Priya Sharma
+                                    </Text>
+                                    <Text
+                                        color={'light'}
+                                        fontSize={'14px'}
+                                        opacity={0.7}
+                                    >
+                                        CEO & Founder, NeuralVision
+                                    </Text>
+                                </VStack>
+                            </Flex>
+                        </Card>
                     ))}
                 </SimpleGrid>
 
