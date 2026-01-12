@@ -869,7 +869,13 @@ const ConferenceX = () => {
                     ))}
                 </SimpleGrid>
 
-                <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
+                <Text
+                    fontFamily={'Tenor Sans, sans-serif'}
+                    fontSize={['24px', '48px']}
+                    color={'#FFFFFF'}
+                    mt={'70px'}
+                    mb={'20px'}
+                >
                     Testimonials
                 </Text>
                 <SimpleGrid
@@ -882,27 +888,33 @@ const ConferenceX = () => {
                     {[1, 2, 3].map((index) => (
                         <Card
                             key={index}
-                            bg="rgba(17,17,17,0.3)"
+                            bg="#2A1A3A"
                             backdropFilter="blur(10px)"
                             border="1px solid rgba(255,255,255,0.1)"
                             borderRadius="lg"
                             p={6}
-                            w={'384px'}
+                            maxW={'384px'}
                             h={'311px'}
                             display="flex"
                             flexDirection="column"
                             justifyContent="space-between"
                         >
                             <VStack align="flex-start" spacing={4}>
-                                <LuQuote
-                                    size={40}
-                                    color="rgba(168, 85, 247, 0.8)"
+                                <Icon
+                                    as={LuQuote as React.ElementType}
+                                    h="40px"
+                                    w="40px"
+                                    color="#cf87ff"
                                 />
                                 <Text
-                                    color={'light'}
-                                    fontSize={'16px'}
+                                    color={' #FFFFFFCC'}
+                                    fontSize={'18px'}
+                                    fontFamily={'Inter, sans-serif'}
                                     fontStyle="italic"
-                                    lineHeight={'1.6'}
+                                    lineHeight={'29.25px'}
+                                    letterSpacing={'-0.44px'}
+                                    w="300px"
+                                    mb="24px"
                                 >
                                     "As a startup founder, ConferenceX gave us
                                     the exposure we needed. We secured funding
@@ -921,16 +933,24 @@ const ConferenceX = () => {
                                 </Box>
                                 <VStack align="flex-start" spacing={0}>
                                     <Text
-                                        color={'light'}
+                                        color={'#FFFFFF'}
                                         fontSize={'16px'}
-                                        fontWeight="semibold"
+                                        fontWeight="600"
+                                        fontStyle="semibold"
+                                        lineHeight={'24px'}
+                                        letterSpacing={'-0.31px'}
+                                        fontFamily={'Inter, sans-serif'}
                                     >
                                         Priya Sharma
                                     </Text>
                                     <Text
-                                        color={'light'}
+                                        color={'#FFFFFF99'}
                                         fontSize={'14px'}
-                                        opacity={0.7}
+                                        lineHeight={'20px'}
+                                        letterSpacing={'-0.15px'}
+                                        fontFamily={'Inter, sans-serif'}
+                                        fontStyle="normal"
+                                        fontWeight="400"
                                     >
                                         CEO & Founder, NeuralVision
                                     </Text>
