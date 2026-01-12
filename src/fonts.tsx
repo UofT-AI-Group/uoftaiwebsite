@@ -63,6 +63,12 @@ const Fonts = () => (
                 font-weight: 700;
                 src: url('./fonts/Tabular-BoldItalic.otf');
             }
+            @font-face {
+                font-family: 'Tenor Sans';
+                font-style: normal;
+                font-weight: 400;
+                src: url('https://fonts.gstatic.com/s/tenorsans/v21/bx6ANxqUneKx06UkIXISr3I.ttf') format('truetype');
+            }
       `}
     />
 )
