@@ -13,6 +13,8 @@ import {
     TabPanels,
     Tab,
     TabPanel,
+    Button,
+    Link,
 } from '@chakra-ui/react'
 import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
@@ -90,6 +92,7 @@ import { HashLink } from 'react-router-hash-link'
 import eyLogo from '../static/assets/2026-confx-spons/EY.png'
 import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact.png'
+import rectangleImage from '../static/assets/rectangle_get_your_ticket.png'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
 import { scheduleDay1 } from '../data/scheduleDay1'
@@ -714,7 +717,6 @@ const ConferenceX = () => {
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2026 Sneakpeak
                 </Text>
-
                 <VStack
                     alignItems={'center'}
                     spacing={[12, 16]}
@@ -843,7 +845,6 @@ const ConferenceX = () => {
                         </Box>
                     </Flex>
                 </VStack>
-
                 <Box mt={'70px'} mb={'40px'}>
                     <Box maxW={'1200px'} mx={'auto'} mb={'40px'}>
                         <Text
@@ -919,7 +920,6 @@ const ConferenceX = () => {
                         ))}
                     </SimpleGrid>
                 </Box>
-
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     FAQ
                 </Text>
@@ -931,7 +931,6 @@ const ConferenceX = () => {
                         "ConferenceX 2026 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more."
                     }
                 />
-
                 <Box
                     bg="#0F0618"
                     mt={'70px'}
@@ -1231,7 +1230,6 @@ const ConferenceX = () => {
                         )
                     })()}
                 </Box>
-
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
                     Sponsors
                 </Text>
@@ -1272,6 +1270,106 @@ const ConferenceX = () => {
                             />
                         </Flex>
                     </Box>
+                </Box>
+                //
+                <Box
+                    w="100vw"
+                    py={[16, 20, 24]}
+                    px={0}
+                    mt={['70px', '100px']}
+                    position="relative"
+                    overflow="hidden"
+                    h="522px"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    ml="calc(-50vw + 50%)"
+                >
+                    <Box
+                        position="absolute"
+                        width="100%"
+                        height="522px"
+                        left={0}
+                        top="calc(50% - 522px/2)"
+                        borderRadius="0px"
+                        zIndex={0}
+                        style={{
+                            background:
+                                'linear-gradient(302.57deg, #5F3B64 13.32%, #361E3A 54.89%, #1D1427 90.51%)',
+                        }}
+                    />
+                    <Box
+                        position="absolute"
+                        top="50%"
+                        left="50%"
+                        transform="translate(-50%, -50%) rotate(67deg)"
+                        w="90%"
+                        h="170%"
+                        bg="rgba(255, 255, 255, 0.15)"
+                        opacity={1}
+                        zIndex={2}
+                        style={{
+                            backdropFilter: 'blur(1px)',
+                        }}
+                    />
+
+                    {/* Text and Button - Centered, above Rectangle B */}
+                    <VStack
+                        spacing={6}
+                        align="center"
+                        textAlign="center"
+                        position="relative"
+                        zIndex={3}
+                        maxW="1200px"
+                        mx="auto"
+                        px={[6, 12, 20]}
+                    >
+                        <VStack spacing={0} align="center">
+                            <Text
+                                fontFamily="'Tenor Sans', sans-serif"
+                                fontSize={['36px', '48px', '60px']}
+                                fontWeight={400}
+                                color="#FFFFFF"
+                                lineHeight={['45px', '60px', '75px']}
+                                letterSpacing="0px"
+                            >
+                                Get your tickets for
+                            </Text>
+                            <Text
+                                fontFamily="'Tenor Sans', sans-serif"
+                                fontSize={['36px', '48px', '60px']}
+                                fontWeight={400}
+                                color="#FFFFFF"
+                                lineHeight={['45px', '60px', '75px']}
+                                letterSpacing="0px"
+                            >
+                                ConferenceX 2026
+                            </Text>
+                        </VStack>
+                        <HashLink
+                            smooth
+                            to={
+                                'https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator'
+                            }
+                        >
+                            <Button
+                                bg="#FFFFFF"
+                                color="#000000"
+                                fontFamily="'JetBrains Mono', monospace"
+                                fontWeight={500}
+                                fontSize="18px"
+                                lineHeight="28px"
+                                px={[12, 16, 20]}
+                                py={[6, 8, 10]}
+                                borderRadius="full"
+                                _hover={{
+                                    bg: 'rgba(255, 255, 255, 0.9)',
+                                }}
+                            >
+                                Secure Your Ticket
+                            </Button>
+                        </HashLink>
+                    </VStack>
                 </Box>
             </Box>
         </Box>
