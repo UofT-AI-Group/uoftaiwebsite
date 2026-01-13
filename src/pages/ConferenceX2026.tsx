@@ -540,7 +540,6 @@ const ConferenceX = () => {
                     color={'light'}
                     mt={'128px'}
                     mb={'48px'}
-                    fontFamily={'Tenor Sans, sans-serif'}
                 >
                     Why Attend ConferenceX?
                 </Text>
@@ -582,7 +581,6 @@ const ConferenceX = () => {
                             fontWeight="normal"
                             lineHeight="28px"
                             mb="12px"
-                            fontFamily={'Tenor Sans, sans-serif'}
                         >
                             World-Class Speakers
                         </Text>
@@ -593,7 +591,6 @@ const ConferenceX = () => {
                             lineHeight="26px"
                             letterSpacing="-0.31px"
                             opacity={0.9}
-                            fontFamily={'Inter, sans-serif'}
                             maxW="281px"
                             mb="16px"
                         >
@@ -632,7 +629,6 @@ const ConferenceX = () => {
                             fontWeight="normal"
                             lineHeight="28px"
                             mb="12px"
-                            fontFamily={'Tenor Sans, sans-serif'}
                         >
                             Cutting-Edge Research
                         </Text>
@@ -642,7 +638,6 @@ const ConferenceX = () => {
                             lineHeight="26px"
                             letterSpacing="-0.31px"
                             opacity={0.9}
-                            fontFamily={'Inter, sans-serif'}
                             maxW="281px"
                             mb="16px"
                         >
@@ -681,7 +676,6 @@ const ConferenceX = () => {
                             fontWeight="normal"
                             lineHeight="28px"
                             mb="12px"
-                            fontFamily={'Tenor Sans, sans-serif'}
                         >
                             Startup Showcase
                         </Text>
@@ -691,7 +685,6 @@ const ConferenceX = () => {
                             lineHeight="26px"
                             letterSpacing="-0.31px"
                             opacity={0.9}
-                            fontFamily={'Inter, sans-serif'}
                             maxW="281px"
                             mb="16px"
                         >
@@ -729,7 +722,6 @@ const ConferenceX = () => {
                             fontWeight="normal"
                             lineHeight="28px"
                             mb="12px"
-                            fontFamily={'Tenor Sans, sans-serif'}
                         >
                             Career Opportunities
                         </Text>
@@ -739,7 +731,6 @@ const ConferenceX = () => {
                             lineHeight="26px"
                             letterSpacing="-0.31px"
                             opacity={0.9}
-                            fontFamily={'Inter, sans-serif'}
                             maxW="281px"
                             mb="16px"
                         >
@@ -777,7 +768,6 @@ const ConferenceX = () => {
                             fontWeight="normal"
                             lineHeight="28px"
                             mb="12px"
-                            fontFamily={'Tenor Sans, sans-serif'}
                         >
                             Global Community
                         </Text>
@@ -787,7 +777,6 @@ const ConferenceX = () => {
                             lineHeight="26px"
                             letterSpacing="-0.31px"
                             opacity={0.9}
-                            fontFamily={'Inter, sans-serif'}
                             maxW="281px"
                             mb="16px"
                         >
@@ -825,7 +814,6 @@ const ConferenceX = () => {
                             fontWeight="normal"
                             lineHeight="28px"
                             mb="12px"
-                            fontFamily={'Tenor Sans, sans-serif'}
                         >
                             Hands-On Workshops
                         </Text>
@@ -835,7 +823,6 @@ const ConferenceX = () => {
                             lineHeight="26px"
                             letterSpacing="-0.31px"
                             opacity={0.9}
-                            fontFamily={'Inter, sans-serif'}
                             maxW="281px"
                             mb="16px"
                         >
