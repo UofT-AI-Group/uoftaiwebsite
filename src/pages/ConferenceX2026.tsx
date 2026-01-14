@@ -90,8 +90,9 @@ import stephen from '../static/assets/conf-2026-assets/stephen_wolfram.jpg'
 
 import { HashLink } from 'react-router-hash-link'
 import eyLogo from '../static/assets/2026-confx-spons/EY.png'
-import canvasLogo from '../static/assets/2026-confx-spons/canvas.png'
-import intactLogo from '../static/assets/2026-confx-spons/intact.png'
+import canvasLogo from '../static/assets/2026-confx-spons/canvas_2026.png'
+import intactLogo from '../static/assets/2026-confx-spons/intact_2026.png'
+import RBCLogo from '../static/assets/2026-confx-spons/RBC.png'
 import rectangleImage from '../static/assets/rectangle_get_your_ticket.png'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
@@ -1602,7 +1603,7 @@ const ConferenceX = () => {
                             >
                                 <Image
                                     src={canvasLogo}
-                                    maxH="60%"
+                                    maxH="40%"
                                     objectFit="contain"
                                 />
                             </Box>
@@ -1620,7 +1621,7 @@ const ConferenceX = () => {
                             >
                                 <Image
                                     src={eyLogo}
-                                    maxH="60%"
+                                    maxH="70%"
                                     objectFit="contain"
                                 />
                             </Box>
@@ -1639,6 +1640,24 @@ const ConferenceX = () => {
                                 <Image
                                     src={intactLogo}
                                     maxH="60%"
+                                    objectFit="contain"
+                                />
+                            </Box>
+
+                            {/* RBC */}
+                            <Box
+                                bg="rgba(255,255,255,0.08)"
+                                borderRadius="16px"
+                                border="1px solid rgba(255,255,255,0.12)"
+                                w={['140px', '180px', '220px']}
+                                h={['90px', '110px', '130px']}
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                <Image
+                                    src={RBCLogo}
+                                    maxH="75%"
                                     objectFit="contain"
                                 />
                             </Box>
