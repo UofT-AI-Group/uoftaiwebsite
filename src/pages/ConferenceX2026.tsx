@@ -1569,47 +1569,83 @@ const ConferenceX = () => {
                         )
                     })()}
                 </Box>
-                <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
-                    Sponsors
-                </Text>
-                <Box
-                    bg={'rgba(255, 255, 255, 0.18)'}
-                    p={['12px', '20px']}
-                    borderRadius={'lg'}
-                    boxShadow={'lg'}
-                    maxW={'1200px'}
-                    mx="auto"
-                    mt={['12px', '20px']}
-                >
-                    <Box maxW={'1100px'} mx="auto">
+                <Box>
+                    <Text
+                        fontSize={['22px', '28px', '32px']}
+                        color="light"
+                        mb="32px"
+                        maxW="1216px"
+                        mx="auto"
+                        px={[6, 0]}
+                        fontFamily="Tabular, sans-serif"
+                    >
+                        Sponsors
+                    </Text>
+
+                    <Box maxW="1216px" mx="auto" px={[4, 6]}>
                         <Flex
-                            justifyContent={'center'}
-                            alignItems={'center'}
-                            gap={['40px', '64px', '88px']}
-                            flexWrap={'wrap'}
-                            py={['12px', '20px']}
+                            justify="center"
+                            align="center"
+                            gap={['20px', '32px', '40px']}
+                            flexWrap="wrap"
                         >
-                            <Image
-                                src={canvasLogo}
-                                h={['140px', '170px']}
-                                maxW={'280px'}
-                                objectFit="contain"
-                            />
-                            <Image
-                                src={eyLogo}
-                                h={['120px', '120px']}
-                                maxW={'240px'}
-                                objectFit="contain"
-                            />
-                            <Image
-                                src={intactLogo}
-                                h={['140px', '170px']}
-                                maxW={'280px'}
-                                objectFit="contain"
-                            />
+                            {/* Canvas */}
+                            <Box
+                                bg="rgba(255,255,255,0.08)"
+                                borderRadius="16px"
+                                border="1px solid rgba(255,255,255,0.12)"
+                                w={['140px', '180px', '220px']}
+                                h={['90px', '110px', '130px']}
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                <Image
+                                    src={canvasLogo}
+                                    maxH="60%"
+                                    objectFit="contain"
+                                />
+                            </Box>
+
+                            {/* EY */}
+                            <Box
+                                bg="rgba(255,255,255,0.08)"
+                                borderRadius="16px"
+                                border="1px solid rgba(255,255,255,0.12)"
+                                w={['140px', '180px', '220px']}
+                                h={['90px', '110px', '130px']}
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                <Image
+                                    src={eyLogo}
+                                    maxH="60%"
+                                    objectFit="contain"
+                                />
+                            </Box>
+
+                            {/* Intact */}
+                            <Box
+                                bg="rgba(255,255,255,0.08)"
+                                borderRadius="16px"
+                                border="1px solid rgba(255,255,255,0.12)"
+                                w={['140px', '180px', '220px']}
+                                h={['90px', '110px', '130px']}
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                <Image
+                                    src={intactLogo}
+                                    maxH="60%"
+                                    objectFit="contain"
+                                />
+                            </Box>
                         </Flex>
                     </Box>
                 </Box>
+
                 <Box
                     w="100vw"
                     py={[16, 20, 24]}
