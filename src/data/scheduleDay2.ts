@@ -109,15 +109,15 @@ export const scheduleDay2 = [
     {
         start: '3:55 PM',
         end: '4:15 PM',
-        title: 'TITLE TBD',
-        description: 'Industry talk on cloud and AI strategy.',
+        title: 'Cloud and AI Strategy',
+        description: 'Industry talk',
         tag: 'Talk',
     },
     {
         start: '4:15 PM',
         end: '4:55 PM',
-        title: 'TITLE TBD',
-        description: 'Online keynote on computation, knowledge, and AI.',
+        title: 'Computation, Knowledge, and AI',
+        description: 'Online keynote',
         tag: 'Talk',
     },
     {

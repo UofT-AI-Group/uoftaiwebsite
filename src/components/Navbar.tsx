@@ -18,8 +18,8 @@ import { ReactNode, useEffect, useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
-import { HamburgerIcon } from '@chakra-ui/icons'
 import { HashLink } from 'react-router-hash-link'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
 const Links = [
     'Home',

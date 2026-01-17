@@ -1,6 +1,6 @@
 export const scheduleDay1 = [
     {
-        start: '9:30 AM',
+        start: '8:30 AM',
         end: '9:40 AM',
         title: 'Opening Remarks & Welcome',
         description: 'Welcome address and opening of the conference.',
@@ -8,21 +8,21 @@ export const scheduleDay1 = [
     },
     {
         start: '9:45 AM',
-        end: '10:15 AM',
-        title: 'TITLE TBD',
-        description: 'Talk by Yvan Gauthier on AI safety and governance.',
+        end: '10:05 AM',
+        title: 'AI safety and governance',
+        description: 'Talk by Yvan Gauthier',
         tag: 'Talk',
     },
     {
-        start: '10:20 AM',
-        end: '10:40 AM',
-        title: 'TITLE TBD',
-        description: 'Talk by Hossein Rahnama on applied AI and innovation.',
+        start: '10:10 AM',
+        end: '10:25 AM',
+        title: 'What does it mean to trust an AI system?',
+        description: 'Talk by Andrei Muresanu',
         tag: 'Talk',
     },
     {
-        start: '10:45 AM',
-        end: '11:25 AM',
+        start: '10:30 AM',
+        end: '10:45 AM',
         title: 'AI for Scientific Discovery',
         description:
             'Panel discussion on how AI accelerates scientific research.',
@@ -53,8 +53,8 @@ export const scheduleDay1 = [
     {
         start: '1:45 PM',
         end: '2:05 PM',
-        title: 'TITLE TBD',
-        description: 'Talk by Jeremy Tyers on AI in financial services.',
+        title: 'AI in financial services',
+        description: 'Talk by Jeremy Tyers',
         tag: 'Talk',
     },
     {
