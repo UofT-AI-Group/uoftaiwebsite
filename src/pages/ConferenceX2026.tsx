@@ -138,6 +138,36 @@ const ConferenceX = () => {
     const [showAllSpeakers, setShowAllSpeakers] = useState(false)
     const day1Speakers = [
         {
+            name: 'Stephen Wolfram',
+            role: 'CEO & Founder',
+            company: 'Wolfram Institute',
+            img: stephen,
+        },
+        {
+            name: 'Janice Stein',
+            role: 'Founding Director',
+            company: 'Munk School of Global Affairs & Public Policy',
+            img: janice,
+        },
+        {
+            name: 'David Fleet',
+            role: 'CIFAR AI Chair; Lead',
+            company: 'Google DeepMind Toronto',
+            img: david,
+        },
+        {
+            name: 'Joshua Gans',
+            role: 'Professor; Chief Economist',
+            company: 'University of Toronto; Creative Destruction Lab',
+            img: joshua,
+        },
+        {
+            name: 'Daniel Wigdor',
+            role: 'Professor of Computer Science; Founder',
+            company: 'University of Toronto; AXL',
+            img: daniel,
+        },
+        {
             name: 'Yvan Gauthier',
             role: 'Principal Advisor, AI Safety',
             company: 'National Research Council of Canada',
@@ -312,13 +342,6 @@ const ConferenceX = () => {
             img: michael,
         },
 
-        {
-            name: 'David Fleet',
-            role: 'CIFAR AI Chair; Lead',
-            company: 'Google DeepMind Toronto',
-            img: david,
-        },
-
         // // ----------------------------
         // // DAY 2 SPEAKERS
         // // ----------------------------
@@ -336,12 +359,6 @@ const ConferenceX = () => {
             img: janice,
         },
 
-        {
-            name: 'Joshua Gans',
-            role: 'Professor; Chief Economist',
-            company: 'University of Toronto; Creative Destruction Lab',
-            img: joshua,
-        },
         {
             name: 'Kristina McElheran',
             role: 'Professor; Faculty Fellow',
@@ -386,22 +403,10 @@ const ConferenceX = () => {
             img: alex,
         },
         {
-            name: 'Daniel Wigdor',
-            role: 'Professor of Computer Science; Founder',
-            company: 'University of Toronto; AXL',
-            img: daniel,
-        },
-        {
             name: 'Andre Albuquerque',
             role: 'Senior Manager, Cloud & AI',
             company: 'BMO',
             img: andre,
-        },
-        {
-            name: 'Stephen Wolfram',
-            role: 'CEO & Founder',
-            company: 'Wolfram Institute',
-            img: stephen,
         },
     ]
 
