@@ -100,7 +100,7 @@ import { scheduleDay2 } from '../data/scheduleDay2'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { FiUsers, FiGlobe } from 'react-icons/fi'
 import { MdLightbulbOutline } from 'react-icons/md'
-import { LuTrophy, LuRocket, LuBrain } from 'react-icons/lu'
+import { LuTrophy, LuRocket, LuBrain, LuQuote } from 'react-icons/lu'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const ConferenceX = () => {
@@ -1302,6 +1302,204 @@ const ConferenceX = () => {
                 )}
 
                 <Text
+                    fontSize={['24px', '48px']}
+                    color={'#FFFFFF'}
+                    mt={'70px'}
+                    mb={'20px'}
+                >
+                    Testimonials
+                </Text>
+                <SimpleGrid
+                    columns={[1, 1, 2, 3]}
+                    spacing={'24px'}
+                    maxW={'1200px'}
+                    mx={'auto'}
+                    mb={'70px'}
+                    px={[4, 6, 8]}
+                >
+                    <Card
+                        bg="#2A1A3A"
+                        backdropFilter="blur(10px)"
+                        border="1px solid rgba(255,255,255,0.1)"
+                        borderRadius="lg"
+                        p={6}
+                        w="100%"
+                        h="auto"
+                        minH={'375px'}
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                    >
+                        <VStack align="flex-start" spacing={4}>
+                            <Icon
+                                as={LuQuote as React.ElementType}
+                                h="40px"
+                                w="40px"
+                                color="#cf87ff"
+                            />
+                            <Text
+                                color={' #FFFFFFCC'}
+                                fontSize={'16px'}
+                                fontStyle="italic"
+                                lineHeight={'29.25px'}
+                                letterSpacing={'-0.44px'}
+                                w="100%"
+                                mb="12px"
+                            >
+                                "ConferenceX 2025 was a well-organized event and
+                                gave me the opportunity to network with
+                                potential recruiters as well as learn more about
+                                the organizations that they represent."
+                            </Text>
+                        </VStack>
+                        <Flex alignItems="center" gap={3} mt={4}>
+                            <VStack align="flex-start" spacing={0}>
+                                <Text
+                                    color={'#FFFFFF'}
+                                    fontSize={'16px'}
+                                    fontWeight="600"
+                                    fontStyle="semibold"
+                                    lineHeight={'24px'}
+                                    letterSpacing={'-0.31px'}
+                                >
+                                    Rio McKen
+                                </Text>
+                                <Text
+                                    color={'#FFFFFF99'}
+                                    fontSize={'14px'}
+                                    lineHeight={'20px'}
+                                    letterSpacing={'-0.15px'}
+                                    fontStyle="normal"
+                                    fontWeight="400"
+                                >
+                                    Student, University of Toronto
+                                </Text>
+                            </VStack>
+                        </Flex>
+                    </Card>
+
+                    <Card
+                        bg="#2A1A3A"
+                        backdropFilter="blur(10px)"
+                        border="1px solid rgba(255,255,255,0.1)"
+                        borderRadius="lg"
+                        p={6}
+                        w="100%"
+                        h="auto"
+                        minH={'375px'}
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                    >
+                        <VStack align="flex-start" spacing={4}>
+                            <Icon
+                                as={LuQuote as React.ElementType}
+                                h="40px"
+                                w="40px"
+                                color="#cf87ff"
+                            />
+                            <Text
+                                color={' #FFFFFFCC'}
+                                fontSize={'16px'}
+                                fontStyle="italic"
+                                lineHeight={'29.25px'}
+                                letterSpacing={'-0.44px'}
+                                w="100%"
+                                mb="12px"
+                            >
+                                "I believe it was a well-run event. There were a
+                                lot of opportunities for networking and it was
+                                personally not too exhausting for me since food
+                                and refreshments were well provided and the
+                                venue was cozy."
+                            </Text>
+                        </VStack>
+                        <Flex alignItems="center" gap={3} mt={4}>
+                            <VStack align="flex-start" spacing={0}>
+                                <Text
+                                    color={'#FFFFFF'}
+                                    fontSize={'16px'}
+                                    fontWeight="600"
+                                    fontStyle="semibold"
+                                    lineHeight={'24px'}
+                                    letterSpacing={'-0.31px'}
+                                >
+                                    Rachel Lo
+                                </Text>
+                                <Text
+                                    color={'#FFFFFF99'}
+                                    fontSize={'14px'}
+                                    lineHeight={'20px'}
+                                    letterSpacing={'-0.15px'}
+                                    fontStyle="normal"
+                                    fontWeight="400"
+                                >
+                                    Student, University of Toronto
+                                </Text>
+                            </VStack>
+                        </Flex>
+                    </Card>
+
+                    <Card
+                        bg="#2A1A3A"
+                        backdropFilter="blur(10px)"
+                        border="1px solid rgba(255,255,255,0.1)"
+                        borderRadius="lg"
+                        p={6}
+                        w="100%"
+                        h="auto"
+                        minH={'375px'}
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                    >
+                        <VStack align="flex-start" spacing={4}>
+                            <Icon
+                                as={LuQuote as React.ElementType}
+                                h="40px"
+                                w="40px"
+                                color="#cf87ff"
+                            />
+                            <Text
+                                color={' #FFFFFFCC'}
+                                fontSize={'16px'}
+                                fontStyle="italic"
+                                lineHeight={'29.25px'}
+                                letterSpacing={'-0.44px'}
+                                w="100%"
+                                mb="12px"
+                            >
+                                "I had a great time, everything went well."
+                            </Text>
+                        </VStack>
+                        <Flex alignItems="center" gap={3} mt={4}>
+                            <VStack align="flex-start" spacing={0}>
+                                <Text
+                                    color={'#FFFFFF'}
+                                    fontSize={'16px'}
+                                    fontWeight="600"
+                                    fontStyle="semibold"
+                                    lineHeight={'24px'}
+                                    letterSpacing={'-0.31px'}
+                                >
+                                    Yvonne Leung, Ph.D.
+                                </Text>
+                                <Text
+                                    color={'#FFFFFF99'}
+                                    fontSize={'14px'}
+                                    lineHeight={'20px'}
+                                    letterSpacing={'-0.15px'}
+                                    fontStyle="normal"
+                                    fontWeight="400"
+                                >
+                                    Research Scientist, UHN
+                                </Text>
+                            </VStack>
+                        </Flex>
+                    </Card>
+                </SimpleGrid>
+
+                <Text
                     fontSize={['22px', '28px', '32px']}
                     color="light"
                     mt="70px"
@@ -1637,14 +1835,14 @@ const ConferenceX = () => {
                         >
                             {/* Canvas */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={canvasLogo}
@@ -1655,14 +1853,14 @@ const ConferenceX = () => {
 
                             {/* EY */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={eyLogo}
@@ -1673,14 +1871,14 @@ const ConferenceX = () => {
 
                             {/* Intact */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={intactLogo}
@@ -1691,14 +1889,14 @@ const ConferenceX = () => {
 
                             {/* RBC */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={RBCLogo}
