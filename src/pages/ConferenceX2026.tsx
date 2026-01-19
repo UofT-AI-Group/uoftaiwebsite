@@ -43,7 +43,6 @@ import gallery from '../static/assets/our-mission.jpg'
 import showcase from '../static/assets/conf-2026-assets/showcase.png'
 
 import yvan from '../static/assets/conf-2026-assets/yvan.jpg'
-import hossein from '../static/assets/conf-2026-assets/hossein.jpg'
 import luis from '../static/assets/conf-2026-assets/luis.png'
 import maryam from '../static/assets/conf-2026-assets/Maryam.png'
 import jonathan from '../static/assets/conf-2026-assets/Jonathan.png'
@@ -102,6 +101,7 @@ import { useBreakpointValue } from '@chakra-ui/react'
 import { FiUsers, FiGlobe } from 'react-icons/fi'
 import { MdLightbulbOutline } from 'react-icons/md'
 import { LuTrophy, LuRocket, LuBrain } from 'react-icons/lu'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const ConferenceX = () => {
     const gradient2026 =
@@ -135,20 +135,44 @@ const ConferenceX = () => {
         md: false,
     })
     const [mobileTabIndex, setMobileTabIndex] = useState(0)
+    const [showAllSpeakers, setShowAllSpeakers] = useState(false)
     const day1Speakers = [
+        {
+            name: 'Stephen Wolfram',
+            role: 'CEO & Founder',
+            company: 'Wolfram Institute',
+            img: stephen,
+        },
+        {
+            name: 'Janice Stein',
+            role: 'Founding Director',
+            company: 'Munk School of Global Affairs & Public Policy',
+            img: janice,
+        },
+        {
+            name: 'David Fleet',
+            role: 'CIFAR AI Chair; Lead',
+            company: 'Google DeepMind Toronto',
+            img: david,
+        },
+        {
+            name: 'Joshua Gans',
+            role: 'Professor; Chief Economist',
+            company: 'University of Toronto; Creative Destruction Lab',
+            img: joshua,
+        },
+        {
+            name: 'Daniel Wigdor',
+            role: 'Professor of Computer Science; Founder',
+            company: 'University of Toronto; AXL',
+            img: daniel,
+        },
         {
             name: 'Yvan Gauthier',
             role: 'Principal Advisor, AI Safety',
             company: 'National Research Council of Canada',
             img: yvan,
         },
-        {
-            name: 'Hossein Rahnama',
-            role: 'CEO; Professor',
-            company: 'Flybits; MIT Media Lab',
-            img: hossein,
-        },
-
         {
             name: 'Luis Martin Mejia Mendoza',
             role: 'Research Officer',
@@ -318,13 +342,6 @@ const ConferenceX = () => {
             img: michael,
         },
 
-        {
-            name: 'David Fleet',
-            role: 'CIFAR AI Chair; Lead',
-            company: 'Google DeepMind Toronto',
-            img: david,
-        },
-
         // // ----------------------------
         // // DAY 2 SPEAKERS
         // // ----------------------------
@@ -342,12 +359,6 @@ const ConferenceX = () => {
             img: janice,
         },
 
-        {
-            name: 'Joshua Gans',
-            role: 'Professor; Chief Economist',
-            company: 'University of Toronto; Creative Destruction Lab',
-            img: joshua,
-        },
         {
             name: 'Kristina McElheran',
             role: 'Professor; Faculty Fellow',
@@ -392,24 +403,29 @@ const ConferenceX = () => {
             img: alex,
         },
         {
-            name: 'Daniel Wigdor',
-            role: 'Professor of Computer Science; Founder',
-            company: 'University of Toronto; AXL',
-            img: daniel,
-        },
-        {
             name: 'Andre Albuquerque',
             role: 'Senior Manager, Cloud & AI',
             company: 'BMO',
             img: andre,
         },
-        {
-            name: 'Stephen Wolfram',
-            role: 'CEO & Founder',
-            company: 'Wolfram Institute',
-            img: stephen,
-        },
     ]
+
+    // First 6 speakers per Natalie (Stephen Wolfram, Janice Stein, David Fleet, Joshua Gans, Yvan Gauthier, Daniel Wigdor), then the rest
+    const FEATURED_FIRST_SIX = [
+        'Stephen Wolfram',
+        'Janice Stein',
+        'David Fleet',
+        'Joshua Gans',
+        'Yvan Gauthier',
+        'Daniel Wigdor',
+    ]
+    const featuredSix = FEATURED_FIRST_SIX.map((name) =>
+        day1Speakers.find((s) => s.name === name),
+    ).filter(Boolean) as typeof day1Speakers
+    const restSpeakers = day1Speakers.filter(
+        (s) => !FEATURED_FIRST_SIX.includes(s.name),
+    )
+    const orderedSpeakers = [...featuredSix, ...restSpeakers]
 
     // Helper function for category tag colors
     const getCategoryTagStyles = (category: string) => {
@@ -1201,7 +1217,10 @@ const ConferenceX = () => {
                     maxW={'1200px'}
                     mx={'auto'}
                 >
-                    {day1Speakers.map((speaker) => (
+                    {(showAllSpeakers
+                        ? orderedSpeakers
+                        : orderedSpeakers.slice(0, 6)
+                    ).map((speaker) => (
                         <Box
                             key={speaker.name}
                             bg="#2A1A3A"
@@ -1258,6 +1277,36 @@ const ConferenceX = () => {
                         </Box>
                     ))}
                 </SimpleGrid>
+
+                {orderedSpeakers.length > 6 && (
+                    <Flex
+                        justify="center"
+                        w="100%"
+                        mt={8}
+                        cursor="pointer"
+                        onClick={() => setShowAllSpeakers((s) => !s)}
+                        align="center"
+                        gap={2}
+                        color="light"
+                        fontFamily="Tabular, sans-serif"
+                        fontSize={['16px', '18px']}
+                        fontWeight={500}
+                        _hover={{ opacity: 0.85 }}
+                    >
+                        <Text>
+                            {showAllSpeakers ? 'See less' : 'See more speakers'}
+                        </Text>
+                        <Icon
+                            as={ChevronDownIcon}
+                            boxSize={6}
+                            transition="transform 0.2s"
+                            transform={
+                                showAllSpeakers ? 'rotate(180deg)' : undefined
+                            }
+                        />
+                    </Flex>
+                )}
+
                 <Text
                     fontSize={['22px', '28px', '32px']}
                     color="light"
@@ -1429,6 +1478,8 @@ const ConferenceX = () => {
                                         fontStyle="italic"
                                         color={'light'}
                                         opacity={0.8}
+                                        minH="72px"
+                                        lineHeight="1.5"
                                     >
                                         {subtitle}
                                     </Text>
@@ -1592,14 +1643,14 @@ const ConferenceX = () => {
                         >
                             {/* Canvas */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={canvasLogo}
@@ -1610,14 +1661,14 @@ const ConferenceX = () => {
 
                             {/* EY */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={eyLogo}
@@ -1628,14 +1679,14 @@ const ConferenceX = () => {
 
                             {/* Intact */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={intactLogo}
@@ -1646,14 +1697,14 @@ const ConferenceX = () => {
 
                             {/* RBC */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={RBCLogo}
