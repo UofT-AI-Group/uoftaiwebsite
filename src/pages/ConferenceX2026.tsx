@@ -1211,27 +1211,21 @@ const ConferenceX = () => {
                     Featured Speakers
                 </Text>
 
-                <SimpleGrid
-                    columns={[1, 1, 2, 3]}
-                    spacing={'24px'}
-                    maxW={'1200px'}
-                    mx={'auto'}
-                >
+                <div className="speakers">
                     {(showAllSpeakers
                         ? orderedSpeakers
                         : orderedSpeakers.slice(0, 6)
                     ).map((speaker) => (
                         <Box
                             key={speaker.name}
+                            className="speaker-card"
                             bg="#2A1A3A"
                             border="1px solid rgba(255,255,255,0.1)"
                             borderRadius="14px"
                             boxShadow="0 2px 8px rgba(0,0,0,0.2)"
                             overflow="hidden"
-                            w="384px"
-                            h="513.5px"
                         >
-                            <Box w="100%" h="365.5px" overflow="hidden">
+                            <Box w="100%" overflow="hidden">
                                 <Image
                                     src={speaker.img || logo}
                                     w="100%"
@@ -1276,7 +1270,7 @@ const ConferenceX = () => {
                             </Box>
                         </Box>
                     ))}
-                </SimpleGrid>
+                </div>
 
                 {orderedSpeakers.length > 6 && (
                     <Flex
