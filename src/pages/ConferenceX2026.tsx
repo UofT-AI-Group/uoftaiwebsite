@@ -885,79 +885,183 @@ const ConferenceX = () => {
                     mx={'auto'}
                     mb={'70px'}
                 >
-                    {[1, 2, 3].map((index) => (
-                        <Card
-                            key={index}
-                            bg="#2A1A3A"
-                            backdropFilter="blur(10px)"
-                            border="1px solid rgba(255,255,255,0.1)"
-                            borderRadius="lg"
-                            p={6}
-                            maxW={'384px'}
-                            h={'311px'}
-                            display="flex"
-                            flexDirection="column"
-                            justifyContent="space-between"
-                        >
-                            <VStack align="flex-start" spacing={4}>
-                                <Icon
-                                    as={LuQuote as React.ElementType}
-                                    h="40px"
-                                    w="40px"
-                                    color="#cf87ff"
-                                />
+                    <Card
+                        bg="#2A1A3A"
+                        backdropFilter="blur(10px)"
+                        border="1px solid rgba(255,255,255,0.1)"
+                        borderRadius="lg"
+                        p={6}
+                        maxW={'384px'}
+                        h={'375px'}
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                    >
+                        <VStack align="flex-start" spacing={4}>
+                            <Icon
+                                as={LuQuote as React.ElementType}
+                                h="40px"
+                                w="40px"
+                                color="#cf87ff"
+                            />
+                            <Text
+                                color={' #FFFFFFCC'}
+                                fontSize={'16px'}
+                                fontStyle="italic"
+                                lineHeight={'29.25px'}
+                                letterSpacing={'-0.44px'}
+                                w="300px"
+                                mb="12px"
+                            >
+                                "ConferenceX 2025 was a well-organized event and
+                                gave me the opportunity to network with
+                                potential recruiters as well as learn more about
+                                the organizations that they represent."
+                            </Text>
+                        </VStack>
+                        <Flex alignItems="center" gap={3} mt={4}>
+                            <VStack align="flex-start" spacing={0}>
                                 <Text
-                                    color={' #FFFFFFCC'}
-                                    fontSize={'18px'}
-                                    fontFamily={'Inter, sans-serif'}
-                                    fontStyle="italic"
-                                    lineHeight={'29.25px'}
-                                    letterSpacing={'-0.44px'}
-                                    w="300px"
-                                    mb="24px"
+                                    color={'#FFFFFF'}
+                                    fontSize={'16px'}
+                                    fontWeight="600"
+                                    fontStyle="semibold"
+                                    lineHeight={'24px'}
+                                    letterSpacing={'-0.31px'}
                                 >
-                                    "As a startup founder, ConferenceX gave us
-                                    the exposure we needed. We secured funding
-                                    and found our first enterprise customer
-                                    here."
+                                    Rio McKen
+                                </Text>
+                                <Text
+                                    color={'#FFFFFF99'}
+                                    fontSize={'14px'}
+                                    lineHeight={'20px'}
+                                    letterSpacing={'-0.15px'}
+                                    fontStyle="normal"
+                                    fontWeight="400"
+                                >
+                                    Student, University of Toronto
                                 </Text>
                             </VStack>
-                            <Flex alignItems="center" gap={3} mt={4}>
-                                <Box
-                                    boxSize={'48px'}
-                                    borderRadius="full"
-                                    bg="rgba(255,255,255,0.1)"
-                                    overflow="hidden"
+                        </Flex>
+                    </Card>
+
+                    <Card
+                        bg="#2A1A3A"
+                        backdropFilter="blur(10px)"
+                        border="1px solid rgba(255,255,255,0.1)"
+                        borderRadius="lg"
+                        p={6}
+                        maxW={'384px'}
+                        h={'375px'}
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                    >
+                        <VStack align="flex-start" spacing={4}>
+                            <Icon
+                                as={LuQuote as React.ElementType}
+                                h="40px"
+                                w="40px"
+                                color="#cf87ff"
+                            />
+                            <Text
+                                color={' #FFFFFFCC'}
+                                fontSize={'16px'}
+                                fontStyle="italic"
+                                lineHeight={'29.25px'}
+                                letterSpacing={'-0.44px'}
+                                w="300px"
+                                mb="12px"
+                            >
+                                "I believe it was a well-run event. There were a
+                                lot of opportunities for networking and it was
+                                personally not too exhausting for me since food
+                                and refreshments were well provided and the
+                                venue was cozy."
+                            </Text>
+                        </VStack>
+                        <Flex alignItems="center" gap={3} mt={4}>
+                            <VStack align="flex-start" spacing={0}>
+                                <Text
+                                    color={'#FFFFFF'}
+                                    fontSize={'16px'}
+                                    fontWeight="600"
+                                    fontStyle="semibold"
+                                    lineHeight={'24px'}
+                                    letterSpacing={'-0.31px'}
                                 >
-                                    {/* Placeholder for image */}
-                                </Box>
-                                <VStack align="flex-start" spacing={0}>
-                                    <Text
-                                        color={'#FFFFFF'}
-                                        fontSize={'16px'}
-                                        fontWeight="600"
-                                        fontStyle="semibold"
-                                        lineHeight={'24px'}
-                                        letterSpacing={'-0.31px'}
-                                        fontFamily={'Inter, sans-serif'}
-                                    >
-                                        Priya Sharma
-                                    </Text>
-                                    <Text
-                                        color={'#FFFFFF99'}
-                                        fontSize={'14px'}
-                                        lineHeight={'20px'}
-                                        letterSpacing={'-0.15px'}
-                                        fontFamily={'Inter, sans-serif'}
-                                        fontStyle="normal"
-                                        fontWeight="400"
-                                    >
-                                        CEO & Founder, NeuralVision
-                                    </Text>
-                                </VStack>
-                            </Flex>
-                        </Card>
-                    ))}
+                                    Rachel Lo
+                                </Text>
+                                <Text
+                                    color={'#FFFFFF99'}
+                                    fontSize={'14px'}
+                                    lineHeight={'20px'}
+                                    letterSpacing={'-0.15px'}
+                                    fontStyle="normal"
+                                    fontWeight="400"
+                                >
+                                    Student, University of Toronto
+                                </Text>
+                            </VStack>
+                        </Flex>
+                    </Card>
+
+                    <Card
+                        bg="#2A1A3A"
+                        backdropFilter="blur(10px)"
+                        border="1px solid rgba(255,255,255,0.1)"
+                        borderRadius="lg"
+                        p={6}
+                        maxW={'384px'}
+                        h={'375px'}
+                        display="flex"
+                        flexDirection="column"
+                        justifyContent="space-between"
+                    >
+                        <VStack align="flex-start" spacing={4}>
+                            <Icon
+                                as={LuQuote as React.ElementType}
+                                h="40px"
+                                w="40px"
+                                color="#cf87ff"
+                            />
+                            <Text
+                                color={' #FFFFFFCC'}
+                                fontSize={'16px'}
+                                fontStyle="italic"
+                                lineHeight={'29.25px'}
+                                letterSpacing={'-0.44px'}
+                                w="300px"
+                                mb="12px"
+                            >
+                                "I had a great time, everything went well."
+                            </Text>
+                        </VStack>
+                        <Flex alignItems="center" gap={3} mt={4}>
+                            <VStack align="flex-start" spacing={0}>
+                                <Text
+                                    color={'#FFFFFF'}
+                                    fontSize={'16px'}
+                                    fontWeight="600"
+                                    fontStyle="semibold"
+                                    lineHeight={'24px'}
+                                    letterSpacing={'-0.31px'}
+                                >
+                                    Yvonne Leung, Ph.D.
+                                </Text>
+                                <Text
+                                    color={'#FFFFFF99'}
+                                    fontSize={'14px'}
+                                    lineHeight={'20px'}
+                                    letterSpacing={'-0.15px'}
+                                    fontStyle="normal"
+                                    fontWeight="400"
+                                >
+                                    Research Scientist, UHN
+                                </Text>
+                            </VStack>
+                        </Flex>
+                    </Card>
                 </SimpleGrid>
 
                 <Text fontSize={'24px'} color={'light'} mt={'70px'} mb={'20px'}>
