@@ -1643,14 +1643,14 @@ const ConferenceX = () => {
                         >
                             {/* Canvas */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={canvasLogo}
@@ -1661,14 +1661,14 @@ const ConferenceX = () => {
 
                             {/* EY */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={eyLogo}
@@ -1679,14 +1679,14 @@ const ConferenceX = () => {
 
                             {/* Intact */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={intactLogo}
@@ -1697,14 +1697,14 @@ const ConferenceX = () => {
 
                             {/* RBC */}
                             <Box
-                                bg="rgba(255,255,255,0.08)"
+                                bg="white"
                                 borderRadius="16px"
-                                border="1px solid rgba(255,255,255,0.12)"
-                                w={['140px', '180px', '220px']}
-                                h={['90px', '110px', '130px']}
+                                w={['160px', '200px', '240px']}
+                                h={['100px', '120px', '140px']}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
+                                boxShadow="sm"
                             >
                                 <Image
                                     src={RBCLogo}
