@@ -768,7 +768,9 @@ const ConferenceX = () => {
                 bgImage={gradient2026}
                 bgSize={'cover'}
                 bgRepeat={'no-repeat'}
-                p={[5, 20]}
+                pt={[5, 20]}
+                px={[5, 20]}
+                pb={0}
                 position={'relative'}
                 zIndex={10}
             >
