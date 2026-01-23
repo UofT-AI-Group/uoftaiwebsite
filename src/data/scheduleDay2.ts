@@ -1,5 +1,13 @@
 export const scheduleDay2 = [
     {
+        start: '8:30 AM',
+        end: '9:30 AM',
+        title: 'Registration & Networking',
+        description: '',
+        tag: 'General',
+        location: 'Pre-Function Space',
+    },
+    {
         start: '9:30 AM',
         end: '9:40 AM',
         title: 'Opening Remarks & Welcome',
@@ -19,8 +27,8 @@ export const scheduleDay2 = [
         start: '10:35 AM',
         end: '11:05 AM',
         title: 'Dehumanizing AI',
-        description: 'Speaker: **Janice Stein**. Moderator: Jaxson Khan',
-        tag: 'Talk',
+        description: 'Speaker: **Janice Stein**. Moderator: Sean Mullin.',
+        tag: 'Panel',
         location: 'Main Theatre',
     },
     {
@@ -35,7 +43,7 @@ export const scheduleDay2 = [
     {
         start: '11:55 AM',
         end: '12:10 PM',
-        title: 'TITLE TBD',
+        title: 'Guest Presentation',
         description: 'Speaker: **Dirk Bernhardt-Walther**',
         tag: 'Talk',
         location: 'Main Theatre',
@@ -51,10 +59,19 @@ export const scheduleDay2 = [
     {
         start: '1:00 PM',
         end: '1:30 PM',
-        title: 'EY Panel',
-        description: '',
+        title: 'AI & Language Panel',
+        description:
+            'Speakers: Andrew Liu, Gerald Penn and Jekaterina Novikova.',
         tag: 'Panel',
         location: 'Main Theatre',
+    },
+    {
+        start: '1:00 PM',
+        end: '1:30 PM',
+        title: 'Building an AI Product Team',
+        description: 'Workshop led by Romi Dhamrait.',
+        tag: 'Workshop',
+        location: 'Workshop Room',
     },
     {
         start: '1:35 PM',
@@ -67,19 +84,18 @@ export const scheduleDay2 = [
     {
         start: '2:00 PM',
         end: '2:30 PM',
-        title: 'Living With AI Agents',
-        description:
-            'Speakers: Farhan Thawar, Andrew McNamara. Moderator: Dev Shah',
-        tag: 'Panel',
+        title: 'Talk with Jeremy, the Financial Services AI leader at Microsoft',
+        description: 'Speaker: **Jeremy Tyers**',
+        tag: 'Talk',
         location: 'Main Theatre',
     },
     {
         start: '2:00 PM',
         end: '2:30 PM',
         title: 'Augmented Creativity Lab',
-        description: '',
+        description: 'Workshop led by Savannah Harlan.',
         tag: 'Workshop',
-        location: 'Main Theatre',
+        location: 'Workshop Room',
     },
     {
         start: '2:30 PM',
@@ -98,17 +114,25 @@ export const scheduleDay2 = [
         location: 'Pre-Function Space',
     },
     {
+        start: '3:20 PM',
+        end: '3:35 PM',
+        title: 'EY Talk',
+        description: '',
+        tag: 'Talk',
+        location: 'Main Theatre',
+    },
+    {
         start: '3:40 PM',
         end: '4:10 PM',
-        title: 'TITLE TBD',
-        description: 'Speaker: **Daniel Wigdor**',
-        tag: 'Talk',
+        title: "Why AI's Next Fortune Lies in What You Build, Not What Powers It",
+        description: 'Speaker: **Daniel Wigdor**. Moderator: Maeesha Biswass.',
+        tag: 'Panel',
         location: 'Main Theatre',
     },
     {
         start: '4:15 PM',
         end: '4:35 PM',
-        title: 'TITLE TBD',
+        title: 'Talk with Andre, Senior Manager of Cloud & AI at BMO',
         description: 'Speaker: **Andre Albuquerque**',
         tag: 'Talk',
         location: 'Main Theatre',
@@ -116,9 +140,9 @@ export const scheduleDay2 = [
     {
         start: '4:40 PM',
         end: '5:20 PM',
-        title: 'TITLE TBD',
+        title: 'Talk with Stephen, CEO & Founder of Wolfram Institute',
         description: 'Speaker: **Stephen Wolfram**',
-        tag: 'General',
+        tag: 'Talk',
         location: 'Main Theatre',
     },
     {
@@ -127,6 +151,6 @@ export const scheduleDay2 = [
         title: 'Closing Remarks',
         description: '',
         tag: 'General',
-        location: 'Main Theatre',
+        location: 'Pre-Function Space',
     },
 ]

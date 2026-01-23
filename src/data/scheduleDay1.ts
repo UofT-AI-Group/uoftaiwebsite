@@ -16,7 +16,7 @@ export const scheduleDay1 = [
         location: 'Main Theatre',
     },
     {
-        start: '9:40 AM',
+        start: '9:45 AM',
         end: '10:05 AM',
         title: 'Understanding and Mitigating Risk in AI Systems',
         description: 'Speaker: **Yvan Gauthier**',
@@ -88,7 +88,7 @@ export const scheduleDay1 = [
         title: 'Living with AI Agents',
         description:
             'Speakers: Farhan Thawar, Andrew McNamara. Moderator: Dev Shah',
-        tag: 'Talk',
+        tag: 'Panel',
         location: 'Main Theatre',
     },
     {
@@ -124,11 +124,19 @@ export const scheduleDay1 = [
         location: 'Main Theatre',
     },
     {
+        start: '3:50 PM',
+        end: '4:35 PM',
+        title: 'Testing the Boundaries: Comparitive Jailbreaking Across Large Language Models',
+        description: 'Workshop led by Savannah Harlan and Rauno Arike.',
+        tag: 'Workshop',
+        location: 'Workshop Room',
+    },
+    {
         start: '4:15 PM',
         end: '4:35 PM',
-        title: 'TITLE TBD',
+        title: 'Talk with Atrisha',
         description: 'Speaker: **Atrisha Sarkar**',
-        tag: 'Research',
+        tag: 'Talk',
         location: 'Main Theatre',
     },
     {
@@ -145,6 +153,6 @@ export const scheduleDay1 = [
         title: 'Closing Remarks',
         description: '',
         tag: 'General',
-        location: 'Main Theatre',
+        location: 'Pre-Function Space',
     },
 ]
