@@ -1952,7 +1952,7 @@ const ConferenceX = () => {
                                         }}
                                         transition="all 0.2s"
                                     >
-                                        Day 1 – Friday, Jan 24
+                                        Day 1 – Saturday, Jan 24
                                     </Tab>
                                     <Tab
                                         fontFamily="'Inter', sans-serif"
@@ -1978,7 +1978,7 @@ const ConferenceX = () => {
                                         }}
                                         transition="all 0.2s"
                                     >
-                                        Day 2 – Saturday, Jan 25
+                                        Day 2 – Sunday, Jan 25
                                     </Tab>
                                 </TabList>
 
