@@ -506,6 +506,8 @@ const ConferenceX = () => {
                 pr="12px"
                 pb="6px"
                 pl="12px"
+                minW="fit-content"
+                whiteSpace="nowrap"
             >
                 <Text
                     color={styles.text}
@@ -1560,75 +1562,262 @@ const ConferenceX = () => {
                             title,
                             description,
                             tag,
+                            location,
                         }: {
                             start: string
                             end: string
                             title: string
                             description: string
                             tag: string
-                        }) => (
-                            <Box
-                                bg="#2A1A3A"
-                                borderTop="1px solid #FFFFFF1A"
-                                borderRight="1px solid #FFFFFF1A"
-                                borderBottom="1px solid #FFFFFF1A"
-                                borderLeft="4px solid #FFFFFF1A"
-                                borderRadius="14px"
-                                p="18px"
-                                position="relative"
-                                minH="170px"
-                                display="flex"
-                                flexDirection="column"
-                            >
-                                <Flex
-                                    justify="space-between"
-                                    align="flex-start"
-                                    mb="6px"
-                                    gap={4}
-                                >
+                            location?: string
+                        }) => {
+                            // Parse description to handle bold "Speaker" label and regular name
+                            const parseDescription = (desc: string) => {
+                                if (!desc) return null
+
+                                // Check if there's a moderator
+                                const moderatorMatch = desc.match(
+                                    /\.\s*Moderator:\s*(.+?)(?:\.|$)/,
+                                )
+                                const hasModerator = moderatorMatch !== null
+
+                                // Match "Speaker: **Name**" pattern (single speaker)
+                                const speakerMatch = desc.match(
+                                    /Speaker:\s*\*\*(.+?)\*\*/,
+                                )
+                                if (speakerMatch) {
+                                    const speakerName = speakerMatch[1]
+                                    const moderatorName = hasModerator
+                                        ? moderatorMatch[1].trim()
+                                        : null
+
+                                    return (
+                                        <VStack
+                                            align="flex-start"
+                                            spacing={0}
+                                            mt="auto"
+                                        >
+                                            <Text
+                                                color="#FFFFFF"
+                                                fontFamily="'Inter', sans-serif"
+                                                fontWeight={500}
+                                                fontSize={'15px'}
+                                                lineHeight="1.4"
+                                            >
+                                                <Text
+                                                    as="span"
+                                                    fontWeight={700}
+                                                >
+                                                    Speaker:
+                                                </Text>{' '}
+                                                <Text
+                                                    as="span"
+                                                    fontWeight={500}
+                                                >
+                                                    {speakerName}
+                                                </Text>
+                                            </Text>
+                                            {moderatorName && (
+                                                <Text
+                                                    color="#FFFFFF"
+                                                    fontFamily="'Inter', sans-serif"
+                                                    fontWeight={500}
+                                                    fontSize={'15px'}
+                                                    lineHeight="1.4"
+                                                    mt="4px"
+                                                >
+                                                    Moderator: {moderatorName}
+                                                </Text>
+                                            )}
+                                        </VStack>
+                                    )
+                                }
+
+                                // Match "Speaker: Name" pattern (single speaker without bold markers)
+                                const speakerSimpleMatch = desc.match(
+                                    /^Speaker:\s*(.+?)(?:\.|$)/,
+                                )
+                                if (speakerSimpleMatch) {
+                                    const speakerName =
+                                        speakerSimpleMatch[1].trim()
+                                    const moderatorName = hasModerator
+                                        ? moderatorMatch[1].trim()
+                                        : null
+
+                                    return (
+                                        <VStack
+                                            align="flex-start"
+                                            spacing={0}
+                                            mt="auto"
+                                        >
+                                            <Text
+                                                color="#FFFFFF"
+                                                fontFamily="'Inter', sans-serif"
+                                                fontWeight={500}
+                                                fontSize={'15px'}
+                                                lineHeight="1.4"
+                                            >
+                                                <Text
+                                                    as="span"
+                                                    fontWeight={700}
+                                                >
+                                                    Speaker:
+                                                </Text>{' '}
+                                                <Text
+                                                    as="span"
+                                                    fontWeight={500}
+                                                >
+                                                    {speakerName}
+                                                </Text>
+                                            </Text>
+                                            {moderatorName && (
+                                                <Text
+                                                    color="#FFFFFF"
+                                                    fontFamily="'Inter', sans-serif"
+                                                    fontWeight={500}
+                                                    fontSize={'15px'}
+                                                    lineHeight="1.4"
+                                                    mt="4px"
+                                                >
+                                                    Moderator: {moderatorName}
+                                                </Text>
+                                            )}
+                                        </VStack>
+                                    )
+                                }
+
+                                // Handle panels and other formats with moderators
+                                if (hasModerator) {
+                                    const mainText = desc
+                                        .replace(/\.\s*Moderator:.+$/, '')
+                                        .trim()
+                                    const moderatorName =
+                                        moderatorMatch[1].trim()
+
+                                    return (
+                                        <VStack
+                                            align="flex-start"
+                                            spacing={0}
+                                            mt="auto"
+                                        >
+                                            <Text
+                                                color="#FFFFFF"
+                                                fontFamily="'Inter', sans-serif"
+                                                fontWeight={500}
+                                                fontSize={'15px'}
+                                                lineHeight="1.4"
+                                            >
+                                                {mainText}
+                                            </Text>
+                                            <Text
+                                                color="#FFFFFF"
+                                                fontFamily="'Inter', sans-serif"
+                                                fontWeight={500}
+                                                fontSize={'15px'}
+                                                lineHeight="1.4"
+                                                mt="4px"
+                                            >
+                                                Moderator: {moderatorName}
+                                            </Text>
+                                        </VStack>
+                                    )
+                                }
+
+                                // Return regular description for panels, multiple speakers, etc. without moderators
+                                return (
                                     <Text
-                                        color="#CF87FF"
+                                        color="#FFFFFF"
                                         fontFamily="'Inter', sans-serif"
-                                        fontWeight={600}
-                                        fontSize={'14px'}
-                                    >
-                                        {start} - {end}
-                                    </Text>
-                                    <Box
-                                        position="absolute"
-                                        top="18px"
-                                        right="18px"
-                                    >
-                                        <CategoryTag category={tag} />
-                                    </Box>
-                                </Flex>
-                                <Text
-                                    color="#FFFFFF"
-                                    fontFamily="'Tenor Sans', sans-serif"
-                                    fontWeight={400}
-                                    fontSize={'18px'}
-                                    mb="8px"
-                                    lineHeight="1.25"
-                                    pr="90px"
-                                    noOfLines={2}
-                                    wordBreak="break-word"
-                                >
-                                    {title}
-                                </Text>
-                                {description && (
-                                    <Text
-                                        color="rgba(255,255,255,0.7)"
-                                        fontFamily="'Inter', sans-serif"
-                                        fontWeight={400}
-                                        fontSize={'14px'}
+                                        fontWeight={500}
+                                        fontSize={'15px'}
                                         lineHeight="1.4"
                                         mt="auto"
                                     >
-                                        {description}
+                                        {desc}
                                     </Text>
-                                )}
-                            </Box>
-                        )
+                                )
+                            }
+
+                            return (
+                                <Box
+                                    bg="#2A1A3A"
+                                    borderTop="1px solid #FFFFFF1A"
+                                    borderRight="1px solid #FFFFFF1A"
+                                    borderBottom="1px solid #FFFFFF1A"
+                                    borderLeft="4px solid #FFFFFF1A"
+                                    borderRadius="14px"
+                                    p="18px"
+                                    position="relative"
+                                    minH="170px"
+                                    display="flex"
+                                    flexDirection="column"
+                                >
+                                    <Flex
+                                        justify="space-between"
+                                        align="center"
+                                        mb="6px"
+                                        gap={4}
+                                        flexWrap="wrap"
+                                    >
+                                        <Text
+                                            color="#CF87FF"
+                                            fontFamily="'Inter', sans-serif"
+                                            fontWeight={600}
+                                            fontSize={'14px'}
+                                        >
+                                            {start} - {end}
+                                        </Text>
+                                        <Flex
+                                            gap={2}
+                                            align="center"
+                                            flexWrap="wrap"
+                                        >
+                                            <CategoryTag category={tag} />
+                                            {location && (
+                                                <Box
+                                                    bg="rgba(207, 135, 255, 0.15)"
+                                                    border="1px solid rgba(207, 135, 255, 0.3)"
+                                                    borderRadius="full"
+                                                    pt="6px"
+                                                    pr="12px"
+                                                    pb="6px"
+                                                    pl="12px"
+                                                    w="140px"
+                                                    display="flex"
+                                                    alignItems="center"
+                                                    justifyContent="center"
+                                                >
+                                                    <Text
+                                                        color="#CF87FF"
+                                                        fontFamily="'Inter', sans-serif"
+                                                        fontWeight={600}
+                                                        fontSize={'12px'}
+                                                        textAlign="center"
+                                                        whiteSpace="nowrap"
+                                                    >
+                                                        {location}
+                                                    </Text>
+                                                </Box>
+                                            )}
+                                        </Flex>
+                                    </Flex>
+                                    <Text
+                                        color="#FFFFFF"
+                                        fontFamily="'Tenor Sans', sans-serif"
+                                        fontWeight={400}
+                                        fontSize={'18px'}
+                                        mb="8px"
+                                        lineHeight="1.25"
+                                        noOfLines={2}
+                                        wordBreak="break-word"
+                                    >
+                                        {title}
+                                    </Text>
+                                    {description &&
+                                        parseDescription(description)}
+                                </Box>
+                            )
+                        }
 
                         // DayColumn Component
                         const DayColumn = ({
@@ -1648,6 +1837,7 @@ const ConferenceX = () => {
                                 title: string
                                 description: string
                                 tag: string
+                                location?: string
                             }>
                         }) => (
                             <VStack
@@ -1712,6 +1902,7 @@ const ConferenceX = () => {
                                             title={event.title}
                                             description={event.description}
                                             tag={event.tag}
+                                            location={event.location}
                                         />
                                     ))}
                                 </VStack>
@@ -1780,7 +1971,7 @@ const ConferenceX = () => {
                                         }}
                                         transition="all 0.2s"
                                     >
-                                        Day 1 – Friday, Jan 24
+                                        Day 1 – Saturday, Jan 24
                                     </Tab>
                                     <Tab
                                         fontFamily="'Inter', sans-serif"
@@ -1806,7 +1997,7 @@ const ConferenceX = () => {
                                         }}
                                         transition="all 0.2s"
                                     >
-                                        Day 2 – Saturday, Jan 25
+                                        Day 2 – Sunday, Jan 25
                                     </Tab>
                                 </TabList>
 
