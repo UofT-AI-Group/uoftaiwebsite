@@ -37,7 +37,7 @@ import vector from '../static/assets/2025-confx-spons/conference 2025 logos/Vect
 import uf from '../static/assets/2025-confx-spons/conference 2025 logos/University-of-Florida-Logo.png'
 import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_Economic_Forum_logo.svg.png'
 import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
-
+// Day 1 Speakers
 import speaker_pic from '../static/assets/conf-2026-assets/speaker_pic.jpg'
 import gallery from '../static/assets/our-mission.jpg'
 import showcase from '../static/assets/conf-2026-assets/showcase.png'
