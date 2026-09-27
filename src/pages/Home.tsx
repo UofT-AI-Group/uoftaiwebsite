@@ -26,9 +26,10 @@ const Home = () => {
             <Bubble speed="15" size="18vw" top="150px" left="calc(94vw)" />
             <Container
                 className={'title'}
-                h={'calc(100vh - 100px)'}
+                minH={'calc(100vh - 100px)'}
                 maxW={'4xl'}
                 pt={[40, 64]}
+                pb={[10, 16]}
             >
                 <VStack
                     alignItems={'left'}
