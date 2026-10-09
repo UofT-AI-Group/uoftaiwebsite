@@ -1,102 +1,118 @@
-import { Box } from '@chakra-ui/react'
-import React from 'react'
-import ProjectXLanding from '../components/projectXlanding'
-import ProjectX2024 from '../components/projectX2024'
-import ProjectX2023 from '../components/projectX2023'
-import ProjectX2022 from '../components/projectX2022'
-import ProjectX2021 from '../components/projectX2021'
-import ProjectX2020 from '../components/projectX2020'
+import { Box, VStack, Text } from '@chakra-ui/react'
+import gradient from '../static/assets/dark gradient.png'
+import { ButtonOutline } from '../components/Button'
+import { Link as RouterLink } from 'react-router-dom'
+import { Link } from '@chakra-ui/react';
+import { HashLink } from 'react-router-hash-link';
 
-const ProjectX = () => {
-    const [viewLanding, setViewLanding] = React.useState(true)
-    const [viewCurrent, setViewCurrent] = React.useState(false)
-    const [view2023, setView2023] = React.useState(false)
-    const [view2022, setView2022] = React.useState(false)
-    const [view2021, setView2021] = React.useState(false)
-    const [view2020, setView2020] = React.useState(false)
-
-    const resetViews = () => {
-        setViewLanding(false)
-        setViewCurrent(false)
-        setView2023(false)
-        setView2022(false)
-        setView2021(false)
-        setView2020(false)
-    }
-
-    const clickLanding = () => {
-        resetViews()
-        setViewLanding(true)
-    }
-
-    const clickCurrent = () => {
-        resetViews()
-        setViewCurrent(true)
-    }
-
-    const click2023 = () => {
-        resetViews()
-        setView2023(true)
-    }
-
-    const click2022 = () => {
-        resetViews()
-        setView2022(true)
-    }
-
-    const click2021 = () => {
-        resetViews()
-        setView2021(true)
-    }
-
-    const click2020 = () => {
-        resetViews()
-        setView2020(true)
-    }
-
+export default function ProjectX() {
     return (
-        <Box fontFamily={'Tabular, sans-serif'}>
-            {viewLanding && (
-                <ProjectXLanding
-                    onClickCurrent={clickCurrent}
-                    onClick2023={click2023}
-                    onClick2022={click2022}
-                    onClick2021={click2021}
-                    onClick2020={click2020}
-                />
-            )}
-            {viewCurrent && (
-                <ProjectX2024
-                    onClick2023={click2023}
-                    onClickLanding={clickLanding}
-                />
-            )}
-            {view2023 && (
-                <ProjectX2023
-                    onClickCurrent={clickCurrent}
-                    onClickLanding={clickLanding}
-                />
-            )}
-            {view2022 && (
-                <ProjectX2022
-                    onClickCurrent={clickCurrent}
-                    onClickLanding={clickLanding}
-                />
-            )}
-            {view2021 && (
-                <ProjectX2021
-                    onClickCurrent={clickCurrent}
-                    onClickLanding={clickLanding}
-                />
-            )}
-            {view2020 && (
-                <ProjectX2020
-                    onClickCurrent={clickCurrent}
-                    onClickLanding={clickLanding}
-                />
-            )}
+        <Box
+            fontFamily={'Tabular, sans-serif'}
+            bgImage={gradient}
+            bgPosition={'50%'}
+            bgSize={'cover'}
+            bgRepeat={'no-repeat'}
+            height={'90vh'}
+            width={'100%'}
+            mt={28}
+            pt={[40, 64]}
+        >
+            <VStack alignItems={'center'} spacing={1}>
+                <span>
+                    <Text
+                        as={'span'}
+                        fontWeight={'medium'}
+                        fontSize={[30, 60]}
+                        fontFamily={'Tabular, sans-serif'}
+                        color={'light'}
+                    >
+                        Project
+                    </Text>
+                    <Text
+                        as={'span'}
+                        fontWeight={'medium'}
+                        fontSize={[30, 60]}
+                        fontFamily={'Tabular, sans-serif'}
+                        color={'brand'}
+                    >
+                        X
+                    </Text>
+                </span>
+                <Text
+                    fontWeight={'regular'}
+                    fontSize={[14, 18]}
+                    color={'light'}
+                    textAlign={'center'}
+                >
+                    Designed and run by UofT AI, ProjectX is a four-month long
+                    machine learning research competition.
+                    <br />
+                    Final papers will be judged by a panel of academics and
+                    industry experts.
+                </Text>
+                <Box marginTop={'20px'}>
+                    <HashLink
+                        smooth
+                        to={
+                            'https://forms.gle/J99tMADBSikDDf9E6'
+                        }
+                    >
+                        <ButtonOutline variant="light">
+                            Apply Now
+                        </ButtonOutline>
+                    </HashLink>
+                </Box>
+                <Text
+                    fontWeight={'regular'}
+                    fontSize={[16, 20]}
+                    color={'light'}
+                    textAlign={'center'}
+                    mt={'40px'}
+                    mb={'10px'}
+                >
+                    EVENT DETAILS
+                </Text>
+
+                <Box>
+                    <Link as={RouterLink} to='2026'>
+                        <ButtonOutline variant="light">
+                            2026
+                        </ButtonOutline>
+                    </Link>
+                    <Box as="span" p={'5px'}></Box>
+                    <Link as={RouterLink} to='2024'>
+                        <ButtonOutline variant="light">
+                            2024
+                        </ButtonOutline>
+                    </Link>
+                    <Box as="span" p={'5px'}></Box>
+                    <Link as={RouterLink} to='2023'>
+                        <ButtonOutline variant="light">
+                            2023
+                        </ButtonOutline>
+                    </Link>
+                    <Box as="span" p={'5px'}></Box>
+                    <Link as={RouterLink} to='2022'>
+                        <ButtonOutline variant="light">
+                            2022
+                        </ButtonOutline>
+                    </Link>
+                    <Box as="span" p={'5px'}></Box>
+                    <Link as={RouterLink} to='2021'>
+                        <ButtonOutline variant="light">
+                            2021
+                        </ButtonOutline>
+                    </Link>
+                    <Box as="span" p={'5px'}></Box>
+                    <Link as={RouterLink} to='2020'>
+                        <ButtonOutline variant="light">
+                            2020
+                        </ButtonOutline>
+                    </Link>
+                </Box>
+            </VStack>
         </Box>
     )
 }
 
-export default ProjectX

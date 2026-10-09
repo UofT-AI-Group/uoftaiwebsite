@@ -12,6 +12,13 @@ import ScrollToTop from './components/scrollToTop'
 import Newsletter from './pages/Newsletter'
 import ComingSoon from './pages/ComingSoon'
 import ProjectX from './pages/ProjectX'
+import ProjectX2020 from './components/projectX2020'
+import ProjectX2021 from './components/projectX2021'
+import ProjectX2022 from './components/projectX2022'
+import ProjectX2023 from './components/projectX2023'
+import ProjectX2024 from './components/projectX2024'
+import ProjectX2026 from './components/projectX2026'
+
 
 // This is the deployment branch
 
@@ -28,7 +35,15 @@ export const App = () => (
             <Route path="/conferencex-2024" element={<ConferenceX />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/learnai" element={<ComingSoon />} />
-            <Route path="/projectx" element={<ProjectX />} />
+            <Route path="/projectx">
+                <Route index element={<ProjectX />} />
+                <Route path="2020" element={<ProjectX2020 />} />
+                <Route path="2021" element={<ProjectX2021 />} />
+                <Route path="2022" element={<ProjectX2022 />} />
+                <Route path="2023" element={<ProjectX2023 />} />
+                <Route path="2024" element={<ProjectX2024 />} />
+                <Route path="2026" element={<ProjectX2026 />} />
+            </Route>
         </Routes>
         <Footer />
     </>

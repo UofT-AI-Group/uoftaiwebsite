@@ -27,13 +27,7 @@ import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 
-const ProjectX2023 = ({
-    onClickCurrent,
-    onClickLanding,
-}: {
-    onClickCurrent: () => void
-    onClickLanding: () => void
-}) => {
+export default function ProjectX2023() {
     return (
         <Box>
             <Box
@@ -110,7 +104,7 @@ const ProjectX2023 = ({
                         OTHER DETAILS
                     </Text>
 
-                    <Box>
+                    {/* <Box>
                         <ButtonOutline variant="light" onClick={onClickCurrent}>
                             2024
                         </ButtonOutline>
@@ -118,7 +112,7 @@ const ProjectX2023 = ({
                         <ButtonOutline variant="light" onClick={onClickLanding}>
                             Landing Page
                         </ButtonOutline>
-                    </Box>
+                    </Box> */}
                 </VStack>
             </Box>
 
@@ -248,5 +242,3 @@ const ProjectX2023 = ({
         </Box>
     )
 }
-
-export default ProjectX2023

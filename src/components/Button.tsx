@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Button as ChakraButton } from '@chakra-ui/react'
+import { Button as ChakraButton, ButtonProps, As } from '@chakra-ui/react'
 
 export const ButtonDark = ({
     children,
@@ -29,21 +29,34 @@ export const ButtonDark = ({
     )
 }
 
+type ButtonOutlineProps = Omit<ButtonProps, 'variant' | 'as'> & {
+    children: ReactNode
+    variant?: 'dark' | 'light'
+    /** Render the button as another element/component, e.g. `as={RouterLink}` or `as="a"` */
+    as?: As
+    /** Route path, used when `as={RouterLink}` */
+    to?: string
+    /** URL, used when `as="a"` */
+    href?: string
+    target?: string
+    rel?: string
+}
+
 export const ButtonOutline = ({
     children,
     onClick,
     variant = 'dark',
-}: {
-    variant?: string
-    onClick?: () => void
-    children: ReactNode
-}) => {
+    as,
+    ...rest
+}: ButtonOutlineProps) => {
     const color = variant === 'dark' ? 'dark' : 'light'
     const hoverColor = variant === 'dark' ? 'light' : 'dark'
     const borderColor = variant === 'dark' ? 'dark' : 'light'
     const bgHoverColor = variant === 'dark' ? 'dark' : 'light'
     return (
         <ChakraButton
+            as={as}
+            {...rest}
             py={4}
             px={8}
             bg={'rgba(0, 0, 0, 0)'}

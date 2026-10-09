@@ -31,13 +31,7 @@ import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 import brain from '../static/assets/brain.png'
 
-const ProjectX2022 = ({
-    onClickCurrent,
-    onClickLanding,
-}: {
-    onClickCurrent: () => void
-    onClickLanding: () => void
-}) => {
+export default function ProjectX2022() {
     return (
         <Box>
             {/* -- Hero / Intro Section -- */}
@@ -341,5 +335,3 @@ const ProjectX2022 = ({
         </Box>
     )
 }
-
-export default ProjectX2022

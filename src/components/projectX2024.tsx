@@ -2,13 +2,7 @@ import { Box, VStack, Text, Flex } from '@chakra-ui/react'
 import gradient from '../static/assets/2024gradient.jpg'
 import { ButtonOutline } from './Button'
 
-const ProjectX2024 = ({
-    onClick2023,
-    onClickLanding,
-}: {
-    onClick2023: () => void
-    onClickLanding: () => void
-}) => {
+export default function ProjectX2024() {
     return (
         <Box>
             <Box
@@ -94,7 +88,7 @@ const ProjectX2024 = ({
                         OTHER DETAILS
                     </Text>
 
-                    <Box>
+                    {/* <Box>
                         <ButtonOutline variant="dark" onClick={onClick2023}>
                             2023
                         </ButtonOutline>
@@ -102,7 +96,7 @@ const ProjectX2024 = ({
                         <ButtonOutline variant="dark" onClick={onClickLanding}>
                             Landing Page
                         </ButtonOutline>
-                    </Box>
+                    </Box> */}
                 </VStack>
             </Box>
             <Box backgroundColor={'light'}>
@@ -118,5 +112,3 @@ const ProjectX2024 = ({
         </Box>
     )
 }
-
-export default ProjectX2024
