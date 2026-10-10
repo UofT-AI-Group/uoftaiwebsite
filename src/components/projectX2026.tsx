@@ -506,7 +506,7 @@ export default function ProjectX2026() {
                     </Text>
                     <Text
                         color={'light'}>
-                        Contact <Text as='span' color={'#a2d2ff'}><a href='mailto:uoftaigroup@gmail.com'>uoftaigroup@gmail.com</a></Text>. We will make our best to accomodate!
+                        Contact <Text as='span' color={'#a2d2ff'}><a href='mailto:uoftaigroup@gmail.com'>uoftaigroup@gmail.com</a></Text>. We will make our best to accommodate!
                     </Text>
                 </Box>
                 <Box></Box>
