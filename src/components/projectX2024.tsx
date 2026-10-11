@@ -4,7 +4,7 @@ import { ButtonOutline } from './Button'
 
 export default function ProjectX2024() {
     return (
-        <Box>
+        <Box fontFamily={'Tabular, sans-serif'}>
             <Box
                 bgImage={gradient}
                 bgPosition={'50%'}
@@ -24,7 +24,6 @@ export default function ProjectX2024() {
                     <Text
                         fontWeight={'medium'}
                         fontSize={[30, 60]}
-                        fontFamily={'Tabular, sans-serif'}
                         color={'dark'}
                         m={'20px 0px'}
                     >
@@ -72,7 +71,6 @@ export default function ProjectX2024() {
                     <Text
                         fontWeight={'medium'}
                         fontSize={[30, 60]}
-                        fontFamily={'Tabular, sans-serif'}
                         color={'dark'}
                     >
                         $10,000+

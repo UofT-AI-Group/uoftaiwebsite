@@ -70,8 +70,7 @@ import human from '../static/assets/human.jpg'
 
 export default function ProjectX2020() {
     return (
-        <Box>
-            {/* -- Hero / Intro Section -- */}
+        <Box fontFamily={'Tabular, sans-serif'}>
             <Box
                 bgImage={gradient}
                 bgPosition="50%"
@@ -91,7 +90,6 @@ export default function ProjectX2020() {
                     <Text
                         fontWeight="medium"
                         fontSize={[30, 60]}
-                        fontFamily="Tabular, sans-serif"
                         color="dark"
                         m="20px 0px"
                     >
@@ -135,7 +133,6 @@ export default function ProjectX2020() {
                     <Text
                         fontWeight="medium"
                         fontSize={[30, 60]}
-                        fontFamily="Tabular, sans-serif"
                         color="dark"
                     >
                         $65,000

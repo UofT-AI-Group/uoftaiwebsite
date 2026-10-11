@@ -24,7 +24,6 @@ export default function ProjectX() {
                         as={'span'}
                         fontWeight={'medium'}
                         fontSize={[30, 60]}
-                        fontFamily={'Tabular, sans-serif'}
                         color={'light'}
                     >
                         Project
@@ -33,7 +32,6 @@ export default function ProjectX() {
                         as={'span'}
                         fontWeight={'medium'}
                         fontSize={[30, 60]}
-                        fontFamily={'Tabular, sans-serif'}
                         color={'brand'}
                     >
                         X

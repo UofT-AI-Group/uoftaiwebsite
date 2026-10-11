@@ -4,6 +4,7 @@ import { ButtonOutline } from './Button'
 import { Box, VStack, Text, Button, chakra, useBreakpointValue, SimpleGrid, Icon } from '@chakra-ui/react'
 import { LuTrophy, LuRocket, LuCheckCheck, LuAtom, LuUserCheck, LuHandshake } from 'react-icons/lu'
 import gradient from '../static/assets/2026gradient.png'
+import { ProjectXResearchThemeTitle } from './Typography'
 
 const VB_W = 600
 const VB_Y = 70   // top of the cropped viewBox (curve's highest point is ~71)
@@ -76,14 +77,7 @@ export default function ProjectX2026() {
                     <Text fontSize={['16px', '22px']} color={'light'}>
                         2026 RESEARCH THEME
                     </Text>
-                    <Text
-                        fontWeight={'medium'}
-                        fontSize={[30, 60]}
-                        color={'light'}
-                        m={'20px 0px'}
-                    >
-                        What is Progress?
-                    </Text>
+                    <ProjectXResearchThemeTitle />
                     <Text
                         color={'light'}
                         width={'50%'}>

@@ -29,7 +29,7 @@ import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 
 export default function ProjectX2023() {
     return (
-        <Box>
+        <Box fontFamily={'Tabular, sans-serif'}>
             <Box
                 bgImage={gradient}
                 bgPosition={'50%'}
@@ -49,7 +49,6 @@ export default function ProjectX2023() {
                     <Text
                         fontWeight={'medium'}
                         fontSize={[30, 60]}
-                        fontFamily={'Tabular, sans-serif'}
                         color={'light'}
                         m={'20px 0px'}
                     >
@@ -88,7 +87,6 @@ export default function ProjectX2023() {
                     <Text
                         fontWeight={'medium'}
                         fontSize={[30, 60]}
-                        fontFamily={'Tabular, sans-serif'}
                         color={'light'}
                     >
                         $10,000+
