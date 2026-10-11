@@ -133,7 +133,7 @@ const MeetTheTeam: React.FC = () => {
                     <span className="underline">M</span>eet The Team
                 </h2>
                 <SimpleGrid
-                    columns={{ base: 1, md: 2 }}
+                    columns={{ base: 1, lg: 2 }}
                     spacingX={6}
                     spacingY={5}
                     justifyItems="center"
