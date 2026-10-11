@@ -2,14 +2,19 @@ import React, { useState, useRef, useEffect } from 'react'
 import chevron from '../static/assets/chevron-down.svg'
 import { Text, Box, Image, VStack } from '@chakra-ui/react'
 
-interface TeamCard {
+interface TeamCardProps {
     role: string
     name: string
     image: string
     description: string
 }
 
-const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
+const TeamCard: React.FC<TeamCardProps> = ({
+    role,
+    name,
+    image,
+    description,
+}) => {
     const [isOpen, setIsOpen] = useState(false)
     const [height, setHeight] = useState('0px')
     const contentRef = useRef<HTMLDivElement>(null)
@@ -26,7 +31,12 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
 
     return (
         <div className="meet-the-team-item">
-            <div className="meet-the-team-question" onClick={toggleOpen}>
+            <button
+                type="button"
+                className="meet-the-team-question"
+                onClick={toggleOpen}
+                aria-expanded={isOpen}
+            >
                 <Box display={'flex'}>
                     <Box
                         borderRadius={'50%'}
@@ -36,6 +46,8 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
                     >
                         <Image
                             src={image}
+                            alt={`${name} headshot`}
+                            loading="lazy"
                             borderRadius={'50%'}
                             width="100%"
                             height="100%"
@@ -68,8 +80,10 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
                 <img
                     src={chevron}
                     className={`arrow ${isOpen ? 'open' : ''}`}
+                    alt=""
+                    aria-hidden="true"
                 ></img>
-            </div>
+            </button>
             <div
                 ref={contentRef}
                 className={`meet-the-team-answer ${isOpen ? 'show' : ''}`}
