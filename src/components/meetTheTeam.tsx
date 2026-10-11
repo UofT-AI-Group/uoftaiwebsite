@@ -38,7 +38,7 @@ const teamMembers = [
         role: 'Co-Director of Software Development',
         image: ibraheem,
         description:
-            'Ibraheem Hussain is a third-year Computer Science student at the University of Toronto. With experience building full-stack applications, AI-powered tools and production software systems, he brings a strong technical and collaborative perspective to UofT AI. As Co-Director of Software Engineering, he is excited to build impactful projects, support student developers and create opportunities for students to explore and apply emerging AI technologies. Outside of university, Ibraheem loves playing soccer and biking in his free time.',
+            'Ibraheem Hussain is a third-year Computer Science student at the University of Toronto. With experience building full-stack applications, AI-powered tools and production software systems, he brings a strong technical and collaborative perspective to UofT AI. As Co-Director of Software Development, he is excited to build impactful projects, support student developers and create opportunities for students to explore and apply emerging AI technologies. Outside of university, Ibraheem loves playing soccer and biking in his free time.',
     },
     {
         name: 'Isabella Wen',
@@ -52,35 +52,35 @@ const teamMembers = [
         role: 'Co-Director of Software Development',
         image: demeng,
         description:
-            'Demeng Chen is a third-year Bioinformatics and Computational Biology Specialist and Computer Science Major at the University of Toronto. He’s previously interned as a software engineer at Microsoft and Shopify, and has also worked on computational biology research at SickKids. At UofT AI, he works on the software and technical projects that support the club and its events.',
+            "Demeng Chen is a third-year Bioinformatics and Computational Biology Specialist and Computer Science Major at the University of Toronto. He's previously interned as a software engineer at Microsoft and Shopify, and has also worked on computational biology research at SickKids. At UofT AI, he works on the software and technical projects that support the club and its events.",
     },
     {
         name: 'Suhani Darda',
         role: 'Co-Director of Community Engagement',
         image: suhani,
         description:
-            'Suhani Darda is a second-year Computer Engineering student at the University of Toronto with experience developing AI and machine learning projects focused on sustainability. As Director of Community Engagement at UofT AI, she is excited to host events that make AI more accessible and bring students together to learn, collaborate, and turn ideas into impact.',
+            'Suhani Darda is a second-year Computer Engineering student at the University of Toronto with experience developing AI and machine learning projects focused on sustainability. As Co-Director of Community Engagement at UofT AI, she is excited to host events that make AI more accessible and bring students together to learn, collaborate, and turn ideas into impact.',
     },
     {
         name: 'Huzaifa Ahmer',
         role: 'Finance Director',
         image: huzaifa,
         description:
-            'Huzaifa Ahmer is a Computer Science and Economics student at the University of Toronto with experience in software development and co-founding his own treetwear brand. As Finance Director at UofT AI, he helps fund student programming and build sponsor relationships, supporting events where students can explore AI and meet people working in the field.',
+            'Huzaifa Ahmer is a Computer Science and Economics student at the University of Toronto with experience in software development and co-founding his own streetwear brand. As Finance Director at UofT AI, he helps fund student programming and build sponsor relationships, supporting events where students can explore AI and meet people working in the field.',
     },
     {
         name: 'Zainab Khalil',
         role: 'Co-Director of Publishing',
         image: zainab,
         description:
-            'Zainab Khalil is a Biology, Environmental Science and Business Student at the University of Toronto with experience in writing and research. As Co-Director of Publishing, she hopes to bring together perspectives from different disciplines to explore how AI is shaping different fields and the people within them.',
+            'Zainab Khalil is a Biology, Environmental Science and Business student at the University of Toronto with experience in writing and research. As Co-Director of Publishing, she hopes to bring together perspectives from different disciplines to explore how AI is shaping different fields and the people within them.',
     },
     {
         name: 'Karishma Persad',
         role: 'Co-Director of Partnerships',
         image: karishma,
         description:
-            'Karishma Persad is a second-year student studying Cognitive Science, Applied Data Science, and Linguistics at the University of Toronto. She enjoys making connections with everyone in her everyday life, which inspired her to learn why humans behave the way they do and how to use human cognitive processes to improve their experience with tech. As a Director of Partnerships at UofT AI, she works on bridging the gap between the real tech industry and the students of the club to provide opportunities and collaborations to support the sucess of ambitous students.',
+            'Karishma Persad is a second-year student studying Cognitive Science, Applied Data Science, and Linguistics at the University of Toronto. She enjoys making connections with everyone in her everyday life, which inspired her to learn why humans behave the way they do and how to use human cognitive processes to improve their experience with tech. As a Co-Director of Partnerships at UofT AI, she works on bridging the gap between the real tech industry and the students of the club to provide opportunities and collaborations to support the success of ambitious students.',
     },
     {
         name: 'Maryam Fayyaz',
@@ -94,7 +94,7 @@ const teamMembers = [
         role: 'Co-Director of Partnerships',
         image: avina,
         description:
-            'Avina Chan is a third-year student at the University of Toronto studying bioinformatics, computer science, and statistics. With experience in go-to-market strategy, healthcare AI, and technology, she brings a cross-functional perspective to AI and is interested in how emerging technologies can translate into meaningful real-world applications. She is excited to create practical opportunities for students to learn, collaborate, and engage thoughtfully with the technologies shaping the future.',
+            'Avina Chan is a third-year student at the University of Toronto studying Bioinformatics, Computer Science, and Statistics. With experience in go-to-market strategy, healthcare AI, and technology, she brings a cross-functional perspective to AI and is interested in how emerging technologies can translate into meaningful real-world applications. She is excited to create practical opportunities for students to learn, collaborate, and engage thoughtfully with the technologies shaping the future.',
     },
     {
         name: 'Seongmin Chang',
@@ -108,7 +108,7 @@ const teamMembers = [
         role: 'Director of Marketing',
         image: capucine,
         description:
-            'Capucine Crouzet is a second-year Computer Science, Mathematics & Statistics student at the University of Toronto, aiming to specialize in Artificial Intelligence. She is passionate about Graphic Design and Photography, with experience in communication and branding initiatives. Outside of UofT AI, she enjoys skiing, spending time with friends, and travelling.',
+            'Capucine Crouzet is a second-year Computer Science, Mathematics & Statistics student at the University of Toronto, aiming to specialize in Artificial Intelligence. She is passionate about graphic design and photography, with experience in communication and branding initiatives. Outside of UofT AI, she enjoys skiing, spending time with friends, and travelling.',
     },
     {
         name: 'Charlize Medina',
