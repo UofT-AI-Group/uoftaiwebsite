@@ -43,6 +43,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                         border={'3px solid black'}
                         h={['60px', '80px', '128px']}
                         w={['60px', '80px', '128px']}
+                        flexShrink={0}
                     >
                         <Image
                             src={image}
