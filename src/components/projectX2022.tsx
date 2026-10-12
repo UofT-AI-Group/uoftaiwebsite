@@ -31,16 +31,9 @@ import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 import brain from '../static/assets/brain.png'
 
-const ProjectX2022 = ({
-    onClickCurrent,
-    onClickLanding,
-}: {
-    onClickCurrent: () => void
-    onClickLanding: () => void
-}) => {
+export default function ProjectX2022() {
     return (
-        <Box>
-            {/* -- Hero / Intro Section -- */}
+        <Box fontFamily={'Tabular, sans-serif'}>
             <Box
                 bgImage={gradient}
                 bgPosition="50%"
@@ -60,7 +53,6 @@ const ProjectX2022 = ({
                     <Text
                         fontWeight="medium"
                         fontSize={[30, 60]}
-                        fontFamily="Tabular, sans-serif"
                         color="dark"
                         m="20px 0px"
                     >
@@ -95,7 +87,6 @@ const ProjectX2022 = ({
                     <Text
                         fontWeight="medium"
                         fontSize={[30, 60]}
-                        fontFamily="Tabular, sans-serif"
                         color="dark"
                     >
                         $40,000+
@@ -341,5 +332,3 @@ const ProjectX2022 = ({
         </Box>
     )
 }
-
-export default ProjectX2022

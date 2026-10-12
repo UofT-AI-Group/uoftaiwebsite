@@ -533,25 +533,6 @@ const ConferenceX = () => {
                 <ConferenceYearTabs />
             </Box>
 
-            {/* URGENT: Sunday Cancellation Notice */}
-            <Box bg="#DC2626" py={4} px={6} textAlign="center">
-                <Text
-                    color="white"
-                    fontSize={['16px', '20px']}
-                    fontWeight="bold"
-                    mb={2}
-                >
-                    IMPORTANT UPDATE: Sunday (Jan 25) In-Person Conference
-                    CANCELLED
-                </Text>
-                <Text color="white" fontSize={['14px', '16px']}>
-                    Due to extreme weather conditions, Sunday's in-person event
-                    has been cancelled. The conference will continue virtually
-                    on Zoom. Details to join will be sent via email to all
-                    registered attendees.
-                </Text>
-            </Box>
-
             <Box
                 bgImage={gradient2026}
                 bgPosition={'50%'}

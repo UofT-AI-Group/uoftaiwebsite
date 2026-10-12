@@ -105,18 +105,6 @@ const ConferenceX = () => {
                     >
                         January 25, 2025
                     </Text>
-                    <Box>
-                        <HashLink
-                            smooth
-                            to={
-                                'https://www.eventbrite.ca/e/conferencex-2025-tickets-1147692381809?aff=oddtdtcreator'
-                            }
-                        >
-                            <ButtonOutline variant="light">
-                                Secure a ticket
-                            </ButtonOutline>
-                        </HashLink>
-                    </Box>
                 </VStack>
             </Box>
             <Box backgroundColor={'dark'} p={[5, 20]} position={'relative'}>

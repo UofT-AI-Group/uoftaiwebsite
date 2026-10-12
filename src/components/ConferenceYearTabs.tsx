@@ -9,7 +9,8 @@ export default function ConferenceYearTabs() {
     const location = useLocation()
 
     const tabs: YearTab[] = [
-        { year: '2026', link: '/conferencex' },
+        { year: '2027', link: '/conferencex' },
+        { year: '2026', link: '/conferencex-2026' },
         { year: '2025', link: '/conferencex-2025' },
         { year: '2024', link: '/conferencex-2024' },
     ]
@@ -26,8 +27,8 @@ export default function ConferenceYearTabs() {
             {tabs.map((t) => {
                 const isActive =
                     location.pathname === t.link ||
-                    (t.year === '2026' &&
-                        location.pathname === '/conferencex-2026')
+                    (t.year === '2027' &&
+                        location.pathname === '/conferencex-2027')
 
                 return (
                     <Link

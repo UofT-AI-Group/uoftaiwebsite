@@ -58,16 +58,9 @@ import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 import covid from '../static/assets/covid.jpg'
 import human from '../static/assets/human.jpg'
 
-const ProjectX2022 = ({
-    onClickCurrent,
-    onClickLanding,
-}: {
-    onClickCurrent: () => void
-    onClickLanding: () => void
-}) => {
+export default function ProjectX2021() {
     return (
-        <Box>
-            {/* -- Hero / Intro Section -- */}
+        <Box fontFamily={'Tabular, sans-serif'}>
             <Box
                 bgImage={gradient}
                 bgPosition="50%"
@@ -87,7 +80,6 @@ const ProjectX2022 = ({
                     <Text
                         fontWeight="medium"
                         fontSize={[30, 60]}
-                        fontFamily="Tabular, sans-serif"
                         color="dark"
                         m="20px 0px"
                     >
@@ -131,7 +123,6 @@ const ProjectX2022 = ({
                     <Text
                         fontWeight="medium"
                         fontSize={[30, 60]}
-                        fontFamily="Tabular, sans-serif"
                         color="dark"
                     >
                         $75,000
@@ -564,5 +555,3 @@ const ProjectX2022 = ({
         </Box>
     )
 }
-
-export default ProjectX2022
