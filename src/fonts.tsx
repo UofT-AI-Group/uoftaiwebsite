@@ -7,61 +7,61 @@ const Fonts = () => (
                 font-family: 'Tabular';
                 font-style: normal;
                 font-weight: 300;
-                src: url('./fonts/Tabular-Light.otf');
+                src: url('/fonts/Tabular-Light.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: italic;
                 font-weight: 300;
-                src: url('./fonts/Tabular-LightItalic.otf');
+                src: url('/fonts/Tabular-LightItalic.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: normal;
                 font-weight: 400;
-                src: url('./fonts/Tabular-Regular.otf');
+                src: url('/fonts/Tabular-Regular.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: italic;
                 font-weight: 400;
-                src: url('./fonts/Tabular-Italic.otf');
+                src: url('/fonts/Tabular-Italic.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: normal;
                 font-weight: 500;
-                src: url('./fonts/Tabular-Medium.otf');
+                src: url('/fonts/Tabular-Medium.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: italic;
                 font-weight: 500;
-                src: url('./fonts/Tabular-MediumItalic.otf');
+                src: url('/fonts/Tabular-MediumItalic.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: normal;
                 font-weight: 600;
-                src: url('./fonts/Tabular-Semibold.otf');
+                src: url('/fonts/Tabular-Semibold.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: italic;
                 font-weight: 600;
-                src: url('./fonts/Tabular-SemiboldItalic.otf');
+                src: url('/fonts/Tabular-SemiboldItalic.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: normal;
                 font-weight: 700;
-                src: url('./fonts/Tabular-Bold.otf');
+                src: url('/fonts/Tabular-Bold.otf');
             }
             @font-face {
                 font-family: 'Tabular';
                 font-style: italic;
                 font-weight: 700;
-                src: url('./fonts/Tabular-BoldItalic.otf');
+                src: url('/fonts/Tabular-BoldItalic.otf');
             }
             @font-face {
                 font-family: 'Tenor Sans';
