@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
                     <div className="footer-bottom">
                         <p>
                             &copy; University of Toronto Artificial Intelligence
-                            Group 2024
+                            Group 2026
                         </p>
                     </div>
                 </div>
