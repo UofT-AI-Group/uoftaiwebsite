@@ -49,7 +49,7 @@ const Newsletter = () => {
 
                     <Box mt={'40px'}>
                         <a
-                            href="http://eepurl.com/iYa6Xw"
+                            href="https://substack.com/@uoftaigroup"
                             target="_blank"
                             rel="noreferrer"
                         >
