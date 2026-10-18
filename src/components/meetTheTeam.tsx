@@ -121,7 +121,8 @@ const teamMembers = [
         name: 'Aaina Garg',
         role: 'Director of Conference',
         image: aaina,
-        description: 'Bio coming soon.',
+        description:
+            "Aaina Garg is a fourth-year Honours BSc student in Computer Science and Economics at the University of Toronto and Director of Conference at UofT AI. A fellow of Google DeepMind's AI4Good program, RBC Borealis's Let's Solve It, and Sentient Futures, she has built machine learning systems at Arcadis and Cash App and researched AI bias and governance. She brings a builder's eye and a critical one to AI, and she's excited to create events where students can learn, ask hard questions, and think carefully about the technology shaping their lives.",
     },
 ]
 
