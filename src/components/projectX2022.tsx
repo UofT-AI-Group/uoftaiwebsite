@@ -1,5 +1,5 @@
 import { Box, VStack, Text, Flex, SimpleGrid, Image } from '@chakra-ui/react'
-import gradient from '../static/assets/2022gradient.png'
+import gradient from '../static/assets/2022gradient.webp'
 import { ButtonOutline } from './Button'
 
 import cornell from '../static/assets/cornell.png'
@@ -29,7 +29,7 @@ import team2022 from '../static/assets/team2022.png'
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
-import brain from '../static/assets/brain.png'
+import brain from '../static/assets/brain.webp'
 
 export default function ProjectX2022() {
     return (

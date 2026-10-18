@@ -8,11 +8,11 @@ import {
     Button,
     Heading,
 } from '@chakra-ui/react'
-import gradient from '../static/assets/2020gradient.png'
+import gradient from '../static/assets/2020gradient.webp'
 import { ButtonOutline } from './Button'
 import berkeley from '../static/assets/berkeley.png'
 import caltech from '../static/assets/caltech.png'
-import carnegie from '../static/assets/carnegie.png'
+import carnegie from '../static/assets/carnegie.webp'
 import cornell from '../static/assets/cornell.png'
 import darmstadt from '../static/assets/darmstadt.png'
 import duquesne from '../static/assets/duquesne.png'
@@ -66,7 +66,7 @@ import bluegray from '../static/assets/gray_blue_bg.jpg'
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
-import human from '../static/assets/human.jpg'
+import human from '../static/assets/human.webp'
 
 export default function ProjectX2020() {
     return (

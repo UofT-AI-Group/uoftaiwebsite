@@ -1,5 +1,5 @@
-import whoWeAre from '../static/assets/who-we-are.jpg'
-import ourMission from '../static/assets/our-mission.jpg'
+import whoWeAre from '../static/assets/who-we-are.webp'
+import ourMission from '../static/assets/our-mission.webp'
 import '../static/styles/about.css'
 import { Box, Flex, Text, Image } from '@chakra-ui/react'
 import SlideInOnScroll from './slideinonscroll'
