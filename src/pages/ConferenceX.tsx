@@ -1,14 +1,5 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import {
-    Box,
-    Container,
-    VStack,
-    Text,
-    Flex,
-    Card,
-    Image,
-    SimpleGrid,
-} from '@chakra-ui/react'
+import { Box, VStack, Text, Flex, Image, SimpleGrid } from '@chakra-ui/react'
 import gradient from '../static/assets/outreach-gradient.jpeg'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
@@ -37,7 +28,7 @@ import tomi from '../static/assets/Tomi-Poutanen.jpg'
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
 import gallery from '../static/assets/gallery.jpg'
 import showcase from '../static/assets/Showcase.jpg'
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 import '../static/styles/conferenceX.css'
 
 const ConferenceX = () => {
@@ -74,14 +65,13 @@ const ConferenceX = () => {
                         Where technology meets humanity
                     </Text>
                     <Box>
-                        <HashLink
-                            smooth
-                            to={'/conferencex#conference2024higlights'}
+                        <ButtonOutline
+                            as={RouterLink}
+                            to={'/conferencex-2024#conference2024higlights'}
+                            variant="light"
                         >
-                            <ButtonOutline variant="light">
-                                ConferenceX 2024 Highlights
-                            </ButtonOutline>
-                        </HashLink>
+                            ConferenceX 2024 Highlights
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </Box>

@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react'
-import { Button as ChakraButton, ButtonProps, As } from '@chakra-ui/react'
+import type { ElementType, ReactNode } from 'react'
+import { Button as ChakraButton, type ButtonProps } from '@chakra-ui/react'
 
 export const ButtonDark = ({
     children,
@@ -33,7 +33,7 @@ type ButtonOutlineProps = Omit<ButtonProps, 'variant' | 'as'> & {
     children: ReactNode
     variant?: 'dark' | 'light'
     /** Render the button as another element/component, e.g. `as={RouterLink}` or `as="a"` */
-    as?: As
+    as?: ElementType
     /** Route path, used when `as={RouterLink}` */
     to?: string
     /** URL, used when `as="a"` */

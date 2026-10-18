@@ -1,6 +1,4 @@
-import * as React from 'react'
 import { Route, Routes } from 'react-router'
-import { ScrollRestoration } from 'react-router-dom'
 import Home from './pages/Home'
 import Footer from './components/Footer/Footer'
 import Partner from './pages/Partner'
@@ -9,7 +7,7 @@ import ConferenceX2025 from './pages/ConferenceX2025'
 import ConferenceX2026 from './pages/ConferenceX2026'
 import ConferenceX2027 from './pages/ConferenceX2027'
 import ConferenceX from './pages/ConferenceX'
-import ScrollToTop from './components/scrollToTop'
+import ScrollManager from './components/ScrollManager'
 import Newsletter from './pages/Newsletter'
 import ComingSoon from './pages/ComingSoon'
 import ProjectX from './pages/ProjectX'
@@ -20,13 +18,12 @@ import ProjectX2023 from './components/projectX2023'
 import ProjectX2024 from './components/projectX2024'
 import ProjectX2026 from './components/projectX2026'
 
-
 // This is the deployment branch
 
 export const App = () => (
     <>
         <Navbar />
-        <ScrollToTop />
+        <ScrollManager />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/partner-with-us" element={<Partner />} />

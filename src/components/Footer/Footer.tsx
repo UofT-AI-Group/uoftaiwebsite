@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../static/assets/UofTAI_Logo.png'
 import './style.css'
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 
 const Footer: React.FC = () => {
     return (
@@ -12,27 +12,27 @@ const Footer: React.FC = () => {
                         <img className="footer-img" src={logo} alt="AI Logo" />
 
                         <div className="footer-link">
-                            <a href="/">Home</a>
+                            <RouterLink to={'/'}>Home</RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <HashLink smooth to={'/#about'}>
-                                About Us
-                            </HashLink>
+                            <RouterLink to={'/#about'}>About Us</RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <HashLink smooth to={'/#meet-the-team'}>
+                            <RouterLink to={'/#meet-the-team'}>
                                 Our Team
-                            </HashLink>
+                            </RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <a href="/conferencex">ConferenceX</a>
+                            <RouterLink to={'/conferencex'}>
+                                ConferenceX
+                            </RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <a href="/projectx">ProjectX</a>
+                            <RouterLink to={'/projectx'}>ProjectX</RouterLink>
                         </div>
 
                         {/* <div className="footer-link">
@@ -40,16 +40,18 @@ const Footer: React.FC = () => {
                         </div> */}
 
                         <div className="footer-link">
-                            <a href="/newsletter">Newsletter</a>
+                            <RouterLink to={'/newsletter'}>
+                                Newsletter
+                            </RouterLink>
                         </div>
                     </div>
 
                     <div className="footer-link">
-                        <a href="/partner-with-us">
+                        <RouterLink to={'/partner-with-us'}>
                             <button className="partner-button">
                                 Partner With Us
                             </button>
-                        </a>
+                        </RouterLink>
                     </div>
                 </div>
                 <div className="main-contacts">

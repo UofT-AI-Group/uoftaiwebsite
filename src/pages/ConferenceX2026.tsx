@@ -21,22 +21,6 @@ import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'
 
-import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/Accenture-logo.png'
-import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
-import stan from '../static/assets/2025-confx-spons/conference 2025 logos/block-s-right.webp'
-import citadel from '../static/assets/2025-confx-spons/conference 2025 logos/Citadel_LLC_Logo.svg.png'
-import deep from '../static/assets/2025-confx-spons/conference 2025 logos/DeepMind_new_logo.svg.png'
-import ghealth from '../static/assets/2025-confx-spons/conference 2025 logos/Google_Health_logo.svg.png'
-import dhealth from '../static/assets/2025-confx-spons/conference 2025 logos/Main-menu-logo.svg'
-import ne from '../static/assets/2025-confx-spons/conference 2025 logos/Northeastern-University-Logo.png'
-import perp from '../static/assets/2025-confx-spons/conference 2025 logos/Perplexity_AI_logo.svg.png'
-import rad from '../static/assets/2025-confx-spons/conference 2025 logos/radical-ventures-header-logo.webp'
-import human from '../static/assets/2025-confx-spons/conference 2025 logos/human.avif'
-import uoft from '../static/assets/2025-confx-spons/conference 2025 logos/University_of_Toronto-Logo.wine.png'
-import vector from '../static/assets/2025-confx-spons/conference 2025 logos/Vector-Institute_Logo.png'
-import uf from '../static/assets/2025-confx-spons/conference 2025 logos/University-of-Florida-Logo.png'
-import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_Economic_Forum_logo.svg.png'
-import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 // Day 1 Speakers
 import speaker_pic from '../static/assets/conf-2026-assets/speaker_pic.jpg'
 import gallery from '../static/assets/our-mission.jpg'
@@ -87,12 +71,11 @@ import andre from '../static/assets/conf-2026-assets/Andre.png'
 
 import stephen from '../static/assets/conf-2026-assets/stephen_wolfram.jpg'
 
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 import eyLogo from '../static/assets/2026-confx-spons/EY.png'
 import canvasLogo from '../static/assets/2026-confx-spons/canvas_2026.png'
 import intactLogo from '../static/assets/2026-confx-spons/intact_2026.png'
 import RBCLogo from '../static/assets/2026-confx-spons/RBC.png'
-import rectangleImage from '../static/assets/rectangle_get_your_ticket.png'
 import '../static/styles/conferenceX.css'
 import { useEffect, useState } from 'react'
 import { scheduleDay1 } from '../data/scheduleDay1'
@@ -566,16 +549,13 @@ const ConferenceX = () => {
                         January 24–25, 2026
                     </Text>
                     <Box>
-                        <HashLink
-                            smooth
-                            to={
-                                'https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator'
-                            }
+                        <ButtonOutline
+                            as="a"
+                            href="https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator"
+                            variant="light"
                         >
-                            <ButtonOutline variant="light">
-                                Secure a ticket
-                            </ButtonOutline>
-                        </HashLink>
+                            Secure a ticket
+                        </ButtonOutline>
                     </Box>
                     <Flex
                         alignItems="center"
@@ -680,23 +660,20 @@ const ConferenceX = () => {
                         </Text>
 
                         {/* Circular / Pill Button */}
-                        <HashLink
-                            smooth
-                            to="/conferencex-2025#conference2024higlights"
+                        <Button
+                            as={RouterLink}
+                            to={'/conferencex-2025#conference2024higlights'}
+                            variant="outline"
+                            borderRadius="full"
+                            px={8}
+                            py={6}
+                            color="white"
+                            borderColor="white"
+                            _hover={{ bg: 'rgba(255,255,255,0.10)' }}
+                            fontFamily="Tabular, sans-serif"
                         >
-                            <Button
-                                variant="outline"
-                                borderRadius="full"
-                                px={8}
-                                py={6}
-                                color="white"
-                                borderColor="white"
-                                _hover={{ bg: 'rgba(255,255,255,0.10)' }}
-                                fontFamily="Tabular, sans-serif"
-                            >
-                                Check out last year's conference
-                            </Button>
-                        </HashLink>
+                            Check out last year's conference
+                        </Button>
                     </VStack>
                 </Flex>
             </Box>
@@ -2175,29 +2152,24 @@ const ConferenceX = () => {
                                 ConferenceX 2026
                             </Text>
                         </VStack>
-                        <HashLink
-                            smooth
-                            to={
-                                'https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator'
-                            }
+                        <Button
+                            as="a"
+                            href="https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator"
+                            bg="#FFFFFF"
+                            color="#000000"
+                            fontFamily="'JetBrains Mono', monospace"
+                            fontWeight={500}
+                            fontSize="18px"
+                            lineHeight="28px"
+                            px={[12, 16, 20]}
+                            py={[6, 8, 10]}
+                            borderRadius="full"
+                            _hover={{
+                                bg: 'rgba(255, 255, 255, 0.9)',
+                            }}
                         >
-                            <Button
-                                bg="#FFFFFF"
-                                color="#000000"
-                                fontFamily="'JetBrains Mono', monospace"
-                                fontWeight={500}
-                                fontSize="18px"
-                                lineHeight="28px"
-                                px={[12, 16, 20]}
-                                py={[6, 8, 10]}
-                                borderRadius="full"
-                                _hover={{
-                                    bg: 'rgba(255, 255, 255, 0.9)',
-                                }}
-                            >
-                                Secure Your Ticket
-                            </Button>
-                        </HashLink>
+                            Secure Your Ticket
+                        </Button>
                     </VStack>
                 </Box>
             </Box>

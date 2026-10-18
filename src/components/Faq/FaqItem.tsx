@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import chevron from '../../static/assets/chevron-down.svg'
-import { Card, CardHeader, Text, Box } from '@chakra-ui/react'
+import { Text, Box } from '@chakra-ui/react'
 
 interface FAQItemProps {
     question: string

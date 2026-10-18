@@ -1,4 +1,4 @@
-import CSS from 'csstype'
+import type * as CSS from 'csstype'
 import { Card, CardHeader, CardBody, Box, Image } from '@chakra-ui/react'
 import '../static/styles/issue.css'
 
