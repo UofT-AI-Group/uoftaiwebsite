@@ -9,7 +9,7 @@ import {
     Image,
     SimpleGrid,
 } from '@chakra-ui/react'
-import gradient from '../static/assets/outreach-gradient.jpeg'
+import gradient from '../static/assets/outreach-gradient.webp'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'

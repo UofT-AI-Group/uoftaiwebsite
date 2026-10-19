@@ -1,5 +1,5 @@
 import { Box, VStack, Text, Flex } from '@chakra-ui/react'
-import gradient from '../static/assets/2024gradient.jpg'
+import gradient from '../static/assets/2024gradient.webp'
 import { ButtonOutline } from './Button'
 
 export default function ProjectX2024() {

@@ -1,5 +1,5 @@
 import { Box, VStack, Text } from '@chakra-ui/react'
-import gradient from '../static/assets/dark gradient.png'
+import gradient from '../static/assets/dark-gradient.webp'
 import { ButtonOutline } from '../components/Button'
 import { Link as RouterLink } from 'react-router-dom'
 import { Link } from '@chakra-ui/react';

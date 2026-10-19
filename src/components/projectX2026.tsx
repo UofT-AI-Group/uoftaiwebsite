@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link'
 import { ButtonOutline } from './Button'
 import { Box, VStack, Text, Button, chakra, useBreakpointValue, SimpleGrid, Icon } from '@chakra-ui/react'
 import { LuTrophy, LuRocket, LuCheckCheck, LuAtom, LuUserCheck, LuHandshake } from 'react-icons/lu'
-import gradient from '../static/assets/2026gradient.png'
+import gradient from '../static/assets/2026gradient.webp'
 import { ProjectXResearchThemeTitle } from './Typography'
 
 const VB_W = 600
