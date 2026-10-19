@@ -1,17 +1,15 @@
-import React from 'react'
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import '../static/styles/banner.css'
 
-const { useState, useEffect, useRef, useCallback } = React
-
-const InfiniteLooper = function InfiniteLooper({
+const InfiniteLooper = ({
     speed,
     direction,
     children,
 }: {
     speed: string
     direction: 'right' | 'left'
-    children: React.ReactNode
-}) {
+    children: ReactNode
+}) => {
     const [looperInstances, setLooperInstances] = useState(1)
     const outerRef = useRef<HTMLDivElement>(null)
     const innerRef = useRef<HTMLDivElement>(null)

@@ -1,5 +1,4 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import React from 'react'
 import {
     Box,
     VStack,
@@ -662,7 +661,7 @@ const ConferenceX = () => {
                         {/* Circular / Pill Button */}
                         <Button
                             as={RouterLink}
-                            to={'/conferencex-2025#conference2024higlights'}
+                            to={'/conferencex-2025#highlights'}
                             variant="outline"
                             borderRadius="full"
                             px={8}
@@ -752,8 +751,8 @@ const ConferenceX = () => {
                 pb={0}
                 position={'relative'}
                 zIndex={10}
+                id="highlights"
             >
-                <div id="conference2024higlights"></div>
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2026 Sneakpeak
                 </Text>

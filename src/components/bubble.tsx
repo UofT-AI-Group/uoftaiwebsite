@@ -1,8 +1,7 @@
-import React from 'react'
-import type * as CSS from 'csstype'
+import type { CSSProperties } from 'react'
 import '../static/styles/bubble.css'
 
-const Bubble = function Bubble({
+const Bubble = ({
     speed,
     size,
     top,
@@ -12,8 +11,8 @@ const Bubble = function Bubble({
     size: string
     top: string
     left: string
-}) {
-    const bubbleStyles: CSS.Properties = {
+}) => {
+    const bubbleStyles: CSSProperties = {
         position: 'absolute',
         top: top,
         left: left,
@@ -21,8 +20,6 @@ const Bubble = function Bubble({
         height: size,
         width: size,
         animationDuration: `${speed}s`,
-        WebkitAnimationDuration: `${speed}s`,
-        MozAnimationDuration: `${speed}s`,
     }
 
     return <div className="bubble" style={bubbleStyles}></div>

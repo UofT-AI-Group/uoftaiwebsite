@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { type ReactNode, useState, useRef, useEffect } from 'react'
 import chevron from '../../static/assets/chevron-down.svg'
 import { Text, Box } from '@chakra-ui/react'
 
 interface FAQItemProps {
     question: string
-    answer: React.ReactNode
+    answer: ReactNode
 }
 
-const FaqItem: React.FC<FAQItemProps> = ({ question, answer }) => {
+const FaqItem = ({ question, answer }: FAQItemProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const [height, setHeight] = useState('0px')
     const contentRef = useRef<HTMLDivElement>(null)

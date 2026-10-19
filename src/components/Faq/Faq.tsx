@@ -1,9 +1,8 @@
-import React from 'react'
 import FaqItem from './FaqItem'
 import './styles.css'
 import { Text, Box } from '@chakra-ui/react'
 
-const Faq: React.FC = () => {
+const Faq = () => {
     return (
         <Box className="faq-container">
             <Box className="container-items">

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import TeamCard from './teamcard'
 import '../static/styles/teamcard.css'
@@ -134,7 +133,7 @@ const teamMembers = [
     },
 ]
 
-const MeetTheTeam: React.FC = () => {
+const MeetTheTeam = () => {
     return (
         <Box className="meet-the-team-container">
             <Box className="container-items">

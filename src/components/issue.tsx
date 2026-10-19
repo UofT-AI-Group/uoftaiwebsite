@@ -1,8 +1,8 @@
-import type * as CSS from 'csstype'
+import type { CSSProperties } from 'react'
 import { Card, CardHeader, CardBody, Box, Image } from '@chakra-ui/react'
 import '../static/styles/issue.css'
 
-const Issue = function Issue({
+const Issue = ({
     issueLink,
     img,
     title,
@@ -14,8 +14,8 @@ const Issue = function Issue({
     title: string
     desc: string
     date: string
-}) {
-    const cardStyles: CSS.Properties = {
+}) => {
+    const cardStyles: CSSProperties = {
         width: '400px',
         height: '600px',
         border: '3px solid black',

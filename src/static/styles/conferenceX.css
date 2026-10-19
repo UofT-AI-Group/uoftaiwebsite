@@ -2,11 +2,6 @@
     display: inline;
 }
 
-#conference2024higlights {
-    position: absolute;
-    top: -112px;
-}
-
 /* Featured Speakers Grid */
 .speakers {
     display: grid;
