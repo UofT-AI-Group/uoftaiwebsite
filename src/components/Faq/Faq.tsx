@@ -10,7 +10,7 @@ const Faq: React.FC = () => {
                 <Text className="faq-h2" fontSize={['36px', '50px']}>
                     FAQ
                 </Text>
-                <Box className="dropdowns">
+                <Box>
                     <FaqItem
                         question="How can I get involved as a partner?"
                         answer={

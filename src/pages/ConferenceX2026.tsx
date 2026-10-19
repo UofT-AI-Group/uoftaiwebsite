@@ -324,24 +324,12 @@ const ConferenceX = () => {
             company: 'Unity Health',
             img: michael,
         },
-
-        // // ----------------------------
-        // // DAY 2 SPEAKERS
-        // // ----------------------------
-        // // const day2Speakers = [
         {
             name: 'David Rokeby',
             role: 'Director; Professor',
             company: 'BMO Lab for Creative Research; University of Toronto',
             img: david_r,
         },
-        {
-            name: 'Janice Stein',
-            role: 'Founding Director',
-            company: 'Munk School of Global Affairs & Public Policy',
-            img: janice,
-        },
-
         {
             name: 'Kristina McElheran',
             role: 'Professor; Faculty Fellow',

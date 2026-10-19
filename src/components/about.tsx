@@ -7,7 +7,6 @@ import SlideInOnScroll from './slideinonscroll'
 const About = () => {
     return (
         <Flex
-            className="about"
             flexDirection={'row'}
             justifyContent={'center'}
             flexWrap={'wrap'}
@@ -22,18 +21,12 @@ const About = () => {
                     flexShrink={2}
                     className="slide-in-right"
                 >
-                    <Text
-                        fontSize={24}
-                        fontWeight="bold"
-                        paddingBottom={10}
-                        className="aboutdesc"
-                    >
+                    <Text fontSize={24} fontWeight="bold" paddingBottom={10}>
                         <span className="underline">W</span>ho we are
                     </Text>
 
                     <Image
                         maxHeight={'300px'}
-                        className="aboutpic"
                         src={whoWeAre}
                         alt="UofT AI Logo"
                         border={'3px solid #000'}
@@ -61,20 +54,18 @@ const About = () => {
                     flexShrink={2}
                     className="slide-in-left"
                 >
-                    <Box className="aboutlabel">
+                    <Box>
                         <Text
                             fontSize={24}
                             fontWeight="bold"
                             paddingBottom={10}
-                            className="aboutdesc"
                         >
                             <span className="underline">O</span>ur Mission
                         </Text>
                     </Box>
-                    <Box className="aboutbody">
+                    <Box>
                         <Image
                             maxHeight={'300px'}
-                            className="aboutpic"
                             src={ourMission}
                             alt="UofT AI Logo"
                             border={'3px solid #000'}

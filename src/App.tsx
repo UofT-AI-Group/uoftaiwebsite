@@ -18,8 +18,6 @@ import ProjectX2023 from './components/projectX2023'
 import ProjectX2024 from './components/projectX2024'
 import ProjectX2026 from './components/projectX2026'
 
-// This is the deployment branch
-
 export const App = () => (
     <>
         <Navbar />

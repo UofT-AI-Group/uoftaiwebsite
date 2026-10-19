@@ -35,10 +35,6 @@ const Footer: React.FC = () => {
                             <RouterLink to={'/projectx'}>ProjectX</RouterLink>
                         </div>
 
-                        {/* <div className="footer-link">
-                            <a href="/learnai">Learn AI</a>
-                        </div> */}
-
                         <div className="footer-link">
                             <RouterLink to={'/newsletter'}>
                                 Newsletter
