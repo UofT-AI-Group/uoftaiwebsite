@@ -134,11 +134,15 @@ export default function ProjectX2023() {
                         2023 participation.
                     </Text>
                     <Box>
-                        <a href={codeOfConduct} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Code of Conduct
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={codeOfConduct}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Code of Conduct
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -170,11 +174,15 @@ export default function ProjectX2023() {
                         expectations.
                     </Text>
                     <Box>
-                        <a href={guidelines} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Guidelines
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={guidelines}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Guidelines
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -192,11 +200,15 @@ export default function ProjectX2023() {
                         information.
                     </Text>
                     <Box>
-                        <a href={problem} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Problem Definition
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={problem}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Problem Definition
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </SimpleGrid>

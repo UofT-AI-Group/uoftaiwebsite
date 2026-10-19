@@ -47,10 +47,11 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className="footer-link">
-                        <RouterLink to={'/partner-with-us'}>
-                            <button className="partner-button">
-                                Partner With Us
-                            </button>
+                        <RouterLink
+                            to={'/partner-with-us'}
+                            className="partner-button"
+                        >
+                            Partner With Us
                         </RouterLink>
                     </div>
                 </div>

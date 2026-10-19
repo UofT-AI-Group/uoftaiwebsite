@@ -1,15 +1,28 @@
 import type { ElementType, ReactNode } from 'react'
 import { Button as ChakraButton, type ButtonProps } from '@chakra-ui/react'
 
+type ButtonLinkProps = Omit<ButtonProps, 'variant' | 'as'> & {
+    children: ReactNode
+    /** Render the button as another element/component, e.g. `as={RouterLink}` or `as="a"` */
+    as?: ElementType
+    /** Route path, used when `as={RouterLink}` */
+    to?: string
+    /** URL, used when `as="a"` */
+    href?: string
+    target?: string
+    rel?: string
+}
+
 export const ButtonDark = ({
     children,
     onClick,
-}: {
-    children: ReactNode
-    onClick?: () => void
-}) => {
+    as,
+    ...rest
+}: ButtonLinkProps) => {
     return (
         <ChakraButton
+            as={as}
+            {...rest}
             py={4}
             px={8}
             bg={'dark'}
@@ -29,17 +42,8 @@ export const ButtonDark = ({
     )
 }
 
-type ButtonOutlineProps = Omit<ButtonProps, 'variant' | 'as'> & {
-    children: ReactNode
+type ButtonOutlineProps = ButtonLinkProps & {
     variant?: 'dark' | 'light'
-    /** Render the button as another element/component, e.g. `as={RouterLink}` or `as="a"` */
-    as?: ElementType
-    /** Route path, used when `as={RouterLink}` */
-    to?: string
-    /** URL, used when `as="a"` */
-    href?: string
-    target?: string
-    rel?: string
 }
 
 export const ButtonOutline = ({

@@ -15,7 +15,7 @@ export function Projects() {
                 image={img1}
                 image2={projectx}
                 theme="dark"
-                location="projectx"
+                location="/projectx"
             />
             <Initiative
                 title="The UofT AI Conference"
@@ -23,7 +23,7 @@ export function Projects() {
                 image={img2}
                 image2={conferencex}
                 theme="light"
-                location="conferencex"
+                location="/conferencex"
             />
             <Initiative
                 title="Learn AI"
@@ -31,7 +31,7 @@ export function Projects() {
                 image={img3}
                 image2={learnai}
                 theme="dark"
-                location="learnai"
+                location="/learnai"
             />
         </div>
     )

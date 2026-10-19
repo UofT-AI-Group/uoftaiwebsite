@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router'
+import { Link } from 'react-router'
 
 export function InitiativeDescription(props: {
     title: string
@@ -7,23 +7,18 @@ export function InitiativeDescription(props: {
     location: string
 }) {
     const themeClass = props.theme === 'dark' ? '' : '_light'
-    const navigate = useNavigate()
-    const routeChange = () => {
-        let path = props.location
-        navigate(path)
-    }
     return (
         <div className={`description-container${themeClass}`}>
             <div className="description-box">
                 <p className={`description-message${themeClass}`}>
                     {props.description}
                 </p>
-                <button
-                    onClick={routeChange}
+                <Link
+                    to={props.location}
                     className={`more-info-button${themeClass}`}
                 >
                     Learn More
-                </button>
+                </Link>
             </div>
         </div>
     )
