@@ -1,9 +1,9 @@
 import img1 from '../../static/assets/Frame 7.png'
 import img2 from '../../static/assets/Frame 8.png'
 import img3 from '../../static/assets/Frame 9.png'
-import conferencex from '../../static/assets/conferencex.png'
-import learnai from '../../static/assets/learnai.png'
-import projectx from '../../static/assets/projectx.png'
+import conferencex from '../../static/assets/conferencex.webp'
+import learnai from '../../static/assets/learnai.webp'
+import projectx from '../../static/assets/projectx.webp'
 
 import { Initiative } from './Initiative'
 export function Projects() {

@@ -18,7 +18,7 @@ import {
     LuUserCheck,
     LuHandshake,
 } from 'react-icons/lu'
-import gradient from '../static/assets/2026gradient.png'
+import gradient from '../static/assets/2026gradient.webp'
 import { ProjectXResearchThemeTitle } from './Typography'
 
 const VB_W = 600

@@ -23,8 +23,8 @@ import logo from '../static/assets/UofTAI_Logo_bw.png'
 
 // Day 1 Speakers
 import speaker_pic from '../static/assets/conf-2026-assets/speaker_pic.jpg'
-import gallery from '../static/assets/our-mission.jpg'
-import showcase from '../static/assets/conf-2026-assets/showcase.png'
+import gallery from '../static/assets/our-mission.webp'
+import showcase from '../static/assets/conf-2026-assets/showcase.webp'
 
 import yvan from '../static/assets/conf-2026-assets/yvan.jpg'
 import luis from '../static/assets/conf-2026-assets/luis.png'

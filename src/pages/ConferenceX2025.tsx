@@ -1,6 +1,6 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
 import { Box, VStack, Text, Flex, Image, SimpleGrid } from '@chakra-ui/react'
-import gradient from '../static/assets/2025_grad.png'
+import gradient from '../static/assets/2025_grad.webp'
 import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'

@@ -1,8 +1,8 @@
 import { Box, VStack, Text, Flex } from '@chakra-ui/react'
 import { ButtonOutline } from '../components/Button'
 import Issue from '../components/issue'
-import issue1 from '../static/assets/newletters/issue1.jpg'
-import newletterBg from '../static/assets/newletter-bg.jpg'
+import issue1 from '../static/assets/newletters/issue1.webp'
+import newletterBg from '../static/assets/newletter-bg.webp'
 
 const Newsletter = () => {
     return (

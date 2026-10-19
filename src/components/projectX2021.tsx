@@ -8,11 +8,11 @@ import {
     Button,
     Heading,
 } from '@chakra-ui/react'
-import gradient from '../static/assets/2021gradient.jpg'
+import gradient from '../static/assets/2021gradient.webp'
 import { ButtonOutline } from './Button'
 
 import caltech from '../static/assets/caltech.png'
-import carnegie from '../static/assets/carnegie.png'
+import carnegie from '../static/assets/carnegie.webp'
 import columbia from '../static/assets/columbia.png'
 import cornell from '../static/assets/cornell.png'
 import jhu from '../static/assets/Johns-Hopkins-University-Logo.png'
@@ -56,7 +56,7 @@ import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 import covid from '../static/assets/covid.jpg'
-import human from '../static/assets/human.jpg'
+import human from '../static/assets/human.webp'
 
 export default function ProjectX2021() {
     return (
