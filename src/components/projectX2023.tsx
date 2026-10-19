@@ -101,16 +101,6 @@ export default function ProjectX2023() {
                     >
                         OTHER DETAILS
                     </Text>
-
-                    {/* <Box>
-                        <ButtonOutline variant="light" onClick={onClickCurrent}>
-                            2024
-                        </ButtonOutline>
-                        <Box as="span" p={'5px'}></Box>
-                        <ButtonOutline variant="light" onClick={onClickLanding}>
-                            Landing Page
-                        </ButtonOutline>
-                    </Box> */}
                 </VStack>
             </Box>
 

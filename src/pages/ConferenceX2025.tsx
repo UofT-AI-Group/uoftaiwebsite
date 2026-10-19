@@ -112,7 +112,6 @@ const ConferenceX = () => {
                 <Text
                     color={'light'}
                     fontSize={['14px', '24px']}
-                    //maxW={'600px'}
                     w={'75%'}
                     pt={8}
                     zIndex={100}
@@ -234,38 +233,6 @@ const ConferenceX = () => {
                             </Text>
                         </Box>
                     </Flex>
-                    {/* <Flex
-                        justifyContent={'center'}
-                        alignItems={'top'}
-                        flexWrap={'wrap'}
-                    >
-                        <Image src={gallery} h={'200px'} borderRadius={'50%'} />
-                        <Box
-                            maxW={'1000px'}
-                            minW={'300px'}
-                            ml={'40px'}
-                            w={'80%'}
-                        >
-                            <Text
-                                color={'light'}
-                                fontSize={['18px', '24px']}
-                                pb={'10px'}
-                            >
-                                AI-Generated Art Gallery
-                            </Text>
-                            <Text color={'light'} fontSize={['14px', '18px']}>
-                                An AI-generated art gallery presented a striking
-                                collection of artwork created entirely by
-                                artificial intelligence. The exhibition
-                                highlighted how AI is being used in creative
-                                processes, offering attendees a unique
-                                perspective on the intersection of technology
-                                and art. The gallery provided an insightful look
-                                into how AI can contribute to the future of
-                                artistic expression.
-                            </Text>
-                        </Box>
-                    </Flex> */}
                 </VStack>
 
                 <Text

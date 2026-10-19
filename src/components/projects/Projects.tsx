@@ -8,7 +8,7 @@ import projectx from '../../static/assets/projectx.webp'
 import { Initiative } from './Initiative'
 export function Projects() {
     return (
-        <div className="projects">
+        <div>
             <Initiative
                 title="ProjectX"
                 description="The largest undergraduate ML competition in North America. 200+ participants, $40k in prize money, 40+ participating Universities all across the world. "

@@ -7,28 +7,9 @@ import {
     Box,
 } from '@chakra-ui/react'
 
-type AccordProps = {
-    scheduleText?: string
-    knowledgeAnswer?: string
-}
-
-const Accord = ({ scheduleText, knowledgeAnswer }: AccordProps) => {
-    const scheduleAnswer =
-        scheduleText ??
-        'The event takes place on Saturday, January 25th from 9:00AM to 5:00PM EST at the Schwartz Reisman Institute for Technology and Society. Registration is from 9:00AM to 10:00AM, with opening remarks starting at 10:00AM'
-
-    const knowledgeAnswerText =
-        knowledgeAnswer ??
-        "ConferenceX 2025 is open to anyone who's interested in the AI community! We welcome attendees with all experience levels, whether they're students, founders, industry professionals or more!"
-
+const Accord = () => {
     return (
-        <Box
-            color={'white'} // White text
-            p={5} // Padding around the accordion
-            borderRadius={'md'} // Rounded corners
-            //maxW={'1200px'}  // Limit the width of the accordion
-            mx={'auto'} // Center it horizontally
-        >
+        <Box color={'white'} p={5} borderRadius={'md'} mx={'auto'}>
             <Accordion>
                 <AccordionItem>
                     <h2>
@@ -40,7 +21,10 @@ const Accord = ({ scheduleText, knowledgeAnswer }: AccordProps) => {
                         </AccordionButton>
                     </h2>
                     <AccordionPanel fontSize={'md'} pb={4}>
-                        {scheduleAnswer}
+                        The event takes place on Saturday, January 25th from
+                        9:00AM to 5:00PM EST at the Schwartz Reisman Institute
+                        for Technology and Society. Registration is from 9:00AM
+                        to 10:00AM, with opening remarks starting at 10:00AM
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -72,7 +56,10 @@ const Accord = ({ scheduleText, knowledgeAnswer }: AccordProps) => {
                         </AccordionButton>
                     </h2>
                     <AccordionPanel fontSize={'md'} pb={4}>
-                        {knowledgeAnswerText}
+                        ConferenceX 2025 is open to anyone who&apos;s interested
+                        in the AI community! We welcome attendees with all
+                        experience levels, whether they&apos;re students,
+                        founders, industry professionals or more!
                     </AccordionPanel>
                 </AccordionItem>
 

@@ -25,7 +25,6 @@ const Home = () => {
             <Bubble speed="10" size="35vw" top="-18vw" left="-17vw" />
             <Bubble speed="15" size="18vw" top="150px" left="calc(94vw)" />
             <Container
-                className={'title'}
                 minH={'calc(100vh - 100px)'}
                 maxW={'4xl'}
                 pt={[40, 64]}
@@ -92,7 +91,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={bmoLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -100,7 +98,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={bellLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -108,7 +105,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={cifarLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -116,7 +112,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={kpmgLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -124,7 +119,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={marsLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -132,7 +126,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={rippleLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -140,7 +133,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={uoftLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -148,7 +140,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={vectorLogo}
                         alt="UofT AI Club Logo"
                     />
@@ -156,7 +147,6 @@ const Home = () => {
                         h={['100px', '150px']}
                         m={'20px 30px'}
                         mb={'10px'}
-                        className="bannerlogo"
                         src={womboLogo}
                         alt="UofT AI Club Logo"
                     />
