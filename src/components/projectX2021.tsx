@@ -5,6 +5,7 @@ import {
     Flex,
     SimpleGrid,
     Image,
+    Button,
     Heading,
 } from '@chakra-ui/react'
 import gradient from '../static/assets/2021gradient.webp'
@@ -274,6 +275,16 @@ export default function ProjectX2021() {
                             application form below to cover the cost of travel
                             (per individual).
                         </Text>
+
+                        <Button
+                            border="1px solid black"
+                            bg="white"
+                            color="black"
+                            mt={4}
+                            isDisabled
+                        >
+                            UofTAI Financial Bursary Form
+                        </Button>
                     </Box>
 
                     {/* FOR TEAMS */}
@@ -290,6 +301,16 @@ export default function ProjectX2021() {
                             your respective university departments to request
                             financial support on covering travelling expenses.
                         </Text>
+
+                        <Button
+                            border="1px solid black"
+                            bg="white"
+                            color="black"
+                            mt={4}
+                            isDisabled
+                        >
+                            ProjectX 2022 Information Package
+                        </Button>
                     </Box>
                 </Box>
 
