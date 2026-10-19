@@ -106,29 +106,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 const ConferenceX = () => {
     const gradient2026 =
         'linear-gradient(135deg, #160d2f 0%, #2c1d5e 40%, #3b4fa3 100%)'
-    const [countdown, setCountdown] = useState({
-        days: '00',
-        hours: '00',
-        minutes: '00',
-    })
 
-    useEffect(() => {
-        const target = new Date('2026-01-24T00:00:00-05:00').getTime()
-        const timer = setInterval(() => {
-            const now = Date.now()
-            const diff = Math.max(target - now, 0)
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
-            const minutes = Math.floor((diff / (1000 * 60)) % 60)
-            setCountdown({
-                days: days.toString().padStart(2, '0'),
-                hours: hours.toString().padStart(2, '0'),
-                minutes: minutes.toString().padStart(2, '0'),
-            })
-        }, 1000)
-
-        return () => clearInterval(timer)
-    }, [])
 
     const isMobile = useBreakpointValue({
         base: true,
@@ -565,51 +543,7 @@ const ConferenceX = () => {
                     >
                         January 24–25, 2026
                     </Text>
-                    <Box>
-                        <HashLink
-                            smooth
-                            to={
-                                'https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator'
-                            }
-                        >
-                            <ButtonOutline variant="light">
-                                Secure a ticket
-                            </ButtonOutline>
-                        </HashLink>
-                    </Box>
-                    <Flex
-                        alignItems="center"
-                        gap={3}
-                        bg="rgba(255,255,255,0.15)"
-                        px={4}
-                        py={2}
-                        borderRadius="full"
-                        fontSize={[12, 14]}
-                        color="light"
-                        fontWeight="semibold"
-                    >
-                        <Text>Countdown to Day 1:</Text>
-                        <Flex gap={3}>
-                            <Box textAlign="center">
-                                <Text fontSize={[16, 18]} fontWeight="bold">
-                                    {countdown.days}
-                                </Text>
-                                <Text fontSize={[10, 12]}>Days</Text>
-                            </Box>
-                            <Box textAlign="center">
-                                <Text fontSize={[16, 18]} fontWeight="bold">
-                                    {countdown.hours}
-                                </Text>
-                                <Text fontSize={[10, 12]}>Hours</Text>
-                            </Box>
-                            <Box textAlign="center">
-                                <Text fontSize={[16, 18]} fontWeight="bold">
-                                    {countdown.minutes}
-                                </Text>
-                                <Text fontSize={[10, 12]}>Minutes</Text>
-                            </Box>
-                        </Flex>
-                    </Flex>
+
                 </VStack>
             </Box>
 
@@ -2006,7 +1940,7 @@ const ConferenceX = () => {
                         )
                     })()}
                 </Box>
-                <Box>
+                <Box paddingBottom={'50px'}>
                     <Text
                         fontSize={['22px', '28px', '32px']}
                         color="light"
@@ -2099,106 +2033,6 @@ const ConferenceX = () => {
                             </Box>
                         </Flex>
                     </Box>
-                </Box>
-
-                <Box
-                    w="100vw"
-                    py={[16, 20, 24]}
-                    px={0}
-                    mt={['70px', '100px']}
-                    position="relative"
-                    overflow="hidden"
-                    h="522px"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    ml="calc(-50vw + 50%)"
-                >
-                    <Box
-                        position="absolute"
-                        width="100%"
-                        height="522px"
-                        left={0}
-                        top="calc(50% - 522px/2)"
-                        borderRadius="0px"
-                        zIndex={0}
-                        style={{
-                            background:
-                                'linear-gradient(302.57deg, #5F3B64 13.32%, #361E3A 54.89%, #1D1427 90.51%)',
-                        }}
-                    />
-                    <Box
-                        position="absolute"
-                        top="50%"
-                        left="50%"
-                        transform="translate(-50%, -50%) rotate(67deg)"
-                        w="90%"
-                        h="170%"
-                        bg="rgba(255, 255, 255, 0.15)"
-                        opacity={1}
-                        zIndex={2}
-                        style={{
-                            backdropFilter: 'blur(1px)',
-                        }}
-                    />
-
-                    {/* Text and Button - Centered, above Rectangle B */}
-                    <VStack
-                        spacing={6}
-                        align="center"
-                        textAlign="center"
-                        position="relative"
-                        zIndex={3}
-                        maxW="1200px"
-                        mx="auto"
-                        px={[6, 12, 20]}
-                    >
-                        <VStack spacing={0} align="center">
-                            <Text
-                                fontFamily="'Tenor Sans', sans-serif"
-                                fontSize={['36px', '48px', '60px']}
-                                fontWeight={400}
-                                color="#FFFFFF"
-                                lineHeight={['45px', '60px', '75px']}
-                                letterSpacing="0px"
-                            >
-                                Get your tickets for
-                            </Text>
-                            <Text
-                                fontFamily="'Tenor Sans', sans-serif"
-                                fontSize={['36px', '48px', '60px']}
-                                fontWeight={400}
-                                color="#FFFFFF"
-                                lineHeight={['45px', '60px', '75px']}
-                                letterSpacing="0px"
-                            >
-                                ConferenceX 2026
-                            </Text>
-                        </VStack>
-                        <HashLink
-                            smooth
-                            to={
-                                'https://www.eventbrite.ca/e/uoft-ai-conferencex-2026-the-intelligence-test-tickets-1979117760498?aff=oddtdtcreator'
-                            }
-                        >
-                            <Button
-                                bg="#FFFFFF"
-                                color="#000000"
-                                fontFamily="'JetBrains Mono', monospace"
-                                fontWeight={500}
-                                fontSize="18px"
-                                lineHeight="28px"
-                                px={[12, 16, 20]}
-                                py={[6, 8, 10]}
-                                borderRadius="full"
-                                _hover={{
-                                    bg: 'rgba(255, 255, 255, 0.9)',
-                                }}
-                            >
-                                Secure Your Ticket
-                            </Button>
-                        </HashLink>
-                    </VStack>
                 </Box>
             </Box>
         </Box>
