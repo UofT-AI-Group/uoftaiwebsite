@@ -13,40 +13,21 @@ import {
     DrawerBody,
     Text,
 } from '@chakra-ui/react'
-import { type ReactNode, useEffect, useRef } from 'react'
+import type { ReactNode } from 'react'
 import { Link as RouterLink } from 'react-router'
 import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-const Links = [
-    'Home',
-    'About Us',
-    'Our Team',
-    'ConferenceX',
-    'ProjectX',
-    'Newsletter',
-    'AI Review',
+const LINKS = [
+    { label: 'Home', to: '/' },
+    { label: 'About Us', to: '/#about' },
+    { label: 'Our Team', to: '/#meet-the-team' },
+    { label: 'ConferenceX', to: '/conferencex' },
+    { label: 'ProjectX', to: '/projectx' },
+    { label: 'Newsletter', to: '/newsletter' },
+    { label: 'AI Review', to: 'https://torontoaireview.framer.website/' },
 ]
-
-function get_link(link: string) {
-    if (link == 'Home') {
-        return '/'
-    }
-
-    if (link == 'About Us') {
-        return '/#about'
-    }
-
-    if (link == 'Our Team') {
-        return '/#meet-the-team'
-    }
-
-    if (link == 'AI Review') {
-        return 'https://torontoaireview.framer.website/'
-    }
-    return link.toLowerCase().replace(/\s/g, '')
-}
 
 export const NavLink = ({
     children,
@@ -77,21 +58,6 @@ export const NavLink = ({
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const ref = useRef<any>(null)
-
-    // lifecycle hook to close mobile navbar when there is a mousedown event
-    // outside of the navbar
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (ref.current && !ref.current.contains(event.target)) onClose()
-        }
-
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [onClose, ref])
-
     return (
         <>
             <Box
@@ -117,7 +83,6 @@ const Navbar = () => {
                 px={4}
                 top={0}
                 width={'100vw'}
-                ref={ref}
                 zIndex={1000}
                 position={'fixed'}
             >
@@ -144,18 +109,20 @@ const Navbar = () => {
                             display={{ base: 'none', md: 'flex' }}
                             fontWeight={'semibold'}
                         >
-                            {Links.map((link) => (
-                                <NavLink
-                                    key={link}
-                                    to={`${get_link(link)}`}
-                                    onClose={onClose}
-                                >
-                                    {link}
+                            {LINKS.map(({ label, to }) => (
+                                <NavLink key={label} to={to} onClose={onClose}>
+                                    {label}
                                 </NavLink>
                             ))}
-                            <NavLink to={'partner-with-us'} onClose={onClose}>
-                                <ButtonDark>Partner With Us</ButtonDark>
-                            </NavLink>
+                            <Box px={2} py={1}>
+                                <ButtonDark
+                                    as={RouterLink}
+                                    to="/partner-with-us"
+                                    onClick={onClose}
+                                >
+                                    Partner With Us
+                                </ButtonDark>
+                            </Box>
                         </HStack>
                     </HStack>
                     <IconButton
@@ -179,10 +146,10 @@ const Navbar = () => {
                         <DrawerCloseButton size={'lg'} mt={3} />
                         <DrawerBody>
                             <Stack as={'nav'} spacing={4}>
-                                {Links.map((link) => (
+                                {LINKS.map(({ label, to }) => (
                                     <NavLink
-                                        key={link}
-                                        to={`${get_link(link)}`}
+                                        key={label}
+                                        to={to}
                                         onClose={onClose}
                                     >
                                         <Text
@@ -190,19 +157,21 @@ const Navbar = () => {
                                             fontSize={24}
                                             textAlign={'right'}
                                         >
-                                            {link}
+                                            {label}
                                         </Text>
                                     </NavLink>
                                 ))}
                                 <Flex justifyContent={'right'}>
-                                    <NavLink
-                                        to={'partner-with-us'}
-                                        onClose={onClose}
-                                    >
-                                        <ButtonOutline variant="light">
+                                    <Box px={2} py={1}>
+                                        <ButtonOutline
+                                            as={RouterLink}
+                                            to="/partner-with-us"
+                                            onClick={onClose}
+                                            variant="light"
+                                        >
                                             Partner With Us
                                         </ButtonOutline>
-                                    </NavLink>
+                                    </Box>
                                 </Flex>
                             </Stack>
                         </DrawerBody>

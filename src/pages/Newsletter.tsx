@@ -48,15 +48,15 @@ const Newsletter = () => {
                     </Text>
 
                     <Box mt={'40px'}>
-                        <a
+                        <ButtonOutline
+                            as="a"
                             href="https://substack.com/@uoftaigroup"
                             target="_blank"
                             rel="noreferrer"
+                            variant="light"
                         >
-                            <ButtonOutline variant="light">
-                                Subscribe
-                            </ButtonOutline>
-                        </a>
+                            Subscribe
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </Box>

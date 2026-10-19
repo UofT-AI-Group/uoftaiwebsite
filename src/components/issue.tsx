@@ -30,12 +30,8 @@ const Issue = function Issue({
         padding: '10px',
     }
 
-    const handleClick = () => {
-        window.location.href = issueLink
-    }
-
     return (
-        <Card style={cardStyles} onClick={handleClick} className="issue">
+        <Card as="a" href={issueLink} style={cardStyles} className="issue">
             <Image h={['150', '230px']} borderRadius={'30px'} src={img}></Image>
             <CardHeader fontWeight={'medium'} fontSize={25} pb={'5px'}>
                 {title}

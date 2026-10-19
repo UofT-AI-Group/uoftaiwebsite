@@ -2,7 +2,9 @@ import { Box, VStack, Text } from '@chakra-ui/react'
 import gradient from '../static/assets/dark-gradient.webp'
 import { ButtonOutline } from '../components/Button'
 import { Link as RouterLink } from 'react-router'
-import { Link } from '@chakra-ui/react'
+import { Fragment } from 'react'
+
+const PAST_YEARS = [2026, 2024, 2023, 2022, 2021, 2020]
 
 export default function ProjectX() {
     return (
@@ -69,29 +71,18 @@ export default function ProjectX() {
                 </Text>
 
                 <Box>
-                    <Link as={RouterLink} to="2026">
-                        <ButtonOutline variant="light">2026</ButtonOutline>
-                    </Link>
-                    <Box as="span" p={'5px'}></Box>
-                    <Link as={RouterLink} to="2024">
-                        <ButtonOutline variant="light">2024</ButtonOutline>
-                    </Link>
-                    <Box as="span" p={'5px'}></Box>
-                    <Link as={RouterLink} to="2023">
-                        <ButtonOutline variant="light">2023</ButtonOutline>
-                    </Link>
-                    <Box as="span" p={'5px'}></Box>
-                    <Link as={RouterLink} to="2022">
-                        <ButtonOutline variant="light">2022</ButtonOutline>
-                    </Link>
-                    <Box as="span" p={'5px'}></Box>
-                    <Link as={RouterLink} to="2021">
-                        <ButtonOutline variant="light">2021</ButtonOutline>
-                    </Link>
-                    <Box as="span" p={'5px'}></Box>
-                    <Link as={RouterLink} to="2020">
-                        <ButtonOutline variant="light">2020</ButtonOutline>
-                    </Link>
+                    {PAST_YEARS.map((year, i) => (
+                        <Fragment key={year}>
+                            {i > 0 && <Box as="span" p={'5px'}></Box>}
+                            <ButtonOutline
+                                as={RouterLink}
+                                to={`/projectx/${year}`}
+                                variant="light"
+                            >
+                                {year}
+                            </ButtonOutline>
+                        </Fragment>
+                    ))}
                 </Box>
             </VStack>
         </Box>
