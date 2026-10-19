@@ -1,15 +1,8 @@
-import React from 'react'
-import type * as CSS from 'csstype'
+import type { CSSProperties } from 'react'
 import { Card, Box } from '@chakra-ui/react'
 
-const TextCard = function TextCard({
-    title,
-    body,
-}: {
-    title: string
-    body: string
-}) {
-    const cardStyles: CSS.Properties = {
+const TextCard = ({ title, body }: { title: string; body: string }) => {
+    const cardStyles: CSSProperties = {
         width: '400px',
         height: '500px',
         border: '3px solid black',

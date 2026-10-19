@@ -1,9 +1,8 @@
-import React from 'react'
 import logo from '../../static/assets/UofTAI_Logo.png'
 import './style.css'
 import { Link as RouterLink } from 'react-router'
 
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-container">

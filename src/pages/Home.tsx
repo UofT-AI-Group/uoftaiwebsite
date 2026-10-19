@@ -16,7 +16,6 @@ import rippleLogo from '../static/assets/ripple-logo.svg'
 import uoftLogo from '../static/assets/uoft-logo.png'
 import vectorLogo from '../static/assets/vector-institute-logo.png'
 import womboLogo from '../static/assets/wombo-logo.svg'
-import '../static/styles/home.css'
 
 const PARTNERS = [
     { name: 'BMO', logo: bmoLogo },
@@ -106,13 +105,11 @@ const Home = () => {
                     ))}
                 </InfiniteLooper>
             </div>
-            <div id="about-container">
-                <div id="about"></div>
+            <div id="about">
                 <About />
             </div>
             <Projects />
-            <div id="meet-the-team-container">
-                <div id="meet-the-team"></div>
+            <div id="meet-the-team">
                 <MeetTheTeam />
             </div>
         </Box>

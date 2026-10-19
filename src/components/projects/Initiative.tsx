@@ -2,10 +2,10 @@ import { InitiativeDescription } from './InitiativeDescription'
 import './initiatives.css'
 
 export function Initiative(props: {
-    title: any
-    description: any
-    image: any
-    image2: any
+    title: string
+    description: string
+    image: string
+    image2: string
     theme: string
     location: string
 }) {

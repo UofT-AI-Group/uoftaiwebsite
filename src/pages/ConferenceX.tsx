@@ -67,7 +67,7 @@ const ConferenceX = () => {
                     <Box>
                         <ButtonOutline
                             as={RouterLink}
-                            to={'/conferencex-2024#conference2024higlights'}
+                            to={'/conferencex-2024#highlights'}
                             variant="light"
                         >
                             ConferenceX 2024 Highlights
@@ -113,8 +113,8 @@ const ConferenceX = () => {
                 p={[5, 20]}
                 position={'relative'}
                 zIndex={10}
+                id="highlights"
             >
-                <div id="conference2024higlights"></div>
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2024 Highlights
                 </Text>

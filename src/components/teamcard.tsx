@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import chevron from '../static/assets/chevron-down.svg'
 import { Text, Box, Image, VStack } from '@chakra-ui/react'
 
@@ -9,12 +9,7 @@ interface TeamCardProps {
     description: string
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({
-    role,
-    name,
-    image,
-    description,
-}) => {
+const TeamCard = ({ role, name, image, description }: TeamCardProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const [height, setHeight] = useState('0px')
     const contentRef = useRef<HTMLDivElement>(null)
