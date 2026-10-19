@@ -1,5 +1,5 @@
 import React from 'react'
-import CSS from 'csstype'
+import type * as CSS from 'csstype'
 import '../static/styles/bubble.css'
 
 const Bubble = function Bubble({

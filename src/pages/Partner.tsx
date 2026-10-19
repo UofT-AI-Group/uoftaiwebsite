@@ -1,4 +1,4 @@
-import { Box, Container, VStack, Text, Flex, Card } from '@chakra-ui/react'
+import { Box, Container, VStack, Text, Flex } from '@chakra-ui/react'
 import Bubble from '../components/bubble'
 import { PartnerTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'

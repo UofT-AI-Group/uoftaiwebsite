@@ -1,14 +1,5 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import {
-    Box,
-    Container,
-    VStack,
-    Text,
-    Flex,
-    Card,
-    Image,
-    SimpleGrid,
-} from '@chakra-ui/react'
+import { Box, VStack, Text, Flex, Image, SimpleGrid } from '@chakra-ui/react'
 import gradient from '../static/assets/2025_grad.webp'
 import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
@@ -18,14 +9,11 @@ import kpmgLogo from '../static/assets/kpmg-logo.png'
 import pant from '../static/assets/2025_speakers/pant.jpg'
 import basu from '../static/assets/2025_speakers/basu.jpg'
 import kesiraju from '../static/assets/2025_speakers/kesiraju.jpg'
-import leung from '../static/assets/2025_speakers/leung.jpg'
 import manal from '../static/assets/2025_speakers/manal.jpg'
 import mcann from '../static/assets/2025_speakers/mcann.png'
 import mike from '../static/assets/2025_speakers/mike.png'
 import ming from '../static/assets/2025_speakers/ming.jpg'
-import parisa from '../static/assets/2025_speakers/parisa.png'
 import platnick from '../static/assets/2025_speakers/platnick.png'
-import rahul from '../static/assets/2025_speakers/rahul.png'
 import sridhar from '../static/assets/2025_speakers/sridhar.jpg'
 import supekar from '../static/assets/2025_speakers/supekar.jpg'
 import wang from '../static/assets/2025_speakers/wang.png'
@@ -36,7 +24,6 @@ import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/A
 import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
 import stan from '../static/assets/2025-confx-spons/conference 2025 logos/block-s-right.webp'
 import citadel from '../static/assets/2025-confx-spons/conference 2025 logos/Citadel_LLC_Logo.svg.png'
-import deep from '../static/assets/2025-confx-spons/conference 2025 logos/DeepMind_new_logo.svg.png'
 import ghealth from '../static/assets/2025-confx-spons/conference 2025 logos/Google_Health_logo.svg.png'
 import dhealth from '../static/assets/2025-confx-spons/conference 2025 logos/Main-menu-logo.svg'
 import ne from '../static/assets/2025-confx-spons/conference 2025 logos/Northeastern-University-Logo.png'
@@ -50,11 +37,9 @@ import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_
 import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
-import gallery from '../static/assets/gallery.jpg'
 import showcase from '../static/assets/Showcase.jpg'
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 import interact from '../static/assets/2025-confx-spons/Interac-Logo.wine 1.png'
-import kpmg from '../static/assets/2025-confx-spons/image 18.png'
 import price from '../static/assets/2025-confx-spons/PricewaterhouseCoopers_Logo 1.png'
 import flybits from '../static/assets/2025-confx-spons/flybits-logo-RGB 1.png'
 import mstar from '../static/assets/2025-confx-spons/morningstar-600px.bb30655 1.png'
@@ -143,16 +128,15 @@ const ConferenceX = () => {
                     professionals.
                 </Text>
                 <Box pt={10}>
-                    <HashLink
-                        smooth
+                    <ButtonOutline
+                        as={RouterLink}
                         to={'/conferencex-2024#conference2024higlights'}
+                        variant="light"
                     >
-                        <ButtonOutline variant="light">
-                            <Text fontSize={['12px', '16px']}>
-                                Check out last year's conference
-                            </Text>
-                        </ButtonOutline>
-                    </HashLink>
+                        <Text fontSize={['12px', '16px']}>
+                            Check out last year's conference
+                        </Text>
+                    </ButtonOutline>
                 </Box>
             </Box>
             <Box

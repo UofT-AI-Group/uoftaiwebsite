@@ -2,7 +2,6 @@ import {
     Box,
     Flex,
     useDisclosure,
-    Link,
     HStack,
     Stack,
     Img,
@@ -14,11 +13,10 @@ import {
     DrawerBody,
     Text,
 } from '@chakra-ui/react'
-import { ReactNode, useEffect, useRef } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import { type ReactNode, useEffect, useRef } from 'react'
+import { Link as RouterLink } from 'react-router'
 import HeaderLogo from '../static/assets/header_logo.png'
 import { ButtonDark, ButtonOutline } from './Button'
-import { HashLink } from 'react-router-hash-link'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
 const Links = [
@@ -71,9 +69,9 @@ export const NavLink = ({
             cursor: 'pointer',
         }}
     >
-        <HashLink smooth to={to} onClick={onClose}>
+        <RouterLink to={to} onClick={onClose}>
             {children}
-        </HashLink>
+        </RouterLink>
     </Box>
 )
 

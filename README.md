@@ -1,36 +1,38 @@
 # UofT AI Website
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app) and built with [ChakraUI](https://v2.chakra-ui.com/).
+Built with [React](https://react.dev/), [Vite](https://vite.dev/), and
+[Chakra UI](https://v2.chakra-ui.com/).
 
 ## Getting Started
 
-To get started, clone the repository and run `npm install` to install all the dependencies.
+Requires Node.js 22.22 or newer. Clone the repository and run `npm install` to
+install all the dependencies.
 
 ## Available Scripts
 
-In the project directory, you can run:
+### `npm run dev`
 
-### `npm start`
-
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
+Starts the development server at [http://localhost:5173](http://localhost:5173)
+with hot reloading.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br /> It correctly bundles
-React in production mode and optimizes the build for the best performance.
+Type-checks the project and builds it for production to the `dist` folder.
 
-The build is minified and the filenames include the hashes.<br /> Your app is
-ready to be deployed!
+### `npm run preview`
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+Serves the production build locally for a final check before deploying.
+
+### `npm run lint`
+
+Lints the code using [Oxlint](https://oxc.rs/docs/guide/usage/linter).
 
 ### `npm run prettier:write`
 
 Formats the code using [Prettier](https://prettier.io/).
+
+## Deployment
+
+The site is deployed on [Vercel](https://vercel.com/). `vercel.json` sets the
+framework preset and rewrites all routes to `index.html` so client-side routing
+works on direct page loads.

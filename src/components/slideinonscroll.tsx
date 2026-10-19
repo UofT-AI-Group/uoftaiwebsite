@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef } from 'react'
+import { type ReactNode, useEffect, useRef } from 'react'
 import '../static/styles/slideinonscroll.css'
 
 const SlideInOnScroll = ({ children }: { children: ReactNode }) => {
@@ -10,7 +10,7 @@ const SlideInOnScroll = ({ children }: { children: ReactNode }) => {
                 const slideIns = ref.current.querySelectorAll(
                     '.slide-in-right, .slide-in-left',
                 )
-                slideIns.forEach((slideIn, index) => {
+                slideIns.forEach((slideIn) => {
                     const slideInTop = slideIn.getBoundingClientRect().top
                     const slideInPosition = window.innerHeight - slideInTop
                     if (slideInPosition >= 0) {

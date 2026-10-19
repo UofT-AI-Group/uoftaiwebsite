@@ -1,6 +1,6 @@
 import React from 'react'
-import CSS from 'csstype'
-import { Card, CardHeader, CardBody, Box } from '@chakra-ui/react'
+import type * as CSS from 'csstype'
+import { Card, Box } from '@chakra-ui/react'
 
 const TextCard = function TextCard({
     title,

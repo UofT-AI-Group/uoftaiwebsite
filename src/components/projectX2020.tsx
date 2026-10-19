@@ -1,13 +1,4 @@
-import {
-    Box,
-    VStack,
-    Text,
-    Flex,
-    SimpleGrid,
-    Image,
-    Button,
-    Heading,
-} from '@chakra-ui/react'
+import { Box, VStack, Text, Flex, SimpleGrid, Image } from '@chakra-ui/react'
 import gradient from '../static/assets/2020gradient.webp'
 import { ButtonOutline } from './Button'
 import berkeley from '../static/assets/berkeley.png'
@@ -130,11 +121,7 @@ export default function ProjectX2020() {
                         Prize Pool
                     </Text>
 
-                    <Text
-                        fontWeight="medium"
-                        fontSize={[30, 60]}
-                        color="dark"
-                    >
+                    <Text fontWeight="medium" fontSize={[30, 60]} color="dark">
                         $65,000
                     </Text>
                 </VStack>
