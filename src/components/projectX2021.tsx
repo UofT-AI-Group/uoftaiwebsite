@@ -276,19 +276,12 @@ export default function ProjectX2021() {
                             (per individual).
                         </Text>
 
-                        {/* Insert button here */}
                         <Button
                             border="1px solid black"
                             bg="white"
                             color="black"
-                            _hover={{ bg: 'gray.100' }}
                             mt={4}
-                            onClick={() =>
-                                window.open(
-                                    'https://example.com/financial-bursary',
-                                    '_blank',
-                                )
-                            }
+                            isDisabled
                         >
                             UofTAI Financial Bursary Form
                         </Button>
@@ -309,19 +302,12 @@ export default function ProjectX2021() {
                             financial support on covering travelling expenses.
                         </Text>
 
-                        {/* Insert button here */}
                         <Button
                             border="1px solid black"
                             bg="white"
                             color="black"
-                            _hover={{ bg: 'gray.100' }}
                             mt={4}
-                            onClick={() =>
-                                window.open(
-                                    'https://example.com/projectx-2022-info',
-                                    '_blank',
-                                )
-                            }
+                            isDisabled
                         >
                             ProjectX 2022 Information Package
                         </Button>

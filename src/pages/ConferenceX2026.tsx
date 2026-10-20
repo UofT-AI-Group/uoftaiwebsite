@@ -84,6 +84,394 @@ import { MdLightbulbOutline } from 'react-icons/md'
 import { LuTrophy, LuRocket, LuBrain, LuQuote } from 'react-icons/lu'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
+type ScheduleEvent = {
+    start: string
+    end: string
+    title: string
+    description: string
+    tag: string
+    location?: string
+}
+
+const getCategoryTagStyles = (category: string) => {
+    const categories: Record<
+        string,
+        { bg: string; border: string; text: string }
+    > = {
+        General: {
+            bg: '#6A728233',
+            border: '#6A72824D',
+            text: '#D1D5DC',
+        },
+        Speaker: {
+            bg: '#AD46FF4D',
+            border: '#AD46FF4D',
+            text: '#DAB2FF',
+        },
+        Talk: {
+            bg: '#2B7FFF4D',
+            border: '#2B7FFF4D',
+            text: '#8EC5FF',
+        },
+        Workshop: {
+            bg: '#00CED14D',
+            border: '#00CED14D',
+            text: '#7FFFD4',
+        },
+        'VC Track': {
+            bg: '#00C9504D',
+            border: '#00C9504D',
+            text: '#7BF1A8',
+        },
+        VC: {
+            bg: '#00C9504D',
+            border: '#00C9504D',
+            text: '#7BF1A8',
+        },
+        'Startup Pitches': {
+            bg: '#00C9504D',
+            border: '#00C9504D',
+            text: '#7BF1A8',
+        },
+        Panel: {
+            bg: '#FFB8004D',
+            border: '#FFB8004D',
+            text: '#FFE066',
+        },
+        Research: {
+            bg: '#FF690033',
+            border: '#FF690033',
+            text: '#FFB86A',
+        },
+        Networking: {
+            bg: '#F6339A4D',
+            border: '#F6339A4D',
+            text: '#FDA5D5',
+        },
+    }
+
+    return (
+        categories[category] || {
+            bg: '#6A728233',
+            border: '#6A72824D',
+            text: '#D1D5DC',
+        }
+    )
+}
+
+const CategoryTag = ({ category }: { category: string }) => {
+    const styles = getCategoryTagStyles(category)
+    return (
+        <Box
+            bg={styles.bg}
+            border={`1px solid ${styles.border}`}
+            borderRadius="full"
+            pt="6px"
+            pr="12px"
+            pb="6px"
+            pl="12px"
+            minW="fit-content"
+            whiteSpace="nowrap"
+        >
+            <Text
+                color={styles.text}
+                fontFamily="'Inter', sans-serif"
+                fontWeight={600}
+                fontSize={'12px'}
+            >
+                {category}
+            </Text>
+        </Box>
+    )
+}
+
+const ScheduleCard = ({
+    start,
+    end,
+    title,
+    description,
+    tag,
+    location,
+}: ScheduleEvent) => {
+    // Parse description to handle bold "Speaker" label and regular name
+    const parseDescription = (desc: string) => {
+        if (!desc) return null
+
+        // Check if there's a moderator
+        const moderatorMatch = desc.match(/\.\s*Moderator:\s*(.+?)(?:\.|$)/)
+        const hasModerator = moderatorMatch !== null
+
+        // Match "Speaker: **Name**" pattern (single speaker)
+        const speakerMatch = desc.match(/Speaker:\s*\*\*(.+?)\*\*/)
+        if (speakerMatch) {
+            const speakerName = speakerMatch[1]
+            const moderatorName = hasModerator ? moderatorMatch[1].trim() : null
+
+            return (
+                <VStack align="flex-start" spacing={0} mt="auto">
+                    <Text
+                        color="#FFFFFF"
+                        fontFamily="'Inter', sans-serif"
+                        fontWeight={500}
+                        fontSize={'15px'}
+                        lineHeight="1.4"
+                    >
+                        <Text as="span" fontWeight={700}>
+                            Speaker:
+                        </Text>{' '}
+                        <Text as="span" fontWeight={500}>
+                            {speakerName}
+                        </Text>
+                    </Text>
+                    {moderatorName && (
+                        <Text
+                            color="#FFFFFF"
+                            fontFamily="'Inter', sans-serif"
+                            fontWeight={500}
+                            fontSize={'15px'}
+                            lineHeight="1.4"
+                            mt="4px"
+                        >
+                            Moderator: {moderatorName}
+                        </Text>
+                    )}
+                </VStack>
+            )
+        }
+
+        // Match "Speaker: Name" pattern (single speaker without bold markers)
+        const speakerSimpleMatch = desc.match(/^Speaker:\s*(.+?)(?:\.|$)/)
+        if (speakerSimpleMatch) {
+            const speakerName = speakerSimpleMatch[1].trim()
+            const moderatorName = hasModerator ? moderatorMatch[1].trim() : null
+
+            return (
+                <VStack align="flex-start" spacing={0} mt="auto">
+                    <Text
+                        color="#FFFFFF"
+                        fontFamily="'Inter', sans-serif"
+                        fontWeight={500}
+                        fontSize={'15px'}
+                        lineHeight="1.4"
+                    >
+                        <Text as="span" fontWeight={700}>
+                            Speaker:
+                        </Text>{' '}
+                        <Text as="span" fontWeight={500}>
+                            {speakerName}
+                        </Text>
+                    </Text>
+                    {moderatorName && (
+                        <Text
+                            color="#FFFFFF"
+                            fontFamily="'Inter', sans-serif"
+                            fontWeight={500}
+                            fontSize={'15px'}
+                            lineHeight="1.4"
+                            mt="4px"
+                        >
+                            Moderator: {moderatorName}
+                        </Text>
+                    )}
+                </VStack>
+            )
+        }
+
+        // Handle panels and other formats with moderators
+        if (hasModerator) {
+            const mainText = desc.replace(/\.\s*Moderator:.+$/, '').trim()
+            const moderatorName = moderatorMatch[1].trim()
+
+            return (
+                <VStack align="flex-start" spacing={0} mt="auto">
+                    <Text
+                        color="#FFFFFF"
+                        fontFamily="'Inter', sans-serif"
+                        fontWeight={500}
+                        fontSize={'15px'}
+                        lineHeight="1.4"
+                    >
+                        {mainText}
+                    </Text>
+                    <Text
+                        color="#FFFFFF"
+                        fontFamily="'Inter', sans-serif"
+                        fontWeight={500}
+                        fontSize={'15px'}
+                        lineHeight="1.4"
+                        mt="4px"
+                    >
+                        Moderator: {moderatorName}
+                    </Text>
+                </VStack>
+            )
+        }
+
+        // Return regular description for panels, multiple speakers, etc. without moderators
+        return (
+            <Text
+                color="#FFFFFF"
+                fontFamily="'Inter', sans-serif"
+                fontWeight={500}
+                fontSize={'15px'}
+                lineHeight="1.4"
+                mt="auto"
+            >
+                {desc}
+            </Text>
+        )
+    }
+
+    return (
+        <Box
+            bg="#2A1A3A"
+            borderTop="1px solid #FFFFFF1A"
+            borderRight="1px solid #FFFFFF1A"
+            borderBottom="1px solid #FFFFFF1A"
+            borderLeft="4px solid #FFFFFF1A"
+            borderRadius="14px"
+            p="18px"
+            position="relative"
+            minH="170px"
+            display="flex"
+            flexDirection="column"
+        >
+            <Flex
+                justify="space-between"
+                align="center"
+                mb="6px"
+                gap={4}
+                flexWrap="wrap"
+            >
+                <Text
+                    color="#CF87FF"
+                    fontFamily="'Inter', sans-serif"
+                    fontWeight={600}
+                    fontSize={'14px'}
+                >
+                    {start} - {end}
+                </Text>
+                <Flex gap={2} align="center" flexWrap="wrap">
+                    <CategoryTag category={tag} />
+                    {location && (
+                        <Box
+                            bg="rgba(207, 135, 255, 0.15)"
+                            border="1px solid rgba(207, 135, 255, 0.3)"
+                            borderRadius="full"
+                            pt="6px"
+                            pr="12px"
+                            pb="6px"
+                            pl="12px"
+                            w="140px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                        >
+                            <Text
+                                color="#CF87FF"
+                                fontFamily="'Inter', sans-serif"
+                                fontWeight={600}
+                                fontSize={'12px'}
+                                textAlign="center"
+                                whiteSpace="nowrap"
+                            >
+                                {location}
+                            </Text>
+                        </Box>
+                    )}
+                </Flex>
+            </Flex>
+            <Text
+                color="#FFFFFF"
+                fontFamily="'Tenor Sans', sans-serif"
+                fontWeight={400}
+                fontSize={'18px'}
+                mb="8px"
+                lineHeight="1.25"
+                noOfLines={2}
+                wordBreak="break-word"
+            >
+                {title}
+            </Text>
+            {description && parseDescription(description)}
+        </Box>
+    )
+}
+
+const DayColumn = ({
+    date,
+    dayName,
+    title,
+    subtitle,
+    events,
+    isMobile,
+}: {
+    date: string
+    dayName: string
+    title: string
+    subtitle: string
+    events: ScheduleEvent[]
+    isMobile: boolean | undefined
+}) => (
+    <VStack spacing={0} align="stretch" flex={1} w="100%">
+        <Box>
+            <Flex gap={2} align="baseline" mb={1}>
+                <Text
+                    fontFamily="'Tenor Sans', sans-serif"
+                    fontWeight={400}
+                    fontSize={'30px'}
+                    color="#FFFFFF"
+                >
+                    {date}
+                </Text>
+                <Text
+                    fontFamily="'Inter', sans-serif"
+                    fontWeight={400}
+                    fontSize={'16px'}
+                    color="rgba(255,255,255,0.6)"
+                >
+                    {dayName}
+                </Text>
+            </Flex>
+            <Text
+                fontFamily="'Tenor Sans', sans-serif"
+                fontWeight={400}
+                fontSize={'30px'}
+                color="#FFFFFF"
+                mb={2}
+            >
+                {title}
+            </Text>
+            <Text
+                fontFamily="'Inter', sans-serif"
+                fontWeight={400}
+                fontSize={'16px'}
+                fontStyle="italic"
+                color={'light'}
+                opacity={0.8}
+                minH="72px"
+                lineHeight="1.5"
+            >
+                {subtitle}
+            </Text>
+        </Box>
+
+        <VStack spacing={isMobile ? 3.5 : 10} align="stretch" w="100%" mt={6}>
+            {events.map((event, index) => (
+                <ScheduleCard
+                    key={index}
+                    start={event.start}
+                    end={event.end}
+                    title={event.title}
+                    description={event.description}
+                    tag={event.tag}
+                    location={event.location}
+                />
+            ))}
+        </VStack>
+    </VStack>
+)
+
 const ConferenceX = () => {
     const gradient2026 =
         'linear-gradient(135deg, #160d2f 0%, #2c1d5e 40%, #3b4fa3 100%)'
@@ -372,100 +760,6 @@ const ConferenceX = () => {
         (s) => !FEATURED_FIRST_SIX.includes(s.name),
     )
     const orderedSpeakers = [...featuredSix, ...restSpeakers]
-
-    // Helper function for category tag colors
-    const getCategoryTagStyles = (category: string) => {
-        const categories: Record<
-            string,
-            { bg: string; border: string; text: string }
-        > = {
-            General: {
-                bg: '#6A728233',
-                border: '#6A72824D',
-                text: '#D1D5DC',
-            },
-            Speaker: {
-                bg: '#AD46FF4D',
-                border: '#AD46FF4D',
-                text: '#DAB2FF',
-            },
-            Talk: {
-                bg: '#2B7FFF4D',
-                border: '#2B7FFF4D',
-                text: '#8EC5FF',
-            },
-            Workshop: {
-                bg: '#00CED14D',
-                border: '#00CED14D',
-                text: '#7FFFD4',
-            },
-            'VC Track': {
-                bg: '#00C9504D',
-                border: '#00C9504D',
-                text: '#7BF1A8',
-            },
-            VC: {
-                bg: '#00C9504D',
-                border: '#00C9504D',
-                text: '#7BF1A8',
-            },
-            'Startup Pitches': {
-                bg: '#00C9504D',
-                border: '#00C9504D',
-                text: '#7BF1A8',
-            },
-            Panel: {
-                bg: '#FFB8004D',
-                border: '#FFB8004D',
-                text: '#FFE066',
-            },
-            Research: {
-                bg: '#FF690033',
-                border: '#FF690033',
-                text: '#FFB86A',
-            },
-            Networking: {
-                bg: '#F6339A4D',
-                border: '#F6339A4D',
-                text: '#FDA5D5',
-            },
-        }
-
-        return (
-            categories[category] || {
-                bg: '#6A728233',
-                border: '#6A72824D',
-                text: '#D1D5DC',
-            }
-        )
-    }
-
-    // Category Tag Component
-    const CategoryTag = ({ category }: { category: string }) => {
-        const styles = getCategoryTagStyles(category)
-        return (
-            <Box
-                bg={styles.bg}
-                border={`1px solid ${styles.border}`}
-                borderRadius="full"
-                pt="6px"
-                pr="12px"
-                pb="6px"
-                pl="12px"
-                minW="fit-content"
-                whiteSpace="nowrap"
-            >
-                <Text
-                    color={styles.text}
-                    fontFamily="'Inter', sans-serif"
-                    fontWeight={600}
-                    fontSize={'12px'}
-                >
-                    {category}
-                </Text>
-            </Box>
-        )
-    }
 
     return (
         <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
@@ -1433,476 +1727,115 @@ const ConferenceX = () => {
                         Schedule
                     </Text>
 
-                    {/* ScheduleCard Component */}
-                    {(() => {
-                        const ScheduleCard = ({
-                            start,
-                            end,
-                            title,
-                            description,
-                            tag,
-                            location,
-                        }: {
-                            start: string
-                            end: string
-                            title: string
-                            description: string
-                            tag: string
-                            location?: string
-                        }) => {
-                            // Parse description to handle bold "Speaker" label and regular name
-                            const parseDescription = (desc: string) => {
-                                if (!desc) return null
-
-                                // Check if there's a moderator
-                                const moderatorMatch = desc.match(
-                                    /\.\s*Moderator:\s*(.+?)(?:\.|$)/,
-                                )
-                                const hasModerator = moderatorMatch !== null
-
-                                // Match "Speaker: **Name**" pattern (single speaker)
-                                const speakerMatch = desc.match(
-                                    /Speaker:\s*\*\*(.+?)\*\*/,
-                                )
-                                if (speakerMatch) {
-                                    const speakerName = speakerMatch[1]
-                                    const moderatorName = hasModerator
-                                        ? moderatorMatch[1].trim()
-                                        : null
-
-                                    return (
-                                        <VStack
-                                            align="flex-start"
-                                            spacing={0}
-                                            mt="auto"
-                                        >
-                                            <Text
-                                                color="#FFFFFF"
-                                                fontFamily="'Inter', sans-serif"
-                                                fontWeight={500}
-                                                fontSize={'15px'}
-                                                lineHeight="1.4"
-                                            >
-                                                <Text
-                                                    as="span"
-                                                    fontWeight={700}
-                                                >
-                                                    Speaker:
-                                                </Text>{' '}
-                                                <Text
-                                                    as="span"
-                                                    fontWeight={500}
-                                                >
-                                                    {speakerName}
-                                                </Text>
-                                            </Text>
-                                            {moderatorName && (
-                                                <Text
-                                                    color="#FFFFFF"
-                                                    fontFamily="'Inter', sans-serif"
-                                                    fontWeight={500}
-                                                    fontSize={'15px'}
-                                                    lineHeight="1.4"
-                                                    mt="4px"
-                                                >
-                                                    Moderator: {moderatorName}
-                                                </Text>
-                                            )}
-                                        </VStack>
-                                    )
-                                }
-
-                                // Match "Speaker: Name" pattern (single speaker without bold markers)
-                                const speakerSimpleMatch = desc.match(
-                                    /^Speaker:\s*(.+?)(?:\.|$)/,
-                                )
-                                if (speakerSimpleMatch) {
-                                    const speakerName =
-                                        speakerSimpleMatch[1].trim()
-                                    const moderatorName = hasModerator
-                                        ? moderatorMatch[1].trim()
-                                        : null
-
-                                    return (
-                                        <VStack
-                                            align="flex-start"
-                                            spacing={0}
-                                            mt="auto"
-                                        >
-                                            <Text
-                                                color="#FFFFFF"
-                                                fontFamily="'Inter', sans-serif"
-                                                fontWeight={500}
-                                                fontSize={'15px'}
-                                                lineHeight="1.4"
-                                            >
-                                                <Text
-                                                    as="span"
-                                                    fontWeight={700}
-                                                >
-                                                    Speaker:
-                                                </Text>{' '}
-                                                <Text
-                                                    as="span"
-                                                    fontWeight={500}
-                                                >
-                                                    {speakerName}
-                                                </Text>
-                                            </Text>
-                                            {moderatorName && (
-                                                <Text
-                                                    color="#FFFFFF"
-                                                    fontFamily="'Inter', sans-serif"
-                                                    fontWeight={500}
-                                                    fontSize={'15px'}
-                                                    lineHeight="1.4"
-                                                    mt="4px"
-                                                >
-                                                    Moderator: {moderatorName}
-                                                </Text>
-                                            )}
-                                        </VStack>
-                                    )
-                                }
-
-                                // Handle panels and other formats with moderators
-                                if (hasModerator) {
-                                    const mainText = desc
-                                        .replace(/\.\s*Moderator:.+$/, '')
-                                        .trim()
-                                    const moderatorName =
-                                        moderatorMatch[1].trim()
-
-                                    return (
-                                        <VStack
-                                            align="flex-start"
-                                            spacing={0}
-                                            mt="auto"
-                                        >
-                                            <Text
-                                                color="#FFFFFF"
-                                                fontFamily="'Inter', sans-serif"
-                                                fontWeight={500}
-                                                fontSize={'15px'}
-                                                lineHeight="1.4"
-                                            >
-                                                {mainText}
-                                            </Text>
-                                            <Text
-                                                color="#FFFFFF"
-                                                fontFamily="'Inter', sans-serif"
-                                                fontWeight={500}
-                                                fontSize={'15px'}
-                                                lineHeight="1.4"
-                                                mt="4px"
-                                            >
-                                                Moderator: {moderatorName}
-                                            </Text>
-                                        </VStack>
-                                    )
-                                }
-
-                                // Return regular description for panels, multiple speakers, etc. without moderators
-                                return (
-                                    <Text
-                                        color="#FFFFFF"
-                                        fontFamily="'Inter', sans-serif"
-                                        fontWeight={500}
-                                        fontSize={'15px'}
-                                        lineHeight="1.4"
-                                        mt="auto"
-                                    >
-                                        {desc}
-                                    </Text>
-                                )
-                            }
-
-                            return (
-                                <Box
-                                    bg="#2A1A3A"
-                                    borderTop="1px solid #FFFFFF1A"
-                                    borderRight="1px solid #FFFFFF1A"
-                                    borderBottom="1px solid #FFFFFF1A"
-                                    borderLeft="4px solid #FFFFFF1A"
-                                    borderRadius="14px"
-                                    p="18px"
-                                    position="relative"
-                                    minH="170px"
-                                    display="flex"
-                                    flexDirection="column"
-                                >
-                                    <Flex
-                                        justify="space-between"
-                                        align="center"
-                                        mb="6px"
-                                        gap={4}
-                                        flexWrap="wrap"
-                                    >
-                                        <Text
-                                            color="#CF87FF"
-                                            fontFamily="'Inter', sans-serif"
-                                            fontWeight={600}
-                                            fontSize={'14px'}
-                                        >
-                                            {start} - {end}
-                                        </Text>
-                                        <Flex
-                                            gap={2}
-                                            align="center"
-                                            flexWrap="wrap"
-                                        >
-                                            <CategoryTag category={tag} />
-                                            {location && (
-                                                <Box
-                                                    bg="rgba(207, 135, 255, 0.15)"
-                                                    border="1px solid rgba(207, 135, 255, 0.3)"
-                                                    borderRadius="full"
-                                                    pt="6px"
-                                                    pr="12px"
-                                                    pb="6px"
-                                                    pl="12px"
-                                                    w="140px"
-                                                    display="flex"
-                                                    alignItems="center"
-                                                    justifyContent="center"
-                                                >
-                                                    <Text
-                                                        color="#CF87FF"
-                                                        fontFamily="'Inter', sans-serif"
-                                                        fontWeight={600}
-                                                        fontSize={'12px'}
-                                                        textAlign="center"
-                                                        whiteSpace="nowrap"
-                                                    >
-                                                        {location}
-                                                    </Text>
-                                                </Box>
-                                            )}
-                                        </Flex>
-                                    </Flex>
-                                    <Text
-                                        color="#FFFFFF"
-                                        fontFamily="'Tenor Sans', sans-serif"
-                                        fontWeight={400}
-                                        fontSize={'18px'}
-                                        mb="8px"
-                                        lineHeight="1.25"
-                                        noOfLines={2}
-                                        wordBreak="break-word"
-                                    >
-                                        {title}
-                                    </Text>
-                                    {description &&
-                                        parseDescription(description)}
-                                </Box>
-                            )
-                        }
-
-                        // DayColumn Component
-                        const DayColumn = ({
-                            date,
-                            dayName,
-                            title,
-                            subtitle,
-                            events,
-                        }: {
-                            date: string
-                            dayName: string
-                            title: string
-                            subtitle: string
-                            events: Array<{
-                                start: string
-                                end: string
-                                title: string
-                                description: string
-                                tag: string
-                                location?: string
-                            }>
-                        }) => (
-                            <VStack
-                                spacing={0}
-                                align="stretch"
-                                flex={1}
-                                w="100%"
+                    {isMobile ? (
+                        <Tabs
+                            colorScheme="purple"
+                            index={mobileTabIndex}
+                            onChange={setMobileTabIndex}
+                        >
+                            <TabList
+                                borderBottom="none"
+                                mb={8}
+                                bg="rgba(255,255,255,0.1)"
+                                borderRadius="full"
+                                p={1}
+                                display="flex"
+                                gap={0}
                             >
-                                <Box>
-                                    <Flex gap={2} align="baseline" mb={1}>
-                                        <Text
-                                            fontFamily="'Tenor Sans', sans-serif"
-                                            fontWeight={400}
-                                            fontSize={'30px'}
-                                            color="#FFFFFF"
-                                        >
-                                            {date}
-                                        </Text>
-                                        <Text
-                                            fontFamily="'Inter', sans-serif"
-                                            fontWeight={400}
-                                            fontSize={'16px'}
-                                            color="rgba(255,255,255,0.6)"
-                                        >
-                                            {dayName}
-                                        </Text>
-                                    </Flex>
-                                    <Text
-                                        fontFamily="'Tenor Sans', sans-serif"
-                                        fontWeight={400}
-                                        fontSize={'30px'}
-                                        color="#FFFFFF"
-                                        mb={2}
-                                    >
-                                        {title}
-                                    </Text>
-                                    <Text
-                                        fontFamily="'Inter', sans-serif"
-                                        fontWeight={400}
-                                        fontSize={'16px'}
-                                        fontStyle="italic"
-                                        color={'light'}
-                                        opacity={0.8}
-                                        minH="72px"
-                                        lineHeight="1.5"
-                                    >
-                                        {subtitle}
-                                    </Text>
-                                </Box>
-
-                                <VStack
-                                    spacing={isMobile ? 3.5 : 10}
-                                    align="stretch"
-                                    w="100%"
-                                    mt={6}
+                                <Tab
+                                    fontFamily="'Inter', sans-serif"
+                                    fontWeight={400}
+                                    fontSize={'14px'}
+                                    color={'light'}
+                                    borderRadius="full"
+                                    flex={1}
+                                    py={2}
+                                    px={4}
+                                    _selected={{
+                                        bg: '#FFFFFF',
+                                        color: '#000000',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                    }}
+                                    _focus={{ boxShadow: 'none' }}
+                                    _hover={{
+                                        bg:
+                                            mobileTabIndex === 0
+                                                ? '#FFFFFF'
+                                                : 'transparent',
+                                    }}
+                                    transition="all 0.2s"
                                 >
-                                    {events.map((event, index) => (
-                                        <ScheduleCard
-                                            key={index}
-                                            start={event.start}
-                                            end={event.end}
-                                            title={event.title}
-                                            description={event.description}
-                                            tag={event.tag}
-                                            location={event.location}
-                                        />
-                                    ))}
-                                </VStack>
-                            </VStack>
-                        )
-
-                        // Desktop: Two-column layout
-                        if (!isMobile) {
-                            return (
-                                <Flex gap={16} align="flex-start">
+                                    Day 1 – Saturday, Jan 24
+                                </Tab>
+                                <Tab
+                                    fontFamily="'Inter', sans-serif"
+                                    fontWeight={400}
+                                    fontSize={'14px'}
+                                    color={'light'}
+                                    borderRadius="full"
+                                    flex={1}
+                                    py={2}
+                                    px={4}
+                                    _selected={{
+                                        bg: '#FFFFFF',
+                                        color: '#000000',
+                                        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                                    }}
+                                    _focus={{ boxShadow: 'none' }}
+                                    _hover={{
+                                        bg:
+                                            mobileTabIndex === 1
+                                                ? '#FFFFFF'
+                                                : 'transparent',
+                                    }}
+                                    transition="all 0.2s"
+                                >
+                                    Day 2 – Sunday, Jan 25
+                                </Tab>
+                            </TabList>
+                            <TabPanels>
+                                <TabPanel p={0}>
                                     <DayColumn
+                                        isMobile={isMobile}
                                         date="Jan 24"
                                         dayName="Saturday"
                                         title="How the human tests the machine"
                                         subtitle="Explore how far we can push the boundaries of AI, and where we must draw boundaries."
                                         events={scheduleDay1}
                                     />
+                                </TabPanel>
+                                <TabPanel p={0}>
                                     <DayColumn
+                                        isMobile={isMobile}
                                         date="Jan 25"
                                         dayName="Sunday"
                                         title="How the machine tests the human"
                                         subtitle="Explore whether AI challenges the way we live, learn, think, create and work."
                                         events={scheduleDay2}
                                     />
-                                </Flex>
-                            )
-                        }
-
-                        // Mobile: Tab switcher
-                        return (
-                            <Tabs
-                                colorScheme="purple"
-                                index={mobileTabIndex}
-                                onChange={setMobileTabIndex}
-                            >
-                                <TabList
-                                    borderBottom="none"
-                                    mb={8}
-                                    bg="rgba(255,255,255,0.1)"
-                                    borderRadius="full"
-                                    p={1}
-                                    display="flex"
-                                    gap={0}
-                                >
-                                    <Tab
-                                        fontFamily="'Inter', sans-serif"
-                                        fontWeight={400}
-                                        fontSize={'14px'}
-                                        color={'light'}
-                                        borderRadius="full"
-                                        flex={1}
-                                        py={2}
-                                        px={4}
-                                        _selected={{
-                                            bg: '#FFFFFF',
-                                            color: '#000000',
-                                            boxShadow:
-                                                '0 2px 4px rgba(0,0,0,0.1)',
-                                        }}
-                                        _focus={{ boxShadow: 'none' }}
-                                        _hover={{
-                                            bg:
-                                                mobileTabIndex === 0
-                                                    ? '#FFFFFF'
-                                                    : 'transparent',
-                                        }}
-                                        transition="all 0.2s"
-                                    >
-                                        Day 1 – Saturday, Jan 24
-                                    </Tab>
-                                    <Tab
-                                        fontFamily="'Inter', sans-serif"
-                                        fontWeight={400}
-                                        fontSize={'14px'}
-                                        color={'light'}
-                                        borderRadius="full"
-                                        flex={1}
-                                        py={2}
-                                        px={4}
-                                        _selected={{
-                                            bg: '#FFFFFF',
-                                            color: '#000000',
-                                            boxShadow:
-                                                '0 2px 4px rgba(0,0,0,0.1)',
-                                        }}
-                                        _focus={{ boxShadow: 'none' }}
-                                        _hover={{
-                                            bg:
-                                                mobileTabIndex === 1
-                                                    ? '#FFFFFF'
-                                                    : 'transparent',
-                                        }}
-                                        transition="all 0.2s"
-                                    >
-                                        Day 2 – Sunday, Jan 25
-                                    </Tab>
-                                </TabList>
-
-                                <TabPanels>
-                                    <TabPanel p={0}>
-                                        <DayColumn
-                                            date="Jan 24"
-                                            dayName="Saturday"
-                                            title="How the human tests the machine"
-                                            subtitle="Explore how far we can push the boundaries of AI, and where we must draw boundaries."
-                                            events={scheduleDay1}
-                                        />
-                                    </TabPanel>
-                                    <TabPanel p={0}>
-                                        <DayColumn
-                                            date="Jan 25"
-                                            dayName="Sunday"
-                                            title="How the machine tests the human"
-                                            subtitle="Explore whether AI challenges the way we live, learn, think, create and work."
-                                            events={scheduleDay2}
-                                        />
-                                    </TabPanel>
-                                </TabPanels>
-                            </Tabs>
-                        )
-                    })()}
+                                </TabPanel>
+                            </TabPanels>
+                        </Tabs>
+                    ) : (
+                        <Flex gap={16} align="flex-start">
+                            <DayColumn
+                                isMobile={isMobile}
+                                date="Jan 24"
+                                dayName="Saturday"
+                                title="How the human tests the machine"
+                                subtitle="Explore how far we can push the boundaries of AI, and where we must draw boundaries."
+                                events={scheduleDay1}
+                            />
+                            <DayColumn
+                                isMobile={isMobile}
+                                date="Jan 25"
+                                dayName="Sunday"
+                                title="How the machine tests the human"
+                                subtitle="Explore whether AI challenges the way we live, learn, think, create and work."
+                                events={scheduleDay2}
+                            />
+                        </Flex>
+                    )}
                 </Box>
                 <Box paddingBottom={'50px'}>
                     <Text

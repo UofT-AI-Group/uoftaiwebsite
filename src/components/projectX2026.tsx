@@ -4,7 +4,6 @@ import {
     Box,
     VStack,
     Text,
-    Button,
     chakra,
     useBreakpointValue,
     SimpleGrid,
@@ -73,15 +72,10 @@ export default function ProjectX2026() {
         return () => ro.disconnect()
     }, [])
 
-    // Button size in px, keep in sync with w/h on the Button below
+    // Marker size in px, keep in sync with w/h on the marker below
     const btnSize = useBreakpointValue({ base: 24, sm: 32, md: 48 }) ?? 48
     // Hole radius in viewBox units; -1 lets the line tuck under the border
     const holeR = containerW ? (btnSize / 2 - 1) * (VB_W / containerW) : 0
-
-    const onSelect = (index: number) => {
-        // TODO: handle click (scroll to section, open modal, etc.)
-        console.log('Selected', TIMELINE[index].label)
-    }
 
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
@@ -228,24 +222,16 @@ export default function ProjectX2026() {
                                                 ? labelText
                                                 : dateText}
 
-                                            <Button
+                                            <Box
                                                 w={['24px', '32px', '48px']}
                                                 h={['24px', '32px', '48px']}
-                                                minW={0}
-                                                p={0}
                                                 borderRadius="full"
-                                                bg="transparent"
                                                 border="2px solid white"
                                                 transition="background 0.2s"
                                                 _hover={{
                                                     bg: `${varying ? 'white' : '#8ecae6'}`,
                                                     border: `2px solid ${varying ? 'white' : '#8ecae6'}`,
                                                 }}
-                                                _active={{
-                                                    bg: 'whiteAlpha.300',
-                                                }}
-                                                onClick={() => onSelect(i)}
-                                                aria-label={`${item.label}, ${item.date}`}
                                             />
 
                                             {item.labelOnTop
