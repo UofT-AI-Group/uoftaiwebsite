@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react'
-import gradient from '../static/assets/page404gradient.png'
-import React, { useEffect, useMemo, useState } from 'react'
+import gradient from '../static/assets/page404gradient.webp'
+import { useEffect, useMemo, useState } from 'react'
 
 const LAYERS = [1, 4, 6, 4, 1]
 const DEAD_LAYER = 3
@@ -53,7 +53,7 @@ function buildNetwork(): { neurons: Neuron[]; edges: Edge[] } {
         Array.from({ length: count }, (_, i) => ({
             x: PADDING_X + layer * gapX,
             y: HEIGHT / 2 + (i - (count - 1) / 2) * gapY,
-        }))
+        })),
     )
 
     const neurons: Neuron[] = positions.flatMap((layerPositions, layer) =>
@@ -68,7 +68,7 @@ function buildNetwork(): { neurons: Neuron[]; edges: Edge[] } {
                 color: layer < DEAD_LAYER ? GREEN : RED,
                 isDead,
             }
-        })
+        }),
     )
 
     const edges: Edge[] = []
@@ -98,9 +98,8 @@ function buildNetwork(): { neurons: Neuron[]; edges: Edge[] } {
 }
 
 export default function PageNotFound() {
-    const { neurons, edges } = useMemo(buildNetwork, [])
+    const { neurons, edges } = useMemo(() => buildNetwork(), [])
     const [phase, setPhase] = useState(-1)
-    const [done, setDone] = useState(false)
     const [textAppear, setTextAppear] = useState(false)
     const [animationStart, setAnimationStart] = useState(false)
 
@@ -116,7 +115,6 @@ export default function PageNotFound() {
             timers.push(setTimeout(() => setPhase(p), t))
             t += edgePhases.has(p) ? EDGE_MS : NEURON_MS
         }
-        timers.push(setTimeout(() => setDone(true), t + 150))
         return () => timers.forEach(clearTimeout)
     }, [edges])
 
@@ -136,7 +134,8 @@ export default function PageNotFound() {
             display={'flex'}
             flexDirection={'column'}
             alignItems={'center'}
-            justifyContent={'center'}>
+            justifyContent={'center'}
+        >
             <Text
                 color={'white'}
                 fontSize={['xl', '3xl', '5xl']}
@@ -145,20 +144,24 @@ export default function PageNotFound() {
                 textAlign={'center'}
                 opacity={textAppear ? 1 : 0}
                 zIndex={999}
-                transition={'opacity 1s ease'}>
+                transition={'opacity 1s ease'}
+            >
                 Page Not Found
             </Text>
             <Box
                 width={'100%'}
                 maxW={'800px'}
                 opacity={animationStart ? 1 : 0}
-                transition={'opacity 1s ease'}>
+                transition={'opacity 1s ease'}
+            >
                 <svg
                     viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
                     width={'100%'}
                     role={'img'}
-                    aria-label={'Neural network whose signal dies before reaching the output'}>
-
+                    aria-label={
+                        'Neural network whose signal dies before reaching the output'
+                    }
+                >
                     {edges.map((e) => {
                         const active = phase >= e.phase
                         return (
@@ -184,7 +187,9 @@ export default function PageNotFound() {
                                     strokeLinecap={'round'}
                                     strokeDasharray={e.length}
                                     strokeDashoffset={active ? 0 : e.length}
-                                    style={{ transition: `stroke-dashoffset ${EDGE_MS}ms linear` }}
+                                    style={{
+                                        transition: `stroke-dashoffset ${EDGE_MS}ms linear`,
+                                    }}
                                 />
                             </g>
                         )
@@ -195,7 +200,11 @@ export default function PageNotFound() {
                         return (
                             <circle
                                 key={n.id}
-                                className={active && n.isDead ? 'dead-neuron' : undefined}
+                                className={
+                                    active && n.isDead
+                                        ? 'dead-neuron'
+                                        : undefined
+                                }
                                 cx={n.x}
                                 cy={n.y}
                                 r={RADIUS}
@@ -204,8 +213,11 @@ export default function PageNotFound() {
                                 stroke={active ? n.color : WHITE}
                                 strokeWidth={2.5}
                                 style={{
-                                    transition: 'stroke 150ms ease, fill 150ms ease, filter 150ms ease',
-                                    filter: active ? `drop-shadow(0 0 6px ${n.color})` : 'none',
+                                    transition:
+                                        'stroke 150ms ease, fill 150ms ease, filter 150ms ease',
+                                    filter: active
+                                        ? `drop-shadow(0 0 6px ${n.color})`
+                                        : 'none',
                                 }}
                             />
                         )
@@ -214,4 +226,4 @@ export default function PageNotFound() {
             </Box>
         </Box>
     )
-} 
+}
