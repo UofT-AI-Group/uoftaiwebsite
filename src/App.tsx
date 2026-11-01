@@ -18,6 +18,7 @@ import ProjectX2022 from './components/projectX2022'
 import ProjectX2023 from './components/projectX2023'
 import ProjectX2024 from './components/projectX2024'
 import ProjectX2026 from './components/projectX2026'
+import PageNotFound from './pages/PageNotFound'
 
 
 // This is the deployment branch
@@ -44,6 +45,7 @@ export const App = () => (
                 <Route path="2024" element={<ProjectX2024 />} />
                 <Route path="2026" element={<ProjectX2026 />} />
             </Route>
+            <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
     </>
