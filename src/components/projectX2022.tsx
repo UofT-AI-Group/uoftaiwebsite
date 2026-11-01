@@ -1,16 +1,16 @@
 import { Box, VStack, Text, Flex, SimpleGrid, Image } from '@chakra-ui/react'
-import gradient from '../static/assets/2022gradient.png'
+import gradient from '../static/assets/2022gradient.webp'
 import { ButtonOutline } from './Button'
 
-import cornell from '../static/assets/cornell.png'
-import mcgill from '../static/assets/mcgill.jpeg'
+import cornell from '../static/assets/cornell.webp'
+import mcgill from '../static/assets/mcgill.webp'
 import montreal from '../static/assets/montreal.png'
 import ubc from '../static/assets/UBC.png'
-import usc from '../static/assets/usc.png'
+import usc from '../static/assets/usc.webp'
 import uoft from '../static/assets/uoft.png'
 import york from '../static/assets/york.png'
 import sfu from '../static/assets/sfu.png'
-import icl from '../static/assets/icl.png'
+import icl from '../static/assets/imperial-college-london.webp'
 import princeton from '../static/assets/princeton.png'
 import umass from '../static/assets/umass.png'
 import uoi from '../static/assets/uoi.png'
@@ -20,16 +20,16 @@ import wisonconsin from '../static/assets/wisonconsin.png'
 
 import deepmind from '../static/assets/deepmind.png'
 import google from '../static/assets/google.png'
-import intel from '../static/assets/intel.png'
+import intel from '../static/assets/intel.webp'
 import nvidia from '../static/assets/nvidia.png'
 import vector from '../static/assets/vector.png'
 
-import team2022 from '../static/assets/team2022.png'
+import team2022 from '../static/assets/team2022.webp'
 
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
-import brain from '../static/assets/brain.png'
+import brain from '../static/assets/brain.webp'
 
 export default function ProjectX2022() {
     return (
@@ -84,11 +84,7 @@ export default function ProjectX2022() {
                         Prize Pool
                     </Text>
 
-                    <Text
-                        fontWeight="medium"
-                        fontSize={[30, 60]}
-                        color="dark"
-                    >
+                    <Text fontWeight="medium" fontSize={[30, 60]} color="dark">
                         $40,000+
                     </Text>
                 </VStack>
@@ -115,11 +111,15 @@ export default function ProjectX2022() {
                         2023 participation.
                     </Text>
                     <Box>
-                        <a href={codeOfConduct} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Code of Conduct
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={codeOfConduct}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Code of Conduct
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -151,11 +151,15 @@ export default function ProjectX2022() {
                         expectations.
                     </Text>
                     <Box>
-                        <a href={guidelines} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Guidelines
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={guidelines}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Guidelines
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -173,11 +177,15 @@ export default function ProjectX2022() {
                         information.
                     </Text>
                     <Box>
-                        <a href={problem} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Problem Definition
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={problem}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Problem Definition
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </SimpleGrid>

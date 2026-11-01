@@ -1,8 +1,8 @@
 import { Box, VStack, Text, Flex } from '@chakra-ui/react'
 import { ButtonOutline } from '../components/Button'
 import Issue from '../components/issue'
-import issue1 from '../static/assets/newletters/issue1.jpg'
-import newletterBg from '../static/assets/newletter-bg.jpg'
+import issue1 from '../static/assets/newletters/issue1.webp'
+import newletterBg from '../static/assets/newletter-bg.webp'
 
 const Newsletter = () => {
     return (
@@ -48,15 +48,15 @@ const Newsletter = () => {
                     </Text>
 
                     <Box mt={'40px'}>
-                        <a
-                            href="http://eepurl.com/iYa6Xw"
+                        <ButtonOutline
+                            as="a"
+                            href="https://substack.com/@uoftaigroup"
                             target="_blank"
                             rel="noreferrer"
+                            variant="light"
                         >
-                            <ButtonOutline variant="light">
-                                Subscribe
-                            </ButtonOutline>
-                        </a>
+                            Subscribe
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </Box>

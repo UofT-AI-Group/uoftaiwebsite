@@ -1,15 +1,6 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import {
-    Box,
-    Container,
-    VStack,
-    Text,
-    Flex,
-    Card,
-    Image,
-    SimpleGrid,
-} from '@chakra-ui/react'
-import gradient from '../static/assets/2025_grad.png'
+import { Box, VStack, Text, Flex, Image, SimpleGrid } from '@chakra-ui/react'
+import gradient from '../static/assets/2025_grad.webp'
 import Accord from '../components/faq_accordian'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
@@ -18,25 +9,21 @@ import kpmgLogo from '../static/assets/kpmg-logo.png'
 import pant from '../static/assets/2025_speakers/pant.jpg'
 import basu from '../static/assets/2025_speakers/basu.jpg'
 import kesiraju from '../static/assets/2025_speakers/kesiraju.jpg'
-import leung from '../static/assets/2025_speakers/leung.jpg'
 import manal from '../static/assets/2025_speakers/manal.jpg'
-import mcann from '../static/assets/2025_speakers/mcann.png'
+import mcann from '../static/assets/2025_speakers/mcann.webp'
 import mike from '../static/assets/2025_speakers/mike.png'
 import ming from '../static/assets/2025_speakers/ming.jpg'
-import parisa from '../static/assets/2025_speakers/parisa.png'
-import platnick from '../static/assets/2025_speakers/platnick.png'
-import rahul from '../static/assets/2025_speakers/rahul.png'
-import sridhar from '../static/assets/2025_speakers/sridhar.jpg'
+import platnick from '../static/assets/2025_speakers/platnick.webp'
+import sridhar from '../static/assets/2025_speakers/sridhar.webp'
 import supekar from '../static/assets/2025_speakers/supekar.jpg'
-import wang from '../static/assets/2025_speakers/wang.png'
-import waslander from '../static/assets/2025_speakers/waslander.png'
+import wang from '../static/assets/2025_speakers/wang.webp'
+import waslander from '../static/assets/2025_speakers/waslander.webp'
 import william from '../static/assets/2025_speakers/william.jpeg'
 
 import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/Accenture-logo.png'
 import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
 import stan from '../static/assets/2025-confx-spons/conference 2025 logos/block-s-right.webp'
 import citadel from '../static/assets/2025-confx-spons/conference 2025 logos/Citadel_LLC_Logo.svg.png'
-import deep from '../static/assets/2025-confx-spons/conference 2025 logos/DeepMind_new_logo.svg.png'
 import ghealth from '../static/assets/2025-confx-spons/conference 2025 logos/Google_Health_logo.svg.png'
 import dhealth from '../static/assets/2025-confx-spons/conference 2025 logos/Main-menu-logo.svg'
 import ne from '../static/assets/2025-confx-spons/conference 2025 logos/Northeastern-University-Logo.png'
@@ -50,11 +37,9 @@ import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_
 import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
-import gallery from '../static/assets/gallery.jpg'
 import showcase from '../static/assets/Showcase.jpg'
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 import interact from '../static/assets/2025-confx-spons/Interac-Logo.wine 1.png'
-import kpmg from '../static/assets/2025-confx-spons/image 18.png'
 import price from '../static/assets/2025-confx-spons/PricewaterhouseCoopers_Logo 1.png'
 import flybits from '../static/assets/2025-confx-spons/flybits-logo-RGB 1.png'
 import mstar from '../static/assets/2025-confx-spons/morningstar-600px.bb30655 1.png'
@@ -127,7 +112,6 @@ const ConferenceX = () => {
                 <Text
                     color={'light'}
                     fontSize={['14px', '24px']}
-                    //maxW={'600px'}
                     w={'75%'}
                     pt={8}
                     zIndex={100}
@@ -143,16 +127,15 @@ const ConferenceX = () => {
                     professionals.
                 </Text>
                 <Box pt={10}>
-                    <HashLink
-                        smooth
-                        to={'/conferencex-2024#conference2024higlights'}
+                    <ButtonOutline
+                        as={RouterLink}
+                        to={'/conferencex-2024#highlights'}
+                        variant="light"
                     >
-                        <ButtonOutline variant="light">
-                            <Text fontSize={['12px', '16px']}>
-                                Check out last year's conference
-                            </Text>
-                        </ButtonOutline>
-                    </HashLink>
+                        <Text fontSize={['12px', '16px']}>
+                            Check out last year's conference
+                        </Text>
+                    </ButtonOutline>
                 </Box>
             </Box>
             <Box
@@ -162,8 +145,8 @@ const ConferenceX = () => {
                 p={[5, 20]}
                 position={'relative'}
                 zIndex={10}
+                id="highlights"
             >
-                <div id="conference2024higlights"></div>
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2025 Sneakpeak
                 </Text>
@@ -250,38 +233,6 @@ const ConferenceX = () => {
                             </Text>
                         </Box>
                     </Flex>
-                    {/* <Flex
-                        justifyContent={'center'}
-                        alignItems={'top'}
-                        flexWrap={'wrap'}
-                    >
-                        <Image src={gallery} h={'200px'} borderRadius={'50%'} />
-                        <Box
-                            maxW={'1000px'}
-                            minW={'300px'}
-                            ml={'40px'}
-                            w={'80%'}
-                        >
-                            <Text
-                                color={'light'}
-                                fontSize={['18px', '24px']}
-                                pb={'10px'}
-                            >
-                                AI-Generated Art Gallery
-                            </Text>
-                            <Text color={'light'} fontSize={['14px', '18px']}>
-                                An AI-generated art gallery presented a striking
-                                collection of artwork created entirely by
-                                artificial intelligence. The exhibition
-                                highlighted how AI is being used in creative
-                                processes, offering attendees a unique
-                                perspective on the intersection of technology
-                                and art. The gallery provided an insightful look
-                                into how AI can contribute to the future of
-                                artistic expression.
-                            </Text>
-                        </Box>
-                    </Flex> */}
                 </VStack>
 
                 <Text

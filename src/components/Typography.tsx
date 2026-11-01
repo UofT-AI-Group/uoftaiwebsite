@@ -1,9 +1,9 @@
 import { Heading, Text, useBreakpointValue } from '@chakra-ui/react'
-import React from 'react'
-import ReactTypingEffect from 'react-typing-effect'
+import type { ReactNode } from 'react'
 import Typewriter from 'typewriter-effect'
-import CSS from 'csstype'
 import '../static/styles/conferenceX.css'
+
+const LANDING_TITLE_WORDS = ['ProjectX', 'ConferenceX', 'LearnAI']
 
 export const LandingTitle = () => {
     const isMobile = useBreakpointValue({ base: true, md: false })
@@ -21,19 +21,25 @@ export const LandingTitle = () => {
             <Text as={'span'}>: Advancing AI through </Text>
             {isMobile && <br />}
             <Text as={'span'} color={'brand'}>
-                <ReactTypingEffect
-                    text={['ProjectX', 'ConferenceX', 'LearnAI']}
-                    speed={100}
-                    eraseSpeed={100}
-                    typingDelay={1250}
-                    eraseDelay={3500}
+                <Typewriter
+                    options={{ delay: 100, deleteSpeed: 100, loop: true }}
+                    onInit={(typewriter) => {
+                        for (const word of LANDING_TITLE_WORDS) {
+                            typewriter
+                                .pauseFor(1250)
+                                .typeString(word)
+                                .pauseFor(3500)
+                                .deleteAll()
+                        }
+                        typewriter.start()
+                    }}
                 />
             </Text>
         </Heading>
     )
 }
 
-export const SectionHeading = ({ children }: { children: React.ReactNode }) => {
+export const SectionHeading = ({ children }: { children: ReactNode }) => {
     return (
         <Heading
             fontSize={[24, 32]}
@@ -66,9 +72,6 @@ export const PartnerTitle = () => {
 }
 
 export const ConferenceXTitle = () => {
-    const displayStyle: CSS.Properties = {
-        display: 'inline',
-    }
     return (
         <Heading
             fontWeight={'medium'}

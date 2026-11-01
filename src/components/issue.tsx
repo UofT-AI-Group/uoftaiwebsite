@@ -1,8 +1,8 @@
-import CSS from 'csstype'
+import type { CSSProperties } from 'react'
 import { Card, CardHeader, CardBody, Box, Image } from '@chakra-ui/react'
 import '../static/styles/issue.css'
 
-const Issue = function Issue({
+const Issue = ({
     issueLink,
     img,
     title,
@@ -14,8 +14,8 @@ const Issue = function Issue({
     title: string
     desc: string
     date: string
-}) {
-    const cardStyles: CSS.Properties = {
+}) => {
+    const cardStyles: CSSProperties = {
         width: '400px',
         height: '600px',
         border: '3px solid black',
@@ -30,12 +30,8 @@ const Issue = function Issue({
         padding: '10px',
     }
 
-    const handleClick = () => {
-        window.location.href = issueLink
-    }
-
     return (
-        <Card style={cardStyles} onClick={handleClick} className="issue">
+        <Card as="a" href={issueLink} style={cardStyles} className="issue">
             <Image h={['150', '230px']} borderRadius={'30px'} src={img}></Image>
             <CardHeader fontWeight={'medium'} fontSize={25} pb={'5px'}>
                 {title}

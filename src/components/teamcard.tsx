@@ -1,15 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import chevron from '../static/assets/chevron-down.svg'
 import { Text, Box, Image, VStack } from '@chakra-ui/react'
 
-interface TeamCard {
+interface TeamCardProps {
     role: string
     name: string
     image: string
     description: string
 }
 
-const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
+const TeamCard = ({ role, name, image, description }: TeamCardProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const [height, setHeight] = useState('0px')
     const contentRef = useRef<HTMLDivElement>(null)
@@ -26,16 +26,24 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
 
     return (
         <div className="meet-the-team-item">
-            <div className="meet-the-team-question" onClick={toggleOpen}>
+            <button
+                type="button"
+                className="meet-the-team-question"
+                onClick={toggleOpen}
+                aria-expanded={isOpen}
+            >
                 <Box display={'flex'}>
                     <Box
                         borderRadius={'50%'}
                         border={'3px solid black'}
                         h={['60px', '80px', '128px']}
                         w={['60px', '80px', '128px']}
+                        flexShrink={0}
                     >
                         <Image
                             src={image}
+                            alt={`${name} headshot`}
+                            loading="lazy"
                             borderRadius={'50%'}
                             width="100%"
                             height="100%"
@@ -68,8 +76,10 @@ const TeamCard: React.FC<TeamCard> = ({ role, name, image, description }) => {
                 <img
                     src={chevron}
                     className={`arrow ${isOpen ? 'open' : ''}`}
+                    alt=""
+                    aria-hidden="true"
                 ></img>
-            </div>
+            </button>
             <div
                 ref={contentRef}
                 className={`meet-the-team-answer ${isOpen ? 'show' : ''}`}

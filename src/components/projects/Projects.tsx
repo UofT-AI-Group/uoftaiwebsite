@@ -1,21 +1,21 @@
-import img1 from '../../static/assets/Frame 7.png'
-import img2 from '../../static/assets/Frame 8.png'
-import img3 from '../../static/assets/Frame 9.png'
-import conferencex from '../../static/assets/conferencex.png'
-import learnai from '../../static/assets/learnai.png'
-import projectx from '../../static/assets/projectx.png'
+import img1 from '../../static/assets/Frame 7.webp'
+import img2 from '../../static/assets/Frame 8.webp'
+import img3 from '../../static/assets/Frame 9.webp'
+import conferencex from '../../static/assets/conferencex.webp'
+import learnai from '../../static/assets/learnai.webp'
+import projectx from '../../static/assets/projectx.webp'
 
 import { Initiative } from './Initiative'
 export function Projects() {
     return (
-        <div className="projects">
+        <div>
             <Initiative
                 title="ProjectX"
                 description="The largest undergraduate ML competition in North America. 200+ participants, $40k in prize money, 40+ participating Universities all across the world. "
                 image={img1}
                 image2={projectx}
                 theme="dark"
-                location="projectx"
+                location="/projectx"
             />
             <Initiative
                 title="The UofT AI Conference"
@@ -23,7 +23,7 @@ export function Projects() {
                 image={img2}
                 image2={conferencex}
                 theme="light"
-                location="conferencex"
+                location="/conferencex"
             />
             <Initiative
                 title="Learn AI"
@@ -31,7 +31,7 @@ export function Projects() {
                 image={img3}
                 image2={learnai}
                 theme="dark"
-                location="learnai"
+                location="/learnai"
             />
         </div>
     )

@@ -1,14 +1,14 @@
 import { Box, VStack, Text, Flex, SimpleGrid, Image } from '@chakra-ui/react'
-import gradient from '../static/assets/dark gradient.png'
+import gradient from '../static/assets/dark-gradient.webp'
 import { ButtonOutline } from './Button'
-import carnegie from '../static/assets/carnegie.png'
-import cornell from '../static/assets/cornell.png'
-import duke from '../static/assets/duke.png'
+import carnegie from '../static/assets/carnegie.webp'
+import cornell from '../static/assets/cornell.webp'
+import duke from '../static/assets/duke.webp'
 import harvard from '../static/assets/Harvard-Logo.png'
 import irvine from '../static/assets/irvine.png'
 import jhu from '../static/assets/Johns-Hopkins-University-Logo.png'
 import laurier from '../static/assets/laurier.png'
-import mcgill from '../static/assets/mcgill.jpeg'
+import mcgill from '../static/assets/mcgill.webp'
 import montreal from '../static/assets/montreal.png'
 import northwestern from '../static/assets/northwestern.png'
 import queens from '../static/assets/queens.png'
@@ -101,16 +101,6 @@ export default function ProjectX2023() {
                     >
                         OTHER DETAILS
                     </Text>
-
-                    {/* <Box>
-                        <ButtonOutline variant="light" onClick={onClickCurrent}>
-                            2024
-                        </ButtonOutline>
-                        <Box as="span" p={'5px'}></Box>
-                        <ButtonOutline variant="light" onClick={onClickLanding}>
-                            Landing Page
-                        </ButtonOutline>
-                    </Box> */}
                 </VStack>
             </Box>
 
@@ -134,11 +124,15 @@ export default function ProjectX2023() {
                         2023 participation.
                     </Text>
                     <Box>
-                        <a href={codeOfConduct} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Code of Conduct
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={codeOfConduct}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Code of Conduct
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -170,11 +164,15 @@ export default function ProjectX2023() {
                         expectations.
                     </Text>
                     <Box>
-                        <a href={guidelines} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Guidelines
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={guidelines}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Guidelines
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -192,11 +190,15 @@ export default function ProjectX2023() {
                         information.
                     </Text>
                     <Box>
-                        <a href={problem} target="_blank">
-                            <ButtonOutline variant="light">
-                                View Problem Definition
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={problem}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Problem Definition
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </SimpleGrid>

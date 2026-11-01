@@ -1,9 +1,8 @@
-import React from 'react'
 import logo from '../../static/assets/UofTAI_Logo.png'
 import './style.css'
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -12,44 +11,43 @@ const Footer: React.FC = () => {
                         <img className="footer-img" src={logo} alt="AI Logo" />
 
                         <div className="footer-link">
-                            <a href="/">Home</a>
+                            <RouterLink to={'/'}>Home</RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <HashLink smooth to={'/#about'}>
-                                About Us
-                            </HashLink>
+                            <RouterLink to={'/#about'}>About Us</RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <HashLink smooth to={'/#meet-the-team'}>
+                            <RouterLink to={'/#meet-the-team'}>
                                 Our Team
-                            </HashLink>
+                            </RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <a href="/conferencex">ConferenceX</a>
+                            <RouterLink to={'/conferencex'}>
+                                ConferenceX
+                            </RouterLink>
                         </div>
 
                         <div className="footer-link">
-                            <a href="/projectx">ProjectX</a>
+                            <RouterLink to={'/projectx'}>ProjectX</RouterLink>
                         </div>
 
-                        {/* <div className="footer-link">
-                            <a href="/learnai">Learn AI</a>
-                        </div> */}
-
                         <div className="footer-link">
-                            <a href="/newsletter">Newsletter</a>
+                            <RouterLink to={'/newsletter'}>
+                                Newsletter
+                            </RouterLink>
                         </div>
                     </div>
 
                     <div className="footer-link">
-                        <a href="/partner-with-us">
-                            <button className="partner-button">
-                                Partner With Us
-                            </button>
-                        </a>
+                        <RouterLink
+                            to={'/partner-with-us'}
+                            className="partner-button"
+                        >
+                            Partner With Us
+                        </RouterLink>
                     </div>
                 </div>
                 <div className="main-contacts">
@@ -70,14 +68,14 @@ const Footer: React.FC = () => {
                     <div className="footer-presidents">
                         <h1>Presidents</h1>
                         <div className="footer-link">
-                            <a href="mailto:sonia.vaidya@mail.utoronto.ca">
-                                sonia.vaidya@mail.utoronto.ca
+                            <a href="mailto:c.hundey@mail.utoronto.ca">
+                                c.hundey@mail.utoronto.ca
                             </a>
                         </div>
 
                         <div className="footer-link">
-                            <a href="mailto:dev.shah@mail.utoronto.ca">
-                                dev.shah@mail.utoronto.ca
+                            <a href="mailto:hana.greenberg@mail.utoronto.ca">
+                                hana.greenberg@mail.utoronto.ca
                             </a>
                         </div>
                     </div>
@@ -90,7 +88,7 @@ const Footer: React.FC = () => {
                     <div className="footer-bottom">
                         <p>
                             &copy; University of Toronto Artificial Intelligence
-                            Group 2024
+                            Group 2026
                         </p>
                     </div>
                 </div>

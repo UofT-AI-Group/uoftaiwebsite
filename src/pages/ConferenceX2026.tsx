@@ -1,5 +1,4 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import React from 'react'
 import {
     Box,
     VStack,
@@ -18,83 +17,65 @@ import {
 } from '@chakra-ui/react'
 import FAQAccord from '../components/faq_accordian_2026'
 import { ConferenceXTitle } from '../components/Typography'
-import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'
 
-import accenture from '../static/assets/2025-confx-spons/conference 2025 logos/Accenture-logo.png'
-import trail from '../static/assets/2025-confx-spons/conference 2025 logos/trail.png'
-import stan from '../static/assets/2025-confx-spons/conference 2025 logos/block-s-right.webp'
-import citadel from '../static/assets/2025-confx-spons/conference 2025 logos/Citadel_LLC_Logo.svg.png'
-import deep from '../static/assets/2025-confx-spons/conference 2025 logos/DeepMind_new_logo.svg.png'
-import ghealth from '../static/assets/2025-confx-spons/conference 2025 logos/Google_Health_logo.svg.png'
-import dhealth from '../static/assets/2025-confx-spons/conference 2025 logos/Main-menu-logo.svg'
-import ne from '../static/assets/2025-confx-spons/conference 2025 logos/Northeastern-University-Logo.png'
-import perp from '../static/assets/2025-confx-spons/conference 2025 logos/Perplexity_AI_logo.svg.png'
-import rad from '../static/assets/2025-confx-spons/conference 2025 logos/radical-ventures-header-logo.webp'
-import human from '../static/assets/2025-confx-spons/conference 2025 logos/human.avif'
-import uoft from '../static/assets/2025-confx-spons/conference 2025 logos/University_of_Toronto-Logo.wine.png'
-import vector from '../static/assets/2025-confx-spons/conference 2025 logos/Vector-Institute_Logo.png'
-import uf from '../static/assets/2025-confx-spons/conference 2025 logos/University-of-Florida-Logo.png'
-import econ from '../static/assets/2025-confx-spons/conference 2025 logos/World_Economic_Forum_logo.svg.png'
-import you from '../static/assets/2025-confx-spons/conference 2025 logos/You.com_Secondary_Vertical_Gradient.png'
 // Day 1 Speakers
 import speaker_pic from '../static/assets/conf-2026-assets/speaker_pic.jpg'
-import gallery from '../static/assets/our-mission.jpg'
-import showcase from '../static/assets/conf-2026-assets/showcase.png'
+import gallery from '../static/assets/our-mission.webp'
+import showcase from '../static/assets/conf-2026-assets/showcase.webp'
 
 import yvan from '../static/assets/conf-2026-assets/yvan.jpg'
-import luis from '../static/assets/conf-2026-assets/luis.png'
-import maryam from '../static/assets/conf-2026-assets/Maryam.png'
-import jonathan from '../static/assets/conf-2026-assets/Jonathan.png'
+import luis from '../static/assets/conf-2026-assets/luis.webp'
+import maryam from '../static/assets/conf-2026-assets/Maryam.webp'
+import jonathan from '../static/assets/conf-2026-assets/Jonathan.webp'
 import ameen from '../static/assets/conf-2026-assets/Ameen.jpg'
-import olivia from '../static/assets/conf-2026-assets/Olivia.png'
+import olivia from '../static/assets/conf-2026-assets/Olivia.webp'
 import selen from '../static/assets/conf-2026-assets/Selen.jpg'
 import rupa from '../static/assets/conf-2026-assets/Rupa.jpg'
 import sean from '../static/assets/conf-2026-assets/Sean.jpg'
 import evan from '../static/assets/conf-2026-assets/Evan.jpg'
-import ishika from '../static/assets/conf-2026-assets/Ishika.png'
+import ishika from '../static/assets/conf-2026-assets/Ishika.webp'
 import shane from '../static/assets/conf-2026-assets/shane.jpg'
-import asad from '../static/assets/conf-2026-assets/Asad.png'
+import asad from '../static/assets/conf-2026-assets/Asad.webp'
 import haris from '../static/assets/conf-2026-assets/Haris.jpg'
 import vikram from '../static/assets/conf-2026-assets/Vikram.jpg'
-import taha from '../static/assets/conf-2026-assets/Taha.png'
-import nick from '../static/assets/conf-2026-assets/Nick.png'
+import taha from '../static/assets/conf-2026-assets/Taha.webp'
+import nick from '../static/assets/conf-2026-assets/Nick.webp'
 import kino from '../static/assets/conf-2026-assets/Kino.jpg'
-import fatima from '../static/assets/conf-2026-assets/Fatima.png'
-import jeremy from '../static/assets/conf-2026-assets/Jeremy.png'
-import peja from '../static/assets/conf-2026-assets/Peja.png'
+import fatima from '../static/assets/conf-2026-assets/Fatima.webp'
+import jeremy from '../static/assets/conf-2026-assets/Jeremy.webp'
+import peja from '../static/assets/conf-2026-assets/Peja.webp'
 import micheal_li from '../static/assets/conf-2026-assets/Michael_li.jpg'
-import michael from '../static/assets/conf-2026-assets/Michael_Page.png'
-import yashwinie from '../static/assets/conf-2026-assets/Yashwinie.png'
+import michael from '../static/assets/conf-2026-assets/Michael_Page.webp'
+import yashwinie from '../static/assets/conf-2026-assets/Yashwinie.webp'
 import zhijing from '../static/assets/conf-2026-assets/zhijing.webp'
 import savannah from '../static/assets/conf-2026-assets/savannah.jpg'
 import rauno from '../static/assets/conf-2026-assets/Rauno.jpg'
-import atrisha from '../static/assets/conf-2026-assets/atrisha.png'
+import atrisha from '../static/assets/conf-2026-assets/atrisha.webp'
 import david from '../static/assets/conf-2026-assets/david.jpg'
 
 import david_r from '../static/assets/conf-2026-assets/David_Rokeby.png'
 import janice from '../static/assets/conf-2026-assets/janice.jpg'
 import joshua from '../static/assets/conf-2026-assets/joshua.webp'
 import kristina from '../static/assets/conf-2026-assets/kristina.png'
-import lawrence from '../static/assets/conf-2026-assets/lawrence.jpg'
+import lawrence from '../static/assets/conf-2026-assets/lawrence.webp'
 import bernhardt from '../static/assets/conf-2026-assets/Bernhardt.jpg'
-import anson from '../static/assets/conf-2026-assets/Anson.png'
-import farhan from '../static/assets/conf-2026-assets/Farhan.png'
-import andrew from '../static/assets/conf-2026-assets/Andrew.png'
-import alex from '../static/assets/conf-2026-assets/Alex.png'
-import daniel from '../static/assets/conf-2026-assets/daniel.png'
-import andre from '../static/assets/conf-2026-assets/Andre.png'
+import anson from '../static/assets/conf-2026-assets/Anson.webp'
+import farhan from '../static/assets/conf-2026-assets/Farhan.webp'
+import andrew from '../static/assets/conf-2026-assets/Andrew.webp'
+import alex from '../static/assets/conf-2026-assets/Alex.webp'
+import daniel from '../static/assets/conf-2026-assets/daniel.webp'
+import andre from '../static/assets/conf-2026-assets/Andre.webp'
 
-import stephen from '../static/assets/conf-2026-assets/stephen_wolfram.jpg'
+import stephen from '../static/assets/conf-2026-assets/stephen_wolfram.webp'
 
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 import eyLogo from '../static/assets/2026-confx-spons/EY.png'
-import canvasLogo from '../static/assets/2026-confx-spons/canvas_2026.png'
+import canvasLogo from '../static/assets/2026-confx-spons/canvas_2026.webp'
 import intactLogo from '../static/assets/2026-confx-spons/intact_2026.png'
 import RBCLogo from '../static/assets/2026-confx-spons/RBC.png'
-import rectangleImage from '../static/assets/rectangle_get_your_ticket.png'
 import '../static/styles/conferenceX.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { scheduleDay1 } from '../data/scheduleDay1'
 import { scheduleDay2 } from '../data/scheduleDay2'
 import { useBreakpointValue } from '@chakra-ui/react'
@@ -106,7 +87,6 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 const ConferenceX = () => {
     const gradient2026 =
         'linear-gradient(135deg, #160d2f 0%, #2c1d5e 40%, #3b4fa3 100%)'
-
 
     const isMobile = useBreakpointValue({
         base: true,
@@ -319,24 +299,12 @@ const ConferenceX = () => {
             company: 'Unity Health',
             img: michael,
         },
-
-        // // ----------------------------
-        // // DAY 2 SPEAKERS
-        // // ----------------------------
-        // // const day2Speakers = [
         {
             name: 'David Rokeby',
             role: 'Director; Professor',
             company: 'BMO Lab for Creative Research; University of Toronto',
             img: david_r,
         },
-        {
-            name: 'Janice Stein',
-            role: 'Founding Director',
-            company: 'Munk School of Global Affairs & Public Policy',
-            img: janice,
-        },
-
         {
             name: 'Kristina McElheran',
             role: 'Professor; Faculty Fellow',
@@ -543,7 +511,6 @@ const ConferenceX = () => {
                     >
                         January 24–25, 2026
                     </Text>
-
                 </VStack>
             </Box>
 
@@ -614,23 +581,20 @@ const ConferenceX = () => {
                         </Text>
 
                         {/* Circular / Pill Button */}
-                        <HashLink
-                            smooth
-                            to="/conferencex-2025#conference2024higlights"
+                        <Button
+                            as={RouterLink}
+                            to={'/conferencex-2025#highlights'}
+                            variant="outline"
+                            borderRadius="full"
+                            px={8}
+                            py={6}
+                            color="white"
+                            borderColor="white"
+                            _hover={{ bg: 'rgba(255,255,255,0.10)' }}
+                            fontFamily="Tabular, sans-serif"
                         >
-                            <Button
-                                variant="outline"
-                                borderRadius="full"
-                                px={8}
-                                py={6}
-                                color="white"
-                                borderColor="white"
-                                _hover={{ bg: 'rgba(255,255,255,0.10)' }}
-                                fontFamily="Tabular, sans-serif"
-                            >
-                                Check out last year's conference
-                            </Button>
-                        </HashLink>
+                            Check out last year's conference
+                        </Button>
                     </VStack>
                 </Flex>
             </Box>
@@ -709,8 +673,8 @@ const ConferenceX = () => {
                 pb={0}
                 position={'relative'}
                 zIndex={10}
+                id="highlights"
             >
-                <div id="conference2024higlights"></div>
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2026 Sneakpeak
                 </Text>

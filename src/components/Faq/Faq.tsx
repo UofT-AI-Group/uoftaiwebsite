@@ -1,16 +1,15 @@
-import React from 'react'
 import FaqItem from './FaqItem'
 import './styles.css'
 import { Text, Box } from '@chakra-ui/react'
 
-const Faq: React.FC = () => {
+const Faq = () => {
     return (
         <Box className="faq-container">
             <Box className="container-items">
                 <Text className="faq-h2" fontSize={['36px', '50px']}>
                     FAQ
                 </Text>
-                <Box className="dropdowns">
+                <Box>
                     <FaqItem
                         question="How can I get involved as a partner?"
                         answer={
