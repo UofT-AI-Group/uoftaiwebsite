@@ -3,21 +3,8 @@ import { Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar'
-import ConferenceX2025 from './pages/ConferenceX2025'
-import ConferenceX2026 from './pages/ConferenceX2026'
-import ConferenceX from './pages/ConferenceX'
-import ScrollToTop from './components/scrollToTop'
-import Newsletter from './pages/Newsletter'
-import ComingSoon from './pages/ComingSoon'
-import ProjectX from './pages/ProjectX'
-import ProjectX2020 from './components/projectX2020'
-import ProjectX2021 from './components/projectX2021'
-import ProjectX2022 from './components/projectX2022'
-import ProjectX2023 from './components/projectX2023'
-import ProjectX2024 from './components/projectX2024'
-import ProjectX2026 from './components/projectX2026'
+import ScrollManager from './components/ScrollManager'
 import PageNotFound from './pages/PageNotFound'
-
 
 const Partner = lazy(() => import('./pages/Partner'))
 const ConferenceX = lazy(() => import('./pages/ConferenceX'))
