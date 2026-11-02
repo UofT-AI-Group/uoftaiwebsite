@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar'
 import ScrollManager from './components/ScrollManager'
+import PageNotFound from './pages/PageNotFound'
 
 const Partner = lazy(() => import('./pages/Partner'))
 const ConferenceX = lazy(() => import('./pages/ConferenceX'))
@@ -44,6 +45,7 @@ export const App = () => (
                     <Route path="2024" element={<ProjectX2024 />} />
                     <Route path="2026" element={<ProjectX2026 />} />
                 </Route>
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </Suspense>
         <Footer />
