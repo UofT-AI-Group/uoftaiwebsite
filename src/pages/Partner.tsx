@@ -34,7 +34,12 @@ const Partner = () => {
                         competitions, guest lectures, and conferences.
                     </Text>
                     <Box>
-                        <ButtonOutline>Get Involved</ButtonOutline>
+                        <ButtonOutline
+                            as="a"
+                            href="mailto:uoftaigrouppartnerships@gmail.com"
+                        >
+                            Get Involved
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </Container>

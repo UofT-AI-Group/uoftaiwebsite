@@ -1,6 +1,6 @@
 import { type ReactNode, useState, useRef, useEffect } from 'react'
 import chevron from '../../static/assets/chevron-down.svg'
-import { Text, Box } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 interface FAQItemProps {
     question: string
@@ -24,21 +24,28 @@ const FaqItem = ({ question, answer }: FAQItemProps) => {
 
     return (
         <Box className="faq-item" fontSize={['24px', '40px']}>
-            <div className="faq-question" onClick={toggleOpen}>
+            <button
+                type="button"
+                className="faq-question"
+                onClick={toggleOpen}
+                aria-expanded={isOpen}
+            >
                 {question}
                 <img
                     src={chevron}
                     className={`arrow ${isOpen ? 'open' : ''}`}
-                ></img>
-            </div>
+                    alt=""
+                    aria-hidden="true"
+                />
+            </button>
             <div
                 ref={contentRef}
                 className={`faq-answer ${isOpen ? 'show' : ''}`}
                 style={{ maxHeight: `${height}` }}
             >
-                <Text fontSize={['16px', '24px']}>{answer}</Text>
+                <Box fontSize={['16px', '24px']}>{answer}</Box>
             </div>
-            <hr className={`underline ${isOpen ? 'toggleOn' : ''}, 'faq-hr`} />
+            <hr />
         </Box>
     )
 }
