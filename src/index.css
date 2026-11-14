@@ -1,10 +1,11 @@
 html,
 body {
     max-width: 100%;
-    overflow-x: hidden;
+    /* clip (not hidden) so position: sticky keeps working inside the page */
+    overflow-x: clip;
 }
 
 html {
     /* Keeps anchor targets clear of the fixed navbar */
-    scroll-padding-top: 112px;
+    scroll-padding-top: 88px;
 }

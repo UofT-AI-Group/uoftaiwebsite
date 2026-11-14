@@ -468,7 +468,7 @@ const ConferenceX = () => {
     }
 
     return (
-        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
+        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={'88px'}>
             <Box
                 bg="white"
                 py={2}
