@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box, SimpleGrid } from '@chakra-ui/react'
 import TeamCard from './teamcard'
 import '../static/styles/teamcard.css'
 import aaina from '../static/assets/team-2026/aaina-garg.jpg'
@@ -125,30 +124,20 @@ const teamMembers = [
     },
 ]
 
-const MeetTheTeam: React.FC = () => {
-    return (
-        <Box className="meet-the-team-container">
-            <Box className="container-items">
-                <h2 className="meet-the-team-h2">
-                    <span className="underline">M</span>eet The Team
-                </h2>
-                <SimpleGrid
-                    columns={{ base: 1, lg: 2 }}
-                    spacingX={6}
-                    spacingY={5}
-                    justifyItems="center"
-                    maxW="1200px"
-                    mx="auto"
-                >
-                    {teamMembers.map((member) => (
-                        <Box key={member.name} width="100%" maxW="500px">
-                            <TeamCard {...member} />
-                        </Box>
-                    ))}
-                </SimpleGrid>
-            </Box>
-        </Box>
-    )
-}
+const MeetTheTeam: React.FC = () => (
+    <section className="team-section" aria-labelledby="team-heading">
+        <div className="team-section__inner">
+            <header className="team-section__heading">
+                <h2 id="team-heading">Meet the team</h2>
+                <p>2026 executive team</p>
+            </header>
+            <div className="team-grid">
+                {teamMembers.map((member) => (
+                    <TeamCard key={member.name} {...member} />
+                ))}
+            </div>
+        </div>
+    </section>
+)
 
 export default MeetTheTeam

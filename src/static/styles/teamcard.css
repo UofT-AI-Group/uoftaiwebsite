@@ -1,76 +1,163 @@
-.meet-the-team-container {
-    padding: 5vh 20px;
+.team-section {
+    padding: 72px 0 80px;
+    background: #fff;
+    color: #1c1c1c;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-section__inner {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.team-section__heading {
     display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-}
-
-.meet-the-team-container .container-items {
-    width: 100%;
-}
-
-.meet-the-team-h2 {
-    font-size: 50px;
-    margin-bottom: 48px;
-}
-
-.meet-the-team-item {
-    font-size: 40px;
-    border: 3px solid black;
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-}
-
-.meet-the-team-ul {
-    margin-left: 50px;
-}
-
-.meet-the-team-question {
-    cursor: pointer;
-    display: flex;
+    align-items: baseline;
     justify-content: space-between;
-    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.team-section__heading h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(38px, 4vw, 56px);
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+.team-section__heading > p {
+    color: #555;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 48px 28px;
+}
+
+.team-member {
+    min-width: 0;
+}
+
+.team-member__portrait {
+    display: block;
     width: 100%;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: inherit;
-    text-align: left;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: #ddd;
 }
 
-.arrow {
-    flex-shrink: 0;
-    margin-left: 8px;
-    rotate: 0deg;
-    transition: 1s ease;
+.team-member h3 {
+    margin-top: 18px;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.35;
 }
 
-@media (max-width: 480px) {
-    .meet-the-team-container {
-        padding-right: 12px;
-        padding-left: 12px;
+.team-member__role {
+    min-height: 44px;
+    margin-top: 6px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.team-member__bio {
+    margin-top: 8px;
+    border-top: 1px solid #b8b8b8;
+}
+
+.team-member__bio summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    font-size: 15px;
+    font-weight: 500;
+    list-style: none;
+    cursor: pointer;
+}
+
+.team-member__bio summary::-webkit-details-marker {
+    display: none;
+}
+
+.team-member__bio summary span {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.team-member__bio[open] summary span {
+    transform: rotate(45deg);
+}
+
+.team-member__bio summary:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.team-member__bio summary:focus-visible {
+    outline: 2px solid #1c1c1c;
+    outline-offset: 4px;
+}
+
+.team-member__bio > p {
+    padding: 0 0 12px;
+    color: #444;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 1400px) {
+    .team-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1023px) {
+    .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .team-section {
+        padding: 56px 0 64px;
     }
 
-    .meet-the-team-h2 {
-        font-size: 36px;
+    .team-section__inner {
+        padding: 0 24px;
     }
-}
 
-.open {
-    rotate: 180deg;
-    transition: 1s ease;
-}
+    .team-section__heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
 
-.meet-the-team-answer {
-    font-size: x-large;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease;
-}
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 20px;
+    }
 
-.meet-the-team-answer.show {
-    max-height: 400px; /* Arbitrarily large value to ensure it expands */
+    .team-member h3 {
+        margin-top: 14px;
+        font-size: 18px;
+    }
+
+    .team-member__role {
+        min-height: 64px;
+    }
 }

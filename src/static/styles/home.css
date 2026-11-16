@@ -1,17 +1,10 @@
-#about-container {
-    position: relative;
-}
-
-#about {
-    position: absolute;
-    top: -112px;
-}
-
+#about-container,
 #meet-the-team-container {
     position: relative;
 }
 
+#about,
 #meet-the-team {
     position: absolute;
-    top: -112px;
+    top: calc(-1 * var(--site-header-height));
 }
