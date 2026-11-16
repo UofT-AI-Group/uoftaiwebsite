@@ -1,8 +1,7 @@
-import React from 'react'
 import './styles.css'
 import { Box } from '@chakra-ui/react'
 
-const ConferenceXBenefits: React.FC = () => {
+const ConferenceXBenefits = () => {
     return (
         <Box className="conferencexbenefits-container" p={['10px', '50px']}>
             <Box className="conferencexbenefits-content">

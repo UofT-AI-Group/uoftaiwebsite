@@ -8,15 +8,15 @@ import {
     Button,
     Heading,
 } from '@chakra-ui/react'
-import gradient from '../static/assets/2021gradient.jpg'
+import gradient from '../static/assets/2021gradient.webp'
 import { ButtonOutline } from './Button'
 
 import caltech from '../static/assets/caltech.png'
-import carnegie from '../static/assets/carnegie.png'
+import carnegie from '../static/assets/carnegie.webp'
 import columbia from '../static/assets/columbia.png'
-import cornell from '../static/assets/cornell.png'
+import cornell from '../static/assets/cornell.webp'
 import jhu from '../static/assets/Johns-Hopkins-University-Logo.png'
-import mcgill from '../static/assets/mcgill.jpeg'
+import mcgill from '../static/assets/mcgill.webp'
 import michigan from '../static/assets/michigan.png'
 import mcmaster from '../static/assets/mcmaster.png'
 import montreal from '../static/assets/montreal.png'
@@ -31,7 +31,7 @@ import uoft from '../static/assets/uoft.png'
 import uoi from '../static/assets/uoi.png'
 import upenn from '../static/assets/UPenn-Logo.png'
 import uottawa from '../static/assets/uottawa.png'
-import usc from '../static/assets/usc.png'
+import usc from '../static/assets/usc.webp'
 import waterloo from '../static/assets/waterloo.png'
 import wisconsin from '../static/assets/wisonconsin.png'
 import yale from '../static/assets/yale.png'
@@ -48,15 +48,15 @@ import nvidia from '../static/assets/nvidia.png'
 import twentythreeandme from '../static/assets/23andme.png'
 import vector from '../static/assets/vector.png'
 
-import team2021part1 from '../static/assets/team2021part1.png'
-import team2021part2 from '../static/assets/team2021part2.png'
-import team2021part3 from '../static/assets/team2021part3.png'
+import team2021part1 from '../static/assets/team2021part1.webp'
+import team2021part2 from '../static/assets/team2021part2.webp'
+import team2021part3 from '../static/assets/team2021part3.webp'
 
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import guidelines from '../static/assets/Submission Guidelines 2023 (1).pdf'
 import problem from '../static/assets/Problem_Statement_ProjectX_1.pdf'
-import covid from '../static/assets/covid.jpg'
-import human from '../static/assets/human.jpg'
+import covid from '../static/assets/covid.webp'
+import human from '../static/assets/human.webp'
 
 export default function ProjectX2021() {
     return (
@@ -120,11 +120,7 @@ export default function ProjectX2021() {
                         Prize Pool
                     </Text>
 
-                    <Text
-                        fontWeight="medium"
-                        fontSize={[30, 60]}
-                        color="dark"
-                    >
+                    <Text fontWeight="medium" fontSize={[30, 60]} color="dark">
                         $75,000
                     </Text>
                 </VStack>
@@ -151,15 +147,15 @@ export default function ProjectX2021() {
                         2023 participation.
                     </Text>
                     <Box>
-                        <a
+                        <ButtonOutline
+                            as="a"
                             href={codeOfConduct}
                             target="_blank"
                             rel="noreferrer"
+                            variant="light"
                         >
-                            <ButtonOutline variant="light">
-                                View Code of Conduct
-                            </ButtonOutline>
-                        </a>
+                            View Code of Conduct
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -191,11 +187,15 @@ export default function ProjectX2021() {
                         expectations.
                     </Text>
                     <Box>
-                        <a href={guidelines} target="_blank" rel="noreferrer">
-                            <ButtonOutline variant="light">
-                                View Guidelines
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={guidelines}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Guidelines
+                        </ButtonOutline>
                     </Box>
                 </VStack>
 
@@ -213,11 +213,15 @@ export default function ProjectX2021() {
                         information.
                     </Text>
                     <Box>
-                        <a href={problem} target="_blank" rel="noreferrer">
-                            <ButtonOutline variant="light">
-                                View Problem Definition
-                            </ButtonOutline>
-                        </a>
+                        <ButtonOutline
+                            as="a"
+                            href={problem}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="light"
+                        >
+                            View Problem Definition
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </SimpleGrid>

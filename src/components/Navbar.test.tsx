@@ -1,8 +1,9 @@
+import { beforeAll, expect, test, vi } from 'vitest'
 import { ChakraProvider } from '@chakra-ui/react'
 import { act } from 'react'
 import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router'
 import theme from '../theme'
 import Navbar from './Navbar'
 
@@ -12,10 +13,10 @@ beforeAll(() => {
         value: (query: string) => ({
             matches: false,
             media: query,
-            addListener: jest.fn(),
-            removeListener: jest.fn(),
-            addEventListener: jest.fn(),
-            removeEventListener: jest.fn(),
+            addListener: vi.fn(),
+            removeListener: vi.fn(),
+            addEventListener: vi.fn(),
+            removeEventListener: vi.fn(),
         }),
     })
 })

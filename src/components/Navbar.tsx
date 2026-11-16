@@ -14,9 +14,9 @@ import {
     useDisclosure,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons'
-import { ReactNode, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
+import { useRef } from 'react'
+import type { ReactNode } from 'react'
+import { Link, useLocation } from 'react-router'
 import logo from '../static/assets/header_logo.png'
 import './Navbar.css'
 
@@ -65,10 +65,8 @@ export const NavLink = ({
     const { pathname, hash } = useLocation()
 
     return (
-        <HashLink
-            smooth
+        <Link
             to={to}
-            elementId={to === '/' ? 'top' : undefined}
             onClick={onClose}
             className="site-nav-link"
             aria-current={
@@ -76,7 +74,7 @@ export const NavLink = ({
             }
         >
             {children}
-        </HashLink>
+        </Link>
     )
 }
 
@@ -88,15 +86,9 @@ const Navbar = () => {
     return (
         <header className="site-header">
             <div className="site-header__inner">
-                <HashLink
-                    smooth
-                    to="/"
-                    elementId="top"
-                    className="site-brand"
-                    aria-label="UofT AI home"
-                >
+                <Link to="/" className="site-brand" aria-label="UofT AI home">
                     <img src={logo} alt="" width="48" height="48" />
-                </HashLink>
+                </Link>
                 <nav className="site-nav" aria-label="Main navigation">
                     <NavLink to="/" onClose={onClose}>
                         Home
@@ -124,8 +116,7 @@ const Navbar = () => {
                                 {group.links.map(({ label, to }) => (
                                     <MenuItem
                                         key={to}
-                                        as={HashLink}
-                                        smooth
+                                        as={Link}
                                         to={to}
                                         onClick={onClose}
                                         aria-current={

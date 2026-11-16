@@ -1,5 +1,4 @@
 import { Icon } from '@chakra-ui/react'
-import { ElementType } from 'react'
 import {
     FaDiscord,
     FaEnvelope,
@@ -7,8 +6,7 @@ import {
     FaLinkedinIn,
     FaXTwitter,
 } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router'
 import logo from '../../static/assets/header_logo.png'
 import './style.css'
 
@@ -36,20 +34,20 @@ const socialLinks = [
     },
 ]
 
+const copyrightYear = new Date().getFullYear()
+
 const Footer = () => (
     <footer className="footer">
         <div className="footer-container">
             <div className="footer-head">
                 <div className="footer-brandline">
-                    <HashLink
-                        smooth
+                    <Link
                         to="/"
-                        elementId="top"
                         className="footer-logo"
                         aria-label="UofT AI home"
                     >
                         <img src={logo} alt="" width="44" height="44" />
-                    </HashLink>
+                    </Link>
                     <div>
                         <h2>UofT AI</h2>
                         <p>
@@ -68,7 +66,7 @@ const Footer = () => (
                             aria-label={label}
                             title={label}
                         >
-                            <Icon as={icon as ElementType} aria-hidden="true" />
+                            <Icon as={icon} aria-hidden="true" />
                         </a>
                     ))}
                 </nav>
@@ -111,10 +109,7 @@ const Footer = () => (
             </div>
 
             <div className="footer-bottom">
-                <p>
-                    &copy; {new Date().getFullYear()} UofT AI. All rights
-                    reserved.
-                </p>
+                <p>&copy; {copyrightYear} UofT AI. All rights reserved.</p>
                 <a href="https://web.cs.toronto.edu">
                     UofT Computer Science <span aria-hidden="true">↗</span>
                 </a>

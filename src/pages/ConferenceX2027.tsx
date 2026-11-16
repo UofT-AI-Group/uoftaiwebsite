@@ -1,5 +1,4 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import React from 'react'
 import { Box, VStack, Text } from '@chakra-ui/react'
 import { ConferenceXTitle } from '../components/Typography'
 import '../static/styles/conferenceX.css'

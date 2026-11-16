@@ -1,15 +1,6 @@
 import ConferenceYearTabs from '../components/ConferenceYearTabs'
-import {
-    Box,
-    Container,
-    VStack,
-    Text,
-    Flex,
-    Card,
-    Image,
-    SimpleGrid,
-} from '@chakra-ui/react'
-import gradient from '../static/assets/outreach-gradient.jpeg'
+import { Box, VStack, Text, Flex, Image, SimpleGrid } from '@chakra-ui/react'
+import gradient from '../static/assets/outreach-gradient.webp'
 import { ConferenceXTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import logo from '../static/assets/UofTAI_Logo_bw.png'
@@ -37,7 +28,7 @@ import tomi from '../static/assets/Tomi-Poutanen.jpg'
 import geoffreySpeaking from '../static/assets/Geoffrey-Hinton-Speaking.jpg'
 import gallery from '../static/assets/gallery.jpg'
 import showcase from '../static/assets/Showcase.jpg'
-import { HashLink } from 'react-router-hash-link'
+import { Link as RouterLink } from 'react-router'
 import '../static/styles/conferenceX.css'
 
 const ConferenceX = () => {
@@ -74,14 +65,13 @@ const ConferenceX = () => {
                         Where technology meets humanity
                     </Text>
                     <Box>
-                        <HashLink
-                            smooth
-                            to={'/conferencex#conference2024higlights'}
+                        <ButtonOutline
+                            as={RouterLink}
+                            to={'/conferencex-2024#highlights'}
+                            variant="light"
                         >
-                            <ButtonOutline variant="light">
-                                ConferenceX 2024 Highlights
-                            </ButtonOutline>
-                        </HashLink>
+                            ConferenceX 2024 Highlights
+                        </ButtonOutline>
                     </Box>
                 </VStack>
             </Box>
@@ -123,8 +113,8 @@ const ConferenceX = () => {
                 p={[5, 20]}
                 position={'relative'}
                 zIndex={10}
+                id="highlights"
             >
-                <div id="conference2024higlights"></div>
                 <Text fontSize={['18px', '24px']} color={'light'}>
                     ConferenceX 2024 Highlights
                 </Text>

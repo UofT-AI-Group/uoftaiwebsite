@@ -1,4 +1,4 @@
-import { Box, Container, VStack, Text, Flex, Card } from '@chakra-ui/react'
+import { Box, Container, VStack, Text, Flex } from '@chakra-ui/react'
 import Bubble from '../components/bubble'
 import { PartnerTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
@@ -15,7 +15,7 @@ const Partner = () => {
             <Bubble speed="15" size="18vw" top="calc(120vh)" left="-18vw" />
 
             <Container
-                className={'title slide-and-zoom'}
+                className="slide-and-zoom"
                 minH={'calc(100vh - 250px)'}
                 maxW={'1200px'}
                 pt={[40, 64]}

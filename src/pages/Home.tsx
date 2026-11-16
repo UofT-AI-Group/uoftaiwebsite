@@ -5,7 +5,7 @@ import { Projects } from '../components/projects/Projects'
 import { LandingTitle } from '../components/Typography'
 import { ButtonOutline } from '../components/Button'
 import About from '../components/about'
-import { useNavigate } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router'
 import MeetTheTeam from '../components/meetTheTeam'
 import bmoLogo from '../static/assets/bmo-logo.png'
 import bellLogo from '../static/assets/bell-logo.png'
@@ -16,16 +16,25 @@ import rippleLogo from '../static/assets/ripple-logo.svg'
 import uoftLogo from '../static/assets/uoft-logo.png'
 import vectorLogo from '../static/assets/vector-institute-logo.png'
 import womboLogo from '../static/assets/wombo-logo.svg'
-import '../static/styles/home.css'
+
+const PARTNERS = [
+    { name: 'BMO', logo: bmoLogo },
+    { name: 'Bell', logo: bellLogo },
+    { name: 'CIFAR', logo: cifarLogo },
+    { name: 'KPMG', logo: kpmgLogo },
+    { name: 'MaRS', logo: marsLogo },
+    { name: 'Ripple Ventures', logo: rippleLogo },
+    { name: 'University of Toronto', logo: uoftLogo },
+    { name: 'Vector Institute', logo: vectorLogo },
+    { name: 'WOMBO', logo: womboLogo },
+]
 
 const Home = () => {
-    let navigate = useNavigate()
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
             <Bubble speed="10" size="35vw" top="-18vw" left="-17vw" />
             <Bubble speed="15" size="18vw" top="150px" left="calc(94vw)" />
             <Container
-                className={'title'}
                 minH={'calc(100vh - 100px)'}
                 maxW={'4xl'}
                 pt={[40, 64]}
@@ -47,11 +56,7 @@ const Home = () => {
                         competitions, guest lectures, and conferences.
                     </Text>
                     <Box>
-                        <ButtonOutline
-                            onClick={() => {
-                                navigate('newsletter')
-                            }}
-                        >
+                        <ButtonOutline as={RouterLink} to="/newsletter">
                             Read our Newsletter
                         </ButtonOutline>
                     </Box>
@@ -88,87 +93,23 @@ const Home = () => {
                 </Box>
 
                 <InfiniteLooper direction="right" speed="16">
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={bmoLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={bellLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={cifarLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={kpmgLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={marsLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={rippleLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={uoftLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={vectorLogo}
-                        alt="UofT AI Club Logo"
-                    />
-                    <Image
-                        h={['100px', '150px']}
-                        m={'20px 30px'}
-                        mb={'10px'}
-                        className="bannerlogo"
-                        src={womboLogo}
-                        alt="UofT AI Club Logo"
-                    />
+                    {PARTNERS.map(({ name, logo }) => (
+                        <Image
+                            key={name}
+                            h={['100px', '150px']}
+                            m={'20px 30px'}
+                            mb={'10px'}
+                            src={logo}
+                            alt={`${name} logo`}
+                        />
+                    ))}
                 </InfiniteLooper>
             </div>
-            <div id="about-container">
-                <div id="about"></div>
+            <div id="about">
                 <About />
             </div>
             <Projects />
-            <div id="meet-the-team-container">
-                <div id="meet-the-team"></div>
+            <div id="meet-the-team">
                 <MeetTheTeam />
             </div>
         </Box>
