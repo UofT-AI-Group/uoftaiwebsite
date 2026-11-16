@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { PARTNERS, STATS } from '../../data/home'
+import { ABOUT, PARTNERS, STATS } from '../../data/home'
 
 /** Counts up from 0 the first time it scrolls into view. */
 const CountUp = ({ to, suffix = '+' }: { to: number; suffix?: string }) => {
@@ -51,6 +51,19 @@ const Stats = () => (
             An incubator for the next generation of AI talent.{' '}
             <em>Learn, build, and meet your future co-founders.</em>
         </h2>
+        <div className="hm-about">
+            {ABOUT.map(({ title, photo, photoAlt, text }) => (
+                <figure key={title}>
+                    <div className="hm-about-photo">
+                        <img src={photo} alt={photoAlt} loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <b>{title}</b>
+                        <p>{text}</p>
+                    </figcaption>
+                </figure>
+            ))}
+        </div>
         <div className="hm-stats">
             {STATS.map(({ value, label }) => (
                 <div key={label}>

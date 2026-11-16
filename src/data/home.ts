@@ -1,6 +1,8 @@
 import projectxPhoto from '../static/assets/projectx.webp'
 import conferencexPhoto from '../static/assets/conferencex.webp'
 import learnaiPhoto from '../static/assets/learnai.webp'
+import whoWeArePhoto from '../static/assets/who-we-are.webp'
+import ourMissionPhoto from '../static/assets/our-mission.webp'
 import hinton from '../static/assets/Geoffrey-Hinton.jpg'
 import wolfram from '../static/assets/conf-2026-assets/stephen_wolfram.webp'
 import stein from '../static/assets/conf-2026-assets/janice.jpg'
@@ -19,6 +21,22 @@ import vectorLogo from '../static/assets/vector-institute-logo.png'
 import womboLogo from '../static/assets/wombo-logo.svg'
 
 export const HERO_WORDS = ['ProjectX', 'ConferenceX', 'LearnAI']
+
+export const ABOUT = [
+    {
+        title: 'Who we are',
+        photo: whoWeArePhoto,
+        photoAlt: 'The UofT AI team together on stage at the conference',
+        text: 'An incubator of talent at the University of Toronto. Beyond conferences and hackathons, we give students a place to learn, network and work on AI projects with industry professionals.',
+    },
+    {
+        title: 'Our mission',
+        photo: ourMissionPhoto,
+        photoAlt:
+            'A UofT AI member talking with a guest at the Vector Institute booth',
+        text: 'To give passionate undergraduates the resources, opportunities and community to explore the corner of AI they care about, alongside like-minded peers.',
+    },
+]
 
 export const STATS = [
     { value: 1500, label: 'ConferenceX 2026 attendees' },
