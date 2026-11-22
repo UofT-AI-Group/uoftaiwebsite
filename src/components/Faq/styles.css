@@ -29,6 +29,13 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
 }
 
 .arrow {
@@ -50,9 +57,4 @@
 
 .faq-answer.show {
     max-height: 400px; /* Arbitrarily large value to ensure it expands */
-}
-
-.faq-hr {
-    border: 2px solid black;
-    margin-top: 10px;
 }

@@ -1,13 +1,12 @@
 import { extendTheme } from '@chakra-ui/react'
 
-const customTheme = extendTheme({
+const theme = extendTheme({
     styles: {
         global: {
             'html, body': {
                 fontFamily: 'Open Sans, sans-serif',
                 fontWeight: 400,
                 fontStyle: 'normal',
-                backgroundColor: '#0e0e0',
             },
         },
     },
@@ -32,7 +31,5 @@ const customTheme = extendTheme({
         },
     },
 })
-
-const theme = extendTheme(customTheme)
 
 export default theme
