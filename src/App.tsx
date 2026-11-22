@@ -30,6 +30,7 @@ export const App = () => (
             <Routes>
                 <Route path="/" element={<Home />} />
                 {Kit && <Route path="/kit" element={<Kit />} />}
+                <Route path="/newsletter" element={<Newsletter />} />
                 <Route element={<ChakraLayout />}>
                     <Route path="/partner-with-us" element={<Partner />} />
                     <Route path="/conferencex" element={<ConferenceX2027 />} />
@@ -46,7 +47,6 @@ export const App = () => (
                         element={<ConferenceX2025 />}
                     />
                     <Route path="/conferencex-2024" element={<ConferenceX />} />
-                    <Route path="/newsletter" element={<Newsletter />} />
                     <Route path="/projectx">
                         <Route index element={<ProjectX />} />
                         <Route path="2020" element={<ProjectX2020 />} />

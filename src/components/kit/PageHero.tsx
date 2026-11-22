@@ -48,7 +48,10 @@ export const PageHero = ({
         <div
             className={cn(
                 wrap,
-                'grid gap-12 pt-16 pb-[clamp(140px,17vw,260px)] sm:pt-20',
+                'grid gap-12 pt-16 sm:pt-20',
+                edition === undefined
+                    ? 'pb-16 sm:pb-20'
+                    : 'pb-[clamp(140px,17vw,260px)]',
                 photo &&
                     'lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16 lg:pb-16',
             )}

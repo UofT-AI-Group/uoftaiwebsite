@@ -1,92 +1,52 @@
-import { Box, VStack, Text, Flex } from '@chakra-ui/react'
-import { ButtonOutline } from '../components/Button'
-import Issue from '../components/issue'
-import issue1 from '../static/assets/newletters/issue1.webp'
-import newletterBg from '../static/assets/newletter-bg.webp'
+import {
+    Card,
+    CardMedia,
+    CardMeta,
+    CardText,
+    CardTitle,
+} from '@/components/kit/Card'
+import { PageHero } from '@/components/kit/PageHero'
+import { PageMeta } from '@/components/kit/PageMeta'
+import { Section, SectionHeading } from '@/components/kit/Section'
+import { Button } from '@/components/ui/button'
+import { ISSUES, SUBSTACK_URL } from '@/data/newsletter'
+import { AI_REVIEW_URL } from '@/data/site'
 
-const Newsletter = () => {
-    return (
-        <Box fontFamily={'Tabular, sans-serif'} minH={'150'}>
-            <Box
-                bgImage={newletterBg}
-                bgPosition={'50%'}
-                bgSize={'cover'}
-                bgRepeat={'no-repeat'}
-                height={'80vh'}
-                width={'100%'}
-                mt={28}
-                pt={[40, 64]}
-            >
-                <VStack alignItems={'center'} spacing={1}>
-                    <span>
-                        <Text
-                            as={'span'}
-                            fontWeight={'medium'}
-                            fontSize={[30, 60]}
-                            fontFamily={'Tabular, sans-serif'}
-                            color={'brand'}
-                        >
-                            UofT AI{' '}
-                        </Text>
-                        <Text
-                            as={'span'}
-                            fontWeight={'medium'}
-                            fontSize={[30, 60]}
-                            fontFamily={'Tabular, sans-serif'}
-                            color={'light'}
-                        >
-                            Newsletter
-                        </Text>
-                    </span>
-
-                    <Text
-                        fontWeight={'regular'}
-                        fontSize={[14, 18]}
-                        color={'light'}
-                    >
-                        Explore AI with us.
-                    </Text>
-
-                    <Box mt={'40px'}>
-                        <ButtonOutline
-                            as="a"
-                            href="https://substack.com/@uoftaigroup"
-                            target="_blank"
-                            rel="noreferrer"
-                            variant="light"
-                        >
-                            Subscribe
-                        </ButtonOutline>
-                    </Box>
-                </VStack>
-            </Box>
-            <Box bgColor={'#272727'} p={[1, '70px']} minH={'100vh'}>
-                <Text fontSize={'24px'} color={'light'} mt={'40px'} pl={'10px'}>
-                    Previous Issues:
-                </Text>
-
-                <Flex
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    flexWrap={'wrap'}
-                    mt={'20px'}
-                    flexShrink={1}
-                >
-                    <Issue
-                        issueLink={
-                            'https://mailchi.mp/24a2b06173ba/welcome-to-uoft-ais-2024-2025-neural-notes'
-                        }
-                        img={issue1}
-                        title={'Welcome to UofT AI 2024-2025'}
-                        desc={
-                            'The UofT AI Neural Notes newsletter provides quick updates on AI news, events, and student highlights. Stay connected with the latest in AI research and opportunities at UofT. Ideal for anyone interested in AI.'
-                        }
-                        date={'September 2 2024'}
-                    />
-                </Flex>
-            </Box>
-        </Box>
-    )
-}
+const Newsletter = () => (
+    <main className="bg-ink font-mono text-fg antialiased">
+        <PageMeta
+            title="Newsletter"
+            description="Neural Notes, the UofT AI newsletter: AI news, club events and student highlights, sent to your inbox."
+        />
+        <PageHero
+            variant="recap"
+            title="Newsletter"
+            subtitle="AI news, club events and student highlights."
+            lede="Neural Notes is UofT AI's newsletter. Subscribe on Substack to get each issue by email."
+            actions={
+                <>
+                    <Button asChild>
+                        <a href={SUBSTACK_URL}>Subscribe on Substack</a>
+                    </Button>
+                    <Button asChild variant="outline">
+                        <a href={AI_REVIEW_URL}>Read the Toronto AI Review</a>
+                    </Button>
+                </>
+            }
+        />
+        <Section heading={<SectionHeading>Past issues</SectionHeading>}>
+            <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                {ISSUES.map((issue) => (
+                    <Card key={issue.href} rule={!issue.photo}>
+                        {issue.photo && <CardMedia photo={issue.photo} />}
+                        <CardMeta>{issue.date}</CardMeta>
+                        <CardTitle href={issue.href}>{issue.title}</CardTitle>
+                        <CardText>{issue.description}</CardText>
+                    </Card>
+                ))}
+            </div>
+        </Section>
+    </main>
+)
 
 export default Newsletter
