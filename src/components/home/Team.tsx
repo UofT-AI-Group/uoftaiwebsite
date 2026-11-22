@@ -67,7 +67,7 @@ const Team = () => {
         >
             <div className={wrap}>
                 <SectionHeading id="team-title" kicker="Team">
-                    The 2026 executive team
+                    The 2026–27 executive team
                 </SectionHeading>
                 <p className="mt-3.5 font-sans text-sm text-dim">
                     Select anyone to read their bio.

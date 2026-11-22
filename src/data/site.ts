@@ -26,7 +26,7 @@ export const NAV_GROUPS: { label: string; links: SiteLink[] }[] = [
             {
                 label: 'Our team',
                 to: '/#team',
-                description: 'The 2026 executive team',
+                description: 'The 2026–27 executive team',
             },
             {
                 label: 'Partner with us',
