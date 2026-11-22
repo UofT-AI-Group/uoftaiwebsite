@@ -31,6 +31,19 @@ Lints the code using [Oxlint](https://oxc.rs/docs/guide/usage/linter).
 
 Formats the code using [Prettier](https://prettier.io/).
 
+## CI checks
+
+GitHub Actions runs formatting, lint, unit tests, and the production build on
+pull requests and pushes to `main`. To run the same checks locally with Node.js 24:
+
+```sh
+npm ci
+npm run prettier:check
+npm run lint
+npm test
+npm run build
+```
+
 ## Deployment
 
 The site is deployed on [Vercel](https://vercel.com/). `vercel.json` sets the
