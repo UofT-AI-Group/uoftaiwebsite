@@ -41,11 +41,20 @@ export const ABOUT = [
     },
 ]
 
-export const STATS = [
-    { value: 1500, label: 'ConferenceX 2026 attendees' },
-    { value: 40, label: 'countries represented' },
-    { value: 200, label: 'ProjectX competitors' },
-    { value: 40, label: 'universities in ProjectX' },
+/**
+ * Every figure must be traceable to a published source and labelled with the
+ * year it describes. Exact figures override `suffix` so they don't render "+".
+ */
+export const STATS: {
+    value: number
+    label: string
+    prefix?: string
+    suffix?: string
+}[] = [
+    { value: 500, label: 'ConferenceX 2024 attendees' },
+    { value: 150, label: 'ProjectX 2021 competitors' },
+    { value: 70, label: 'ProjectX 2020 prize pool', prefix: '$', suffix: 'K' },
+    { value: 36, label: 'universities in ProjectX 2020–22', suffix: '' },
 ]
 
 export type Program = {

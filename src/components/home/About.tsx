@@ -5,7 +5,15 @@ import { cn } from '@/lib/utils'
 import SectionHeading from './SectionHeading'
 
 /** Counts up from 0 the first time it scrolls into view. */
-const CountUp = ({ to, suffix = '+' }: { to: number; suffix?: string }) => {
+const CountUp = ({
+    to,
+    prefix = '',
+    suffix = '+',
+}: {
+    to: number
+    prefix?: string
+    suffix?: string
+}) => {
     const ref = useRef<HTMLElement>(null)
     const [value, setValue] = useState(to)
 
@@ -44,6 +52,7 @@ const CountUp = ({ to, suffix = '+' }: { to: number; suffix?: string }) => {
             ref={ref}
             className="block text-[clamp(40px,5vw,72px)] font-light tracking-[-0.04em] tabular-nums"
         >
+            {prefix}
             {value.toLocaleString('en-US')}
             {suffix}
         </b>
@@ -86,14 +95,18 @@ const About = () => (
                 ))}
             </div>
             <dl className="mt-16 grid grid-cols-2 border-t border-hair lg:grid-cols-4">
-                {STATS.map(({ value, label }) => (
+                {STATS.map(({ value, label, prefix, suffix }) => (
                     <div
                         key={label}
-                        className="flex flex-col-reverse pt-7 pr-5 pb-7 lg:pb-0"
+                        className="flex flex-col-reverse justify-end pt-7 pr-5 pb-7 lg:pb-0"
                     >
                         <dt className="text-[12.5px] text-dim">{label}</dt>
                         <dd>
-                            <CountUp to={value} />
+                            <CountUp
+                                to={value}
+                                prefix={prefix}
+                                suffix={suffix}
+                            />
                         </dd>
                     </div>
                 ))}
