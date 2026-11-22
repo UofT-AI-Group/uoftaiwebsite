@@ -33,7 +33,11 @@ import '../static/styles/conferenceX.css'
 
 const ConferenceX = () => {
     return (
-        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
+        <Box
+            fontFamily={'Tabular, sans-serif'}
+            minH={'200vh'}
+            pt="var(--site-header-height)"
+        >
             <Box
                 bg="white"
                 py={2}

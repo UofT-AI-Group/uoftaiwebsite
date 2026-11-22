@@ -8,7 +8,7 @@ const ConferenceX = () => {
         'linear-gradient(135deg, #2f0f36 0%, #34194e 40%, #3b72a3 100%)'
 
     return (
-        <Box fontFamily={'Tabular, sans-serif'} pt={28}>
+        <Box fontFamily={'Tabular, sans-serif'} pt="var(--site-header-height)">
             <Box
                 bg="white"
                 py={2}

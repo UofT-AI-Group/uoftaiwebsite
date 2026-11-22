@@ -762,7 +762,11 @@ const ConferenceX = () => {
     const orderedSpeakers = [...featuredSix, ...restSpeakers]
 
     return (
-        <Box fontFamily={'Tabular, sans-serif'} minH={'200vh'} pt={28}>
+        <Box
+            fontFamily={'Tabular, sans-serif'}
+            minH={'200vh'}
+            pt="var(--site-header-height)"
+        >
             <Box
                 bg="white"
                 py={2}

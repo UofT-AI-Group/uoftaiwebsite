@@ -1,33 +1,57 @@
 import {
-    Box,
-    Flex,
-    useDisclosure,
-    HStack,
-    Stack,
-    Img,
-    IconButton,
     Drawer,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
     DrawerBody,
-    Text,
+    DrawerCloseButton,
+    DrawerContent,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    IconButton,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    useDisclosure,
 } from '@chakra-ui/react'
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { useRef } from 'react'
 import type { ReactNode } from 'react'
-import { Link as RouterLink } from 'react-router'
-import HeaderLogo from '../static/assets/header_logo.png'
-import { ButtonDark, ButtonOutline } from './Button'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { Link, useLocation } from 'react-router'
+import logo from '../static/assets/header_logo.png'
+import './Navbar.css'
 
-const LINKS = [
-    { label: 'Home', to: '/' },
-    { label: 'About Us', to: '/#about' },
-    { label: 'Our Team', to: '/#meet-the-team' },
-    { label: 'ConferenceX', to: '/conferencex' },
-    { label: 'ProjectX', to: '/projectx' },
-    { label: 'Newsletter', to: '/newsletter' },
-    { label: 'AI Review', to: 'https://torontoaireview.framer.website/' },
+const home = { label: 'Home', to: '/' }
+const navigationGroups = [
+    {
+        label: 'About Us',
+        links: [
+            { label: 'About Us', to: '/#about' },
+            { label: 'Our Team', to: '/#meet-the-team' },
+        ],
+    },
+    {
+        label: 'Programs',
+        links: [
+            { label: 'ConferenceX', to: '/conferencex' },
+            { label: 'ProjectX', to: '/projectx' },
+        ],
+    },
+    {
+        label: 'News',
+        links: [
+            { label: 'Newsletter', to: '/newsletter' },
+            {
+                label: 'AI Review',
+                to: 'https://torontoaireview.framer.website/',
+            },
+        ],
+    },
 ]
+const links = [home, ...navigationGroups.flatMap((group) => group.links)]
+
+function isCurrentLink(to: string, pathname: string, hash: string) {
+    return `${pathname}${hash}` === to || pathname.startsWith(`${to}/`)
+}
 
 export const NavLink = ({
     children,
@@ -37,148 +61,154 @@ export const NavLink = ({
     children: ReactNode
     to: string
     onClose: () => void
-}) => (
-    <Box
-        px={2}
-        py={1}
-        rounded={'md'}
-        fontFamily={'Tabular, sans-serif'}
-        fontWeight={'semibold'}
-        _hover={{
-            textDecoration: 'none',
-            cursor: 'pointer',
-        }}
-    >
-        <RouterLink to={to} onClick={onClose}>
+}) => {
+    const { pathname, hash } = useLocation()
+
+    return (
+        <Link
+            to={to}
+            onClick={onClose}
+            className="site-nav-link"
+            aria-current={
+                isCurrentLink(to, pathname, hash) ? 'page' : undefined
+            }
+        >
             {children}
-        </RouterLink>
-    </Box>
-)
+        </Link>
+    )
+}
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const menuButtonRef = useRef<HTMLButtonElement>(null)
+    const { pathname, hash } = useLocation()
 
     return (
-        <>
-            <Box
-                position={'fixed'}
-                zIndex={1000}
-                top={0}
-                left={0}
-                width={'110%'}
-                h={28}
-                overflow={'hidden'}
-                bg={'white'}
-                borderBottom={'2px solid black'}
-            >
-                <Box
-                    bg={'rgba(236, 236, 236, 0.1)'}
-                    backdropFilter={'blur(200px)'}
-                    width={'100%'}
-                    h={28}
-                    margin={'-5px -10px -10px -5px'}
+        <header className="site-header">
+            <div className="site-header__inner">
+                <Link to="/" className="site-brand" aria-label="UofT AI home">
+                    <img src={logo} alt="" width="48" height="48" />
+                </Link>
+                <nav className="site-nav" aria-label="Main navigation">
+                    <NavLink to="/" onClose={onClose}>
+                        Home
+                    </NavLink>
+                    {navigationGroups.map((group) => (
+                        <Menu key={group.label}>
+                            <MenuButton
+                                type="button"
+                                className="site-nav-trigger"
+                                data-current={group.links.some(({ to }) =>
+                                    isCurrentLink(to, pathname, hash),
+                                )}
+                            >
+                                {group.label}
+                                <ChevronDownIcon aria-hidden="true" />
+                            </MenuButton>
+                            <MenuList
+                                bg="dark"
+                                color="light"
+                                borderColor="whiteAlpha.300"
+                                fontFamily="Montserrat, sans-serif"
+                                borderRadius="6px"
+                                p={2}
+                            >
+                                {group.links.map(({ label, to }) => (
+                                    <MenuItem
+                                        key={to}
+                                        as={Link}
+                                        to={to}
+                                        onClick={onClose}
+                                        aria-current={
+                                            isCurrentLink(to, pathname, hash)
+                                                ? 'page'
+                                                : undefined
+                                        }
+                                        bg="dark"
+                                        minH="44px"
+                                        fontSize="15px"
+                                        borderRadius="3px"
+                                        _focus={{ bg: 'whiteAlpha.200' }}
+                                        _hover={{ bg: 'whiteAlpha.200' }}
+                                    >
+                                        {label}
+                                        {label === 'AI Review' && (
+                                            <span aria-hidden="true"> ↗</span>
+                                        )}
+                                    </MenuItem>
+                                ))}
+                            </MenuList>
+                        </Menu>
+                    ))}
+                    <Link to="/partner-with-us" className="site-nav-link">
+                        Partner with us
+                    </Link>
+                </nav>
+                <IconButton
+                    ref={menuButtonRef}
+                    className="site-menu-button"
+                    icon={<HamburgerIcon boxSize={6} />}
+                    aria-label="Open menu"
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-navigation"
+                    onClick={onOpen}
+                    variant="ghost"
+                    color="light"
+                    borderRadius={0}
+                    size="lg"
+                    _hover={{ bg: 'whiteAlpha.100' }}
                 />
-            </Box>
-            <Box
-                px={4}
-                top={0}
-                width={'100vw'}
-                zIndex={1000}
-                position={'fixed'}
+            </div>
+            <Drawer
+                isOpen={isOpen}
+                onClose={onClose}
+                finalFocusRef={menuButtonRef}
+                placement="right"
+                size="full"
             >
-                <Flex
-                    h={28}
-                    alignItems={'center'}
-                    justifyContent={'space-between'}
+                <DrawerOverlay />
+                <DrawerContent
+                    bg="dark"
+                    color="light"
+                    fontFamily="Montserrat, sans-serif"
                 >
-                    <Flex alignItems={'center'} pl={0}>
-                        <NavLink to={'/'} onClose={onClose}>
-                            <Img src={HeaderLogo} alt="Logo" h={20} w={20} />
-                        </NavLink>
-                    </Flex>
-
-                    <HStack
-                        spacing={8}
-                        alignItems={'center'}
-                        px={8}
-                        display={{ md: 'block' }}
-                    >
-                        <HStack
-                            as={'nav'}
-                            spacing={6}
-                            display={{ base: 'none', md: 'flex' }}
-                            fontWeight={'semibold'}
+                    <DrawerCloseButton
+                        aria-label="Close menu"
+                        top={6}
+                        right={6}
+                        size="lg"
+                    />
+                    <DrawerHeader px={8} pt={8} pb={6}>
+                        <p className="site-mobile-title">UofT AI</p>
+                    </DrawerHeader>
+                    <DrawerBody px={8}>
+                        <nav
+                            id="mobile-navigation"
+                            className="site-mobile-nav"
+                            aria-label="Mobile navigation"
                         >
-                            {LINKS.map(({ label, to }) => (
-                                <NavLink key={label} to={to} onClose={onClose}>
+                            {links.map(({ label, to }) => (
+                                <NavLink key={to} to={to} onClose={onClose}>
                                     {label}
+                                    {label === 'AI Review' && (
+                                        <span aria-hidden="true">↗</span>
+                                    )}
                                 </NavLink>
                             ))}
-                            <Box px={2} py={1}>
-                                <ButtonDark
-                                    as={RouterLink}
-                                    to="/partner-with-us"
-                                    onClick={onClose}
-                                >
-                                    Partner With Us
-                                </ButtonDark>
-                            </Box>
-                        </HStack>
-                    </HStack>
-                    <IconButton
-                        fontSize={'2rem'}
-                        icon={<HamburgerIcon />}
-                        aria-label={'Open Menu'}
-                        display={!isOpen ? { md: 'none' } : { base: 'none' }}
-                        onClick={isOpen ? onClose : onOpen}
-                        bg={'none'}
-                    />
-                </Flex>
-
-                <Drawer onClose={onClose} isOpen={isOpen} size={'full'}>
-                    <DrawerOverlay />
-                    <DrawerContent
-                        zIndex={1000000000}
-                        pt={16}
-                        bg={'dark'}
-                        color={'light'}
-                    >
-                        <DrawerCloseButton size={'lg'} mt={3} />
-                        <DrawerBody>
-                            <Stack as={'nav'} spacing={4}>
-                                {LINKS.map(({ label, to }) => (
-                                    <NavLink
-                                        key={label}
-                                        to={to}
-                                        onClose={onClose}
-                                    >
-                                        <Text
-                                            fontWeight={'semibold'}
-                                            fontSize={24}
-                                            textAlign={'right'}
-                                        >
-                                            {label}
-                                        </Text>
-                                    </NavLink>
-                                ))}
-                                <Flex justifyContent={'right'}>
-                                    <Box px={2} py={1}>
-                                        <ButtonOutline
-                                            as={RouterLink}
-                                            to="/partner-with-us"
-                                            onClick={onClose}
-                                            variant="light"
-                                        >
-                                            Partner With Us
-                                        </ButtonOutline>
-                                    </Box>
-                                </Flex>
-                            </Stack>
-                        </DrawerBody>
-                    </DrawerContent>
-                </Drawer>
-            </Box>
-        </>
+                        </nav>
+                    </DrawerBody>
+                    <DrawerFooter p={8}>
+                        <Link
+                            to="/partner-with-us"
+                            onClick={onClose}
+                            className="site-nav-link"
+                        >
+                            Partner with us
+                        </Link>
+                    </DrawerFooter>
+                </DrawerContent>
+            </Drawer>
+        </header>
     )
 }
 

@@ -1,0 +1,134 @@
+:root {
+    --site-header-height: clamp(80px, 5.6vw, 176px);
+}
+
+.site-header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 1000;
+    background:
+        linear-gradient(
+            110deg,
+            rgba(186, 118, 225, 0.28),
+            rgba(186, 118, 225, 0.08)
+        ),
+        #1c1c1c;
+    color: #ececec;
+    border-bottom: 1px solid rgba(236, 236, 236, 0.12);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    height: var(--site-header-height);
+    padding: 0 clamp(24px, 2.5vw, 80px);
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+.site-brand img {
+    width: clamp(44px, 3.15vw, 100px);
+    height: clamp(44px, 3.15vw, 100px);
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(26px, 2.25vw, 72px);
+}
+
+.site-nav-link,
+.site-nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 10px 0;
+    font-size: clamp(15px, 1.08vw, 32px);
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.site-nav-trigger > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.site-nav-trigger svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0.75;
+}
+
+.site-nav-link:hover,
+.site-nav-link[aria-current],
+.site-nav-trigger:hover,
+.site-nav-trigger[data-current='true'] {
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 1px;
+}
+
+.site-header .site-menu-button {
+    display: none;
+}
+
+.site-header a:focus-visible,
+.site-nav-trigger:focus-visible,
+.site-mobile-nav a:focus-visible {
+    outline: 2px solid #ececec;
+    outline-offset: 5px;
+}
+
+.site-mobile-title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.site-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.site-mobile-nav .site-nav-link {
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(236, 236, 236, 0.16);
+    font-size: 22px;
+}
+
+@media (max-width: 899px) {
+    .site-nav {
+        display: none;
+    }
+
+    .site-header .site-menu-button {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 599px) {
+    :root {
+        --site-header-height: 76px;
+    }
+
+    .site-brand img {
+        width: 38px;
+        height: 38px;
+    }
+}
