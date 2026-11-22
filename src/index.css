@@ -1,3 +1,16 @@
+:root {
+    /* Shared by the site header and footer so they match the homepage */
+    --site-ink: #0b0b0d;
+    --site-fg: #ededed;
+    --site-dim: #9a9aa1;
+    --site-hair: #222226;
+    --site-edge: #34343a;
+    --site-brand: #ba76e1;
+    --site-mono: Tabular, ui-monospace, Menlo, monospace;
+    --site-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --site-wrap: min(1200px, 100% - 32px);
+}
+
 html,
 body {
     max-width: 100%;

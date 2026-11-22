@@ -4,7 +4,6 @@ import {
     DrawerCloseButton,
     DrawerContent,
     DrawerFooter,
-    DrawerHeader,
     DrawerOverlay,
     IconButton,
     Menu,
@@ -20,7 +19,6 @@ import { Link, useLocation } from 'react-router'
 import logo from '../static/assets/header_logo.png'
 import './Navbar.css'
 
-const home = { label: 'Home', to: '/' }
 const navigationGroups = [
     {
         label: 'About Us',
@@ -47,11 +45,19 @@ const navigationGroups = [
         ],
     },
 ]
-const links = [home, ...navigationGroups.flatMap((group) => group.links)]
+
+const isExternal = (to: string) => to.startsWith('http')
 
 function isCurrentLink(to: string, pathname: string, hash: string) {
     return `${pathname}${hash}` === to || pathname.startsWith(`${to}/`)
 }
+
+const ExternalMark = ({ to }: { to: string }) =>
+    isExternal(to) ? (
+        <span className="site-external" aria-hidden="true">
+            ↗
+        </span>
+    ) : null
 
 export const NavLink = ({
     children,
@@ -74,6 +80,7 @@ export const NavLink = ({
             }
         >
             {children}
+            <ExternalMark to={to} />
         </Link>
     )
 }
@@ -87,14 +94,15 @@ const Navbar = () => {
         <header className="site-header">
             <div className="site-header__inner">
                 <Link to="/" className="site-brand" aria-label="UofT AI home">
-                    <img src={logo} alt="" width="48" height="48" />
+                    <img src={logo} alt="" width="32" height="32" />
+                    <span aria-hidden="true">UofT AI</span>
                 </Link>
                 <nav className="site-nav" aria-label="Main navigation">
                     <NavLink to="/" onClose={onClose}>
                         Home
                     </NavLink>
                     {navigationGroups.map((group) => (
-                        <Menu key={group.label}>
+                        <Menu key={group.label} gutter={14}>
                             <MenuButton
                                 type="button"
                                 className="site-nav-trigger"
@@ -106,12 +114,15 @@ const Navbar = () => {
                                 <ChevronDownIcon aria-hidden="true" />
                             </MenuButton>
                             <MenuList
-                                bg="dark"
-                                color="light"
-                                borderColor="whiteAlpha.300"
-                                fontFamily="Montserrat, sans-serif"
-                                borderRadius="6px"
-                                p={2}
+                                className="site-menu"
+                                bg="#0b0b0d"
+                                color="#ededed"
+                                border="1px solid #2c2c32"
+                                borderRadius={0}
+                                boxShadow="0 18px 40px rgba(0, 0, 0, 0.5)"
+                                minW="220px"
+                                py={2}
+                                px={0}
                             >
                                 {group.links.map(({ label, to }) => (
                                     <MenuItem
@@ -124,39 +135,47 @@ const Navbar = () => {
                                                 ? 'page'
                                                 : undefined
                                         }
-                                        bg="dark"
+                                        bg="transparent"
+                                        color="#9a9aa1"
                                         minH="44px"
-                                        fontSize="15px"
-                                        borderRadius="3px"
-                                        _focus={{ bg: 'whiteAlpha.200' }}
-                                        _hover={{ bg: 'whiteAlpha.200' }}
+                                        px={5}
+                                        fontSize="14px"
+                                        justifyContent="space-between"
+                                        _focus={{
+                                            bg: '#151518',
+                                            color: '#ededed',
+                                        }}
+                                        _activeLink={{
+                                            color: '#ededed',
+                                            boxShadow: 'inset 2px 0 0 #ba76e1',
+                                        }}
                                     >
                                         {label}
-                                        {label === 'AI Review' && (
-                                            <span aria-hidden="true"> ↗</span>
-                                        )}
+                                        <ExternalMark to={to} />
                                     </MenuItem>
                                 ))}
                             </MenuList>
                         </Menu>
                     ))}
-                    <Link to="/partner-with-us" className="site-nav-link">
+                    <Link
+                        to="/partner-with-us"
+                        className="site-cta"
+                        aria-current={
+                            pathname === '/partner-with-us' ? 'page' : undefined
+                        }
+                    >
                         Partner with us
                     </Link>
                 </nav>
                 <IconButton
                     ref={menuButtonRef}
                     className="site-menu-button"
-                    icon={<HamburgerIcon boxSize={6} />}
+                    icon={<HamburgerIcon boxSize={5} />}
                     aria-label="Open menu"
                     aria-expanded={isOpen}
                     aria-controls="mobile-navigation"
                     onClick={onOpen}
-                    variant="ghost"
-                    color="light"
-                    borderRadius={0}
-                    size="lg"
-                    _hover={{ bg: 'whiteAlpha.100' }}
+                    variant="unstyled"
                 />
             </div>
             <Drawer
@@ -167,41 +186,51 @@ const Navbar = () => {
                 size="full"
             >
                 <DrawerOverlay />
-                <DrawerContent
-                    bg="dark"
-                    color="light"
-                    fontFamily="Montserrat, sans-serif"
-                >
+                <DrawerContent className="site-drawer">
+                    <div className="site-drawer__bar">
+                        <p className="site-brand">
+                            <img src={logo} alt="" width="32" height="32" />
+                            UofT AI
+                        </p>
+                    </div>
                     <DrawerCloseButton
                         aria-label="Close menu"
-                        top={6}
-                        right={6}
-                        size="lg"
+                        className="site-drawer__close"
                     />
-                    <DrawerHeader px={8} pt={8} pb={6}>
-                        <p className="site-mobile-title">UofT AI</p>
-                    </DrawerHeader>
-                    <DrawerBody px={8}>
+                    <DrawerBody px={0} py={0}>
                         <nav
                             id="mobile-navigation"
                             className="site-mobile-nav"
                             aria-label="Mobile navigation"
                         >
-                            {links.map(({ label, to }) => (
-                                <NavLink key={to} to={to} onClose={onClose}>
-                                    {label}
-                                    {label === 'AI Review' && (
-                                        <span aria-hidden="true">↗</span>
-                                    )}
-                                </NavLink>
+                            <NavLink to="/" onClose={onClose}>
+                                Home
+                            </NavLink>
+                            {navigationGroups.map((group) => (
+                                <section
+                                    key={group.label}
+                                    className="site-mobile-group"
+                                    aria-label={group.label}
+                                >
+                                    <h2>{group.label}</h2>
+                                    {group.links.map(({ label, to }) => (
+                                        <NavLink
+                                            key={to}
+                                            to={to}
+                                            onClose={onClose}
+                                        >
+                                            {label}
+                                        </NavLink>
+                                    ))}
+                                </section>
                             ))}
                         </nav>
                     </DrawerBody>
-                    <DrawerFooter p={8}>
+                    <DrawerFooter className="site-drawer__footer">
                         <Link
                             to="/partner-with-us"
                             onClick={onClose}
-                            className="site-nav-link"
+                            className="site-cta site-cta--solid"
                         >
                             Partner with us
                         </Link>

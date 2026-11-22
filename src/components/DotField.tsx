@@ -4,10 +4,11 @@ const GAP = 26
 const RADIUS = 170
 
 /**
- * A grid of faint points behind the hero. A slow wave moves through it, and
- * points near the cursor brighten to the brand purple and lean away from it.
+ * A grid of faint points that fills its parent element. A slow wave moves
+ * through it, and points near the cursor brighten to the brand purple and lean
+ * away from it.
  */
-const DotField = () => {
+const DotField = ({ className = 'hm-field' }: { className?: string }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
 
     useEffect(() => {
@@ -100,7 +101,7 @@ const DotField = () => {
         }
     }, [])
 
-    return <canvas ref={canvasRef} className="hm-field" aria-hidden="true" />
+    return <canvas ref={canvasRef} className={className} aria-hidden="true" />
 }
 
 export default DotField

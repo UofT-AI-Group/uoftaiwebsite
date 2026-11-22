@@ -4,13 +4,6 @@ const Fonts = () => (
     <Global
         styles={`
             @font-face {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 400 600;
-                font-display: swap;
-                src: url('/fonts/Montserrat-Latin.woff2') format('woff2');
-            }
-            @font-face {
                 font-family: 'Tabular';
                 font-style: normal;
                 font-weight: 300;

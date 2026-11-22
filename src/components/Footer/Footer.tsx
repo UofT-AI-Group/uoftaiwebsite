@@ -7,6 +7,7 @@ import {
     FaXTwitter,
 } from 'react-icons/fa6'
 import { Link } from 'react-router'
+import DotField from '../DotField'
 import logo from '../../static/assets/header_logo.png'
 import './style.css'
 
@@ -34,29 +35,44 @@ const socialLinks = [
     },
 ]
 
+const linkColumns = [
+    {
+        label: 'Programs',
+        links: [
+            { label: 'ConferenceX', to: '/conferencex' },
+            { label: 'ProjectX', to: '/projectx' },
+            { label: 'Partner with us', to: '/partner-with-us' },
+        ],
+    },
+    {
+        label: 'News',
+        links: [
+            { label: 'Newsletter', to: '/newsletter' },
+            {
+                label: 'AI Review',
+                to: 'https://torontoaireview.framer.website/',
+            },
+        ],
+    },
+]
+
 const copyrightYear = new Date().getFullYear()
 
 const Footer = () => (
-    <footer className="footer">
-        <div className="footer-container">
-            <div className="footer-head">
-                <div className="footer-brandline">
-                    <Link
-                        to="/"
-                        className="footer-logo"
-                        aria-label="UofT AI home"
-                    >
-                        <img src={logo} alt="" width="44" height="44" />
-                    </Link>
-                    <div>
-                        <h2>UofT AI</h2>
-                        <p>
-                            University of Toronto Artificial Intelligence Group
-                        </p>
-                    </div>
-                </div>
+    <footer className="site-footer">
+        <div className="site-footer__inner">
+            <div className="site-footer__brand">
+                <Link to="/" className="site-footer__mark">
+                    <img src={logo} alt="" width="30" height="30" />
+                    UofT AI
+                </Link>
+                <p>
+                    The University of Toronto Artificial Intelligence Group.
+                    Bringing students together through AI research, competitions
+                    and events.
+                </p>
                 <nav
-                    className="footer-socials"
+                    className="site-footer__socials"
                     aria-label="UofT AI social links"
                 >
                     {socialLinks.map(({ label, href, icon }) => (
@@ -72,48 +88,68 @@ const Footer = () => (
                 </nav>
             </div>
 
-            <div className="footer-grid">
-                <div className="footer-message">
-                    <h3>Stay connected</h3>
-                    <p>
-                        Bringing students together through AI research,
-                        competitions, and events at the University of Toronto.
-                    </p>
-                </div>
-                <nav className="footer-column" aria-label="Footer navigation">
-                    <h3>Quick links</h3>
-                    <div className="footer-links">
-                        <Link to="/conferencex">ConferenceX</Link>
-                        <Link to="/projectx">ProjectX</Link>
-                        <Link to="/newsletter">Newsletter</Link>
-                    </div>
+            {linkColumns.map((column) => (
+                <nav
+                    key={column.label}
+                    className="site-footer__column"
+                    aria-label={`Footer ${column.label.toLowerCase()}`}
+                >
+                    <h2>{column.label}</h2>
+                    {column.links.map(({ label, to }) =>
+                        to.startsWith('http') ? (
+                            <a key={to} href={to}>
+                                {label} <span aria-hidden="true">↗</span>
+                            </a>
+                        ) : (
+                            <Link key={to} to={to}>
+                                {label}
+                            </Link>
+                        ),
+                    )}
                 </nav>
-                <div className="footer-column footer-contacts">
-                    <h3>Contact</h3>
-                    <a href="mailto:uoftaigroup@gmail.com">
-                        uoftaigroup@gmail.com
-                    </a>
-                    <a href="mailto:uoftaigrouppartnerships@gmail.com">
-                        uoftaigrouppartnerships@gmail.com
-                    </a>
-                    <details className="footer-presidents">
-                        <summary>Presidents</summary>
-                        <a href="mailto:c.hundey@mail.utoronto.ca">
-                            c.hundey@mail.utoronto.ca
-                        </a>
-                        <a href="mailto:hana.greenberg@mail.utoronto.ca">
-                            hana.greenberg@mail.utoronto.ca
-                        </a>
-                    </details>
-                </div>
-            </div>
+            ))}
 
-            <div className="footer-bottom">
-                <p>&copy; {copyrightYear} UofT AI. All rights reserved.</p>
-                <a href="https://web.cs.toronto.edu">
-                    UofT Computer Science <span aria-hidden="true">↗</span>
-                </a>
+            <div className="site-footer__column site-footer__contact">
+                <h2>Contact</h2>
+                <dl>
+                    <div>
+                        <dt>General</dt>
+                        <dd>
+                            <a href="mailto:uoftaigroup@gmail.com">
+                                uoftaigroup@gmail.com
+                            </a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>Partnerships</dt>
+                        <dd>
+                            <a href="mailto:uoftaigrouppartnerships@gmail.com">
+                                uoftaigrouppartnerships@gmail.com
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+                <details className="site-footer__presidents">
+                    <summary>Presidents</summary>
+                    <a href="mailto:c.hundey@mail.utoronto.ca">
+                        c.hundey@mail.utoronto.ca
+                    </a>
+                    <a href="mailto:hana.greenberg@mail.utoronto.ca">
+                        hana.greenberg@mail.utoronto.ca
+                    </a>
+                </details>
             </div>
+        </div>
+
+        <div className="site-footer__base">
+            <p>&copy; {copyrightYear} UofT AI</p>
+            <a href="https://web.cs.toronto.edu">
+                UofT Computer Science <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+
+        <div className="site-footer__field">
+            <DotField className="site-footer__canvas" />
         </div>
     </footer>
 )

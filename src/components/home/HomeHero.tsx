@@ -1,6 +1,6 @@
 import { Link as RouterLink } from 'react-router'
 import Typewriter from 'typewriter-effect'
-import DotField from './DotField'
+import DotField from '../DotField'
 import { HERO_WORDS } from '../../data/home'
 
 const HomeHero = () => (
