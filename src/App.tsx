@@ -13,7 +13,6 @@ const ConferenceX2025 = lazy(() => import('./pages/ConferenceX2025'))
 const ConferenceX2026 = lazy(() => import('./pages/ConferenceX2026'))
 const ConferenceX2027 = lazy(() => import('./pages/ConferenceX2027'))
 const Newsletter = lazy(() => import('./pages/Newsletter'))
-const ComingSoon = lazy(() => import('./pages/ComingSoon'))
 const ProjectX = lazy(() => import('./pages/ProjectX'))
 const ProjectX2020 = lazy(() => import('./components/projectX2020'))
 const ProjectX2021 = lazy(() => import('./components/projectX2021'))
@@ -46,7 +45,6 @@ export const App = () => (
                     />
                     <Route path="/conferencex-2024" element={<ConferenceX />} />
                     <Route path="/newsletter" element={<Newsletter />} />
-                    <Route path="/learnai" element={<ComingSoon />} />
                     <Route path="/projectx">
                         <Route index element={<ProjectX />} />
                         <Route path="2020" element={<ProjectX2020 />} />
