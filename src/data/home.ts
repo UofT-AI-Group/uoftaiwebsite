@@ -1,7 +1,7 @@
 import projectx640 from '../static/assets/home/projectx-640.webp'
 import projectx1100 from '../static/assets/home/projectx-1100.webp'
-import conferencex800 from '../static/assets/home/conferencex-800.webp'
-import conferencex1400 from '../static/assets/home/conferencex-1400.webp'
+import conferencex640 from '../static/assets/home/conferencex-640.webp'
+import conferencex1100 from '../static/assets/home/conferencex-1100.webp'
 import hinton from '../static/assets/home/speaker-hinton.webp'
 import wolfram from '../static/assets/home/speaker-wolfram.webp'
 import stein from '../static/assets/home/speaker-stein.webp'
@@ -95,10 +95,10 @@ export const PROGRAMS: Program[] = [
             { label: 'Dates', value: 'Jan 24 and 25, 2026' },
         ],
         photo: {
-            src: conferencex1400,
-            srcSet: `${conferencex800} 800w, ${conferencex1400} 1400w`,
-            alt: 'The audience watching a panel at ConferenceX',
-            position: '42% 50%',
+            src: conferencex1100,
+            srcSet: `${conferencex640} 640w, ${conferencex1100} 1100w`,
+            alt: 'A speaker presenting at a podium',
+            position: '60% 40%',
         },
     },
 ]
