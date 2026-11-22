@@ -56,8 +56,8 @@ export const App = () => (
                         <Route path="2024" element={<ProjectX2024 />} />
                         <Route path="2026" element={<ProjectX2026 />} />
                     </Route>
-                    <Route path="*" element={<PageNotFound />} />
                 </Route>
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </Suspense>
         <SiteFooter />
