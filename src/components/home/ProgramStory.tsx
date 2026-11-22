@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
+import { FactRow } from '@/components/kit/FactRow'
+import { Section, SectionHeading } from '@/components/kit/Section'
 import { PROGRAMS } from '@/data/home'
 import type { Program } from '@/data/home'
-import { wrap } from '@/lib/layout'
 import { cn } from '@/lib/utils'
-import SectionHeading from './SectionHeading'
 
 const FRAME_SIZES = '(min-width: 1024px) 568px, 100vw'
 
@@ -21,7 +21,7 @@ const Chapter = ({
         ref={chapterRef}
         id={program.id}
         aria-labelledby={`${program.id}-title`}
-        className="scroll-mt-[calc(var(--site-header-height)+24px)] pb-14 lg:flex lg:min-h-[78vh] lg:flex-col lg:justify-center lg:py-10"
+        className="scroll-mt-6 pb-14 lg:flex lg:min-h-[78vh] lg:flex-col lg:justify-center lg:py-10"
     >
         <img
             src={program.photo.src}
@@ -44,17 +44,10 @@ const Chapter = ({
         >
             {program.name}
         </h3>
-        <p className="mt-4 max-w-110 font-sans text-[17px]/[1.6] text-[#b9b9bf]">
+        <p className="mt-4 max-w-110 font-sans text-[17px]/[1.6] text-prose">
             {program.description}
         </p>
-        <dl className="mt-5.5 mb-6.5 flex flex-wrap gap-x-7 gap-y-2 text-[13px] text-dim">
-            {program.facts.map(({ label, value }) => (
-                <div key={label}>
-                    <dt>{label}</dt>
-                    <dd className="mt-0.5 text-lg text-white">{value}</dd>
-                </div>
-            ))}
-        </dl>
+        <FactRow facts={program.facts} size="sm" className="mt-5.5 mb-6.5" />
         <Link
             to={program.to}
             className="link-line focus-ring self-start text-sm max-lg:inline-block"
@@ -91,69 +84,68 @@ const ProgramStory = () => {
     }, [])
 
     return (
-        <section
+        <Section
             id="programs"
-            aria-labelledby="programs-title"
-            className="scroll-mt-(--site-header-height) pt-20 pb-10 lg:pt-30"
-        >
-            <div className={wrap}>
-                <SectionHeading id="programs-title" kicker="Programs">
+            spacing="none"
+            className="pt-20 pb-10 lg:pt-30"
+            heading={
+                <SectionHeading kicker="Programs">
                     A research competition and a conference
                 </SectionHeading>
+            }
+        >
+            <div className="mt-16 grid gap-16 lg:grid-cols-2">
+                <div
+                    aria-hidden="true"
+                    className="sticky top-[calc(var(--site-header-height)+24px)] hidden aspect-[4/5] max-h-[calc(100vh-144px)] w-full self-start overflow-hidden rounded-sm bg-raised lg:block"
+                >
+                    {PROGRAMS.map((program, i) => (
+                        <img
+                            key={program.id}
+                            src={program.photo.src}
+                            srcSet={program.photo.srcSet}
+                            sizes={FRAME_SIZES}
+                            alt=""
+                            loading="lazy"
+                            className={cn(
+                                'absolute inset-0 size-full object-cover transition-[clip-path,scale] duration-[800ms,1200ms] ease-[var(--ease-wipe),ease] motion-reduce:transition-none',
+                                i <= active
+                                    ? 'scale-100 [clip-path:inset(0_0_0_0)]'
+                                    : 'scale-106 [clip-path:inset(100%_0_0_0)]',
+                            )}
+                            style={{
+                                objectPosition: program.photo.position,
+                            }}
+                        />
+                    ))}
+                    <span className="absolute bottom-3.5 left-4 z-2 text-xs tracking-widest text-white [text-shadow:0_1px_8px_rgb(0_0_0/0.6)]">
+                        0{active + 1} / 0{PROGRAMS.length}
+                    </span>
+                    <span className="absolute inset-x-0 bottom-0 z-2 h-0.5 bg-white/15">
+                        <i
+                            className="block h-full bg-white transition-transform duration-600 ease-out-soft motion-reduce:transition-none"
+                            style={{
+                                width: `${100 / PROGRAMS.length}%`,
+                                transform: `translateX(${active * 100}%)`,
+                            }}
+                        />
+                    </span>
+                </div>
 
-                <div className="mt-16 grid gap-16 lg:grid-cols-2">
-                    <div
-                        aria-hidden="true"
-                        className="sticky top-[calc(var(--site-header-height)+24px)] hidden aspect-[4/5] max-h-[calc(100vh-144px)] w-full self-start overflow-hidden rounded-sm bg-raised lg:block"
-                    >
-                        {PROGRAMS.map((program, i) => (
-                            <img
-                                key={program.id}
-                                src={program.photo.src}
-                                srcSet={program.photo.srcSet}
-                                sizes={FRAME_SIZES}
-                                alt=""
-                                loading="lazy"
-                                className={cn(
-                                    'absolute inset-0 size-full object-cover transition-[clip-path,scale] duration-[800ms,1200ms] ease-[var(--ease-wipe),ease] motion-reduce:transition-none',
-                                    i <= active
-                                        ? 'scale-100 [clip-path:inset(0_0_0_0)]'
-                                        : 'scale-106 [clip-path:inset(100%_0_0_0)]',
-                                )}
-                                style={{
-                                    objectPosition: program.photo.position,
-                                }}
-                            />
-                        ))}
-                        <span className="absolute bottom-3.5 left-4 z-2 text-xs tracking-widest text-white [text-shadow:0_1px_8px_rgb(0_0_0/0.6)]">
-                            0{active + 1} / 0{PROGRAMS.length}
-                        </span>
-                        <span className="absolute inset-x-0 bottom-0 z-2 h-0.5 bg-white/15">
-                            <i
-                                className="block h-full bg-white transition-transform duration-600 ease-out-soft motion-reduce:transition-none"
-                                style={{
-                                    width: `${100 / PROGRAMS.length}%`,
-                                    transform: `translateX(${active * 100}%)`,
-                                }}
-                            />
-                        </span>
-                    </div>
-
-                    <div>
-                        {PROGRAMS.map((program, i) => (
-                            <Chapter
-                                key={program.id}
-                                program={program}
-                                active={i === active}
-                                chapterRef={(el) => {
-                                    chapters.current[i] = el
-                                }}
-                            />
-                        ))}
-                    </div>
+                <div>
+                    {PROGRAMS.map((program, i) => (
+                        <Chapter
+                            key={program.id}
+                            program={program}
+                            active={i === active}
+                            chapterRef={(el) => {
+                                chapters.current[i] = el
+                            }}
+                        />
+                    ))}
                 </div>
             </div>
-        </section>
+        </Section>
     )
 }
 

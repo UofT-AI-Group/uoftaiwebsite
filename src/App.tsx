@@ -20,6 +20,7 @@ const ProjectX2022 = lazy(() => import('./components/projectX2022'))
 const ProjectX2023 = lazy(() => import('./components/projectX2023'))
 const ProjectX2024 = lazy(() => import('./components/projectX2024'))
 const ProjectX2026 = lazy(() => import('./components/projectX2026'))
+const Kit = import.meta.env.DEV ? lazy(() => import('./pages/Kit')) : null
 
 export const App = () => (
     <>
@@ -28,6 +29,7 @@ export const App = () => (
         <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
             <Routes>
                 <Route path="/" element={<Home />} />
+                {Kit && <Route path="/kit" element={<Kit />} />}
                 <Route element={<ChakraLayout />}>
                     <Route path="/partner-with-us" element={<Partner />} />
                     <Route path="/conferencex" element={<ConferenceX2027 />} />

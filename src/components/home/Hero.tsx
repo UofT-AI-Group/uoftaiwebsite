@@ -1,8 +1,7 @@
 import { Link } from 'react-router'
-import { FaDiscord } from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
 import DotField from '@/components/site/DotField'
-import { DISCORD_URL } from '@/data/site'
+import { DiscordButton } from '@/components/kit/DiscordButton'
 import { wrap } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
@@ -44,12 +43,7 @@ const Hero = () => (
                     ConferenceX, a yearly conference on AI.
                 </p>
                 <div className="pointer-events-auto flex flex-wrap gap-3">
-                    <Button asChild>
-                        <a href={DISCORD_URL}>
-                            <FaDiscord aria-hidden="true" />
-                            Join the Discord
-                        </a>
-                    </Button>
+                    <DiscordButton />
                     <Button asChild variant="outline">
                         <a href="#programs">What we run ↓</a>
                     </Button>

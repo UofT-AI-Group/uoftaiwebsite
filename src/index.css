@@ -100,6 +100,11 @@
     --hair: #222226;
     --edge: #34343a;
     --brand: #ba76e1;
+    --brand-soft: #ebdcf6;
+    --prose: #b9b9bf;
+    --line: #3a3a40;
+    --rail: #2e2e34;
+    --rail-dot: #5a5a61;
 
     --background: var(--ink);
     --foreground: var(--fg);
@@ -138,6 +143,11 @@
     --color-hair: var(--hair);
     --color-edge: var(--edge);
     --color-brand: var(--brand);
+    --color-brand-soft: var(--brand-soft);
+    --color-prose: var(--prose);
+    --color-line: var(--line);
+    --color-rail: var(--rail);
+    --color-rail-dot: var(--rail-dot);
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -268,6 +278,43 @@ body {
         width: 28px;
         height: 1px;
         background: var(--brand);
+    }
+}
+
+/*
+ * Body text that may arrive as paragraphs, lists or inline links. Size and
+ * line height are left to the component so they can't fight its own classes.
+ */
+@utility copy {
+    font-family: var(--font-sans);
+    color: var(--prose);
+
+    & > * + * {
+        margin-top: 0.85em;
+    }
+    & ul {
+        list-style: disc;
+        padding-left: 1.25em;
+    }
+    & ol {
+        list-style: decimal;
+        padding-left: 1.25em;
+    }
+    & li + li {
+        margin-top: 0.35em;
+    }
+    & strong {
+        color: var(--fg);
+        font-weight: 500;
+    }
+    & a {
+        color: var(--fg);
+        text-decoration: underline 1px #555;
+        text-underline-offset: 4px;
+        transition: text-decoration-color 250ms;
+    }
+    & a:hover {
+        text-decoration-color: var(--brand);
     }
 }
 

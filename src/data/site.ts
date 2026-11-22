@@ -6,6 +6,9 @@ import {
     FaXTwitter,
 } from 'react-icons/fa6'
 
+export const SITE_DESCRIPTION =
+    "UofT AI is the University of Toronto's undergraduate AI group. We run ProjectX, an ML research competition, and ConferenceX, a two-day conference on AI and society."
+
 export const DISCORD_URL = 'https://discord.gg/FU8QvACr7X'
 export const INSTAGRAM_URL = 'https://instagram.com/uoftaigroup'
 export const GENERAL_EMAIL = 'uoftaigroup@gmail.com'

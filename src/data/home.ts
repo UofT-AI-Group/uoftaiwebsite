@@ -22,6 +22,9 @@ import vector from '../static/assets/home/logo-vector.webp'
 import ripple from '../static/assets/ripple-logo.svg'
 import uoft from '../static/assets/uoft-logo.png'
 import wombo from '../static/assets/wombo-logo.svg'
+import type { Fact } from '@/components/kit/FactRow'
+import type { Logo } from '@/components/kit/LogoWall'
+import type { Person } from '@/components/kit/Person'
 import whoWeAre from '../static/assets/who-we-are.webp'
 import ourMission from '../static/assets/our-mission.webp'
 
@@ -43,18 +46,13 @@ export const ABOUT = [
 
 /**
  * Every figure must be traceable to a published source and labelled with the
- * year it describes. Exact figures override `suffix` so they don't render "+".
+ * year it describes. Only figures that are lower bounds get a "+".
  */
-export const STATS: {
-    value: number
-    label: string
-    prefix?: string
-    suffix?: string
-}[] = [
-    { value: 500, label: 'ConferenceX 2024 attendees' },
-    { value: 150, label: 'ProjectX 2021 competitors' },
+export const STATS: Fact[] = [
+    { value: 500, label: 'ConferenceX 2024 attendees', suffix: '+' },
+    { value: 150, label: 'ProjectX 2021 competitors', suffix: '+' },
     { value: 70, label: 'ProjectX 2020 prize pool', prefix: '$', suffix: 'K' },
-    { value: 36, label: 'universities in ProjectX 2020–22', suffix: '' },
+    { value: 36, label: 'universities in ProjectX 2020–22' },
 ]
 
 export type Program = {
@@ -112,16 +110,14 @@ export const PROGRAMS: Program[] = [
     },
 ]
 
-export type Speaker = { name: string; role: string; photo: string }
-
-export const FEATURED_SPEAKER: Speaker & { event: string } = {
+export const FEATURED_SPEAKER: Person & { event: string } = {
     name: 'Geoffrey Hinton',
     role: 'Nobel laureate, University of Toronto',
     photo: hinton,
     event: 'ConferenceX 2024',
 }
 
-export const SPEAKERS_2026: Speaker[] = [
+export const SPEAKERS_2026: Person[] = [
     {
         name: 'Stephen Wolfram',
         role: 'CEO and Founder, Wolfram Institute',
@@ -227,9 +223,6 @@ export const EVENTS: PastEvent[] = [
     },
 ]
 
-export type Logo = { name: string; src: string; width: number }
-
-/** Widths are each logo's width when scaled to 120px tall. */
 export const SPONSORS_2026: Logo[] = [
     { name: 'EY', src: ey, width: 119 },
     { name: 'RBC', src: rbc, width: 91 },
