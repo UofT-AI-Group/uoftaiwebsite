@@ -1,41 +1,23 @@
-import { Link as RouterLink } from 'react-router'
-import HomeHero from '../components/home/HomeHero'
-import Stats from '../components/home/Stats'
+import Hero from '../components/home/Hero'
+import About from '../components/home/About'
 import ProgramStory from '../components/home/ProgramStory'
 import Speakers from '../components/home/Speakers'
-import Timeline from '../components/home/Timeline'
-import TeamList from '../components/home/TeamList'
-import '../components/home/home.css'
+import History from '../components/home/History'
+import Sponsors from '../components/home/Sponsors'
+import Team from '../components/home/Team'
+import Join from '../components/home/Join'
 
 const Home = () => (
-    <div className="hm">
-        <HomeHero />
-        <main className="hm-wrap">
-            <Stats />
-            <ProgramStory />
-            <Speakers />
-            <Timeline />
-            <TeamList />
-            <section className="hm-section hm-join" id="join">
-                <div className="hm-kicker">Join</div>
-                <h2 className="hm-h2">Start building with us.</h2>
-                <div className="hm-ctas">
-                    <RouterLink
-                        className="hm-btn hm-btn-solid"
-                        to="/newsletter"
-                    >
-                        Read the newsletter
-                    </RouterLink>
-                    <a className="hm-btn" href="mailto:uoftaigroup@gmail.com">
-                        Get in touch
-                    </a>
-                    <RouterLink className="hm-btn" to="/partner-with-us">
-                        Partner with us
-                    </RouterLink>
-                </div>
-            </section>
-        </main>
-    </div>
+    <main className="bg-ink font-mono text-fg antialiased">
+        <Hero />
+        <About />
+        <ProgramStory />
+        <Speakers />
+        <History />
+        <Sponsors />
+        <Team />
+        <Join />
+    </main>
 )
 
 export default Home

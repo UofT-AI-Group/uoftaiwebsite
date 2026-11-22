@@ -8,7 +8,7 @@ const RADIUS = 170
  * through it, and points near the cursor brighten to the brand purple and lean
  * away from it.
  */
-const DotField = ({ className = 'hm-field' }: { className?: string }) => {
+const DotField = ({ className }: { className?: string }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
 
     useEffect(() => {

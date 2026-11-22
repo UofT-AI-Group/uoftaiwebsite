@@ -1,40 +1,43 @@
-import projectxPhoto from '../static/assets/projectx.webp'
-import conferencexPhoto from '../static/assets/conferencex.webp'
-import learnaiPhoto from '../static/assets/learnai.webp'
-import whoWeArePhoto from '../static/assets/who-we-are.webp'
-import ourMissionPhoto from '../static/assets/our-mission.webp'
-import hinton from '../static/assets/Geoffrey-Hinton.jpg'
-import wolfram from '../static/assets/conf-2026-assets/stephen_wolfram.webp'
-import stein from '../static/assets/conf-2026-assets/janice.jpg'
-import fleet from '../static/assets/conf-2026-assets/david.jpg'
-import gans from '../static/assets/conf-2026-assets/joshua.webp'
-import wigdor from '../static/assets/conf-2026-assets/daniel.webp'
-import gauthier from '../static/assets/conf-2026-assets/yvan.jpg'
-import bmoLogo from '../static/assets/bmo-logo.png'
-import bellLogo from '../static/assets/bell-logo.png'
-import cifarLogo from '../static/assets/cifar-logo.png'
-import kpmgLogo from '../static/assets/kpmg-logo.png'
-import marsLogo from '../static/assets/mars-logo.png'
-import rippleLogo from '../static/assets/ripple-logo.svg'
-import uoftLogo from '../static/assets/uoft-logo.png'
-import vectorLogo from '../static/assets/vector-institute-logo.png'
-import womboLogo from '../static/assets/wombo-logo.svg'
-
-export const HERO_WORDS = ['ProjectX', 'ConferenceX', 'LearnAI']
+import projectx640 from '../static/assets/home/projectx-640.webp'
+import projectx1100 from '../static/assets/home/projectx-1100.webp'
+import conferencex800 from '../static/assets/home/conferencex-800.webp'
+import conferencex1400 from '../static/assets/home/conferencex-1400.webp'
+import hinton from '../static/assets/home/speaker-hinton.webp'
+import wolfram from '../static/assets/home/speaker-wolfram.webp'
+import stein from '../static/assets/home/speaker-stein.webp'
+import fleet from '../static/assets/home/speaker-fleet.webp'
+import gans from '../static/assets/home/speaker-gans.webp'
+import wigdor from '../static/assets/home/speaker-wigdor.webp'
+import gauthier from '../static/assets/home/speaker-gauthier.webp'
+import ey from '../static/assets/home/logo-ey.webp'
+import rbc from '../static/assets/home/logo-rbc.webp'
+import intact from '../static/assets/home/logo-intact.webp'
+import canvas from '../static/assets/home/logo-canvas.webp'
+import bmo from '../static/assets/home/logo-bmo.webp'
+import bell from '../static/assets/home/logo-bell.webp'
+import cifar from '../static/assets/home/logo-cifar.webp'
+import kpmg from '../static/assets/home/logo-kpmg.webp'
+import mars from '../static/assets/home/logo-mars.webp'
+import vector from '../static/assets/home/logo-vector.webp'
+import ripple from '../static/assets/ripple-logo.svg'
+import uoft from '../static/assets/uoft-logo.png'
+import wombo from '../static/assets/wombo-logo.svg'
+import whoWeAre from '../static/assets/who-we-are.webp'
+import ourMission from '../static/assets/our-mission.webp'
 
 export const ABOUT = [
     {
         title: 'Who we are',
-        photo: whoWeArePhoto,
-        photoAlt: 'The UofT AI team together on stage at the conference',
-        text: 'An incubator of talent at the University of Toronto. Beyond conferences and hackathons, we give students a place to learn, network and work on AI projects with industry professionals.',
+        photo: whoWeAre,
+        photoAlt: 'UofT AI members together on stage',
+        text: 'Outside our conferences and hackathons, members learn about AI together and work on projects with people from industry.',
     },
     {
         title: 'Our mission',
-        photo: ourMissionPhoto,
+        photo: ourMission,
         photoAlt:
             'A UofT AI member talking with a guest at the Vector Institute booth',
-        text: 'To give passionate undergraduates the resources, opportunities and community to explore the corner of AI they care about, alongside like-minded peers.',
+        text: 'We want undergraduates to find the part of AI they care about and work on it with other students.',
     },
 ]
 
@@ -45,125 +48,194 @@ export const STATS = [
     { value: 40, label: 'universities in ProjectX' },
 ]
 
-/** `solid` logos are filled shapes, so they are desaturated instead of turned white. */
-export const PARTNERS = [
-    { name: 'BMO', logo: bmoLogo },
-    { name: 'Bell', logo: bellLogo },
-    { name: 'CIFAR', logo: cifarLogo },
-    { name: 'KPMG', logo: kpmgLogo },
-    { name: 'MaRS', logo: marsLogo, solid: true },
-    { name: 'Ripple Ventures', logo: rippleLogo },
-    { name: 'University of Toronto', logo: uoftLogo },
-    { name: 'Vector Institute', logo: vectorLogo },
-    { name: 'WOMBO', logo: womboLogo },
-]
+export type Program = {
+    id: string
+    kicker: string
+    name: string
+    to: string
+    description: string
+    facts: { label: string; value: string }[]
+    photo: {
+        src: string
+        srcSet: string
+        alt: string
+        /** Keeps the subject in view when the photo is cropped to the frame. */
+        position: string
+    }
+}
 
-export const PROGRAMS = [
+export const PROGRAMS: Program[] = [
     {
+        id: 'projectx',
         kicker: '01 · Competition',
-        title: 'ProjectX',
+        name: 'ProjectX',
         to: '/projectx',
-        photo: projectxPhoto,
-        photoAlt: 'A speaker presenting on stage at ProjectX',
         description:
-            "North America's largest undergraduate ML research competition. Open to every discipline, from computer science to the humanities: propose a new technology, process or policy, or pursue academic research.",
+            "North America's largest undergraduate ML research competition. It's open to every discipline, from computer science to the humanities. You can propose a new technology, process or policy, or submit academic research.",
         facts: [
             { label: '2026 theme', value: 'What is Progress?' },
-            { label: 'Competitors', value: '200+ from 40+ universities' },
+            { label: 'First held', value: '2020' },
         ],
+        photo: {
+            src: projectx1100,
+            srcSet: `${projectx640} 640w, ${projectx1100} 1100w`,
+            alt: 'A speaker presenting on stage at ProjectX',
+            position: '50% 30%',
+        },
     },
     {
+        id: 'conferencex',
         kicker: '02 · Conference',
-        title: 'ConferenceX',
+        name: 'ConferenceX',
         to: '/conferencex',
-        photo: conferencexPhoto,
-        photoAlt: 'A panel discussion at ConferenceX',
         description:
-            'Two days of talks and panels where humanity meets technology, with researchers, founders and policymakers on one stage.',
+            'Two days of talks and panels on AI and society, plus a showcase of Toronto AI startups.',
         facts: [
             { label: '2026 theme', value: 'The Intelligence Test' },
-            { label: 'Attendance', value: '1,500+, 40+ countries' },
+            { label: 'Dates', value: 'Jan 24 and 25, 2026' },
         ],
-    },
-    {
-        kicker: '03 · Course',
-        title: 'LearnAI',
-        to: '/learnai',
-        photo: learnaiPhoto,
-        photoAlt: 'A speaker at a LearnAI session',
-        description:
-            'A 4-month course that bridges the gap between theoretical knowledge and practical application in AI.',
-        facts: [
-            { label: 'Length', value: '4 months' },
-            { label: 'Next cohort', value: 'Coming soon' },
-        ],
+        photo: {
+            src: conferencex1400,
+            srcSet: `${conferencex800} 800w, ${conferencex1400} 1400w`,
+            alt: 'The audience watching a panel at ConferenceX',
+            position: '42% 50%',
+        },
     },
 ]
 
-export const SPEAKERS = [
-    {
-        name: 'Geoffrey Hinton',
-        role: 'Nobel laureate, University of Toronto',
-        photo: hinton,
-        event: 'ConferenceX 2024',
-    },
+export type Speaker = { name: string; role: string; photo: string }
+
+export const FEATURED_SPEAKER: Speaker & { event: string } = {
+    name: 'Geoffrey Hinton',
+    role: 'Nobel laureate, University of Toronto',
+    photo: hinton,
+    event: 'ConferenceX 2024',
+}
+
+export const SPEAKERS_2026: Speaker[] = [
     {
         name: 'Stephen Wolfram',
-        role: 'CEO & Founder, Wolfram Institute',
+        role: 'CEO and Founder, Wolfram Institute',
         photo: wolfram,
-        event: 'ConferenceX 2026',
     },
     {
         name: 'Janice Stein',
         role: 'Founding Director, Munk School',
         photo: stein,
-        event: 'ConferenceX 2026',
     },
     {
         name: 'David Fleet',
         role: 'CIFAR AI Chair, Google DeepMind',
         photo: fleet,
-        event: 'ConferenceX 2026',
     },
     {
         name: 'Joshua Gans',
         role: 'Chief Economist, Creative Destruction Lab',
         photo: gans,
-        event: 'ConferenceX 2026',
     },
     {
         name: 'Daniel Wigdor',
-        role: 'Professor of CS, University of Toronto',
+        role: 'Professor of Computer Science, University of Toronto',
         photo: wigdor,
-        event: 'ConferenceX 2026',
     },
     {
         name: 'Yvan Gauthier',
         role: 'AI Safety, National Research Council',
         photo: gauthier,
-        event: 'ConferenceX 2026',
     },
 ]
 
-export const MILESTONES = [
-    { year: '2020', title: 'ProjectX', detail: '$65k in prizes.' },
-    { year: '2021', title: 'ProjectX', detail: '$75k in prizes.' },
-    { year: '2022', title: 'ProjectX', detail: '$40k+ in prizes.' },
+export type PastEvent = {
+    year: number
+    name: string
+    to: string
+    detail: string
+    upcoming?: boolean
+}
+
+/** One entry per event, oldest first, so every cell in the grid has the same shape. */
+export const EVENTS: PastEvent[] = [
     {
-        year: '2024',
-        title: 'ConferenceX',
-        detail: 'Panel with Geoffrey Hinton.',
+        year: 2020,
+        name: 'ProjectX',
+        to: '/projectx/2020',
+        detail: '$65,000 in prizes',
     },
-    { year: '2025', title: 'ConferenceX', detail: 'January 25, 2025.' },
     {
-        year: '2026',
-        title: 'The Intelligence Test',
-        detail: '1,500+ attendees from 40+ countries.',
+        year: 2021,
+        name: 'ProjectX',
+        to: '/projectx/2021',
+        detail: '$75,000 in prizes',
     },
     {
-        year: '2027',
-        title: 'ConferenceX',
-        detail: 'Proposed theme: The Past and Future of AI.',
+        year: 2022,
+        name: 'ProjectX',
+        to: '/projectx/2022',
+        detail: '$40,000+ in prizes',
+    },
+    {
+        year: 2023,
+        name: 'ProjectX',
+        to: '/projectx/2023',
+        detail: '$10,000+ in prizes',
+    },
+    {
+        year: 2024,
+        name: 'ProjectX',
+        to: '/projectx/2024',
+        detail: '$10,000+ in prizes',
+    },
+    {
+        year: 2024,
+        name: 'ConferenceX',
+        to: '/conferencex-2024',
+        detail: 'Panel with Geoffrey Hinton',
+    },
+    {
+        year: 2025,
+        name: 'ConferenceX',
+        to: '/conferencex-2025',
+        detail: 'Startup showcase and research fair',
+    },
+    {
+        year: 2026,
+        name: 'ConferenceX',
+        to: '/conferencex-2026',
+        detail: 'Theme: The Intelligence Test',
+    },
+    {
+        year: 2026,
+        name: 'ProjectX',
+        to: '/projectx/2026',
+        detail: 'Theme: What is Progress?',
+    },
+    {
+        year: 2027,
+        name: 'ConferenceX',
+        to: '/conferencex-2027',
+        detail: 'Proposed theme: The Past and Future of AI',
         upcoming: true,
     },
+]
+
+export type Logo = { name: string; src: string; width: number }
+
+/** Widths are each logo's width when scaled to 120px tall. */
+export const SPONSORS_2026: Logo[] = [
+    { name: 'EY', src: ey, width: 119 },
+    { name: 'RBC', src: rbc, width: 91 },
+    { name: 'Intact', src: intact, width: 274 },
+    { name: 'Canvas', src: canvas, width: 406 },
+]
+
+export const PAST_PARTNERS: Logo[] = [
+    { name: 'BMO', src: bmo, width: 314 },
+    { name: 'Bell', src: bell, width: 210 },
+    { name: 'CIFAR', src: cifar, width: 375 },
+    { name: 'KPMG', src: kpmg, width: 299 },
+    { name: 'MaRS', src: mars, width: 120 },
+    { name: 'Ripple Ventures', src: ripple, width: 404 },
+    { name: 'University of Toronto', src: uoft, width: 329 },
+    { name: 'Vector Institute', src: vector, width: 330 },
+    { name: 'WOMBO', src: wombo, width: 369 },
 ]

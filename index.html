@@ -2,20 +2,38 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#0b0b0d" />
         <meta
             name="description"
-            content="Welcome to the UofT AI Website, where you can learn more about the UofT AI community and its events."
+            content="UofT AI is the University of Toronto's undergraduate AI group. We run ProjectX, an ML research competition, and ConferenceX, a two-day conference on AI and society."
         />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="UofT AI" />
+        <meta property="og:title" content="UofT AI" />
+        <meta
+            property="og:description"
+            content="The University of Toronto's undergraduate AI group. We run ProjectX and ConferenceX."
+        />
+        <meta property="og:image" content="/logo512.png" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link
+            rel="preload"
+            href="/fonts/Tabular-Regular.otf"
+            as="font"
+            type="font/otf"
+            crossorigin
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Open Sans is only used by inner pages, so it loads without blocking the first paint -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            media="print"
+            onload="this.media = 'all'"
         />
         <title>UofT AI</title>
     </head>
