@@ -78,7 +78,7 @@ export default function ProjectX2026() {
                             or below the undergraduate level. Teams must have a
                             faculty advisor from an accredited institution
                             confirmed by{' '}
-                            <Text fontWeight={'bold'} display={'inline-block'}>
+                            <Text as="span" fontWeight={'bold'}>
                                 January 15
                             </Text>
                             .
@@ -1545,7 +1545,7 @@ export default function ProjectX2026() {
                             Contact{' '}
                             <Text as="span" color={'#a2d2ff'}>
                                 <a href="mailto:uoftaigroup@gmail.com">
-                                    uoftaigroup@gmail.com
+                                    projectxuoft@gmail.com
                                 </a>
                             </Text>
                             . We will make our best to accommodate!
