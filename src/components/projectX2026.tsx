@@ -13,6 +13,7 @@ import {
     Image,
     UnorderedList,
     ListItem,
+    Link,
 } from '@chakra-ui/react'
 import {
     LuTrophy,
@@ -1488,6 +1489,48 @@ export default function ProjectX2026() {
                                     location to be confirmed.
                                 </AccordionPanel>
                             </AccordionItem>
+
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            What are the guidelines for
+                                            participating teams?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    The guidelines for participating teams of
+                                    both Research and Proposal + Pitch streams
+                                    are accessible here -{' '}
+                                    <Link href="https://docs.google.com/document/d/1xiWhXU9ofkp9TH71-RpKnl-ZcfvX4405wvNZdgxzFpw/edit?tab=t.0">
+                                        Guidelines
+                                    </Link>
+                                </AccordionPanel>
+                            </AccordionItem>
+
                             <AccordionItem
                                 border="1px solid transparent"
                                 mb={3}
