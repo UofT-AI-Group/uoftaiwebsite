@@ -1,82 +1,50 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { ButtonOutline } from './Button'
 import {
     Box,
     VStack,
     Text,
-    chakra,
-    useBreakpointValue,
-    SimpleGrid,
     Icon,
+    Accordion,
+    AccordionButton,
+    AccordionIcon,
+    AccordionItem,
+    AccordionPanel,
+    Grid,
+    GridItem,
+    Image,
+    UnorderedList,
+    ListItem,
 } from '@chakra-ui/react'
 import {
     LuTrophy,
-    LuRocket,
-    LuCheckCheck,
     LuAtom,
     LuUserCheck,
     LuHandshake,
+    LuMicVocal,
+    LuUsersRound,
 } from 'react-icons/lu'
 import gradient from '../static/assets/2026gradient.webp'
+import evanLight from '../static/assets/projectx2026_mentors/evan_light.jpg'
+import veraKhovanskaya from '../static/assets/projectx2026_mentors/vera_khovanskaya.jpg'
+import sebastianJaimungal from '../static/assets/projectx2026_mentors/sebastian_jaimungal.jpg'
+import fernandoYanez from '../static/assets/projectx2026_mentors/fernando_yanez.jpg'
+import helenaWright from '../static/assets/projectx2026_mentors/helena_wright.jpg'
+import konradSamsel from '../static/assets/projectx2026_mentors/konrad_samsel.jpeg'
+import nickJia from '../static/assets/projectx2026_mentors/nick_jia.jpg'
+import paoloGranata from '../static/assets/projectx2026_mentors/paolo_granata.jpg'
+import saiTedla from '../static/assets/projectx2026_mentors/sai_tedla.jpg'
+import benjaminSanchezLengeling from '../static/assets/projectx2026_mentors/benjamin_sanchez-lengeling.jpg'
 import { ProjectXResearchThemeTitle } from './Typography'
+import ProjectXTimeline from './ProjectXTimeline'
 
-const VB_W = 600
-const VB_Y = 70 // top of the cropped viewBox (curve's highest point is ~71)
-const VB_H = 60 // 70 → 130 covers the curve's full height (~71 to ~129)
-const CURVE = 'M 30 100 C 180 0, 330 200, 570 100'
-
-const TIMELINE = [
-    { label: 'Applications Open', date: 'September 28th', labelOnTop: false },
-    { label: 'Applications Close', date: 'October 20th', labelOnTop: false },
-    {
-        label: 'Short Check-Ins',
-        date: 'Monthly until December',
-        labelOnTop: true,
+const cardHoverProps = {
+    transition: 'transform 0.2s ease, border-color 0.2s ease',
+    _hover: {
+        borderColor: '#87a7ff',
+        transform: 'translateY(-2px)',
     },
-    { label: 'Final Submission', date: 'January 15th', labelOnTop: false },
-    { label: 'ConferenceX', date: 'February', labelOnTop: true },
-]
-
-type Point = { x: number; y: number }
+}
 
 export default function ProjectX2026() {
-    const pathRef = useRef<SVGPathElement>(null)
-    const containerRef = useRef<HTMLDivElement>(null)
-    const [points, setPoints] = useState<Point[]>([])
-    const [containerW, setContainerW] = useState(0)
-
-    // Evenly spaced points along the curve
-    useLayoutEffect(() => {
-        const path = pathRef.current
-        if (!path) return
-        const total = path.getTotalLength()
-        const n = TIMELINE.length
-        setPoints(
-            TIMELINE.map((_, i) => {
-                const { x, y } = path.getPointAtLength(
-                    n === 1 ? 0 : (i / (n - 1)) * total,
-                )
-                return { x, y }
-            }),
-        )
-    }, [])
-
-    // Track the container's rendered width (for px -> viewBox conversion)
-    useEffect(() => {
-        const el = containerRef.current
-        if (!el) return
-        const ro = new ResizeObserver(([entry]) =>
-            setContainerW(entry.contentRect.width),
-        )
-        ro.observe(el)
-        return () => ro.disconnect()
-    }, [])
-
-    // Marker size in px, keep in sync with w/h on the marker below
-    const btnSize = useBreakpointValue({ base: 24, sm: 32, md: 48 }) ?? 48
-    // Hole radius in viewBox units; -1 lets the line tuck under the border
-    const holeR = containerW ? (btnSize / 2 - 1) * (VB_W / containerW) : 0
-
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
             <Box
@@ -98,150 +66,50 @@ export default function ProjectX2026() {
                     width={{ base: '90%', xl: '70%' }}
                     margin={'auto'}
                 >
-                    <Box width={'100%'}>
-                        <Text fontSize={['16px', '22px']} color={'light'}>
+                    <Box width={'100%'} color={'light'}>
+                        <Text fontSize={['16px', '22px']}>
                             2026 RESEARCH THEME
                         </Text>
                         <ProjectXResearchThemeTitle />
-                        <Text color={'light'} width={'50%'}>
+                        <Text width={'75%'}>
                             Projects may explore how AI can address a specific
                             problem or how regulation should guide the pace of
-                            AI development.
+                            AI development. The competition is open to anyone at
+                            or below the undergraduate level. Teams must have a
+                            faculty advisor from an accredited institution
+                            confirmed by{' '}
+                            <Text fontWeight={'bold'} display={'inline-block'}>
+                                January 15
+                            </Text>
+                            .
                         </Text>
-                        <Box marginTop={'20px'}>
-                            <ButtonOutline
-                                as="a"
-                                href="https://forms.gle/J99tMADBSikDDf9E6"
-                                variant="light"
-                            >
-                                Apply Now
-                            </ButtonOutline>
-                        </Box>
-                    </Box>
-
-                    <Box width={'100%'}>
-                        {/* Fixed px padding = room for labels/buttons above & below the line.
-        This is what sets the heading-to-line distance, and it doesn't scale. */}
-                        <Box pt={['44px', '64px']} pb={['44px', '64px']}>
-                            {/* Same aspect ratio as the cropped viewBox so % positions line up */}
-                            <Box
-                                ref={containerRef}
-                                position="relative"
-                                w="full"
-                                style={{ aspectRatio: `${VB_W} / ${VB_H}` }}
-                            >
-                                <chakra.svg
-                                    viewBox={`0 ${VB_Y} ${VB_W} ${VB_H}`}
-                                    position="absolute"
-                                    inset={0}
-                                    w="full"
-                                    h="full"
-                                    overflow="visible"
-                                >
-                                    <defs>
-                                        <mask
-                                            id="timeline-mask"
-                                            maskUnits="userSpaceOnUse"
-                                            x={-50}
-                                            y={VB_Y - 50}
-                                            width={VB_W + 100}
-                                            height={VB_H + 100}
-                                        >
-                                            <rect
-                                                x={-50}
-                                                y={VB_Y - 50}
-                                                width={VB_W + 100}
-                                                height={VB_H + 100}
-                                                fill="white"
-                                            />
-                                            {points.map((p, i) => (
-                                                <circle
-                                                    key={i}
-                                                    cx={p.x}
-                                                    cy={p.y}
-                                                    r={holeR}
-                                                    fill="black"
-                                                />
-                                            ))}
-                                        </mask>
-                                    </defs>
-
-                                    <chakra.path
-                                        ref={pathRef}
-                                        d={CURVE}
-                                        fill="none"
-                                        stroke="white"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        mask="url(#timeline-mask)"
-                                    />
-                                </chakra.svg>
-
-                                {points.map((p, i) => {
-                                    const item = TIMELINE[i]
-                                    const varying = i % 2 === 0
-
-                                    const dateText = (
-                                        <Text
-                                            color={'#caf0f8'}
-                                            fontSize={{
-                                                base: '0.5rem',
-                                                md: '0.7rem',
-                                                lg: '0.9rem',
-                                            }}
-                                            whiteSpace="nowrap"
-                                        >
-                                            {item.date}
-                                        </Text>
-                                    )
-                                    const labelText = (
-                                        <Text
-                                            color={'light'}
-                                            fontSize={{
-                                                base: '0.5rem',
-                                                md: '0.7rem',
-                                                lg: '0.9rem',
-                                            }}
-                                            fontWeight={'bold'}
-                                            whiteSpace="nowrap"
-                                        >
-                                            {item.label}
-                                        </Text>
-                                    )
-
-                                    return (
-                                        <VStack
-                                            key={item.label}
-                                            position="absolute"
-                                            left={`${(p.x / VB_W) * 100}%`}
-                                            top={`${((p.y - VB_Y) / VB_H) * 100}%`}
-                                            transform="translate(-50%, -50%)"
-                                            spacing={{ base: 2, lg: 4 }}
-                                        >
-                                            {item.labelOnTop
-                                                ? labelText
-                                                : dateText}
-
-                                            <Box
-                                                w={['24px', '32px', '48px']}
-                                                h={['24px', '32px', '48px']}
-                                                borderRadius="full"
-                                                border="2px solid white"
-                                                transition="background 0.2s"
-                                                _hover={{
-                                                    bg: `${varying ? 'white' : '#8ecae6'}`,
-                                                    border: `2px solid ${varying ? 'white' : '#8ecae6'}`,
-                                                }}
-                                            />
-
-                                            {item.labelOnTop
-                                                ? dateText
-                                                : labelText}
-                                        </VStack>
-                                    )
-                                })}
-                            </Box>
-                        </Box>
+                        <Text>Two streams:</Text>
+                        <UnorderedList
+                            listStyleType={'circle'}
+                            spacing={1}
+                            mt={3}
+                        >
+                            <ListItem>
+                                <Text>
+                                    <Text as="span" fontWeight={'bold'}>
+                                        Research Stream:
+                                    </Text>{' '}
+                                    Teams produce an original AI research paper
+                                    (4-10 pages).
+                                </Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text>
+                                    <Text as="span" fontWeight={'bold'}>
+                                        Proposal + Pitch Stream:
+                                    </Text>{' '}
+                                    Teams develop and pitch an AI product,
+                                    startup, or policy idea. The deliverable is
+                                    a written proposal (3-5 pages) plus a live
+                                    pitch.
+                                </Text>
+                            </ListItem>
+                        </UnorderedList>
                     </Box>
 
                     <Box width={'100%'}>
@@ -251,23 +119,40 @@ export default function ProjectX2026() {
                             fontSize={[30, 40]}
                             color={'light'}
                         >
-                            FAQ
+                            Timeline
                         </Text>
-                        <SimpleGrid
-                            marginTop={'20px'}
-                            columns={[1, 2, 3]}
-                            rowGap={'32px'}
-                            columnGap={'32px'}
+                        <ProjectXTimeline />
+                    </Box>
+
+                    <Box width={'100%'}>
+                        <Text
+                            w="fit-content"
+                            fontWeight={'medium'}
+                            fontSize={[30, 40]}
+                            color={'light'}
                         >
-                            <Box
-                                bg="#001233"
+                            Events and Workshops
+                        </Text>
+                        <Grid
+                            templateColumns={{
+                                base: 'repeat(1, 1fr)',
+                                lg: 'repeat(2, 1fr)',
+                            }}
+                            autoRows={'1fr'}
+                            gap={6}
+                            marginTop={9}
+                        >
+                            <GridItem
+                                colSpan={1}
+                                bg="#1a223a"
                                 borderRadius="14px"
-                                border="1px solid #002855"
+                                border="1px solid #FFFFFF1A"
                                 p={6}
-                                maxW="384px"
+                                color={'light'}
+                                {...cardHoverProps}
                             >
                                 <Box
-                                    bg="#001845"
+                                    bg="rgba(97, 116, 200, 0.3)"
                                     borderRadius="full"
                                     w="56px"
                                     h="56px"
@@ -279,142 +164,66 @@ export default function ProjectX2026() {
                                     <Icon
                                         as={LuUserCheck as React.ElementType}
                                         boxSize="28px"
-                                        color="#8ecae6"
+                                        color="#87a7ff"
                                     />
                                 </Box>
                                 <Text
-                                    color="light"
+                                    color="#87a7ff"
                                     fontSize={['16px', '20px']}
                                     fontWeight="normal"
                                     lineHeight="28px"
                                     mb="12px"
                                 >
-                                    Eligibility
+                                    Kickoff and Networking Mixer
                                 </Text>
-                                <Text
-                                    color="#FFFFFFB2"
-                                    fontSize={['14px', '16px']}
-                                    fontWeight="normal"
-                                    lineHeight="26px"
-                                    letterSpacing="-0.31px"
-                                    opacity={0.9}
-                                    maxW="281px"
-                                    mb="16px"
-                                >
-                                    Students from all academic backgrounds are
-                                    welcome, including computer science,
-                                    mathematics, social sciences, and
-                                    humanities. Projects may propose a new
-                                    technology, process, or policy, or pursue
-                                    traditional academic research.
-                                </Text>
-                            </Box>
-
-                            <Box
-                                bg="#001233"
-                                borderRadius="14px"
-                                border="1px solid #002855"
-                                p={6}
-                                maxW="384px"
-                            >
-                                <Box
-                                    bg="#001845"
-                                    borderRadius="full"
-                                    w="56px"
-                                    h="56px"
-                                    display="flex"
-                                    alignItems="center"
-                                    justifyContent="center"
-                                    mb="24px"
-                                >
-                                    <Icon
-                                        as={LuCheckCheck as React.ElementType}
-                                        boxSize="28px"
-                                        color="#8ecae6"
-                                    />
+                                <Box>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Date:
+                                        </Text>{' '}
+                                        November 7, 2026
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Format:
+                                        </Text>{' '}
+                                        In-Person
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Location:
+                                        </Text>{' '}
+                                        OISE 2214, University of Toronto
+                                    </Text>
+                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
-                                <Text
-                                    color="light"
-                                    fontSize={['16px', '20px']}
-                                    fontWeight="normal"
-                                    lineHeight="28px"
-                                    mb="12px"
-                                >
-                                    Acceptance
-                                </Text>
                                 <Text
                                     color="#FFFFFFB2"
                                     fontSize={['14px', '16px']}
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-                                    maxW="281px"
                                     mb="16px"
                                 >
-                                    Applicants are then notified whether they
-                                    have been accepted. Accepted teams work on
-                                    their projects with UofT AI mentorship until
-                                    the January 15 final submission deadline.
+                                    Welcome event for all accepted teams.
+                                    Mentors and faculty advisors attended, teams
+                                    presented their projects, and teams
+                                    connected with potential mentors and
+                                    advisors through networking.
                                 </Text>
-                            </Box>
+                            </GridItem>
 
-                            <Box
-                                bg="#001233"
+                            <GridItem
+                                colSpan={1}
+                                bg="#1a223a"
                                 borderRadius="14px"
-                                border="1px solid #002855"
+                                border="1px solid #FFFFFF1A"
                                 p={6}
-                                maxW="384px"
+                                color={'light'}
+                                {...cardHoverProps}
                             >
                                 <Box
-                                    bg="#001845"
-                                    borderRadius="full"
-                                    w="56px"
-                                    h="56px"
-                                    display="flex"
-                                    alignItems="center"
-                                    justifyContent="center"
-                                    mb="24px"
-                                >
-                                    <Icon
-                                        as={LuAtom as React.ElementType}
-                                        boxSize="28px"
-                                        color="#8ecae6"
-                                    />
-                                </Box>
-                                <Text
-                                    color="light"
-                                    fontSize={['16px', '20px']}
-                                    fontWeight="normal"
-                                    lineHeight="28px"
-                                    mb="12px"
-                                >
-                                    Research Direction
-                                </Text>
-                                <Text
-                                    color="#FFFFFFB2"
-                                    fontSize={['14px', '16px']}
-                                    lineHeight="26px"
-                                    letterSpacing="-0.31px"
-                                    opacity={0.9}
-                                    maxW="281px"
-                                    mb="16px"
-                                >
-                                    Your proposal does not need to be finalized
-                                    when you apply. Outline your research
-                                    interests and initial project direction; you
-                                    can refine the details during the program.
-                                </Text>
-                            </Box>
-
-                            <Box
-                                bg="#001233"
-                                borderRadius="14px"
-                                border="1px solid #002855"
-                                p={6}
-                                maxW="384px"
-                            >
-                                <Box
-                                    bg="#001845"
+                                    bg="rgba(97, 116, 200, 0.3)"
                                     borderRadius="full"
                                     w="56px"
                                     h="56px"
@@ -426,42 +235,58 @@ export default function ProjectX2026() {
                                     <Icon
                                         as={LuHandshake as React.ElementType}
                                         boxSize="28px"
-                                        color="#8ecae6"
+                                        color="#87a7ff"
                                     />
                                 </Box>
                                 <Text
-                                    color="light"
+                                    color="#87a7ff"
                                     fontSize={['16px', '20px']}
                                     fontWeight="normal"
                                     lineHeight="28px"
                                     mb="12px"
                                 >
-                                    Support
+                                    Virtual Mentorship and Networking Event
                                 </Text>
+                                <Box>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Date:
+                                        </Text>{' '}
+                                        November 27, 2026
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Format:
+                                        </Text>{' '}
+                                        Virtual (Zoom)
+                                    </Text>
+                                    <Text fontWeight="bold">Description:</Text>
+                                </Box>
                                 <Text
                                     color="#FFFFFFB2"
                                     fontSize={['14px', '16px']}
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-                                    maxW="281px"
+
                                     mb="16px"
                                 >
-                                    All participants have access to mentorship,
-                                    workshops, and professional development
-                                    opportunities throughout the program.
+                                    Virtual networking event for all teams to
+                                    connect with mentors and advisors.
                                 </Text>
-                            </Box>
+                            </GridItem>
 
-                            <Box
-                                bg="#001233"
+                            <GridItem
+                                colSpan={1}
+                                bg="#1a223a"
                                 borderRadius="14px"
-                                border="1px solid #002855"
+                                border="1px solid #FFFFFF1A"
                                 p={6}
-                                maxW="384px"
+                                color={'light'}
+                                {...cardHoverProps}
                             >
                                 <Box
-                                    bg="#001845"
+                                    bg="rgba(97, 116, 200, 0.3)"
                                     borderRadius="full"
                                     w="56px"
                                     h="56px"
@@ -471,45 +296,193 @@ export default function ProjectX2026() {
                                     mb="24px"
                                 >
                                     <Icon
-                                        as={LuRocket as React.ElementType}
+                                        as={LuAtom as React.ElementType}
                                         boxSize="28px"
-                                        color="#8ecae6"
+                                        color="#87a7ff"
                                     />
                                 </Box>
                                 <Text
-                                    color="light"
+                                    color="#87a7ff"
                                     fontSize={['16px', '20px']}
                                     fontWeight="normal"
                                     lineHeight="28px"
                                     mb="12px"
                                 >
-                                    ConferenceX
+                                    Research Methods Workshop
                                 </Text>
+                                <Box>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Date:
+                                        </Text>{' '}
+                                        December 2026
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Format:
+                                        </Text>{' '}
+                                        Virtual (Zoom)
+                                    </Text>
+                                    <Text fontWeight="bold">Description:</Text>
+                                </Box>
                                 <Text
                                     color="#FFFFFFB2"
                                     fontSize={['14px', '16px']}
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-                                    maxW="281px"
+
                                     mb="16px"
                                 >
-                                    After January 15, top finalists from both
-                                    streams are invited to present live at
-                                    ConferenceX, UofT AI's annual two-day
-                                    flagship event in February.
+                                    Research stream event. A session on how to
+                                    conduct and write AI research: literature
+                                    reviews, methodology, citations, and
+                                    structuring a paper. Recorded and shared
+                                    after.
                                 </Text>
-                            </Box>
+                            </GridItem>
 
-                            <Box
-                                bg="#001233"
+                            <GridItem
+                                colSpan={1}
+                                bg="#1a223a"
                                 borderRadius="14px"
-                                border="1px solid #002855"
+                                border="1px solid #FFFFFF1A"
                                 p={6}
-                                maxW="384px"
+                                color={'light'}
+                                {...cardHoverProps}
                             >
                                 <Box
-                                    bg="#001845"
+                                    bg="rgba(97, 116, 200, 0.3)"
+                                    borderRadius="full"
+                                    w="56px"
+                                    h="56px"
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    mb="24px"
+                                >
+                                    <Icon
+                                        as={LuMicVocal as React.ElementType}
+                                        boxSize="28px"
+                                        color="#87a7ff"
+                                    />
+                                </Box>
+                                <Text
+                                    color="#87a7ff"
+                                    fontSize={['16px', '20px']}
+                                    fontWeight="normal"
+                                    lineHeight="28px"
+                                    mb="12px"
+                                >
+                                    Pitch and Proposal Talk and Q&A
+                                </Text>
+                                <Box>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Date:
+                                        </Text>{' '}
+                                        December 2026
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Format:
+                                        </Text>{' '}
+                                        TBA
+                                    </Text>
+                                    <Text fontWeight="bold">Description:</Text>
+                                </Box>
+                                <Text
+                                    color="#FFFFFFB2"
+                                    fontSize={['14px', '16px']}
+                                    lineHeight="26px"
+                                    letterSpacing="-0.31px"
+                                    opacity={0.9}
+
+                                    mb="16px"
+                                >
+                                    Event for Proposal + Pitch Stream primarily.
+                                    A session on entrepreneurship in tech and
+                                    how to build and deliver a compelling pitch
+                                    and written proposal, followed by a Q&A on
+                                    proposal structure and what judges look for.
+                                </Text>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                bg="#1a223a"
+                                borderRadius="14px"
+                                border="1px solid #FFFFFF1A"
+                                p={6}
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box
+                                    bg="rgba(97, 116, 200, 0.3)"
+                                    borderRadius="full"
+                                    w="56px"
+                                    h="56px"
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    mb="24px"
+                                >
+                                    <Icon
+                                        as={LuUsersRound as React.ElementType}
+                                        boxSize="28px"
+                                        color="#87a7ff"
+                                    />
+                                </Box>
+                                <Text
+                                    color="#87a7ff"
+                                    fontSize={['16px', '20px']}
+                                    fontWeight="normal"
+                                    lineHeight="28px"
+                                    mb="12px"
+                                >
+                                    Virtual Office Hours
+                                </Text>
+                                <Box>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Date:
+                                        </Text>{' '}
+                                        January 2027
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Format:
+                                        </Text>{' '}
+                                        Virtual (Zoom)
+                                    </Text>
+                                    <Text fontWeight="bold">Description:</Text>
+                                </Box>
+                                <Text
+                                    color="#FFFFFFB2"
+                                    fontSize={['14px', '16px']}
+                                    lineHeight="26px"
+                                    letterSpacing="-0.31px"
+                                    opacity={0.9}
+
+                                    mb="16px"
+                                >
+                                    Open drop-in Zoom session. Teams can ask
+                                    questions about their submissions before the
+                                    January 15 deadline.
+                                </Text>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                bg="#1a223a"
+                                borderRadius="14px"
+                                border="1px solid #FFFFFF1A"
+                                p={6}
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box
+                                    bg="rgba(97, 116, 200, 0.3)"
                                     borderRadius="full"
                                     w="56px"
                                     h="56px"
@@ -521,37 +494,1044 @@ export default function ProjectX2026() {
                                     <Icon
                                         as={LuTrophy as React.ElementType}
                                         boxSize="28px"
-                                        color="#8ecae6"
+                                        color="#87a7ff"
                                     />
                                 </Box>
                                 <Text
-                                    color="light"
+                                    color="#87a7ff"
                                     fontSize={['16px', '20px']}
                                     fontWeight="normal"
                                     lineHeight="28px"
                                     mb="12px"
                                 >
-                                    Finalists
+                                    ConferenceX
                                 </Text>
+                                <Box>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Date:
+                                        </Text>{' '}
+                                        February 2027
+                                    </Text>
+                                    <Text>
+                                        <Text as="span" fontWeight="bold">
+                                            Format:
+                                        </Text>{' '}
+                                        Live presentations and awards ceremony
+                                    </Text>
+                                    <Text fontWeight="bold">Description:</Text>
+                                </Box>
                                 <Text
                                     color="#FFFFFFB2"
                                     fontSize={['14px', '16px']}
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-                                    maxW="281px"
+
                                     mb="16px"
                                 >
-                                    Receive a VIP ticket and the opportunity to
-                                    present alongside industry professionals and
-                                    AI experts from across North America. They
-                                    can share their research, build professional
-                                    connections, and seek support for their
-                                    projects.
+                                    Top finalists present their work live before
+                                    a panel of judges. All teams may attend
+                                    virtually. The winning team from each stream
+                                    presents as a 10-minute slide deck.
                                 </Text>
-                            </Box>
-                        </SimpleGrid>
+                            </GridItem>
+                        </Grid>
                     </Box>
+
+                    <Box width={'100%'}>
+                        <Text
+                            w="fit-content"
+                            fontWeight={'medium'}
+                            fontSize={[30, 40]}
+                            color={'light'}
+                        >
+                            Judges
+                        </Text>
+                        <Text color={'light'} mt={5} width={'75%'}>
+                            Judges are professors and experts in the field of
+                            AI. They review and score all submissions according
+                            to the rubric for each stream and attend
+                            ConferenceX. 3-5 judges per stream.
+                        </Text>
+                        <Grid
+                            templateColumns={'repeat(1, 1fr)'}
+                            autoRows={'1fr'}
+                            gap={6}
+                            marginTop={6}
+                        >
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box
+                                    display={'flex'}
+                                    flexDirection={{
+                                        base: 'column',
+                                        md: 'row',
+                                    }}
+                                    gap={5}
+                                >
+                                    <Box
+                                        boxSize={'150px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        alignSelf={{
+                                            base: 'center',
+                                            md: 'flex-start',
+                                        }}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={paoloGranata}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1)'}
+                                            alt="Paolo Granata"
+                                        />
+                                    </Box>
+                                    <Box
+                                        width={'90%'}
+                                        alignSelf={{
+                                            base: 'center',
+                                            md: 'flex-start',
+                                        }}
+                                    >
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '20px',
+                                                md: '20px',
+                                            }}
+                                            textAlign={{
+                                                base: 'center',
+                                                md: 'left',
+                                            }}
+                                        >
+                                            Paolo Granata
+                                        </Text>
+                                        <UnorderedList
+                                            listStyleType={'circle'}
+                                            spacing={1}
+                                            mt={3}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            <ListItem>
+                                                <Text>
+                                                    Faculty member in Book and
+                                                    Media Studies at St.
+                                                    Michael's College,
+                                                    University of Toronto
+                                                </Text>
+                                            </ListItem>
+                                            <ListItem>
+                                                <Text>
+                                                    Affiliated with UofT's
+                                                    Schwartz Reisman Institute
+                                                    for Technology and Society
+                                                    and the School of Cities
+                                                </Text>
+                                            </ListItem>
+                                            <ListItem>
+                                                <Text>
+                                                    Researches media ethics,
+                                                    philosophy of technology,
+                                                    semiotics, and digital
+                                                    equity
+                                                </Text>
+                                            </ListItem>
+                                            <ListItem>
+                                                <Text>
+                                                    Founder of UofT's Media
+                                                    Ethics Lab, where the
+                                                    ethical, political, and
+                                                    social sides of digital
+                                                    media and new technologies
+                                                    are studied
+                                                </Text>
+                                            </ListItem>
+                                        </UnorderedList>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+                        </Grid>
+                    </Box>
+
+                    <Box width={'100%'}>
+                        <Text
+                            w="fit-content"
+                            fontWeight={'medium'}
+                            fontSize={[30, 40]}
+                            color={'light'}
+                        >
+                            Mentors
+                        </Text>
+                        <Text color={'light'} mt={5} width={'75%'}>
+                            The following mentors attended the{' '}
+                            <Text fontWeight={'bold'} display={'inline-block'}>
+                                November 7
+                            </Text>{' '}
+                            kickoff or have confirmed interest in supporting
+                            Project X teams. Teams may reach out to mentors for
+                            guidance throughout the sprint.
+                        </Text>
+                        <Grid
+                            templateColumns={{
+                                base: 'repeat(1, 1fr)',
+                                lg: 'repeat(2, 1fr)',
+                            }}
+                            autoRows={'1fr'}
+                            gap={6}
+                            marginTop={6}
+                        >
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={saiTedla}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1)'}
+                                            alt="Sai Tedla"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Sai Tedla
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            <Text
+                                                fontWeight={'bold'}
+                                                display={'inline-block'}
+                                            >
+                                                Topics:
+                                            </Text>{' '}
+                                            Computational photography,
+                                            generative models, multimodal AI
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={nickJia}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.6)'}
+                                            transformOrigin={'52% 35%'}
+                                            alt="Nick Jia"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Nick Jia
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            <Text
+                                                fontWeight={'bold'}
+                                                display={'inline-block'}
+                                            >
+                                                Topics:
+                                            </Text>{' '}
+                                            AI security, governance, agentic
+                                            systems
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={fernandoYanez}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.3)'}
+                                            transformOrigin={'60% 25%'}
+                                            alt="Fernando Yanez"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Fernando Yanez
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            <Text
+                                                fontWeight={'bold'}
+                                                display={'inline-block'}
+                                            >
+                                                Topics:
+                                            </Text>{' '}
+                                            Intelligent adaptive teaching
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={helenaWright}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.8)'}
+                                            transformOrigin={'50% 14%'}
+                                            alt="Helena Wright"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Helena Wright
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            <Text
+                                                fontWeight={'bold'}
+                                                display={'inline-block'}
+                                            >
+                                                Topics:
+                                            </Text>{' '}
+                                            AI and work, digital labour
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={konradSamsel}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.7)'}
+                                            transformOrigin={'48% 40%'}
+                                            alt="Conrad Samsel"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Konrad Samsel
+                                        </Text>
+
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            <Text
+                                                fontWeight={'bold'}
+                                                display={'inline-block'}
+                                            >
+                                                Topics:
+                                            </Text>{' '}
+                                            Clinical AI, health policy
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+                        </Grid>
+                    </Box>
+
+                    <Box width={'100%'}>
+                        <Text
+                            w="fit-content"
+                            fontWeight={'medium'}
+                            fontSize={[30, 40]}
+                            color={'light'}
+                        >
+                            Faculty Advisors
+                        </Text>
+                        <Text color={'light'} mt={5} width={'75%'}>
+                            All teams must have a faculty advisor by{' '}
+                            <Text as="span" fontWeight={'bold'}>
+                                January 15
+                            </Text>{' '}
+                            who can attest to the credibility of their
+                            submission in a short signed note. Faculty advisors
+                            connected with teams at the{' '}
+                            <Text as="span" fontWeight={'bold'}>
+                                November 7
+                            </Text>{' '}
+                            kickoff.
+                        </Text>
+                        <Grid
+                            templateColumns={{
+                                base: 'repeat(1, 1fr)',
+                                lg: 'repeat(2, 1fr)',
+                            }}
+                            autoRows={'1fr'}
+                            gap={6}
+                            marginTop={6}
+                        >
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={evanLight}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.9)'}
+                                            transformOrigin={'60% 10%'}
+                                            alt="Evan Light"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Evan Light
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            iSchool (Faculty of Information)
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={veraKhovanskaya}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.5)'}
+                                            transformOrigin={'60% 25%'}
+                                            alt="Vera Khovanskaya"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Vera Khovanskaya
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            Faculty of Information; Computer
+                                            Science; Schwartz Reisman
+                                            Institute{' '}
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={benjaminSanchezLengeling}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(2)'}
+                                            transformOrigin={'50% 55%'}
+                                            alt="Benjamin Sanchez-Lengeling"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Benjamin Sanchez-Lengeling
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            Chemical Engineering; Vector
+                                            Institute; Acceleration Consortium
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+
+                            <GridItem
+                                colSpan={1}
+                                border="1px solid transparent"
+                                padding={5}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                color={'light'}
+                                {...cardHoverProps}
+                            >
+                                <Box display={'flex'} gap={5}>
+                                    <Box
+                                        boxSize={'100px'}
+                                        borderRadius={'full'}
+                                        overflow={'hidden'}
+                                        border={'3px solid white'}
+                                        flexShrink={0}
+                                    >
+                                        <Image
+                                            src={sebastianJaimungal}
+                                            boxSize={'100%'}
+                                            fit={'cover'}
+                                            align={'top'}
+                                            transform={'scale(1.9)'}
+                                            transformOrigin={'50% 14%'}
+                                            alt="Sebastian Jaimungal"
+                                        />
+                                    </Box>
+                                    <Box width={'75%'}>
+                                        <Text
+                                            fontWeight={'medium'}
+                                            fontSize={{
+                                                base: '15px',
+                                                md: '20px',
+                                            }}
+                                        >
+                                            Sebastian Jaimungal
+                                        </Text>
+                                        <Text
+                                            mt={2}
+                                            fontSize={{
+                                                base: '12px',
+                                                md: '15px',
+                                            }}
+                                        >
+                                            Department of Statistical Sciences
+                                        </Text>
+                                    </Box>
+                                </Box>
+                            </GridItem>
+                        </Grid>
+                    </Box>
+
+                    <Box width={'100%'}>
+                        <Text
+                            w="fit-content"
+                            fontWeight={'medium'}
+                            fontSize={[30, 40]}
+                            color={'light'}
+                        >
+                            FAQ
+                        </Text>
+                        <Accordion allowMultiple marginTop={'6'}>
+                            {/* Q1 */}
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        _hover={{
+                                            bg: 'rgba(255,255,255,0.10)',
+                                        }}
+                                        _expanded={{
+                                            bg: 'rgba(255,255,255,0.10)',
+                                        }}
+                                    >
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            What is the theme?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    “What is Progress?” Teams explore questions
+                                    about AI innovation, regulation, and the
+                                    speed of progress in society.
+                                </AccordionPanel>
+                            </AccordionItem>
+
+                            {/* Q2 */}
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            What are the two streams?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    The Research Stream produces an original AI
+                                    research paper (4-10 pages). The Proposal +
+                                    Pitch Stream produces a written proposal
+                                    (3-5 pages) and live pitch for an AI
+                                    product, startup, or policy idea.
+                                </AccordionPanel>
+                            </AccordionItem>
+
+                            {/* Q3 */}
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            Who can participate?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    Project X is open to anyone at or below the
+                                    undergraduate level. International teams are
+                                    welcome.
+                                </AccordionPanel>
+                            </AccordionItem>
+
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            Do I need a faculty advisor?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    Yes. All teams must have a faculty advisor
+                                    from an accredited institution confirmed by
+                                    January 15, 2027.
+                                </AccordionPanel>
+                            </AccordionItem>
+
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            What do winners receive?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    The winning team from each stream presents
+                                    at ConferenceX and receives a UofT AI
+                                    certificate signed by the judges and UofT AI
+                                    executives. All participants receive a UofT
+                                    AI certificate signed by UofT AI executives
+                                    as a “Project X Finalist Competitor.” Four
+                                    honorable mentions per stream receive a UofT
+                                    AI certificate signed by the judges and UofT
+                                    AI executives. Teams unable to attend
+                                    ConferenceX in person due to distance or
+                                    financial constraints will be facilitated
+                                    with virtual attendance.
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            What is ConferenceX?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    ConferenceX is UofT AI’s end-of-sprint
+                                    showcase event where top finalists from each
+                                    stream present their work live. Date and
+                                    location to be confirmed.
+                                </AccordionPanel>
+                            </AccordionItem>
+                            <AccordionItem
+                                border="1px solid transparent"
+                                mb={3}
+                                borderRadius="lg"
+                                overflow="hidden"
+                                bg="rgba(255,255,255,0.08)"
+                                boxShadow="0 6px 18px rgba(0,0,0,0.25)"
+                                {...cardHoverProps}
+                            >
+                                <h2>
+                                    <AccordionButton py={3} px={4}>
+                                        <Text
+                                            flex="1"
+                                            textAlign="left"
+                                            color="white"
+                                            fontSize="14px"
+                                            fontWeight={500}
+                                        >
+                                            I already applied. Where do I submit
+                                            my work?
+                                        </Text>
+                                        <AccordionIcon color="white" />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel
+                                    px={4}
+                                    pb={4}
+                                    pt={2}
+                                    color="white"
+                                    opacity={0.85}
+                                    fontSize="14px"
+                                >
+                                    Submissions are due January 15, 2027 through
+                                    the application form. Research Stream teams
+                                    submit one PDF of their paper and one PDF of
+                                    the faculty advisor note. Proposal + Pitch
+                                    Stream teams submit one PDF of their written
+                                    proposal and one PDF of the faculty advisor
+                                    note.
+                                </AccordionPanel>
+                            </AccordionItem>
+                        </Accordion>
+                    </Box>
+
                     <Box width={'100%'}>
                         <Text
                             fontWeight={'medium'}
