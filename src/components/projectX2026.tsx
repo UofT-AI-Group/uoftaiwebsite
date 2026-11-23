@@ -23,7 +23,6 @@ import {
     LuMicVocal,
     LuUsersRound,
 } from 'react-icons/lu'
-import gradient from '../static/assets/2026gradient.webp'
 import evanLight from '../static/assets/projectx2026_mentors/evan_light.jpg'
 import veraKhovanskaya from '../static/assets/projectx2026_mentors/vera_khovanskaya.jpg'
 import sebastianJaimungal from '../static/assets/projectx2026_mentors/sebastian_jaimungal.jpg'
@@ -45,22 +44,47 @@ const cardHoverProps = {
     },
 }
 
+const PAGE_GRADIENT = [
+    'radial-gradient(ellipse 65% 30% at 85% 6%, rgba(52, 108, 198, 0.38), transparent 68%)',
+    'radial-gradient(ellipse 55% 26% at 12% 24%, rgba(28, 96, 156, 0.32), transparent 65%)',
+    'radial-gradient(ellipse 60% 28% at 88% 48%, rgba(40, 86, 168, 0.34), transparent 68%)',
+    'radial-gradient(ellipse 58% 26% at 14% 74%, rgba(26, 84, 148, 0.32), transparent 66%)',
+    'radial-gradient(ellipse 65% 25% at 82% 94%, rgba(44, 92, 174, 0.30), transparent 70%)',
+    'linear-gradient(180deg, #0b1933 0%, #11264c 22%, #0d1f40 48%, #142c57 74%, #09152b 100%)',
+].join(', ')
+
+const GRAIN_TEXTURE = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`
+
 export default function ProjectX2026() {
     return (
         <Box fontFamily={'Tabular, sans-serif'}>
             <Box
-                bgImage={gradient}
-                bgPosition={'50%'}
-                bgSize={'cover'}
-                bgRepeat={'no-repeat'}
+                position={'relative'}
+                isolation={'isolate'}
+                bgColor={'#11264c'}
+                bgImage={PAGE_GRADIENT}
                 minHeight={'80vh'}
                 width={'100%'}
                 mt={28}
                 pt={[10, 58]}
                 pl={[4, 16]}
                 pr={[4, 16]}
+                _before={{
+                    content: '""',
+                    position: 'absolute',
+                    inset: 0,
+                    bgImage: GRAIN_TEXTURE,
+                    bgRepeat: 'repeat',
+                    bgSize: '200px 200px',
+                    opacity: 1,
+                    mixBlendMode: 'overlay',
+                    pointerEvents: 'none',
+                    zIndex: 0,
+                }}
             >
                 <VStack
+                    position={'relative'}
+                    zIndex={1}
                     alignItems={'left'}
                     spacing={100}
                     pb={'20px'}
