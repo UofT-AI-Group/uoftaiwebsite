@@ -19,15 +19,11 @@ import { wrap } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 import Wordmark from './Wordmark'
 
-/** Year pages like `/conferencex-2026` count as part of `/conferencex`. */
+/** Year pages like `/conferencex/2026` count as part of `/conferencex`. */
 function isCurrentLink(to: string, pathname: string, hash: string) {
     if (to.includes('#')) return `${pathname}${hash}` === to
     if (to === '/') return pathname === '/' && !hash
-    return (
-        pathname === to ||
-        pathname.startsWith(`${to}/`) ||
-        pathname.startsWith(`${to}-`)
-    )
+    return pathname === to || pathname.startsWith(`${to}/`)
 }
 
 const LinkTarget = ({

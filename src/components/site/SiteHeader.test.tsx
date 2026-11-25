@@ -28,7 +28,7 @@ const openMenu = async (group: string) => {
 test.each([
     ['/#team', 'About', 'Our team', '/#team'],
     ['/projectx/2026', 'Programs', 'ProjectX', '/projectx'],
-    ['/conferencex-2026', 'Programs', 'ConferenceX', '/conferencex'],
+    ['/conferencex/2026', 'Programs', 'ConferenceX', '/conferencex'],
 ])(
     'marks the current section on %s',
     async (route, group, label, destination) => {

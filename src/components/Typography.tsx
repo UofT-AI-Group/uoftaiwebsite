@@ -35,29 +35,6 @@ export const PartnerTitle = () => {
     )
 }
 
-export const ConferenceXTitle = () => {
-    return (
-        <Heading
-            fontWeight={'medium'}
-            fontSize={[30, 48]}
-            fontFamily={'Tabular, sans-serif'}
-            display={'inline'}
-            textAlign={'center'}
-        >
-            <Text as={'span'} color={'light'}>
-                Welcome To:
-            </Text>
-            <Text as={'span'} color={'brand'}>
-                <Typewriter
-                    onInit={(typewriter) => {
-                        typewriter.typeString('ConferenceX').start()
-                    }}
-                />
-            </Text>
-        </Heading>
-    )
-}
-
 export const ProjectXResearchThemeTitle = () => {
     return (
         <Heading

@@ -193,19 +193,19 @@ export const EVENTS: PastEvent[] = [
     {
         year: 2024,
         name: 'ConferenceX',
-        to: '/conferencex-2024',
+        to: '/conferencex/2024',
         detail: 'Panel with Geoffrey Hinton',
     },
     {
         year: 2025,
         name: 'ConferenceX',
-        to: '/conferencex-2025',
+        to: '/conferencex/2025',
         detail: 'Startup showcase and research fair',
     },
     {
         year: 2026,
         name: 'ConferenceX',
-        to: '/conferencex-2026',
+        to: '/conferencex/2026',
         detail: 'Theme: The Intelligence Test',
     },
     {
@@ -217,7 +217,7 @@ export const EVENTS: PastEvent[] = [
     {
         year: 2027,
         name: 'ConferenceX',
-        to: '/conferencex-2027',
+        to: '/conferencex',
         detail: 'Proposed theme: The Past and Future of AI',
         upcoming: true,
     },

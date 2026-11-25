@@ -26,7 +26,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tag } from '@/components/ui/tag'
 import {
     ABOUT,
-    EVENTS,
     FEATURED_SPEAKER,
     PAST_PARTNERS,
     PROGRAMS,
@@ -34,22 +33,12 @@ import {
     SPONSORS_2026,
     STATS,
 } from '@/data/home'
-import { scheduleDay1 } from '@/data/scheduleDay1'
-import { scheduleDay2 } from '@/data/scheduleDay2'
+import { ALL_EDITIONS } from '@/data/conferencex'
+import { recap2026 } from '@/data/conferencex/2026'
 import codeOfConduct from '../static/assets/codeofconduct.pdf'
 import problemStatement from '../static/assets/Problem_Statement_ProjectX_1.pdf'
 
 const conferencePhoto = PROGRAMS[1].photo
-
-const CONFERENCE_EDITIONS = EVENTS.filter((e) => e.name === 'ConferenceX')
-    .reverse()
-    .map(({ year, name, to, detail, upcoming }) => ({
-        year,
-        title: name,
-        href: to,
-        detail,
-        upcoming,
-    }))
 
 const FAQ = [
     {
@@ -85,10 +74,11 @@ const FAQ = [
     },
 ]
 
-const DAYS = [
-    { value: 'day-1', label: 'Day 1', events: scheduleDay1.slice(0, 4) },
-    { value: 'day-2', label: 'Day 2', events: scheduleDay2.slice(0, 4) },
-]
+const DAYS = (recap2026.schedule?.days ?? []).map(({ id, items }, i) => ({
+    value: id,
+    label: `Day ${i + 1}`,
+    events: items.slice(0, 4),
+}))
 
 /** Every kit piece and state on one page. Only routed in development. */
 const Kit = () => (
@@ -394,8 +384,8 @@ const Kit = () => (
         >
             <ArchiveList
                 className="mt-12"
-                editions={CONFERENCE_EDITIONS}
-                current="/conferencex-2026"
+                editions={ALL_EDITIONS}
+                current="/conferencex/2026"
             />
         </Section>
 

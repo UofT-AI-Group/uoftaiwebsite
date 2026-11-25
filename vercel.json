@@ -1,5 +1,27 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
     "framework": "vite",
+    "redirects": [
+        {
+            "source": "/conferencex-2024",
+            "destination": "/conferencex/2024",
+            "permanent": true
+        },
+        {
+            "source": "/conferencex-2025",
+            "destination": "/conferencex/2025",
+            "permanent": true
+        },
+        {
+            "source": "/conferencex-2026",
+            "destination": "/conferencex/2026",
+            "permanent": true
+        },
+        {
+            "source": "/conferencex-2027",
+            "destination": "/conferencex",
+            "permanent": true
+        }
+    ],
     "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

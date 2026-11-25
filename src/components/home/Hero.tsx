@@ -22,7 +22,7 @@ const Hero = () => (
             )}
         >
             <Link
-                to="/conferencex-2027"
+                to="/conferencex"
                 className="focus-ring pointer-events-auto mb-10 inline-flex items-center gap-2.5 self-start rounded-full border border-[#2c2c32] bg-ink/60 py-2 pr-3.5 pl-2.5 text-[12.5px] text-[#d2d2d7] transition-colors duration-250 hover:border-brand motion-reduce:transition-none"
             >
                 <span className="shrink-0 rounded-full bg-brand/16 px-2 py-0.75 text-[11px] tracking-widest whitespace-nowrap text-[#e2c6f5] uppercase">

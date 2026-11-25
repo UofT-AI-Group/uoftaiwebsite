@@ -2,14 +2,20 @@ import { useId, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-export type Person = { name: string; role: string; photo: string }
+export type Person = {
+    name: string
+    role: string
+    photo: string
+    /** Set on its own line under the role, for people listed with an employer. */
+    org?: string
+}
 
 const photoClass =
     'aspect-[4/5] w-full bg-raised object-cover transition-transform duration-600 ease-out-soft group-hover:scale-105 motion-reduce:transition-none'
 
 /** A 4:5 portrait with name and role. `lg` is for a single featured person. */
 export const PersonCard = ({
-    person: { name, role, photo },
+    person: { name, role, photo, org },
     size = 'md',
     className,
 }: {
@@ -36,6 +42,11 @@ export const PersonCard = ({
                 <span className="mt-1.5 block font-sans text-[15px] text-dim">
                     {role}
                 </span>
+                {org && (
+                    <span className="mt-0.5 block font-sans text-[15px] text-dim">
+                        {org}
+                    </span>
+                )}
             </figcaption>
         ) : (
             <figcaption>
@@ -43,6 +54,11 @@ export const PersonCard = ({
                 <span className="mt-1 block font-sans text-xs/[1.4] text-dim">
                     {role}
                 </span>
+                {org && (
+                    <span className="mt-0.5 block font-sans text-xs/[1.4] text-dim">
+                        {org}
+                    </span>
+                )}
             </figcaption>
         )}
     </figure>
