@@ -44,6 +44,11 @@ const cardHoverProps = {
     },
 }
 
+const faqButtonProps = {
+    _hover: { bg: 'rgba(255,255,255,0.10)' },
+    _expanded: { bg: 'rgba(255,255,255,0.10)' },
+}
+
 const PAGE_GRADIENT = [
     'radial-gradient(ellipse 65% 30% at 85% 6%, rgba(52, 108, 198, 0.38), transparent 68%)',
     'radial-gradient(ellipse 55% 26% at 12% 24%, rgba(28, 96, 156, 0.32), transparent 65%)',
@@ -97,18 +102,18 @@ export default function ProjectX2026() {
                         </Text>
                         <ProjectXResearchThemeTitle />
                         <Text width={'75%'}>
-                            Projects may explore how AI can address a specific
-                            problem or how regulation should guide the pace of
-                            AI development. The competition is open to anyone at
-                            or below the undergraduate level. Teams must have a
-                            faculty advisor from an accredited institution
-                            confirmed by{' '}
+                            Project X is UofT AI’s undergraduate AI research
+                            competition. Over four months, teams research and
+                            present original work on AI innovation, regulation,
+                            and the speed of progress. It’s open to anyone at or
+                            below the undergraduate level, and every team needs
+                            a faculty advisor from an accredited institution by{' '}
                             <Text as="span" fontWeight={'bold'}>
                                 January 15
                             </Text>
                             .
                         </Text>
-                        <Text>Two streams:</Text>
+                        <Text mt={4}>Teams compete in one of two streams:</Text>
                         <UnorderedList
                             listStyleType={'circle'}
                             spacing={1}
@@ -119,8 +124,7 @@ export default function ProjectX2026() {
                                     <Text as="span" fontWeight={'bold'}>
                                         Research Stream:
                                     </Text>{' '}
-                                    Teams produce an original AI research paper
-                                    (4-10 pages).
+                                    an original AI research paper (4-10 pages).
                                 </Text>
                             </ListItem>
                             <ListItem>
@@ -128,10 +132,9 @@ export default function ProjectX2026() {
                                     <Text as="span" fontWeight={'bold'}>
                                         Proposal + Pitch Stream:
                                     </Text>{' '}
-                                    Teams develop and pitch an AI product,
-                                    startup, or policy idea. The deliverable is
-                                    a written proposal (3-5 pages) plus a live
-                                    pitch.
+                                    a written proposal (3-5 pages) and a live
+                                    pitch for an AI product, startup, or policy
+                                    idea.
                                 </Text>
                             </ListItem>
                         </UnorderedList>
@@ -212,7 +215,7 @@ export default function ProjectX2026() {
                                         <Text as="span" fontWeight="bold">
                                             Format:
                                         </Text>{' '}
-                                        In-Person
+                                        In person
                                     </Text>
                                     <Text>
                                         <Text as="span" fontWeight="bold">
@@ -220,7 +223,6 @@ export default function ProjectX2026() {
                                         </Text>{' '}
                                         OISE 2214, University of Toronto
                                     </Text>
-                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
                                 <Text
                                     color="#FFFFFFB2"
@@ -228,13 +230,12 @@ export default function ProjectX2026() {
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
+                                    mt="12px"
                                     mb="16px"
                                 >
-                                    Welcome event for all accepted teams.
-                                    Mentors and faculty advisors attended, teams
-                                    presented their projects, and teams
-                                    connected with potential mentors and
-                                    advisors through networking.
+                                    The welcome event for accepted teams. Teams
+                                    presented their projects and met mentors and
+                                    faculty advisors.
                                 </Text>
                             </GridItem>
 
@@ -285,7 +286,6 @@ export default function ProjectX2026() {
                                         </Text>{' '}
                                         Virtual (Zoom)
                                     </Text>
-                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
                                 <Text
                                     color="#FFFFFFB2"
@@ -293,11 +293,11 @@ export default function ProjectX2026() {
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-
+                                    mt="12px"
                                     mb="16px"
                                 >
-                                    Virtual networking event for all teams to
-                                    connect with mentors and advisors.
+                                    Another chance for every team to meet
+                                    mentors and advisors, this time online.
                                 </Text>
                             </GridItem>
 
@@ -340,7 +340,7 @@ export default function ProjectX2026() {
                                         <Text as="span" fontWeight="bold">
                                             Date:
                                         </Text>{' '}
-                                        December 2026
+                                        December 2026 (date TBA)
                                     </Text>
                                     <Text>
                                         <Text as="span" fontWeight="bold">
@@ -348,7 +348,6 @@ export default function ProjectX2026() {
                                         </Text>{' '}
                                         Virtual (Zoom)
                                     </Text>
-                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
                                 <Text
                                     color="#FFFFFFB2"
@@ -356,14 +355,14 @@ export default function ProjectX2026() {
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-
+                                    mt="12px"
                                     mb="16px"
                                 >
-                                    Research stream event. A session on how to
-                                    conduct and write AI research: literature
-                                    reviews, methodology, citations, and
-                                    structuring a paper. Recorded and shared
-                                    after.
+                                    How to conduct and write AI research,
+                                    covering literature reviews, methodology,
+                                    citations, and paper structure. Built for
+                                    the Research Stream but open to every team,
+                                    and recorded for anyone who can’t attend.
                                 </Text>
                             </GridItem>
 
@@ -406,7 +405,7 @@ export default function ProjectX2026() {
                                         <Text as="span" fontWeight="bold">
                                             Date:
                                         </Text>{' '}
-                                        December 2026
+                                        December 2026 (date TBA)
                                     </Text>
                                     <Text>
                                         <Text as="span" fontWeight="bold">
@@ -414,7 +413,6 @@ export default function ProjectX2026() {
                                         </Text>{' '}
                                         TBA
                                     </Text>
-                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
                                 <Text
                                     color="#FFFFFFB2"
@@ -422,14 +420,15 @@ export default function ProjectX2026() {
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-
+                                    mt="12px"
                                     mb="16px"
                                 >
-                                    Event for Proposal + Pitch Stream primarily.
-                                    A session on entrepreneurship in tech and
-                                    how to build and deliver a compelling pitch
-                                    and written proposal, followed by a Q&A on
-                                    proposal structure and what judges look for.
+                                    A talk on entrepreneurship in tech and on
+                                    building a strong pitch and written
+                                    proposal, followed by a Q&A on proposal
+                                    structure and what judges look for. Aimed at
+                                    the Proposal + Pitch Stream, and Research
+                                    Stream teams are welcome.
                                 </Text>
                             </GridItem>
 
@@ -472,7 +471,7 @@ export default function ProjectX2026() {
                                         <Text as="span" fontWeight="bold">
                                             Date:
                                         </Text>{' '}
-                                        January 2027
+                                        January 2027 (date TBA)
                                     </Text>
                                     <Text>
                                         <Text as="span" fontWeight="bold">
@@ -480,7 +479,6 @@ export default function ProjectX2026() {
                                         </Text>{' '}
                                         Virtual (Zoom)
                                     </Text>
-                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
                                 <Text
                                     color="#FFFFFFB2"
@@ -488,12 +486,12 @@ export default function ProjectX2026() {
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-
+                                    mt="12px"
                                     mb="16px"
                                 >
-                                    Open drop-in Zoom session. Teams can ask
-                                    questions about their submissions before the
-                                    January 15 deadline.
+                                    A drop-in session where teams from both
+                                    streams can ask questions about their
+                                    submissions before the January 15 deadline.
                                 </Text>
                             </GridItem>
 
@@ -536,7 +534,7 @@ export default function ProjectX2026() {
                                         <Text as="span" fontWeight="bold">
                                             Date:
                                         </Text>{' '}
-                                        February 2027
+                                        February 2027 (date TBA)
                                     </Text>
                                     <Text>
                                         <Text as="span" fontWeight="bold">
@@ -544,7 +542,6 @@ export default function ProjectX2026() {
                                         </Text>{' '}
                                         Live presentations and awards ceremony
                                     </Text>
-                                    <Text fontWeight="bold">Description:</Text>
                                 </Box>
                                 <Text
                                     color="#FFFFFFB2"
@@ -552,13 +549,13 @@ export default function ProjectX2026() {
                                     lineHeight="26px"
                                     letterSpacing="-0.31px"
                                     opacity={0.9}
-
+                                    mt="12px"
                                     mb="16px"
                                 >
-                                    Top finalists present their work live before
-                                    a panel of judges. All teams may attend
-                                    virtually. The winning team from each stream
-                                    presents as a 10-minute slide deck.
+                                    Finalists present their work live to the
+                                    judges, and the winning team from each
+                                    stream gives a 10-minute slide presentation.
+                                    Every team can attend virtually.
                                 </Text>
                             </GridItem>
                         </Grid>
@@ -574,10 +571,10 @@ export default function ProjectX2026() {
                             Judges
                         </Text>
                         <Text color={'light'} mt={5} width={'75%'}>
-                            Judges are professors and experts in the field of
-                            AI. They review and score all submissions according
-                            to the rubric for each stream and attend
-                            ConferenceX. 3-5 judges per stream.
+                            Each stream will have three to five judges, all
+                            professors or AI experts. They score every
+                            submission against that stream’s rubric and attend
+                            ConferenceX.
                         </Text>
                         <Grid
                             templateColumns={'repeat(1, 1fr)'}
@@ -644,50 +641,39 @@ export default function ProjectX2026() {
                                         >
                                             Paolo Granata
                                         </Text>
-                                        <UnorderedList
-                                            listStyleType={'circle'}
-                                            spacing={1}
+                                        <Text
                                             mt={3}
                                             fontSize={{
                                                 base: '12px',
                                                 md: '15px',
                                             }}
                                         >
-                                            <ListItem>
-                                                <Text>
-                                                    Faculty member in Book and
-                                                    Media Studies at St.
-                                                    Michael's College,
-                                                    University of Toronto
-                                                </Text>
-                                            </ListItem>
-                                            <ListItem>
-                                                <Text>
-                                                    Affiliated with UofT's
-                                                    Schwartz Reisman Institute
-                                                    for Technology and Society
-                                                    and the School of Cities
-                                                </Text>
-                                            </ListItem>
-                                            <ListItem>
-                                                <Text>
-                                                    Researches media ethics,
-                                                    philosophy of technology,
-                                                    semiotics, and digital
-                                                    equity
-                                                </Text>
-                                            </ListItem>
-                                            <ListItem>
-                                                <Text>
-                                                    Founder of UofT's Media
-                                                    Ethics Lab, where the
-                                                    ethical, political, and
-                                                    social sides of digital
-                                                    media and new technologies
-                                                    are studied
-                                                </Text>
-                                            </ListItem>
-                                        </UnorderedList>
+                                            Paolo Granata is a faculty member of
+                                            Book and Media Studies at St.
+                                            Michael’s College, University of
+                                            Toronto, where he also holds
+                                            affiliations with the Schwartz
+                                            Reisman Institute for Technology and
+                                            Society and the School of Cities. An
+                                            award-winning educator and
+                                            cross-disciplinary media scholar,
+                                            his research spans media ethics,
+                                            philosophy of technology, semiotics,
+                                            and digital equity. In 2019 he
+                                            founded the Media Ethics Lab at
+                                            UofT, a research hub dedicated to
+                                            examining the ethical, political,
+                                            and societal dimensions of digital
+                                            media and emerging technologies. He
+                                            is a Marshall McLuhan Centenary
+                                            Fellow, a Senior Fellow at Massey
+                                            College, and has held visiting
+                                            professorships at institutions
+                                            across Italy, Brazil, and China. His
+                                            work as a cultural strategist
+                                            contributed to Toronto’s designation
+                                            as a UNESCO Creative City in 2017.
+                                        </Text>
                                     </Box>
                                 </Box>
                             </GridItem>
@@ -704,13 +690,13 @@ export default function ProjectX2026() {
                             Mentors
                         </Text>
                         <Text color={'light'} mt={5} width={'75%'}>
-                            The following mentors attended the{' '}
-                            <Text fontWeight={'bold'} display={'inline-block'}>
+                            These mentors attended the{' '}
+                            <Text as="span" fontWeight={'bold'}>
                                 November 7
                             </Text>{' '}
-                            kickoff or have confirmed interest in supporting
-                            Project X teams. Teams may reach out to mentors for
-                            guidance throughout the sprint.
+                            kickoff or have offered to support Project X teams.
+                            Teams can contact them for guidance at any point in
+                            the sprint.
                         </Text>
                         <Grid
                             templateColumns={{
@@ -766,10 +752,7 @@ export default function ProjectX2026() {
                                                 md: '15px',
                                             }}
                                         >
-                                            <Text
-                                                fontWeight={'bold'}
-                                                display={'inline-block'}
-                                            >
+                                            <Text as="span" fontWeight={'bold'}>
                                                 Topics:
                                             </Text>{' '}
                                             Computational photography,
@@ -825,10 +808,7 @@ export default function ProjectX2026() {
                                                 md: '15px',
                                             }}
                                         >
-                                            <Text
-                                                fontWeight={'bold'}
-                                                display={'inline-block'}
-                                            >
+                                            <Text as="span" fontWeight={'bold'}>
                                                 Topics:
                                             </Text>{' '}
                                             AI security, governance, agentic
@@ -884,10 +864,7 @@ export default function ProjectX2026() {
                                                 md: '15px',
                                             }}
                                         >
-                                            <Text
-                                                fontWeight={'bold'}
-                                                display={'inline-block'}
-                                            >
+                                            <Text as="span" fontWeight={'bold'}>
                                                 Topics:
                                             </Text>{' '}
                                             Intelligent adaptive teaching
@@ -942,10 +919,7 @@ export default function ProjectX2026() {
                                                 md: '15px',
                                             }}
                                         >
-                                            <Text
-                                                fontWeight={'bold'}
-                                                display={'inline-block'}
-                                            >
+                                            <Text as="span" fontWeight={'bold'}>
                                                 Topics:
                                             </Text>{' '}
                                             AI and work, digital labour
@@ -980,7 +954,7 @@ export default function ProjectX2026() {
                                             align={'top'}
                                             transform={'scale(1.7)'}
                                             transformOrigin={'48% 40%'}
-                                            alt="Conrad Samsel"
+                                            alt="Konrad Samsel"
                                         />
                                     </Box>
                                     <Box width={'75%'}>
@@ -1001,10 +975,7 @@ export default function ProjectX2026() {
                                                 md: '15px',
                                             }}
                                         >
-                                            <Text
-                                                fontWeight={'bold'}
-                                                display={'inline-block'}
-                                            >
+                                            <Text as="span" fontWeight={'bold'}>
                                                 Topics:
                                             </Text>{' '}
                                             Clinical AI, health policy
@@ -1025,17 +996,17 @@ export default function ProjectX2026() {
                             Faculty Advisors
                         </Text>
                         <Text color={'light'} mt={5} width={'75%'}>
-                            All teams must have a faculty advisor by{' '}
+                            Every team needs a faculty advisor by{' '}
                             <Text as="span" fontWeight={'bold'}>
                                 January 15
                             </Text>{' '}
-                            who can attest to the credibility of their
-                            submission in a short signed note. Faculty advisors
-                            connected with teams at the{' '}
+                            to vouch for its submission in a short signed note.
+                            Advisors met teams at the{' '}
                             <Text as="span" fontWeight={'bold'}>
                                 November 7
                             </Text>{' '}
-                            kickoff.
+                            kickoff, and the faculty members below have offered
+                            to advise Project X teams.
                         </Text>
                         <Grid
                             templateColumns={{
@@ -1269,7 +1240,6 @@ export default function ProjectX2026() {
                             FAQ
                         </Text>
                         <Accordion allowMultiple marginTop={'6'}>
-                            {/* Q1 */}
                             <AccordionItem
                                 border="1px solid transparent"
                                 mb={3}
@@ -1283,12 +1253,7 @@ export default function ProjectX2026() {
                                     <AccordionButton
                                         py={3}
                                         px={4}
-                                        _hover={{
-                                            bg: 'rgba(255,255,255,0.10)',
-                                        }}
-                                        _expanded={{
-                                            bg: 'rgba(255,255,255,0.10)',
-                                        }}
+                                        {...faqButtonProps}
                                     >
                                         <Text
                                             flex="1"
@@ -1316,7 +1281,6 @@ export default function ProjectX2026() {
                                 </AccordionPanel>
                             </AccordionItem>
 
-                            {/* Q2 */}
                             <AccordionItem
                                 border="1px solid transparent"
                                 mb={3}
@@ -1327,7 +1291,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1356,7 +1324,6 @@ export default function ProjectX2026() {
                                 </AccordionPanel>
                             </AccordionItem>
 
-                            {/* Q3 */}
                             <AccordionItem
                                 border="1px solid transparent"
                                 mb={3}
@@ -1367,7 +1334,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1404,7 +1375,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1441,7 +1416,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1449,7 +1428,7 @@ export default function ProjectX2026() {
                                             fontSize="14px"
                                             fontWeight={500}
                                         >
-                                            What do winners receive?
+                                            What recognition do teams receive?
                                         </Text>
                                         <AccordionIcon color="white" />
                                     </AccordionButton>
@@ -1462,18 +1441,38 @@ export default function ProjectX2026() {
                                     opacity={0.85}
                                     fontSize="14px"
                                 >
-                                    The winning team from each stream presents
-                                    at ConferenceX and receives a UofT AI
-                                    certificate signed by the judges and UofT AI
-                                    executives. All participants receive a UofT
-                                    AI certificate signed by UofT AI executives
-                                    as a “Project X Finalist Competitor.” Four
-                                    honorable mentions per stream receive a UofT
-                                    AI certificate signed by the judges and UofT
-                                    AI executives. Teams unable to attend
-                                    ConferenceX in person due to distance or
-                                    financial constraints will be facilitated
-                                    with virtual attendance.
+                                    <UnorderedList spacing={1}>
+                                        <ListItem>
+                                            <Text as="span" fontWeight="bold">
+                                                Winners
+                                            </Text>{' '}
+                                            (one team per stream) present at
+                                            ConferenceX and receive a
+                                            certificate signed by the judges and
+                                            UofT AI executives.
+                                        </ListItem>
+                                        <ListItem>
+                                            <Text as="span" fontWeight="bold">
+                                                Honourable mentions
+                                            </Text>{' '}
+                                            (four per stream) receive a
+                                            certificate signed by the judges and
+                                            UofT AI executives.
+                                        </ListItem>
+                                        <ListItem>
+                                            <Text as="span" fontWeight="bold">
+                                                Every participant
+                                            </Text>{' '}
+                                            receives a “Project X Finalist
+                                            Competitor” certificate signed by
+                                            UofT AI executives.
+                                        </ListItem>
+                                    </UnorderedList>
+                                    <Text mt={2}>
+                                        Teams that can’t attend ConferenceX in
+                                        person because of distance or cost can
+                                        join virtually.
+                                    </Text>
                                 </AccordionPanel>
                             </AccordionItem>
                             <AccordionItem
@@ -1486,7 +1485,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1507,10 +1510,11 @@ export default function ProjectX2026() {
                                     opacity={0.85}
                                     fontSize="14px"
                                 >
-                                    ConferenceX is UofT AI’s end-of-sprint
-                                    showcase event where top finalists from each
-                                    stream present their work live. Date and
-                                    location to be confirmed.
+                                    It’s UofT AI’s showcase at the end of the
+                                    sprint, where finalists from each stream
+                                    present their work live. It takes place in
+                                    February 2027, with the exact date and
+                                    location TBA.
                                 </AccordionPanel>
                             </AccordionItem>
 
@@ -1524,7 +1528,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1532,8 +1540,8 @@ export default function ProjectX2026() {
                                             fontSize="14px"
                                             fontWeight={500}
                                         >
-                                            What are the guidelines for
-                                            participating teams?
+                                            Where can I find the competition
+                                            guidelines?
                                         </Text>
                                         <AccordionIcon color="white" />
                                     </AccordionButton>
@@ -1546,12 +1554,16 @@ export default function ProjectX2026() {
                                     opacity={0.85}
                                     fontSize="14px"
                                 >
-                                    The guidelines for participating teams of
-                                    both Research and Proposal + Pitch streams
-                                    are accessible here -{' '}
-                                    <Link href="https://docs.google.com/document/d/1xiWhXU9ofkp9TH71-RpKnl-ZcfvX4405wvNZdgxzFpw/edit?tab=t.0">
-                                        Guidelines
-                                    </Link>
+                                    The{' '}
+                                    <Link
+                                        href="https://docs.google.com/document/d/1xiWhXU9ofkp9TH71-RpKnl-ZcfvX4405wvNZdgxzFpw/edit?tab=t.0"
+                                        isExternal
+                                        textDecoration="underline"
+                                        color="#a2d2ff"
+                                    >
+                                        participant guidelines
+                                    </Link>{' '}
+                                    cover both streams.
                                 </AccordionPanel>
                             </AccordionItem>
 
@@ -1565,7 +1577,11 @@ export default function ProjectX2026() {
                                 {...cardHoverProps}
                             >
                                 <h2>
-                                    <AccordionButton py={3} px={4}>
+                                    <AccordionButton
+                                        py={3}
+                                        px={4}
+                                        {...faqButtonProps}
+                                    >
                                         <Text
                                             flex="1"
                                             textAlign="left"
@@ -1587,13 +1603,19 @@ export default function ProjectX2026() {
                                     opacity={0.85}
                                     fontSize="14px"
                                 >
-                                    Submissions are due January 15, 2027 through
-                                    the application form. Research Stream teams
-                                    submit one PDF of their paper and one PDF of
-                                    the faculty advisor note. Proposal + Pitch
-                                    Stream teams submit one PDF of their written
-                                    proposal and one PDF of the faculty advisor
-                                    note.
+                                    Submit through the{' '}
+                                    <Link
+                                        href="https://forms.gle/J99tMADBSikDDf9E6"
+                                        isExternal
+                                        textDecoration="underline"
+                                        color="#a2d2ff"
+                                    >
+                                        application form
+                                    </Link>{' '}
+                                    by January 15, 2027. Every team uploads two
+                                    PDFs: the faculty advisor’s note, plus the
+                                    research paper (Research Stream) or written
+                                    proposal (Proposal + Pitch Stream).
                                 </AccordionPanel>
                             </AccordionItem>
                         </Accordion>
@@ -1609,13 +1631,13 @@ export default function ProjectX2026() {
                             Have Questions?
                         </Text>
                         <Text color={'light'}>
-                            Contact{' '}
+                            Email us at{' '}
                             <Text as="span" color={'#a2d2ff'}>
-                                <a href="mailto:uoftaigroup@gmail.com">
+                                <a href="mailto:projectxuoft@gmail.com">
                                     projectxuoft@gmail.com
                                 </a>
                             </Text>
-                            . We will make our best to accommodate!
+                            .
                         </Text>
                     </Box>
                     <Box></Box>
