@@ -57,21 +57,3 @@ export const ConferenceXTitle = () => {
         </Heading>
     )
 }
-
-export const ProjectXResearchThemeTitle = () => {
-    return (
-        <Heading
-            fontFamily={'Tabular, sans-serif'}
-            fontWeight={'medium'}
-            fontSize={[30, 60]}
-            color={'light'}
-            m={'20px 0px'}
-        >
-            <Typewriter
-                onInit={(typewriter) => {
-                    typewriter.typeString('What is Progress?').start()
-                }}
-            />
-        </Heading>
-    )
-}

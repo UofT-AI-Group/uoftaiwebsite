@@ -10,6 +10,18 @@ export type LogoGroup = {
     logos: Logo[]
     /** Rendered logo height in px. Use larger values for higher tiers. */
     height?: number
+    /**
+     * Sizes logos by area instead of height, so square crests and long
+     * wordmarks carry similar weight. `height` then applies to a logo about
+     * 2.5 times as wide as it is tall; others scale from there, within limits.
+     */
+    balance?: boolean
+}
+
+const balancedHeight = (width: number, height: number) => {
+    const aspect = width / 120
+    const scaled = height * Math.sqrt(2.5 / aspect)
+    return Math.round(Math.min(height * 1.5, Math.max(height * 0.65, scaled)))
 }
 
 /**
@@ -36,7 +48,7 @@ export const LogoWall = ({
                 'bg-white text-ink',
             )}
         >
-            {groups.map(({ title, logos, height = 40 }) => (
+            {groups.map(({ title, logos, height = 40, balance = false }) => (
                 <div
                     key={title ?? logos[0]?.name}
                     className="grid gap-5 border-t border-ink/12 py-8 md:grid-cols-12 md:gap-8"
@@ -52,19 +64,24 @@ export const LogoWall = ({
                             title ? 'md:col-span-9' : 'md:col-span-12',
                         )}
                     >
-                        {logos.map(({ name, src, width }) => (
-                            <li key={name}>
-                                <img
-                                    src={src}
-                                    alt={name}
-                                    width={Math.round((width * height) / 120)}
-                                    height={height}
-                                    loading="lazy"
-                                    className="w-auto"
-                                    style={{ height }}
-                                />
-                            </li>
-                        ))}
+                        {logos.map(({ name, src, width }) => {
+                            const h = balance
+                                ? balancedHeight(width, height)
+                                : height
+                            return (
+                                <li key={name}>
+                                    <img
+                                        src={src}
+                                        alt={name}
+                                        width={Math.round((width * h) / 120)}
+                                        height={h}
+                                        loading="lazy"
+                                        className="w-auto"
+                                        style={{ height: h }}
+                                    />
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
             ))}
