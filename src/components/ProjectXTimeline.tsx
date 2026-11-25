@@ -23,7 +23,7 @@ const MILESTONES: TimelineMilestone[] = [
     },
     {
         date: 'November 7, 2026',
-        title: 'Kickoff and Networking Mixer (in-person)',
+        title: 'Kickoff and Networking Mixer (in person)',
     },
     {
         date: 'November 27, 2026',
@@ -39,11 +39,11 @@ const MILESTONES: TimelineMilestone[] = [
     },
     {
         date: 'January 2027',
-        title: 'Virtual Office Hours — Research Stream',
+        title: 'Virtual Office Hours (Research Stream)',
     },
     {
         date: 'January 2027',
-        title: 'Virtual Office Hours — Proposal + Pitch Stream',
+        title: 'Virtual Office Hours (Proposal + Pitch Stream)',
     },
     {
         date: 'January 15, 2027',
@@ -52,7 +52,7 @@ const MILESTONES: TimelineMilestone[] = [
     },
     {
         date: 'February 2027',
-        title: 'ConferenceX — live presentations and awards (date pending)',
+        title: 'ConferenceX presentations and awards',
         highlight: true,
     },
 ]
@@ -133,7 +133,8 @@ function MilestoneCard({
 }
 
 export default function ProjectXTimeline() {
-    const cols = useBreakpointValue({ base: 1, md: 2, lg: 3 }) ?? 1
+    const cols =
+        useBreakpointValue({ base: 1, md: 2, lg: 3 }, { ssr: false }) ?? 1
 
     if (cols === 1) {
         return (

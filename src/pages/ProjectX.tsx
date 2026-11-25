@@ -50,15 +50,15 @@ export default function ProjectX() {
                     Final papers will be judged by a panel of academics and
                     industry experts.
                 </Text>
-                {/* <Box marginTop={'20px'}>
+                <Box marginTop={'20px'}>
                     <ButtonOutline
                         as="a"
                         href="https://forms.gle/J99tMADBSikDDf9E6"
                         variant="light"
                     >
-                        Apply Now
+                        Submit Your Work
                     </ButtonOutline>
-                </Box> */}
+                </Box>
                 <Text
                     fontWeight={'regular'}
                     fontSize={[16, 20]}
