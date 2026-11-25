@@ -56,7 +56,7 @@ export default function ProjectX() {
                         href="https://forms.gle/J99tMADBSikDDf9E6"
                         variant="light"
                     >
-                        Apply Now
+                        Submit Your Work
                     </ButtonOutline>
                 </Box>
                 <Text
