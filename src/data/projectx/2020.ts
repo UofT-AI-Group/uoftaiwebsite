@@ -12,8 +12,9 @@ export const cycle2020: ProjectXCycle = {
     year: 2020,
     href: '/projectx/2020',
     description:
-        'ProjectX 2020, UofT AI’s ML research competition on climate change: research areas, documents, timeline, judging panel, participating teams and partners.',
+        'ProjectX 2020 was UofT AI’s ML research competition on climate change. This archived page keeps its documents, timeline, judging panel, participating teams and partners.',
     summary: 'Climate Change · $65,000 prize pool',
+    archived: { title: 'ProjectX 2020 has ended.' },
     themeLabel: '2020 ML research focus',
     theme: 'Climate Change',
     topics: [
@@ -22,17 +23,16 @@ export const cycle2020: ProjectXCycle = {
         'Emissions and Energy Efficiency',
     ],
     facts: [{ label: 'Prize pool', value: '$65,000' }],
-    resources: RESOURCES,
+    documents: { items: RESOURCES },
     timeline: { title: 'Timeline', items: TIMELINE_2020_2021 },
     people: [
-        { id: 'judging-panel', title: 'Judging Panel', people: JUDGES_2020 },
-        { id: 'team', title: 'Our Team', people: TEAM_2020_2021 },
+        { id: 'judging-panel', title: 'Judging panel', people: JUDGES_2020 },
+        { id: 'team', title: 'Our team', people: TEAM_2020_2021 },
     ],
     logos: {
-        title: 'Participating teams and partners',
+        title: 'Participating teams',
         groups: [
             {
-                title: 'Participating teams',
                 logos: logos(
                     'mit',
                     'uoft',
@@ -59,7 +59,7 @@ export const cycle2020: ProjectXCycle = {
                 ),
             },
             {
-                title: 'Partners',
+                title: 'Our partners',
                 logos: logos(
                     'google-ai',
                     'uoft',

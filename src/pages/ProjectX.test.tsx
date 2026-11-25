@@ -47,7 +47,7 @@ test('sends old /projectx/2026 links to /projectx, keeping the section', () => {
     ).toBeInTheDocument()
 })
 
-test('keeps a past cycle at its own URL with its documents downloadable', () => {
+test('keeps a past cycle at its own URL, marked archived, with its documents downloadable', () => {
     renderAt('/projectx/2021')
     expect(
         screen.getByRole('heading', { level: 1, name: /^ProjectX\s*2021$/ }),
@@ -55,7 +55,11 @@ test('keeps a past cycle at its own URL with its documents downloadable', () => 
     expect(
         screen.getByRole('link', { name: 'Code of Conduct' }),
     ).toHaveAttribute('download', 'ProjectX Code of Conduct.pdf')
-    expect(archiveLinks('Every ProjectX')).toContain('/projectx')
+    expect(
+        within(
+            screen.getByRole('complementary', { name: 'Archived page' }),
+        ).getByRole('link', { name: 'ProjectX 2026' }),
+    ).toHaveAttribute('href', '/projectx')
     expect(
         screen.getByRole('link', {
             name: /^ProjectX\s*2021$/,

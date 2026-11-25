@@ -13,23 +13,29 @@ export const cycle2021: ProjectXCycle = {
     year: 2021,
     href: '/projectx/2021',
     description:
-        'ProjectX 2021, UofT AI’s ML research competition on health: research areas, documents, financial aid, timeline, judging panel, participating teams and sponsors.',
+        'ProjectX 2021 was UofT AI’s ML research competition on health. This archived page keeps its documents, financial aid, timeline, judging panel, participating teams and sponsors.',
     summary: 'Health · $75,000 prize pool',
+    archived: { title: 'ProjectX 2021 has ended.' },
     themeLabel: '2021 ML research focus',
     theme: 'Health',
     topics: ['Epidemiology', 'Clinical Practice', 'Genetics'],
     facts: [{ label: 'Prize pool', value: '$75,000' }],
-    resources: RESOURCES,
+    documents: { items: RESOURCES },
     support: {
-        title: 'Participants Financial Aid',
+        title: 'Participants financial aid',
         items: [
             {
                 title: 'For individuals',
-                text: 'Travelling or struggling to cover the cost of attending? We’ve got your back! Fill out our bursary application form below to cover the cost of travel (per individual).',
+                paragraphs: [
+                    'Travelling or struggling to cover the cost of attending?',
+                    "We've got your back! Fill out our bursary application form below to cover the cost of travel (per individual).",
+                ],
             },
             {
                 title: 'For teams',
-                text: 'Please submit the following information package to your respective university departments to request financial support on covering travelling expenses.',
+                paragraphs: [
+                    'Please submit the following information package to your respective university departments to request financial support on covering travelling expenses.',
+                ],
             },
         ],
     },
@@ -37,16 +43,15 @@ export const cycle2021: ProjectXCycle = {
     people: [
         {
             id: 'judging-panel',
-            title: 'Judging Panel',
+            title: 'Judging panel',
             people: [...JUDGES_2020, ...JUDGES_2021],
         },
-        { id: 'team', title: 'Our Team', people: TEAM_2020_2021 },
+        { id: 'team', title: 'Our team', people: TEAM_2020_2021 },
     ],
     logos: {
-        title: 'Participating teams and sponsors',
+        title: 'Participating teams',
         groups: [
             {
-                title: 'Participating teams',
                 logos: logos(
                     'uoft',
                     'torino',

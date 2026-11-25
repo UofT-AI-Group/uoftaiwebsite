@@ -1,6 +1,5 @@
-import { Link, Navigate, useLocation, useParams } from 'react-router'
+import { Navigate, useLocation, useParams } from 'react-router'
 import { CyclePage } from '@/components/projectx/CyclePage'
-import { Button } from '@/components/ui/button'
 import {
     CURRENT_CYCLE,
     PAST_CYCLES,
@@ -35,13 +34,10 @@ const ProjectXArchive = () => {
                 editions: EDITIONS,
                 current: cycle.href,
             }}
-            heroActions={
-                <Button asChild variant="outline">
-                    <Link to={CURRENT_CYCLE.href}>
-                        See ProjectX {CURRENT_CYCLE.year}
-                    </Link>
-                </Button>
-            }
+            latest={{
+                label: `ProjectX ${CURRENT_CYCLE.year}`,
+                href: CURRENT_CYCLE.href,
+            }}
         />
     )
 }

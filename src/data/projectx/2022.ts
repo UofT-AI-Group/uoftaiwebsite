@@ -44,49 +44,49 @@ export const cycle2022: ProjectXCycle = {
     year: 2022,
     href: '/projectx/2022',
     description:
-        'ProjectX 2022, UofT AI’s ML research competition on human-computer interaction: research areas, documents, timeline, team, participating teams and partners.',
+        'ProjectX 2022 was UofT AI’s ML research competition on human-computer interaction. This archived page keeps its documents, timeline, team, participating teams and partners.',
     summary: 'Human-Computer Interaction · $40,000+ prize pool',
+    archived: { title: 'ProjectX 2022 has ended.' },
     themeLabel: '2022 ML research focus',
     theme: 'Human-Computer Interaction',
     topics: ['Human-Computer Interaction', 'Human-Human Interaction'],
     facts: [{ label: 'Prize pool', value: '$40,000+' }],
-    resources: RESOURCES,
+    documents: { items: RESOURCES },
     timeline: {
-        title: 'Timeline',
+        title: 'Project X 2023 timeline',
         items: [
             {
-                date: 'Sep 1',
-                title: 'Confirm University Participation',
+                date: 'September 01',
+                title: 'Confirm university participation',
                 detail: 'Participation confirmation deadline for universities.',
             },
             {
-                date: 'Sep 14',
-                title: 'Team Registration Deadline',
+                date: 'September 14',
+                title: 'Team registration deadline',
                 detail: 'Students will form groups and be onboarded with short presentations from UofT AI, the head judge, and partners.',
             },
             {
-                date: 'Oct 1',
-                title: 'Competition Starts',
+                date: 'October 01',
+                title: 'Competition starts',
                 detail: 'Teams begin research with focus on one of two themes: human-computer interaction or human-human interaction.',
             },
             {
-                date: 'Dec 14',
-                title: 'Final Deliverable Due',
+                date: 'December 14',
+                title: 'Final deliverable due',
                 detail: 'Final draft of research paper is due from all participating teams.',
             },
             {
-                date: 'Jan 21',
-                title: 'Winners Announced',
+                date: 'January 21',
+                title: 'Winners announced',
                 detail: 'Winning teams are announced by our panel of researchers and industry experts! Awards ceremony for winning teams held at the UofT AI conference.',
             },
         ],
     },
-    people: [{ id: 'team', title: 'Our Team', people: TEAM }],
+    people: [{ id: 'team', title: 'Our team', people: TEAM }],
     logos: {
-        title: 'Participating teams and partners',
+        title: 'Participating teams',
         groups: [
             {
-                title: 'Participating teams',
                 logos: logos(
                     'uoft',
                     'usc',
@@ -106,7 +106,7 @@ export const cycle2022: ProjectXCycle = {
                 ),
             },
             {
-                title: 'Partners',
+                title: 'Our partners',
                 logos: logos('vector', 'nvidia', 'intel', 'deepmind', 'google'),
                 height: 56,
             },

@@ -171,27 +171,27 @@ export const TEAM_2020_2021: Person[] = [
 export const TIMELINE_2020_2021: Milestone[] = [
     {
         date: 'May 31',
-        title: 'Confirm University Participation',
+        title: 'Confirm university participation',
         detail: 'Participation confirmation deadline for universities.',
     },
     {
-        date: 'Jun 14',
-        title: 'Team Registration Deadline',
+        date: 'June 14',
+        title: 'Team registration deadline',
         detail: 'Students will form groups and be onboarded with short presentations from UofT AI, the head judge, and partners.',
     },
     {
-        date: 'Sep 1',
-        title: 'Competition Starts',
+        date: 'September 01',
+        title: 'Competition starts',
         detail: 'Teams begin research with focus on one of two themes: human-computer interaction or human-human interaction.',
     },
     {
-        date: 'Jan 31',
-        title: 'Final Deliverables Due',
+        date: 'January 31',
+        title: 'Final deliverables due',
         detail: 'Final draft of research paper is due from all participating teams.',
     },
     {
-        date: 'Feb 14',
-        title: 'Winners Announced',
+        date: 'February 14',
+        title: 'Winners announced',
         detail: 'Winning teams are announced by our panel of researchers and industry experts! Awards ceremony for winning teams held at the UofT AI conference.',
     },
 ]

@@ -13,7 +13,7 @@ export type Rich = Inline | Inline[]
 export type Block = Rich | { list: Rich[] }
 
 export type Milestone = {
-    /** Short and set large, e.g. "Oct 20" or "Mid-Nov". */
+    /** Set large, e.g. "Oct 20" or "September 01". */
     date: string
     title: string
     detail?: string
@@ -51,7 +51,11 @@ export type PeopleGroup = {
     people?: Person[]
 }
 
-/** One year of ProjectX. Sections render in a fixed order when present. */
+/**
+ * One year of ProjectX. Sections render in a fixed order when present. Past
+ * cycles keep the wording they were published with; `archived` is the only
+ * text written after the event.
+ */
 export type ProjectXCycle = {
     year: number
     href: string
@@ -59,7 +63,14 @@ export type ProjectXCycle = {
     description: string
     /** One line for the archive list. */
     summary: string
-    /** e.g. "Research theme" or "ML research focus". */
+    /** Marks a past cycle with a banner linking to the current one. */
+    archived?: {
+        /** e.g. "ProjectX 2021 has ended." */
+        title: string
+        /** One sentence on anything known to have changed since. */
+        note?: string
+    }
+    /** Shown above the theme, e.g. "2020 ML research focus". */
     themeLabel: string
     theme: string
     topics?: string[]
@@ -73,12 +84,13 @@ export type ProjectXCycle = {
     }
     timeline?: { title: string; lede?: string; items: Milestone[] }
     events?: CycleEvent[]
-    resources?: Resource[]
+    documents?: { title?: string; items: Resource[] }
     support?: {
         title: string
-        items: { title: string; text: string }[]
+        items: { title: string; paragraphs: string[] }[]
     }
     people?: PeopleGroup[]
+    /** The first group usually has no title of its own, so the heading names it. */
     logos?: { title: string; groups: LogoGroup[] }
     faq?: { question: string; answer: Block[] }[]
     contactEmail?: string

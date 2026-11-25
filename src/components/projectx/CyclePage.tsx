@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
 import { ArrowDownToLine } from 'lucide-react'
+import { ArchiveBanner } from '@/components/kit/ArchiveBanner'
 import { ArchiveList } from '@/components/kit/ArchiveList'
 import type { Edition } from '@/components/kit/ArchiveList'
 import {
@@ -19,6 +19,7 @@ import { Timeline } from '@/components/kit/Timeline'
 import { Button } from '@/components/ui/button'
 import { Tag } from '@/components/ui/tag'
 import type { ProjectXCycle } from '@/data/projectx/types'
+import { cn } from '@/lib/utils'
 import { withStates } from './milestones'
 import { RichText } from './RichText'
 
@@ -32,14 +33,14 @@ export const CyclePage = ({
     cycle,
     title,
     archive,
-    heroActions,
+    latest,
 }: {
     cycle: ProjectXCycle
     /** Page title for the browser tab. */
     title: string
     archive: { title: string; editions: Edition[]; current?: string }
-    /** Shown after the cycle's own actions. */
-    heroActions?: ReactNode
+    /** Where the archive banner on a past cycle points. */
+    latest?: { label: string; href: string }
 }) => {
     const milestones = cycle.timeline && withStates(cycle.timeline.items)
     const live = milestones?.some(({ state }) => state !== 'past') ?? false
@@ -48,12 +49,27 @@ export const CyclePage = ({
         <main className="bg-ink font-mono text-fg antialiased">
             <PageMeta title={title} description={cycle.description} />
             <PageHero
+                banner={
+                    cycle.archived && (
+                        <ArchiveBanner
+                            title={cycle.archived.title}
+                            link={latest}
+                        >
+                            This page is kept as it was originally published, so
+                            some details may be out of date.
+                            {cycle.archived.note && ` ${cycle.archived.note}`}
+                        </ArchiveBanner>
+                    )
+                }
                 variant={live ? 'upcoming' : 'recap'}
                 title="ProjectX"
                 edition={cycle.year}
                 subtitle={
                     <>
-                        <span className="sr-only">{cycle.themeLabel}: </span>
+                        <span className="mb-3 block text-[13px] tracking-normal text-dim">
+                            {cycle.themeLabel}
+                            <span className="sr-only">:</span>
+                        </span>
                         {cycle.theme}
                     </>
                 }
@@ -63,39 +79,27 @@ export const CyclePage = ({
                         <>
                             {cycle.intro && <RichText blocks={cycle.intro} />}
                             {cycle.topics && (
-                                <div>
-                                    <p className="text-[13px] text-dim">
-                                        Research areas
-                                    </p>
-                                    <ul className="mt-3 flex list-none! flex-wrap gap-2 pl-0! [&>li+li]:mt-0!">
-                                        {cycle.topics.map((topic) => (
-                                            <li key={topic}>
-                                                <Tag>{topic}</Tag>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                <ul className="flex list-none! flex-wrap gap-2 pl-0! [&>li+li]:mt-0!">
+                                    {cycle.topics.map((topic) => (
+                                        <li key={topic}>
+                                            <Tag>{topic}</Tag>
+                                        </li>
+                                    ))}
+                                </ul>
                             )}
                         </>
                     )
                 }
                 facts={cycle.facts}
-                actions={
-                    (cycle.actions || heroActions) && (
-                        <>
-                            {cycle.actions?.map(({ label, href }, i) => (
-                                <Button
-                                    key={href}
-                                    asChild
-                                    variant={i === 0 ? 'default' : 'outline'}
-                                >
-                                    <a href={href}>{label}</a>
-                                </Button>
-                            ))}
-                            {heroActions}
-                        </>
-                    )
-                }
+                actions={cycle.actions?.map(({ label, href }, i) => (
+                    <Button
+                        key={href}
+                        asChild
+                        variant={i === 0 ? 'default' : 'outline'}
+                    >
+                        <a href={href}>{label}</a>
+                    </Button>
+                ))}
             />
 
             {cycle.streams && (
@@ -167,13 +171,24 @@ export const CyclePage = ({
                 </Section>
             )}
 
-            {cycle.resources && (
+            {cycle.documents && (
                 <Section
                     id="documents"
-                    heading={<SectionHeading>Documents</SectionHeading>}
+                    heading={
+                        cycle.documents.title && (
+                            <SectionHeading>
+                                {cycle.documents.title}
+                            </SectionHeading>
+                        )
+                    }
                 >
-                    <div className={cardGrid}>
-                        {cycle.resources.map(
+                    <div
+                        className={cn(
+                            cardGrid,
+                            !cycle.documents.title && 'mt-0',
+                        )}
+                    >
+                        {cycle.documents.items.map(
                             ({ title, description, href, download }) => (
                                 <Card key={title}>
                                     <CardTitle href={href} download={download}>
@@ -203,11 +218,13 @@ export const CyclePage = ({
                     }
                 >
                     <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2">
-                        {cycle.support.items.map(({ title, text }) => (
+                        {cycle.support.items.map(({ title, paragraphs }) => (
                             <Card key={title}>
                                 <CardTitle>{title}</CardTitle>
                                 <CardText>
-                                    <p>{text}</p>
+                                    {paragraphs.map((text) => (
+                                        <p key={text}>{text}</p>
+                                    ))}
                                 </CardText>
                             </Card>
                         ))}

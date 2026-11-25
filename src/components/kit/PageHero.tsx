@@ -25,6 +25,8 @@ type PageHeroProps = {
     facts?: Fact[]
     actions?: ReactNode
     photo?: Photo
+    /** A full-width notice above the hero content, e.g. an `ArchiveBanner`. */
+    banner?: ReactNode
 }
 
 /**
@@ -43,8 +45,10 @@ export const PageHero = ({
     facts,
     actions,
     photo,
+    banner,
 }: PageHeroProps) => (
     <header className="relative isolate overflow-hidden border-b border-hair pt-(--site-header-height)">
+        {banner}
         <div
             className={cn(
                 wrap,
