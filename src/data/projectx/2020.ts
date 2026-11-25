@@ -1,0 +1,88 @@
+import { logos } from './logos'
+import {
+    JUDGES_2020,
+    RESOURCES,
+    SPONSOR_TIERS_2020_2021,
+    TEAM_2020_2021,
+    TIMELINE_2020_2021,
+} from './shared'
+import type { ProjectXCycle } from './types'
+
+export const cycle2020: ProjectXCycle = {
+    year: 2020,
+    href: '/projectx/2020',
+    description:
+        'ProjectX 2020 was UofT AI’s ML research competition on climate change. This archived page keeps its documents, timeline, judging panel, participating teams and partners.',
+    summary: 'Climate Change · $65,000 prize pool',
+    archived: { title: 'ProjectX 2020 has ended.' },
+    themeLabel: '2020 ML research focus',
+    theme: 'Climate Change',
+    topics: [
+        'Infectious Disease',
+        'Weather and Natural Disaster Prediction',
+        'Emissions and Energy Efficiency',
+    ],
+    facts: [{ label: 'Prize pool', value: '$65,000' }],
+    documents: { items: RESOURCES },
+    timeline: { title: 'Timeline', items: TIMELINE_2020_2021 },
+    people: [
+        { id: 'judging-panel', title: 'Judging panel', people: JUDGES_2020 },
+        { id: 'team', title: 'Our team', people: TEAM_2020_2021 },
+    ],
+    logos: {
+        title: 'Participating teams',
+        groups: [
+            {
+                logos: logos(
+                    'mit',
+                    'uoft',
+                    'stanford',
+                    'berkeley',
+                    'carnegie',
+                    'johns-hopkins',
+                    'illinois',
+                    'mcgill',
+                    'michigan',
+                    'caltech',
+                    'montreal',
+                    'ubc',
+                    'cornell',
+                    'wisconsin',
+                    'queens',
+                    'umass',
+                    'usc',
+                    'alberta',
+                    'uchile',
+                    'duquesne',
+                    'usp',
+                    'darmstadt',
+                ),
+            },
+            {
+                title: 'Our partners',
+                logos: logos(
+                    'google-ai',
+                    'uoft',
+                    'ibm',
+                    'deepmind',
+                    'vector',
+                    'accuweather',
+                    'schwartz-reisman',
+                    'citadel',
+                    'climsystems',
+                    'altaml',
+                    'rogers',
+                    'konrad',
+                    'mattermore',
+                    'loblaw',
+                    'descartes-labs',
+                    'international-tax-solutions',
+                    'mila',
+                    'mckinsey',
+                    'amii',
+                ),
+            },
+            ...SPONSOR_TIERS_2020_2021,
+        ],
+    },
+}

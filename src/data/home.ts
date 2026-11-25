@@ -211,7 +211,7 @@ export const EVENTS: PastEvent[] = [
     {
         year: 2026,
         name: 'ProjectX',
-        to: '/projectx/2026',
+        to: '/projectx',
         detail: 'Theme: What is Progress?',
     },
     {
